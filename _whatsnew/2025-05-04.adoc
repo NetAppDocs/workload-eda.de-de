@@ -1,0 +1,9 @@
+= Aktualisierte Berechtigungsterminologie
+:allow-uri-read: 
+
+
+
+
+=== Aktualisierte Berechtigungsterminologie
+
+Die Benutzeroberfläche und die Dokumentation von Workload Factory verwenden nun „read-only“ für Leseberechtigungen und „read/write“ für Automatisierungsberechtigungen.

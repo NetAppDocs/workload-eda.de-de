@@ -1,0 +1,40 @@
+---
+sidebar: sidebar 
+permalink: create-workspaces.html 
+keywords: manage, workspace, snapshot, project 
+summary: Ein Workspace in NetApp Workload Factory for EDA ist eine Perforce-Darstellung eines Projekts, die auf einem Projekt-Snapshot basiert. Im Rahmen eines EDA-Projekts können Sie Arbeitsbereiche erstellen. 
+---
+= Erstellen Sie einen EDA-Arbeitsbereich
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Ein Workspace in NetApp Workload Factory for EDA ist eine Perforce-Darstellung eines Projekts zu einem bestimmten Zeitpunkt. Arbeitsbereiche werden auf Basis eines Projekt-Snapshots erstellt. Innerhalb eines EDA-Projekts können Sie neue Arbeitsbereiche erstellen. Sie können Arbeitsbereiche über die Perforce-Benutzeroberfläche erstellen.
+
+.Bevor Sie beginnen
+Stellen Sie sicher, dass Sie EDA in den Perforce Helix Visual Client integriert haben. Sehen link:integrate-perforce.html["EDA mit Perforce integrieren"^] für weitere Informationen.
+
+.Schritte
+. Melden Sie sich bei Perforce an.
+. Im Perforce-Menü wählen Sie *Ansicht* > *WF*.
++
+Innerhalb der Perforce-Benutzeroberfläche wird der Anmeldebildschirm von Workload Factory angezeigt.
+
+. Melden Sie sich mit einem der folgenden Dienste an: link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["Konsolenerlebnisse"^]Die
+. Wählen Sie das Menü aus image:workloads-menu-icon.png["Über das Hamburger-Menüsymbol kann man zu Workloads wie Speicher, EDA, KI, Datenbanken, VMware und Administration navigieren."] und wählen Sie dann *EDA* aus.
+. Wählen Sie *CI/CD*.
+. Wählen Sie *Projekt erstellen* und anschließend *Arbeitsbereich erstellen*.
+. Geben Sie auf der Seite „Arbeitsbereichsprojekt erstellen“ Folgendes an:
++
+.. Wählen Sie einen Snapshot aus, der als Grundlage für den Arbeitsbereich dienen soll.
+.. Geben Sie einen Namen für den Arbeitsbereich ein.
+.. Optional können Sie eine Benutzerkennung eingeben, um den Arbeitsbereich zu beanspruchen. Diese Kennung sollte mit der Perforce-Benutzer-ID des Entwicklers übereinstimmen, der diesen Arbeitsbereich nutzen wird.
+
+
+. Wählen Sie *Erstellen*.
+
+
+.Ergebnis
+Der Arbeitsbereich wurde erstellt und erscheint in der Liste der Arbeitsbereiche auf der Seite „Arbeitsbereiche“.

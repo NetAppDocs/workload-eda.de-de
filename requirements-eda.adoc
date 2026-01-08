@@ -1,0 +1,45 @@
+---
+sidebar: sidebar 
+permalink: requirements-eda.html 
+keywords: Builders, FSx, project, projects. eda, electronic design automation, requirements, setup, workload factory 
+summary: Stellen Sie sicher, dass Workload Factory und AWS ordnungsgemäß eingerichtet sind, bevor Sie NetApp Workload Factory für EDA verwenden. Dazu gehören unter anderem Ihre AWS-Anmeldeinformationen und ein bereitgestelltes FSx for ONTAP -Dateisystem. 
+---
+= EDA Anforderungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Stellen Sie sicher, dass Workload Factory und AWS ordnungsgemäß eingerichtet sind, bevor Sie NetApp Workload Factory für EDA verwenden. Dazu gehören unter anderem Ihre AWS-Anmeldeinformationen und ein bereitgestelltes FSx for ONTAP -Dateisystem.
+
+Workload Factory-Login und -Konto:: Du musst https://docs.netapp.com/us-en/workload-setup-admin/sign-up-saas.html["Richten Sie ein Konto bei Workload Factory ein."^] und melden Sie sich mit einem der folgenden Anmeldedaten an: https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["Konsolenerlebnisse"^]Die
+AWS-Anmeldeinformationen und Berechtigungen:: Sie müssen AWS-Zugangsdaten mit Lese-/Schreibberechtigungen zu Workload Factory hinzufügen, was bedeutet, dass Sie Workload Factory im Lese-/Schreibmodus für EDA verwenden werden.
+
+
+Die Berechtigungen _Basic_ und _read-only_ werden derzeit nicht unterstützt.
+
+https://docs.netapp.com/us-en/workload-setup-admin/add-credentials.html["Erfahren Sie, wie Sie AWS-Anmeldeinformationen zu Workload Factory hinzufügen."^]
+
+FSx für ONTAP -Dateisystem:: Sie benötigen mindestens ein FSx for ONTAP -Dateisystem:
++
+--
+* Das Dateisystem wird von EDA verwendet, um die von Ihnen erstellten Projekte und Arbeitsbereiche zu speichern.
++
+Dieses FSx for ONTAP Dateisystem muss FlexVol Volumes verwenden. FlexGroup Volumes werden nicht unterstützt.
+
+* Sie müssen die AWS-Region, die VPC und das Subnetz kennen, in dem sich das AWS FSx for ONTAP -Dateisystem befindet.
+* Sie benötigen mindestens ein Volume im Dateisystem mit folgender Konfiguration:
++
+** Das Volume muss als NFS-Freigabe konfiguriert sein.
+** Das Dateisystem muss mit einem Link konfiguriert werden. https://docs.netapp.com/us-en/workload-fsx-ontap/links-overview.html["Mehr über Links erfahren"^]Die
+
+
+* Sie müssen die Tag-Schlüssel/Wert-Paare berücksichtigen, die Sie auf die AWS-Ressourcen anwenden möchten, die Teil dieser Bereitstellung sind (optional).
++
+https://docs.netapp.com/us-en/workload-fsx-ontap/create-file-system.html["Erfahren Sie, wie Sie FSx für ONTAP -Dateisysteme bereitstellen und verwalten."^]
+
+
+
+--
+

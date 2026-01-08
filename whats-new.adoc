@@ -1,0 +1,76 @@
+---
+sidebar: sidebar 
+permalink: whats-new.html 
+keywords: 'what"s new, features, new, release notes, enhancements, fixes, new features, Workload Factory, builders, Workload Factory, EDA, electronic design automation' 
+summary: Erfahren Sie, was es Neues bei Workload Factory für EDA gibt. 
+---
+= Was ist neu bei NetApp Workload Factory für EDA?
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Erfahren Sie mehr über die Neuerungen der EDA-Funktionalität von Workload Factory.
+
+
+
+== 4. Januar 2026
+
+
+
+=== NetApp Workload Factory for Builders heißt jetzt NetApp Workload Factory for EDA
+
+Workload Factory for Builders heißt jetzt Workload Factory for EDA. Die Namensänderung spiegelt den Fokus auf EDA-Workloads (Electronic Design Automation) wider.
+
+Workload Factory für EDA hilft Ihnen, FSx für ONTAP über mehrere Dateisysteme hinweg zu optimieren. Sie können die Leistung optimieren und die Betriebskosten senken, indem Sie Speicherparameter automatisieren, Leistungsbeschränkungen analysieren und Einblicke in EDA-Projekte gewinnen. Workload Factory für EDA ist so konzipiert, dass es sich in Ihre Infrastructure as Code (IaC)-Frameworks integrieren lässt.
+
+
+
+=== Integration des KI-Assistenten auf der Startseite
+
+Auf der Startseite der Workload Factory-Konsole ist der KI-Assistent „Ask me“ integriert, mit dem Sie Fragen zu Ihrer eigenen Speicherlandschaft stellen, personalisierte Einblicke direkt aus Ihrer Umgebung erhalten und auf frühere Konversationen zurückgreifen können. Sie können mit „Fragen Sie mich“ interagieren, um Ihre Workloads zu verstehen, Probleme zu beheben und mehr über Workload Factory zu erfahren – alles, ohne die Konsole zu verlassen.
+
+
+
+== 5. Oktober 2025
+
+
+
+=== BlueXP workload factory jetzt NetApp Workload Factory
+
+BlueXP wurde umbenannt und neu gestaltet, um seine Rolle bei der Verwaltung Ihrer Dateninfrastruktur besser widerzuspiegeln. Aus diesem Grund wurde die BlueXP workload factory in NetApp Workload Factory umbenannt.
+
+
+
+== 16. Juni 2025
+
+
+
+=== Klonunterstützung
+
+Sie können jetzt ein Projekt in BlueXP Workload Factory for Builders klonen. Wenn Sie ein Projekt klonen, erstellt Builders ein neues Projekt aus einem Snapshot mit der gleichen Konfiguration wie das Original. Das Klonen ist nützlich, um schnell ähnliche Projekte zu erstellen oder zu Testzwecken. Sie können den neuen Projektklon gemäß den Anweisungen in Builders einbinden.
+
+https://docs.netapp.com/us-en/workload-builders/version-projects.html["Versionen von BlueXP Workload Factory für Builders-Projekte verwalten"]
+
+
+
+== 4. Mai 2025
+
+
+
+=== Aktualisierte Berechtigungsterminologie
+
+Die Benutzeroberfläche und die Dokumentation von Workload Factory verwenden nun „read-only“ für Leseberechtigungen und „read/write“ für Automatisierungsberechtigungen.
+
+
+
+== 1. Dezember 2024
+
+
+
+=== Erste Veröffentlichung der Builder-Workload
+
+BlueXP Workload Factory for Builders vereinfacht die Nutzung und den Zugriff auf Softwareversionen und macht so die Notwendigkeit von benutzerdefinierten Tools oder Skripten überflüssig. Es ermöglicht Ihnen, Softwareversionen als Instant Clones zu nutzen, die in Perforce Helix Core als komfortabler Arbeitsbereich für Ihre Entwicklungsprozesse integriert sind und so Zeit und Ressourcen sparen.
+
+Die erste Version beinhaltet die Möglichkeit, Projekte und Arbeitsbereiche zu verwalten und Aktionen mit Codebox zu automatisieren. Sie können Builders auch mit Perforce Helix Core integrieren, um verschiedene Versionen jedes Projekts zu verwalten und schnell zwischen ihnen zu wechseln.

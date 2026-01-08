@@ -1,0 +1,115 @@
+---
+sidebar: sidebar 
+permalink: support-registration.html 
+keywords: support registration, register for support, support, nss account, add nss account 
+summary: Bevor Sie einen Supportfall beim technischen Support von NetApp eröffnen können, müssen Sie ein NetApp Support Site-Konto zu Workload Factory hinzufügen und sich dann für den Support registrieren. 
+---
+= Registrieren Sie sich für Support für NetApp Workload Factory für EDA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Bevor Sie einen Supportfall beim technischen Support von NetApp eröffnen können, müssen Sie ein NetApp Support Site-Konto zu Workload Factory hinzufügen und sich dann für den Support registrieren.
+
+Für den Erhalt von technischem Support speziell für NetApp Workload Factory und seine Speicherlösungen und -dienste ist eine Supportregistrierung erforderlich. Sie müssen sich über die NetApp Console für den Support registrieren. Dabei handelt es sich um eine separate webbasierte Konsole, die nicht mit Workload Factory kompatibel ist.
+
+Die Registrierung für den Support aktiviert nicht den NetApp -Support für einen Dateidienst eines Cloud-Anbieters. Technische Unterstützung für den Dateidienst eines Cloud-Anbieters, dessen Infrastruktur oder für Lösungen, die diesen Dienst nutzen, finden Sie in der Dokumentation von Workload Factory unter „Hilfe“.
+
+link:https://docs.netapp.com/us-en/storage-management-fsx-ontap/start/concept-fsx-aws.html#getting-help["Amazon FSx für ONTAP"^]
+
+
+
+== Übersicht zur Support-Registrierung
+
+Die Registrierung Ihrer Support-Abonnement-ID (Ihre 20-stellige Seriennummer 960xxxxxxxxx, die Sie auf der Seite „Supportressourcen“ in der NetApp Console finden) dient als Ihre einzige Support-Abonnement-ID. Jedes NetApp -Supportabonnement auf Kontoebene muss registriert werden.
+
+Durch die Registrierung werden Funktionen wie das Öffnen von Support-Tickets und die automatische Fallgenerierung freigeschaltet. Die Registrierung wird abgeschlossen, indem NetApp Support Site (NSS)-Konten wie unten beschrieben zur NetApp Console hinzugefügt werden.
+
+
+
+== Registrieren Sie Ihr Konto für den NetApp Support.
+
+Um sich für den Support zu registrieren und die Supportberechtigung zu aktivieren, muss ein Benutzer Ihres Kontos ein NetApp Support Site-Konto mit seinem NetApp Console -Login verknüpfen. Wie Sie sich für den NetApp -Support registrieren, hängt davon ab, ob Sie bereits ein NetApp Support Site (NSS)-Konto besitzen.
+
+
+
+=== Bestandskunde mit NSS-Konto
+
+Wenn Sie NetApp Kunde mit einem NSS-Konto sind, müssen Sie sich lediglich über die NetApp Console für den Support registrieren.
+
+.Schritte
+. Wählen Sie oben rechts in der Workload Factory-Konsole *Hilfe > Support*.
++
+Durch Auswahl dieser Option wird die NetApp Console in einem neuen Browser-Tab geöffnet und das Support-Dashboard geladen.
+
+. Wählen Sie im Menü der NetApp Console *Administration* und anschließend *Anmeldeinformationen*.
+. Wählen Sie *Benutzeranmeldeinformationen*.
+. Wählen Sie *NSS-Anmeldeinformationen hinzufügen* und folgen Sie der Authentifizierungsaufforderung der NetApp Support Site (NSS).
+. Um zu bestätigen, dass der Registrierungsvorgang erfolgreich war, wählen Sie das Hilfesymbol und dann *Support*.
++
+Auf der Seite *Ressourcen* sollte angezeigt werden, dass Ihr Konto für den Support registriert ist.
+
++
+image:https://raw.githubusercontent.com/NetAppDocs/workload-family/main/media/screenshot-support-registration.png["Ein Screenshot, der eine Kontoseriennummer, ein grünes Kontrollkästchen und den Text „Für Support registriert“ zeigt."]
+
++
+Beachten Sie, dass andere NetApp Console Benutzer diesen Support-Registrierungsstatus nicht sehen, wenn sie kein NetApp Support Site-Konto mit ihrem NetApp Console -Login verknüpft haben. Das bedeutet jedoch nicht, dass Ihr NetApp -Konto nicht für den Support registriert ist. Sobald mindestens ein Benutzer dieses Kontos diese Schritte befolgt hat, ist Ihr Konto registriert.
+
+
+
+
+
+=== Bestandskunde, aber kein NSS-Konto
+
+Wenn Sie bereits NetApp Kunde sind und über bestehende Lizenzen und Seriennummern, aber _kein_ NSS-Konto verfügen, müssen Sie ein NSS-Konto erstellen und es mit Ihrem NetApp Console -Login verknüpfen.
+
+.Schritte
+. Erstellen Sie ein NetApp Support Site-Konto, indem Sie das https://mysupport.netapp.com/site/user/registration["Registrierungsformular für Benutzer der NetApp Support-Site"^]
++
+.. Achten Sie darauf, die entsprechende Benutzerebene auszuwählen, in der Regel „NetApp -Kunde/Endbenutzer“.
+.. Achten Sie darauf, die oben angegebene NetApp -Kontoseriennummer (960xxxx) für das Feld „Seriennummer“ zu kopieren. Dadurch wird die Kontobearbeitung beschleunigt.
+
+
+. Verknüpfen Sie Ihr neues NSS-Konto mit Ihrem NetApp Console -Login, indem Sie die folgenden Schritte ausführen: <<Bestandskunde mit NSS-Konto>>Die
+
+
+
+
+=== Ganz neu bei NetApp
+
+Wenn Sie NetApp noch nicht kennen und kein NSS-Konto haben, befolgen Sie die nachstehenden Schritte.
+
+.Schritte
+. Wählen Sie oben rechts in der Workload Factory-Konsole *Hilfe > Support*.
++
+Durch Auswahl dieser Option wird die NetApp Console in einem neuen Browser-Tab geöffnet und das Support-Dashboard geladen.
+
+. Suchen Sie Ihre Konto-ID-Seriennummer auf der Seite „Supportressourcen“.
++
+image:https://raw.githubusercontent.com/NetAppDocs/workload-family/main/media/screenshot-serial-number.png["Ein Screenshot des Hilfemenüs, in dem „Support“ die erste aufgeführte Option ist."]
+
+. Navigieren Sie zu https://register.netapp.com["Support-Registrierungssite von NetApp"^] und wählen Sie *Ich bin kein registrierter NetApp Kunde*.
+. Füllen Sie die Pflichtfelder (mit roten Sternchen gekennzeichnet) aus.
+. Wählen Sie im Feld *Produktlinie* *Cloud Manager* und dann Ihren entsprechenden Abrechnungsanbieter aus.
+. Kopieren Sie die Seriennummer Ihres Kontos aus Schritt 2 oben, schließen Sie die Sicherheitsüberprüfung ab und bestätigen Sie anschließend, dass Sie die globale Datenschutzrichtlinie von NetApp gelesen haben.
++
+Um diese sichere Transaktion abzuschließen, wird umgehend eine E-Mail an das angegebene Postfach gesendet. Überprüfen Sie unbedingt Ihren Spam-Ordner, wenn die Bestätigungs-E-Mail nicht innerhalb weniger Minuten eintrifft.
+
+. Bestätigen Sie die Aktion in der E-Mail.
++
+Durch die Bestätigung wird Ihre Anfrage an NetApp übermittelt und es wird empfohlen, dass Sie ein NetApp Support Site-Konto erstellen.
+
+. Erstellen Sie ein NetApp Support Site-Konto, indem Sie das https://mysupport.netapp.com/site/user/registration["Registrierungsformular für Benutzer der NetApp Support-Site"^]
++
+.. Achten Sie darauf, die entsprechende Benutzerebene auszuwählen, in der Regel „NetApp -Kunde/Endbenutzer“.
+.. Denken Sie daran, die oben für das Seriennummernfeld verwendete Kontoseriennummer (960xxxx) zu kopieren. Dies beschleunigt die Kontobearbeitung.
+
+
+
+
+.Nach Abschluss
+NetApp sollte sich während dieses Vorgangs mit Ihnen in Verbindung setzen. Dies ist eine einmalige Onboarding-Übung für neue Benutzer.
+
+Sobald Sie über ein NetApp -Support-Site-Konto verfügen, verknüpfen Sie dieses Konto mit Ihrem NetApp Console -Login, indem Sie die folgenden Schritte ausführen: <<Bestandskunde mit NSS-Konto>>Die

@@ -1,0 +1,70 @@
+---
+sidebar: sidebar 
+permalink: task-configure-dashboard.html 
+keywords: configure, dashboard, AWS tags, CloudWatch, FSx for ONTAP, Workload Factory, EDA, electronic design automation 
+summary: Konfigurieren Sie Ihr EDA-Dashboard, indem Sie Tags hinzufügen, um Metriken zu erfassen. 
+---
+= Nutzen Sie das Dashboard
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Wenn Sie sich zum ersten Mal bei EDA anmelden, können Sie über das Dashboard die Projektnutzung in Ihren FSx for ONTAP -Dateisystemen und -Volumes beobachten. Das Dashboard enthält mehrere Standardfilter, mit denen Sie die angezeigten Informationen anpassen können. Darüber hinaus können Sie Ihre eigenen AWS-Tags erstellen und anwenden, um die Daten gemäß Ihren spezifischen Geschäftsanforderungen zu organisieren und zu filtern.
+
+Das Dashboard hilft Ihnen, die Speichernutzung hinsichtlich zugewiesener Kapazität, genutzter Kapazität, Durchsatz und IOPS zu überwachen.
+
+Die von CloudWatch erfassten Metriken umfassen:
+
+* Bereitgestellte Kapazität: Eine Kennzahl auf Volumenebene, die die bereitgestellte Speicherkapazität darstellt.
+* Belegte Kapazität: Eine Kennzahl auf Volumenebene, die den genutzten Speicherplatz darstellt.
+* Durchschnittlicher/Maximaler Durchsatz: Berechnet als Durchschnitt bzw. Maximum der Summe von DataReadBytes und DataWriteBytes über den angegebenen Zeitraum.
+* Durchschnittliche/Maximale IOPS: Berechnet als Durchschnitt bzw. Maximum der Summe aus DataReadOperations, DataWriteOperations und MetadataOperations über den angegebenen Zeitraum.
+
+
+
+
+== Dashboard einrichten
+
+Um das Dashboard effektiv zu nutzen, konfigurieren Sie AWS-Tags auf Ihren FSx for ONTAP Volumes basierend auf Ihren Geschäftsanforderungen, z. B. Tags, die Projekte oder Geschäftseinheiten repräsentieren. Für weitere Details siehe <<Benutzerdefinierte Filter konfigurieren>>Die
+
+AWS-Tags sind Metadaten für Ihre AWS-Ressourcen. Sie helfen Ihnen dabei, Ihre AWS-Ressourcen auf verschiedene Weise zu kategorisieren, beispielsweise nach Projekt, Anwendung oder Geschäftsbereich. Weitere Informationen zum Tagging finden Sie unter https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/what-are-tags.html["Was sind Tags?"^] Und  https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/overview.html["AWS Resource Groups Tagging API-Referenz"^]Die
+
+Sobald die Tag-Konfiguration abgeschlossen ist, geben Sie auf der Seite *Tag-Konfiguration* die AWS-Tag-Schlüsselnamen und die entsprechenden Bezeichnungen an, die in Ihrem Dashboard angezeigt werden sollen.
+
+Sobald diese Tags angewendet werden, beginnt Workload Factory mit dem Sammeln und Anzeigen der relevanten CloudWatch-Metriken.
+
+Ihr Dashboard wird zu einem dynamischen Werkzeug, mit dem Sie Ressourcen organisieren, Kosten verfolgen und filtern können, ganz nach Ihren organisatorischen Bedürfnissen.
+
+
+
+=== Benutzerdefinierte Filter konfigurieren
+
+. Melden Sie sich mit einem der folgenden Dienste an: link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["Konsolenerlebnisse"^]Die
+. Wählen Sie das Menü aus image:workloads-menu-icon.png["Über das Hamburger-Menüsymbol kann man zu Workloads wie Speicher, EDA, KI, Datenbanken, VMware und Administration navigieren."] und wählen Sie dann *EDA* aus.
++
+Falls Sie Ihr Dashboard noch nicht konfiguriert haben, werden Sie automatisch dazu aufgefordert.
+
+. Fügen Sie für jeden benötigten Filter einen Filterbezeichnungsnamen und den AWS-Tag-Schlüsselnamen hinzu, den Sie damit verknüpfen möchten.
+. Wählen Sie *Übernehmen*.
+. Um Ihre Änderungen nach dem Anwenden von Tags oder Filtern anzuzeigen, wählen Sie das Aktualisierungssymbol im Dashboard aus. Das dynamische Dashboard, das mit den neuen Filtern konfiguriert ist, wird im Dashboard Ihrer EDA-Projekte angezeigt.
+. Um die Dashboard-Konfiguration später zu bearbeiten, wählen Sie *Konfigurieren*.
+
+
+
+
+=== Dashboard filtern
+
+Sie können die auf dem Dashboard angezeigten Informationen filtern, indem Sie einen oder alle der folgenden Standardfilter sowie alle von Ihnen erstellten benutzerdefinierten Filter auswählen:
+
+* Anmeldeinformationen
+* Region
+* Dateisystem
+* Datenträgertyp
+* Zeitbereich
+
+
+Nachdem Sie die gewünschten Filter ausgewählt haben, klicken Sie auf das Aktualisierungssymbol, um die Informationen im Dashboard zu aktualisieren.
+
+Um eine Erläuterung der auf einer Karte angezeigten Informationen zu erhalten, wählen Sie das Informationssymbol für diese Karte aus.
