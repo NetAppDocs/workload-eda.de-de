@@ -351,17 +351,13 @@
   <block id="cc8b0535948da368f832027c19b7f853" category="list-text">Denken Sie daran, die oben für das Seriennummernfeld verwendete Kontoseriennummer (960xxxx) zu kopieren. Dies beschleunigt die Kontobearbeitung.</block>
   <block id="684375e279a289295b72a006d93e2c4c" category="paragraph">NetApp sollte sich während dieses Vorgangs mit Ihnen in Verbindung setzen. Dies ist eine einmalige Onboarding-Übung für neue Benutzer.</block>
   <block id="f335678326583cea28377216c5515221" category="paragraph">Sobald Sie über ein NetApp -Support-Site-Konto verfügen, verknüpfen Sie dieses Konto mit Ihrem NetApp Console -Login, indem Sie die folgenden Schritte ausführen: <block ref="2f3aba04ec49ee5f0573a6c80a1b9df2" category="inline-xref-macro-rx"></block>Die</block>
-  <block id="487644be42ec68bfbe1af8bedccf87d4" category="summary">Konfigurieren Sie Ihr EDA-Dashboard, indem Sie Tags hinzufügen, um Metriken zu erfassen.</block>
   <block id="b5ca39077f3b34df657d01b0e4e66348" category="doc">Nutzen Sie das Dashboard</block>
-  <block id="9f87c2937598d5a669f7fda9b2860b22" category="paragraph">Wenn Sie sich zum ersten Mal bei EDA anmelden, können Sie über das Dashboard die Projektnutzung in Ihren FSx for ONTAP -Dateisystemen und -Volumes beobachten. Das Dashboard enthält mehrere Standardfilter, mit denen Sie die angezeigten Informationen anpassen können. Darüber hinaus können Sie Ihre eigenen AWS-Tags erstellen und anwenden, um die Daten gemäß Ihren spezifischen Geschäftsanforderungen zu organisieren und zu filtern.</block>
-  <block id="9108e435212992e269c4a0e10c304297" category="paragraph">Das Dashboard hilft Ihnen, die Speichernutzung hinsichtlich zugewiesener Kapazität, genutzter Kapazität, Durchsatz und IOPS zu überwachen.</block>
   <block id="00909736de459ef354dd54f7a12c7137" category="paragraph">Die von CloudWatch erfassten Metriken umfassen:</block>
   <block id="83ec7827b9a51abd480f21f9797d1c3b" category="list-text">Bereitgestellte Kapazität: Eine Kennzahl auf Volumenebene, die die bereitgestellte Speicherkapazität darstellt.</block>
   <block id="99051abc318cae9824d95692d1c95b25" category="list-text">Belegte Kapazität: Eine Kennzahl auf Volumenebene, die den genutzten Speicherplatz darstellt.</block>
   <block id="ff1cfca20a1660c53ade527b17be8ad8" category="list-text">Durchschnittlicher/Maximaler Durchsatz: Berechnet als Durchschnitt bzw. Maximum der Summe von DataReadBytes und DataWriteBytes über den angegebenen Zeitraum.</block>
   <block id="a0932dae893409aa61370e810d740d59" category="list-text">Durchschnittliche/Maximale IOPS: Berechnet als Durchschnitt bzw. Maximum der Summe aus DataReadOperations, DataWriteOperations und MetadataOperations über den angegebenen Zeitraum.</block>
   <block id="c4d073c70378b04dc94a31c6e002190c" category="section-title">Dashboard einrichten</block>
-  <block id="4a77707914ca5addc817ef4b8452e03d" category="paragraph">Um das Dashboard effektiv zu nutzen, konfigurieren Sie AWS-Tags auf Ihren FSx for ONTAP Volumes basierend auf Ihren Geschäftsanforderungen, z. B. Tags, die Projekte oder Geschäftseinheiten repräsentieren. Für weitere Details siehe <block ref="56431a7f0461e9258a1144a0e01a6b8d" category="inline-xref-macro-rx"></block>Die</block>
   <block id="4c6f0009ac1f9c550c3c27ca47734a94" category="inline-link">Was sind Tags?</block>
   <block id="6ec564eeb8bbd7d65ea723d7377e4535" category="inline-link">AWS Resource Groups Tagging API-Referenz</block>
   <block id="3c533aef31dd27afb54ebf253685f3c2" category="paragraph">AWS-Tags sind Metadaten für Ihre AWS-Ressourcen. Sie helfen Ihnen dabei, Ihre AWS-Ressourcen auf verschiedene Weise zu kategorisieren, beispielsweise nach Projekt, Anwendung oder Geschäftsbereich. Weitere Informationen zum Tagging finden Sie unter<block ref="3a728828042c1a731e3aa740ed780475" category="inline-link-rx"></block> Und <block ref="53b3c63786d21199a28ae32477919693" category="inline-link-rx"></block>Die</block>
@@ -370,12 +366,10 @@
   <block id="40dded464250d8f5174e221d1ee142f9" category="paragraph">Ihr Dashboard wird zu einem dynamischen Werkzeug, mit dem Sie Ressourcen organisieren, Kosten verfolgen und filtern können, ganz nach Ihren organisatorischen Bedürfnissen.</block>
   <block id="976e508c4d7059185077a486bc23c939" category="section-title">Benutzerdefinierte Filter konfigurieren</block>
   <block id="0de06b59453acb74b09edb405890d19b" category="paragraph">Falls Sie Ihr Dashboard noch nicht konfiguriert haben, werden Sie automatisch dazu aufgefordert.</block>
-  <block id="b5aff8f837547a2440ebe2a08de996e4" category="list-text">Fügen Sie für jeden benötigten Filter einen Filterbezeichnungsnamen und den AWS-Tag-Schlüsselnamen hinzu, den Sie damit verknüpfen möchten.</block>
   <block id="24347b3ddf5a25cc9c27e54ae285ade1" category="list-text">Wählen Sie *Übernehmen*.</block>
   <block id="cd272c40b08a69d4fcdc74ed592a2f25" category="list-text">Um Ihre Änderungen nach dem Anwenden von Tags oder Filtern anzuzeigen, wählen Sie das Aktualisierungssymbol im Dashboard aus. Das dynamische Dashboard, das mit den neuen Filtern konfiguriert ist, wird im Dashboard Ihrer EDA-Projekte angezeigt.</block>
   <block id="365caa3dff9ac22391eab30998fdad59" category="list-text">Um die Dashboard-Konfiguration später zu bearbeiten, wählen Sie *Konfigurieren*.</block>
   <block id="26949f06981e97a3e3cda29668de2aff" category="section-title">Dashboard filtern</block>
-  <block id="6e25e66f3be3bae488d3ee4d44bfdd2d" category="paragraph">Sie können die auf dem Dashboard angezeigten Informationen filtern, indem Sie einen oder alle der folgenden Standardfilter sowie alle von Ihnen erstellten benutzerdefinierten Filter auswählen:</block>
   <block id="2daf1cb573c2c61422faf64610cf9402" category="list-text">Anmeldeinformationen</block>
   <block id="f447ac856e7e72435904956e3b15f433" category="list-text">Region</block>
   <block id="53b936091a984a22f4042eeb94499891" category="list-text">Dateisystem</block>
@@ -404,7 +398,6 @@
   <block id="91ff6a222c07990103d82fb8831e3c69" category="summary">Erfahren Sie, was es Neues bei Workload Factory für EDA gibt.</block>
   <block id="8aa901901d7a7435a17fc1f732006316" category="doc">Was ist neu bei NetApp Workload Factory für EDA?</block>
   <block id="ddd57eb702782b0c009fb89b951edaae" category="paragraph">Erfahren Sie mehr über die Neuerungen der EDA-Funktionalität von Workload Factory.</block>
-  <block id="0ccb64fb4de18921b08df0c5dcb5549f" category="section-title">4. Januar 2026</block>
   <block id="992efefab3dd15099f5eff3f904d8df4" category="section-title">5. Oktober 2025</block>
   <block id="f6db487abe903d447c5070f569416c3a" category="section-title">16. Juni 2025</block>
   <block id="dac96c84baa92faab0eb342df5283a1b" category="section-title">4. Mai 2025</block>
@@ -430,4 +423,140 @@
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">Was ist neu</block>
   <block id="482723983a4f2af954e36ff41e567451" category="sidebar">Bekannte Einschränkungen</block>
   <block id="30d965eef5ba25c6b9998ae38270b43e" category="sidebar">Rechtliche Hinweise</block>
+  <block id="efc6f47d5e8620dbd993bbf5427fa876" category="doc">Erweiterte Dashboard-Filterung mit anpassbaren Tags</block>
+  <block id="1c074117512c813d0d3c5474c6839792" category="paragraph">Sie können nun bis zu fünf benutzerdefinierte Filter im EDA-Dashboard basierend auf Ihren AWS-Tags konfigurieren. Jeder benutzerdefinierte Filter enthält einen Labelnamen, einen AWS-Tag-Schlüssel und einen Auswahltyp (Einzel- oder Mehrfachauswahl).</block>
+  <block id="a290a89777e8fd7db6061c83affdbda9" category="paragraph">Die Mehrfachauswahl ermöglicht es Ihnen, mehrere Werte gleichzeitig auszuwählen, während die Einzelauswahl Sie auf einen Wert zur gleichen Zeit beschränkt. Benutzerdefinierte Filter erscheinen in der Reihenfolge, in der Sie sie konfigurieren, was es einfach macht, Ihre am häufigsten verwendeten Filter zu organisieren.</block>
+  <block id="a9f4d955c73322ea2697149d48ca3230" category="paragraph">Wenn Sie keine benutzerdefinierten Filter konfigurieren, bleiben die Standardfilter (Dateisystem, Volume-Typ und Zeitbereich) verfügbar, sodass Sie Ihre Dashboards weiterhin anzeigen und interaktiv nutzen können.</block>
+  <block id="7f599cf351ac708ac51a573f45f1adfe" category="inline-link">Erfahren Sie mehr über die Konfiguration benutzerdefinierter Filter</block>
+  <block id="b4d8b5d35eb5ad238c4bc40c7bfa5cc8" category="paragraph"><block ref="0fffea6d188f5a3a46b25be10dcf1dca" category="inline-link-rx"></block>.</block>
+  <block id="5908526b06383bf6b835d957813a0a5b" category="section-title">Volumendetailansicht für granulare Leistungsanalyse</block>
+  <block id="be14699d8f808150c6e3ec8fd5f5fb6f" category="paragraph">Das Dashboard bietet nun zwei Ansichtsmodi: Gesamtansicht und Volumenansicht. Die Gesamtansicht zeigt aggregierte Kennzahlen über alle Volumina hinweg, während die Volumenansicht die individuelle Performance der Top 10 Volumina im Zeitverlauf anzeigt.</block>
+  <block id="6828b4aa70bf0499581d68bc0a737c8a" category="paragraph">In der Volumenansicht bieten interaktive Tooltips beim Überfahren mit der Maus detaillierte Informationen zu jedem Volumen, einschließlich Volumenname, Metriken und zeitbezogener Werte. Wenn dieselben Volumen in mehreren Komponenten erscheinen, erleichtert eine konsistente Farbcodierung das Nachverfolgen bestimmter Volumen über verschiedene Metriken hinweg.</block>
+  <block id="b7259cf0b1b93b9f8f56fd85b8a2075f" category="inline-link">Erfahren Sie mehr über die Anzeige von Volume-Details</block>
+  <block id="3d218b60cf53ed75572aecfde4c1d233" category="paragraph"><block ref="fdc27d3397a23552fa2bc2b42dee0c76" category="inline-link-rx"></block>.</block>
+  <block id="a63dd8c708227f66adf2e93b1b973bfe" category="section-title">Latenzanalyse für proaktive Leistungsüberwachung</block>
+  <block id="4eca5955b4d0f7b664a2f65c49306dcf" category="paragraph">Die Latenzanalyse ermöglicht es Ihnen, die Lese- und Schreiblatenz Ihrer FSx for ONTAP-Dateisysteme zu überwachen. Sie können anpassbare Warn- und kritische Ereignisschwellenwerte konfigurieren, um Leistungsengpässe proaktiv zu identifizieren, bevor sie Ihre EDA-Workloads beeinträchtigen.</block>
+  <block id="40a74d0e93037927ed8b742952444782" category="paragraph">Die Tabelle der Latenzereignisse zeigt alle Warn- und kritischen Ereignisse an, sodass Sie die Volume-Leistung überwachen und Volumes identifizieren können, die eine Optimierung erfordern.</block>
+  <block id="40599551b14b033049a0306f8d7e0da2" category="paragraph">Diese Funktion erfordert AWS-Zugangsdaten und ist über das Menü Latenz im EDA-Dashboard zugänglich.</block>
+  <block id="195b656b2b34184ab7cb51ea0158eba0" category="inline-link">Erfahren Sie mehr über Latenzanalyse</block>
+  <block id="3589dd4e8f5f2cbdba29810271d0f1d9" category="paragraph"><block ref="6f22f53277ef02f84f5ed64bde49085d" category="inline-link-rx"></block>.</block>
+  <block id="6b1bfc4b2985b92dcf5662055b7cd336" category="inline-link-macro">Latenzüberwachung</block>
+  <block id="6932162a874668e2d1dc901452dbb1b8" category="list-text"><block ref="fecda44c58c462f47e8a148f1d0d4382" category="inline-link-macro-rx"></block>: Überwacht proaktiv die Lese- und Schreiblatenzleistung des Volumes mit konfigurierbaren Warn- und kritischen Ereignisschwellenwerten, um potenzielle Leistungsengpässe zu identifizieren.</block>
+  <block id="7e565772caac09d981d6b3641bb20148" category="inline-link-macro">Erfahren Sie mehr über Latenzüberwachung</block>
+  <block id="d3e9e776c97e0f2d8388d6d741dd47a8" category="admonition">AWS-Zugangsdaten werden auch für die Nutzung der Latenzüberwachungsfunktion benötigt, die CloudWatch-Metriken zur Analyse der Volumenleistung erfasst. <block ref="123cec35459a259baaf9454185c7e6c4" category="inline-link-macro-rx"></block>.</block>
+  <block id="2106cf3366c1f8905dc8d0decf2ac6cc" category="summary">Konfigurieren Sie Ihr EDA-Dashboard, indem Sie Tags hinzufügen, um Kennzahlen zu erfassen. Passen Sie Filter mit Einzel- oder Mehrfachauswahloptionen an, um Ihre Geschäftsanforderungen zu erfüllen.</block>
+  <block id="f085cface8e84ac185b38370c5a4aead" category="paragraph">Wenn Sie sich zum ersten Mal bei EDA anmelden, können Sie das Dashboard verwenden, um die Projektnutzung über Ihre FSx for ONTAP-Dateisysteme und -Volumes zu beobachten. Das Dashboard enthält mehrere Standardfilter, die Sie verwenden können, um die angezeigten Informationen anzupassen. Zusätzlich können Sie bis zu fünf benutzerdefinierte Filter basierend auf Ihren AWS-Tags erstellen, mit Optionen für Einzel- oder Mehrfachauswahl, um die Daten entsprechend Ihren spezifischen Geschäftsanforderungen zu organisieren und zu filtern.</block>
+  <block id="9918911ccf4f48662bd23b3fa6ea97a8" category="inline-link-macro">Volume-Latenz überwachen</block>
+  <block id="c09e7b1ab90792168923158989ca6297" category="paragraph">Das Dashboard hilft Ihnen bei der Überwachung der Speichernutzung hinsichtlich zugewiesener Kapazität, genutzter Kapazität, Durchsatz und IOPS. Für die proaktive Überwachung der Latenzleistung siehe <block ref="4d71518cae1e26b3714fb432b3fb2249" category="inline-link-macro-rx"></block>.</block>
+  <block id="3eeb776c775a0a186eaac0ae86ca4408" category="paragraph">Um das Dashboard effektiv zu nutzen, konfigurieren Sie bis zu fünf AWS-Tags auf Ihren FSx for ONTAP Volumes basierend auf Ihren Geschäftsanforderungen, zum Beispiel Tags, die Projekte oder Geschäftsbereiche repräsentieren. Weitere Informationen finden Sie unter <block ref="56431a7f0461e9258a1144a0e01a6b8d" category="inline-xref-macro-rx"></block>.</block>
+  <block id="b915af974b3255995db1b551b1e1dcbb" category="paragraph">Sie können bis zu fünf benutzerdefinierte Filter basierend auf Ihren AWS-Tags konfigurieren. Jeder benutzerdefinierte Filter benötigt drei Komponenten: einen Filter-Label-Namen, einen AWS-Tag-Schlüssel-Namen und einen Auswahltyp (Einzel- oder Mehrfachauswahl). Wenn Sie keine benutzerdefinierten Filter konfigurieren, bleiben die Standardfilter (Dateisystem, Volume-Typ und Zeitraum) verfügbar, sodass Sie Ihre Dashboards weiterhin anzeigen und interaktiv nutzen können.</block>
+  <block id="27e0e44d189c553eb00dc006b35029f5" category="list-text">*+ Filter hinzufügen* auswählen.</block>
+  <block id="5678492274c56b0e9a6e36ba6f34b836" category="list-text">Für jeden benutzerdefinierten Filter, den Sie erstellen möchten (bis zu fünf), geben Sie Folgendes an:</block>
+  <block id="7371329c5bc9fb1913a92db5445368eb" category="list-text">*Filter label name*: Der Anzeigename, der im Dashboard erscheint.</block>
+  <block id="9dc66313c07505b9b6ee97b9490648d4" category="list-text">*AWS tag key name*: Der AWS-Ressourcen-Tag-Schlüssel, der diesem Filter entspricht.</block>
+  <block id="6245bc7faa3c897c2839919b1e0f6c5d" category="list-text">*Mehrfachauswahl*: Wählen Sie, ob dieser Filter die Einzelauswahl oder Mehrfachauswahl zulässt. Wenn Sie *Mehrfachauswahl* auswählen, können Sie mehrere Werte für diesen Filter gleichzeitig auswählen. Die Einzelauswahl beschränkt Sie darauf, jeweils nur einen Wert auszuwählen.</block>
+  <block id="0be6ab8a3d394d63c0aaea5444fc4d94" category="admonition">Filter werden im Dashboard in der Reihenfolge angezeigt, in der Sie sie konfigurieren. Ordnen Sie Ihre am häufigsten verwendeten Filter am besten zuerst an, um einen einfacheren Zugriff zu ermöglichen.</block>
+  <block id="58812a046615ae0cede06aa76e867511" category="paragraph">Sie können einen benutzerdefinierten Filter löschen, indem Sie das Papierkorbsymbol neben diesem Filter auswählen, bevor Sie Ihre Änderungen anwenden.</block>
+  <block id="7ad57d97a4e7251a593b560f3edd7c6c" category="paragraph">Sie können die auf dem Dashboard angezeigten Informationen mit einer Kombination aus Standardfiltern und allen von Ihnen erstellten benutzerdefinierten Filtern filtern.</block>
+  <block id="0893a6eb6fac2bd4489c23ad574e3e32" category="paragraph">Die folgenden Standardfilter sind immer verfügbar:</block>
+  <block id="b6c5b00ab5f9877d11bf9e5b5bc8b2fa" category="paragraph">Benutzerdefinierte Filter, die Sie konfigurieren, werden zusätzlich zu diesen Standardfiltern im Dashboard angezeigt. Bei der Verwendung von Filtern:</block>
+  <block id="0d9da1f1a6c87419d9a59e59c2f60af2" category="list-text">*Mehrfachauswahlfilter* ermöglichen es Ihnen, mehrere Werte gleichzeitig auszuwählen, um Ihre Ansicht zu erweitern. Beispielsweise können Sie mehrere Projekte auswählen, um kombinierte Kennzahlen anzuzeigen.</block>
+  <block id="2ad8dabd47e501a4ed1c3d01be491886" category="list-text">*Einzelauswahlfilter* beschränken Sie darauf, jeweils nur einen Wert auszuwählen, was nützlich ist, wenn Sie sich auf eine bestimmte Ressource oder Kategorie konzentrieren müssen.</block>
+  <block id="ec4fc4cb1b37373b785aaee6062cfec7" category="section-title">Volumendetails anzeigen</block>
+  <block id="c42e01801b1f2ef2fbdf3f8841353b73" category="paragraph">Das Dashboard bietet zwei Ansichtsmodi zur Analyse Ihrer Speichermetriken: Gesamtansicht und Volumenansicht. Sie können zwischen diesen Modi mithilfe der auf dem Dashboard verfügbaren Registerkarten wechseln.</block>
+  <block id="ee855ba807a55874eb4b38814389078f" category="section-title">Gesamtansicht</block>
+  <block id="e7dd4c9a6d36b6512dda7f2c3e278b77" category="paragraph">Die Gesamtansicht (Standard) zeigt aggregierte Metriken aller Volumes an, die Ihren ausgewählten Filtern entsprechen. Diese Ansicht bietet einen Überblick auf hoher Ebene über Ihre gesamte Speicherleistung und zeigt kombinierte Kapazitäts-, IOPS- und Durchsatzmetriken.</block>
+  <block id="515b555dcf569c4cc1d2a938ae9822d3" category="section-title">Volumenansicht</block>
+  <block id="e3f5fd2f57f7a82a665af7de374483ac" category="paragraph">Die Volumenansicht zeigt die Leistung einzelner Volumen im Zeitverlauf und listet die Top 10 Volumen für jede Metrik auf. Diese Ansicht hilft Ihnen, bestimmte Volumen zu identifizieren, die den Ressourcenverbrauch antreiben, und deren Verhalten im ausgewählten Zeitraum zu beobachten.</block>
+  <block id="5753fce8315ebaa06a713e75985750bf" category="paragraph">Um zur Volume-Ansicht zu wechseln, wählen Sie die Registerkarte *Volume* im Dashboard aus.</block>
+  <block id="f768a8e9133dfc338015fd0d83ec2cf0" category="section-title">Volumenmetriken angezeigt</block>
+  <block id="2347e9819148413af6cc4e5827b02d4e" category="paragraph">Wenn Sie die Volumenansicht auswählen, zeigt das Dashboard die Top 10 Volumen aus Ihrer Gesamtanzahl an Volumen an. * *Volume used capacity*: Zeigt Volumen mit der aktuell höchsten genutzten Kapazität an. * *IOPS*: Zeigt Volumen mit den höchsten durchschnittlichen IOPS im ausgewählten Zeitraum an. * *Throughput*: Zeigt Volumen mit dem höchsten durchschnittlichen Durchsatz im ausgewählten Zeitraum an.</block>
+  <block id="286b672abb5d35bb05baef5e5758a310" category="admonition">Das Dashboard zeigt nur die Top 10 Volumes für jede Kennzahl an. Wenn Sie mehr als 10 Volumes haben, werden einige Volumes möglicherweise nicht in der Detailansicht angezeigt.</block>
+  <block id="502ab59dcef25c014584999b381b739b" category="paragraph">Wenn die gleichen Volumes in den Metriken *Volume used capacity*, *IOPS* und *Throughput* auftreten, verwendet das Dashboard eine einheitliche Farbcodierung in der Legende, um die Verfolgung bestimmter Volumes über verschiedene Metriken hinweg zu erleichtern.</block>
+  <block id="4745a2c999b128a25bda01aed19ab2f8" category="paragraph">Die horizontale Achse zeigt den Zeitbereich an, während eine Legende alle im Diagramm dargestellten Volumes (bis zu 10) anzeigt.</block>
+  <block id="90681f223ffce7f43af4ac6e8572f319" category="section-title">Interaktive Volumendaten</block>
+  <block id="409e7e820a2aec1df14db5a88edd443e" category="paragraph">Sie können mit dem Mauszeiger über eine beliebige Volumenlinie in den Diagrammen fahren, um detaillierte Informationen anzuzeigen:</block>
+  <block id="66098fe1f75297ccbc3e4c2332830104" category="paragraph">*Ausgenutzte Kapazität des Volumes*: Zeigt den Volumennamen, die zum jeweiligen Zeitpunkt genutzte Kapazität und die zugewiesene Kapazität an.</block>
+  <block id="748334bb99d46cf2ef3aa45e610baf24" category="paragraph">*IOPS*: Zeigt den Volume-Namen, die durchschnittlichen IOPS für den Zeitraum und die maximalen IOPS für den Zeitraum an.</block>
+  <block id="04eeb8d03cf6b4755481c052a6e535e6" category="paragraph">*Durchsatz*: Zeigt den Volume-Namen, den durchschnittlichen Durchsatz für den Zeitraum und den maximalen Durchsatz für den Zeitraum an.</block>
+  <block id="f2c7e3d31586c840e7c17c779b7d70dd" category="paragraph">Diese interaktiven Daten helfen Ihnen, Volumenleistungsmuster zu analysieren und potenzielle Engpässe oder Optimierungsmöglichkeiten zu identifizieren.</block>
+  <block id="300ec882ed0bc603a8bc31f188dc28e5" category="summary">Überwachen und analysieren Sie die Volumenlatenzleistung mit konfigurierbaren Schwellenwerten für Warn- und kritische Ereignisse, um Leistungsengpässe proaktiv zu identifizieren.</block>
+  <block id="90d997e137ee990e196229395af6d6a7" category="paragraph">Mithilfe der Latenzanalyse können Sie die Volume-Performance proaktiv überwachen, indem Sie Lese- und Schreiblatenzmetriken in Ihren FSx for ONTAP file systems verfolgen. Konfigurieren Sie anpassbare Schwellenwerte für Warn- und kritische Ereignisse, um potenzielle Leistungsengpässe zu erkennen, bevor sie sich auf Ihre EDA workloads auswirken.</block>
+  <block id="3b878279a04dc47d60932cb294d96259" category="section-title">Überblick</block>
+  <block id="1c42660fdf55fec5341f109b1c18ae8c" category="paragraph">Die Latenzanalyse erfasst und überwacht CloudWatch Metriken für Lese- und Schreibvorgänge. Wenn sowohl die Schwellenwerte für Latenz als auch für IOPS für alle Datenpunkte innerhalb eines festgelegten Zeitraums überschritten werden, generiert das System Warnmeldungen, die in der Tabelle der Latenzereignisse angezeigt werden. Dies ermöglicht Ihnen:</block>
+  <block id="52840e6ea19e30e010425ac96fc1fd74" category="list-text">Identifizieren Sie Volumes, die eine Leistungsverschlechterung aufweisen.</block>
+  <block id="8111593c4b9e675b40060181e91582b7" category="list-text">Unterscheiden Sie zwischen Leistungsproblemen auf Warnstufe und auf kritischer Stufe.</block>
+  <block id="029070dac474b47b91825e694dd48f7e" category="list-text">Verfolgen Sie Latenztrends im Zeitverlauf, um Speicherkonfigurationen zu optimieren.</block>
+  <block id="82bfba3efae839fe6bbe2de97d83c475" category="list-text">Ergreifen Sie proaktiv Maßnahmen, bevor Latenz die Arbeitslastleistung beeinträchtigt.</block>
+  <block id="b18d695fc7384219d11ff79654f49701" category="paragraph">Für die Nutzung der Latenzanalyse müssen AWS-Anmeldeinformationen in Workload Factory konfiguriert sein. Die Funktion erfordert Zugriff auf CloudWatch-Metriken für alle FSx for ONTAP Volumes, die mit Ihren AWS-Anmeldeinformationen verknüpft sind.</block>
+  <block id="196a1b1d4d7eff75b0b7bc0f6fa282e7" category="inline-link-macro">AWS-Anmeldeinformationen hinzufügen</block>
+  <block id="70317e3abbdadfb99e6ea364d432bd9b" category="paragraph">Wenn Sie noch keine AWS-Zugangsdaten konfiguriert haben, siehe <block ref="53eda59ec5ff13cb6e6660c47027e8c7" category="inline-link-macro-rx"></block>.</block>
+  <block id="b7a6e29a17f641a5bd663b0c27c433ed" category="section-title">Latenzschwellenwerte konfigurieren</block>
+  <block id="9b53289586841271ac6d175ca4a5af63" category="paragraph">Sie können Schwellenwerte für Warn- und kritische Ereignisse konfigurieren. Jeder Ereignistyp umfasst separate Schwellenwerte für Lese- und Schreibvorgänge. Das System wertet diese Schwellenwerte kontinuierlich aus und generiert Warnmeldungen, sobald die Bedingungen erfüllt sind.</block>
+  <block id="2542d3fbcc77fe58daf4a8287e4dc4ae" category="admonition">Sie müssen die Schwellenwerte für kritische Ereignisse höher ansetzen als die für Warnereignisse, um eine ordnungsgemäße Eskalation von Warnmeldungen sicherzustellen. Andernfalls können Sie Ihre Konfiguration nicht speichern.</block>
+  <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">Über diese Aufgabe</block>
+  <block id="92aac57dc8699e8869b6e3f2aec6b360" category="paragraph">Damit eine Warnung ausgelöst wird, müssen sowohl der Latenzschwellenwert als auch der IOPS-Schwellenwert für alle Datenpunkte innerhalb des angegebenen Zeitraums überschritten werden. Diese Logik mit zwei Bedingungen trägt dazu bei, Fehlalarme zu reduzieren, indem sichergestellt wird, dass hohe Latenz unter signifikanter Last kontinuierlich aufrechterhalten wird.</block>
+  <block id="e1cf2ece0db166d8b4c6b87f20794e11" category="inline-image-macro">Das Hamburger-Menüsymbol</block>
+  <block id="c625174f1f2ee54505e8df5c7884aaa1" category="list-text">Wählen Sie das Menü <block ref="438b712f6e6afc173ce78a756adc207c" category="inline-image-macro-rx" type="image"></block> und wählen Sie dann *EDA* aus.</block>
+  <block id="6522859d513a1a4996b48c2075e5629d" category="list-text">Wählen Sie im EDA-Menü *Latenz* aus.</block>
+  <block id="e98927daa3269d89ed40e1d00b9894f4" category="list-text">Konfigurieren Sie auf der EDA-Latenzkonfigurationsseite die folgenden Schwellenwerte:</block>
+  <block id="6a92339b37a09c472028f07967682c85" category="list-text">*Warnereignisse*</block>
+  <block id="7a9ff4c8c2260709d5b8ca3ea5720d48" category="list-text">*Leselatenzschwelle*: Geben Sie die Latenzschwelle in Millisekunden ein. Standard: 6 ms.</block>
+  <block id="c7ffe38ce2716364ec13888fb0fb4d18" category="list-text">*Read IOPS-Schwellenwert*: Geben Sie den IOPS-Schwellenwert in Operationen pro Sekunde ein. Standard: 100 ops/sec.</block>
+  <block id="a9c123b2457943cad2a4a7b1da9e2ba2" category="list-text">*Lesezeitraum*: Geben Sie den Zeitraum in Minuten ein (5-20). Standard: 10 Minuten.</block>
+  <block id="0bb2971cdc9904893b398e127f86ccc1" category="list-text">*Schreiblatenzschwelle*: Geben Sie die Latenzschwelle in Millisekunden ein. Standard: 8 ms.</block>
+  <block id="f1d2b429b535ce1659d20f6a98f239da" category="list-text">*Write IOPS threshold*: Geben Sie den IOPS-Schwellenwert in Operationen pro Sekunde ein. Standard: 100 ops/sec.</block>
+  <block id="a0274640a4f41ca07311c67d74f332b1" category="list-text">*Write time range*: Geben Sie den Zeitbereich in Minuten (5-20) ein. Standard: 10 Minuten.</block>
+  <block id="a3ca3437ce0a7bbf111f75af4d05ea72" category="list-text">*Kritische Ereignisse*</block>
+  <block id="fe225c18ccd35d621ab2e58cf79459b5" category="list-text">*Leselatenzschwelle*: Geben Sie die Latenzschwelle in Millisekunden ein. Standard: 12 ms.</block>
+  <block id="84da8d5b9264494d5cd9cb035bc28120" category="list-text">*Schreiblatenzschwelle*: Geben Sie die Latenzschwelle in Millisekunden ein. Standard: 15 ms.</block>
+  <block id="0073a211209725d1fd56c6533d4ffec3" category="paragraph">Workload Factory beginnt mit der Erfassung von Latenzmetriken für alle FSx for ONTAP Volumes, die Ihren AWS-Anmeldeinformationen zugeordnet sind. Metriken werden mindestens alle 20 Minuten erfasst. Die Latenzereignistabelle zeigt alle Volumes an, die Ihre konfigurierten Schwellenwerte überschreiten.</block>
+  <block id="6bc0e94d709a00317b3fdd4f3958342b" category="section-title">Warnmeldungen verstehen</block>
+  <block id="c00d3202c1a4245d5310c03fe4c4d124" category="paragraph">Die Funktion zur Latenzanalyse nutzt CloudWatch Alarme zur Überwachung der Volumenleistung. Das Verständnis, wie Warnmeldungen ausgelöst werden, hilft Ihnen, geeignete Schwellenwerte zu konfigurieren und die Ergebnisse zu interpretieren.</block>
+  <block id="ee34286f143c9ac572df816e88226163" category="section-title">Gesammelte Kennzahlen</block>
+  <block id="bea060c037959de7378c9c2f91ea4219" category="paragraph">Das System erfasst die folgenden CloudWatch-Kennzahlen für jedes Volumen:</block>
+  <block id="9115f34400f66fb673aa39683fefc0a8" category="list-text">*Leselatenzschwelle*: Berechnet als 1000 * m2/(m1+0.000001), wobei m1 = DataReadOperations und m2 = DataReadOperationTime</block>
+  <block id="507575c143ec3020fe407125ed3df334" category="list-text">*Schreiblatenzschwelle*: Berechnet als 1000 * m2/(m1+0.000001), wobei m1 = DataWriteOperations und m2 = DataWriteOperationTime</block>
+  <block id="6c2de48345c28d8092d96aca583778d0" category="section-title">Alarm-Auslösebedingungen</block>
+  <block id="9242656254a25093b3f3351379ea0f02" category="paragraph">Eine Warnung wird ausgelöst, wenn alle der folgenden Bedingungen erfüllt sind:</block>
+  <block id="186a1bcf007367f6bc6fa82ec4719e16" category="list-text">Der Latenzschwellenwert wird für den Operationstyp (Lesen oder Schreiben) überschritten.</block>
+  <block id="e276786b9c415526db7d13f4aa5efadd" category="list-text">Der IOPS-Schwellenwert wird für den Betriebstyp überschritten.</block>
+  <block id="d4f2d389a3d4d575b8158ca4417bf9a5" category="list-text">Beide Bedingungen bestehen für alle Datenpunkte innerhalb des konfigurierten Zeitraums fort.</block>
+  <block id="6efa4b954c442dd4f15a0f58f1b0bd86" category="paragraph">Bei voreingestellten Warnschwellenwerten wird beispielsweise eine Lesewarnung nur dann ausgelöst, wenn die Leselatenz 6 ms überschreitet UND die Lese-IOPS 100 Operationen/Sekunde für alle Datenpunkte innerhalb eines 10-minütigen Zeitraums übersteigt.</block>
+  <block id="e0b18d5b04f677d427e5a029d591d7a9" category="section-title">Schweregrad</block>
+  <block id="c5dada127d514b30222d50c180808dff" category="list-text">*Warnereignisse*: Weisen auf erhöhte Latenz hin, die möglicherweise Aufmerksamkeit erfordern.</block>
+  <block id="3b1132558500e795d2918a031b3533ea" category="list-text">*Kritische Ereignisse*: Weisen auf eine schwere Latenz hin, die eine sofortige Untersuchung erfordert.</block>
+  <block id="a0136d636bd452e02818b34b1fb9eb98" category="section-title">Latenzereignisse anzeigen</block>
+  <block id="7965c28e3a946fcfe26f8d31449a72e3" category="paragraph">Die Tabelle mit den Latenzereignissen zeigt alle Warn- und kritischen Ereignisse an, die in den letzten 72 Stunden erkannt wurden. Verwenden Sie diese Tabelle, um die Volume-Leistung zu überwachen und Volumes zu identifizieren, die optimiert werden müssen.</block>
+  <block id="0f68b904e33d9ac04605aecc958bcf52" category="list-title">Weitere Informationen</block>
+  <block id="0fd27ce965f59d9ce188afda7be707f7" category="list-text">In der Tabelle wird nur der jeweils letzte Sicherheitsverstoß für jedes Volume angezeigt. Wenn ein Volume mehrere Sicherheitsverstöße aufweist, wird nur das aktuellste Ereignis angezeigt.</block>
+  <block id="7776f517a75d578f349901d6f0886405" category="list-text">Ereignisse werden nach 72 Stunden automatisch entfernt.</block>
+  <block id="99789473cc53d4c5f2666a4ab79ebb39" category="list-text">Die Tabelle zeigt maximal 200 Ereignisse an. Ältere Ereignisse werden entfernt, wenn neue Ereignisse hinzugefügt werden.</block>
+  <block id="fa25e0e326e38037315b4df99a68a595" category="list-text">Im Tab *Latenz* sehen Sie die Tabelle der Latenzereignisse.</block>
+  <block id="dcc9848cbc440e33ab31099e592f3548" category="list-text">Überprüfen Sie die Informationen für jedes Ereignis, einschließlich:</block>
+  <block id="93051970a8383738704f4809fd35779f" category="list-text">*Schweregrad*: Gibt an, ob das Ereignis kritisch oder eine Warnung ist.</block>
+  <block id="9d0418bddad0434b22eddfa9e6ac70b3" category="list-text">*Volume name*: Der Name des betroffenen Volumes.</block>
+  <block id="3970adb265372ae157b79f5cf32c4654" category="list-text">*Volume ID*: Die ID des betroffenen Volumes.</block>
+  <block id="94785a36456605abe135e07954560b83" category="list-text">*Dateisystem*: Das FSx for ONTAP-Dateisystem, das das Volume enthält.</block>
+  <block id="fe78c594fbd3ab20c9638e8c15888f03" category="list-text">*Erkennungszeitpunkt*: Zeitpunkt, zu dem der Sicherheitsverstoß erkannt wurde</block>
+  <block id="f24df78eef3360387dd1a4f2d6a0fdb0" category="list-text">*Mediane Latenz*: Der mediane Latenzwert während des Verstoßzeitraums.</block>
+  <block id="ffdc22229e20f79439c83c1406c5988f" category="list-text">Um die Tabelle zu sortieren, wählen Sie eine beliebige Spaltenüberschrift aus. Standardmäßig werden kritische Ereignisse zuerst nach Zeit sortiert angezeigt, gefolgt von Warnereignissen, die ebenfalls nach Zeit sortiert sind.</block>
+  <block id="c010e7ccfe39dff8710b56fb1e570258" category="list-text">Um ein oder mehrere Ereignisse zu verwerfen, wählen Sie neben jedem Ereignis *Verwerfen* aus.</block>
+  <block id="4592e1df7d97ccf7061a86a746d9261d" category="list-text">Um der Tabelle Spalten hinzuzufügen, wählen Sie das Spaltensymbol, wählen Sie die Spalten und wählen Sie *Anwenden*.</block>
+  <block id="01bd639bef6ec9a56687ee7ffd9f246c" category="section-title">Latenzkonfiguration verwalten</block>
+  <block id="7851fb52b1039fde0650c3e8173c2a5a" category="paragraph">Nach der Erstkonfiguration können Sie Ihre Schwellenwerte bearbeiten.</block>
+  <block id="6fe6ef1cbd27d3257ff9500aab5f9ab9" category="list-text">Wählen Sie auf der Seite *Latenz* *Bearbeiten* aus.</block>
+  <block id="d53bdccd3ec334ddfd63d2269906352a" category="list-text">Ändern Sie bei Bedarf einen der Schwellenwerte.</block>
+  <block id="247a926ff070f20efece2fd2ed4162c3" category="admonition">Stellen Sie sicher, dass die kritischen Schwellenwerte höher als die Warnschwellenwerte bleiben. Das System zeigt eine Fehlermeldung an, wenn Sie die kritischen Schwellenwerte niedriger als die Warnschwellenwerte konfigurieren.</block>
+  <block id="d3152a664d12079fbf89a50fcb166ef3" category="list-text">Wählen Sie *Apply*, um Ihre Änderungen zu speichern.</block>
+  <block id="c2ffe02d76c4f089648f1647b43e4ee5" category="section-title">Best Practices</block>
+  <block id="9034aebe9b693f759faa32d33c7d1358" category="paragraph">Beachten Sie diese Empfehlungen bei der Konfiguration und Verwendung der Latenzanalyse:</block>
+  <block id="6a17347e669ad40689359f41fee3efc9" category="list-text">*Reale Schwellenwerte festlegen*: Konfigurieren Sie die Schwellenwerte entsprechend Ihren Arbeitslastanforderungen. Standardwerte bieten einen Ausgangspunkt, könnten aber für Ihre spezifische Umgebung angepasst werden müssen.</block>
+  <block id="8d2a6ec04c3428e17318eec752e34640" category="list-text">*Beginnen Sie mit Warnschwellenwerten*: Verwenden Sie Warnereignisse, um grundlegende Leistungserwartungen festzulegen, bevor Sie kritische Schwellenwerte feinabstimmen.</block>
+  <block id="1f3a99c8bf0d4110ea6d8f943c76ad49" category="list-text">*Zeiträume sorgfältig abwägen*: Kürzere Zeiträume (5-10 Minuten) erkennen Probleme schneller, können aber mehr Warnmeldungen auslösen. Längere Zeiträume (15-20 Minuten) reduzieren Fehlalarme, können die Erkennung aber verzögern.</block>
+  <block id="10c6a588ad4a1a320036ec18537a9783" category="list-text">*Trends überwachen*: Überprüfen Sie regelmäßig die Tabelle der Latenzereignisse, um Muster oder wiederkehrende Probleme zu identifizieren, die auf zugrunde liegende Konfigurationsprobleme hinweisen könnten.</block>
+  <block id="582145492bc6491a13bd3c8e766df7f4" category="list-text">*IOPS- und Latenzschwellenwerte koordinieren*: Die Logik mit zwei Bedingungen bedeutet, dass beide überschritten werden müssen. Das Festlegen sehr hoher IOPS-Schwellenwerte kann Warnmeldungen verhindern, selbst wenn die Latenz problematisch ist.</block>
+  <block id="829d4cdd3177ddf6591982d99aa444ab" category="list-text">*Überprüfung abgewiesener Ereignisse*: Überprüfen Sie regelmäßig, warum Ereignisse abgewiesen wurden, um Möglichkeiten zur Anpassung der Schwellenwerte oder Infrastrukturverbesserungen zu identifizieren.</block>
+  <block id="8d2488f820b40da5c2d7dfd912588e9a" category="section-title">1. Februar 2026</block>
+  <block id="2c421bc29b0b255dff7d2788d0d1a127" category="section-title">4. Januar 2026</block>
 </blocks>

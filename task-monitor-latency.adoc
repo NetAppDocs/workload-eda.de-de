@@ -1,0 +1,176 @@
+---
+sidebar: sidebar 
+permalink: task-monitor-latency.html 
+keywords: latency analysis, CloudWatch alarms, volume latency, read latency, write latency, critical events, warning events, latency thresholds, IOPS thresholds, latency monitoring, FSx for ONTAP 
+summary: Überwachen und analysieren Sie die Volumenlatenzleistung mit konfigurierbaren Schwellenwerten für Warn- und kritische Ereignisse, um Leistungsengpässe proaktiv zu identifizieren. 
+---
+= Volume-Latenz überwachen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Mithilfe der Latenzanalyse können Sie die Volume-Performance proaktiv überwachen, indem Sie Lese- und Schreiblatenzmetriken in Ihren FSx for ONTAP file systems verfolgen. Konfigurieren Sie anpassbare Schwellenwerte für Warn- und kritische Ereignisse, um potenzielle Leistungsengpässe zu erkennen, bevor sie sich auf Ihre EDA workloads auswirken.
+
+
+
+== Überblick
+
+Die Latenzanalyse erfasst und überwacht CloudWatch Metriken für Lese- und Schreibvorgänge. Wenn sowohl die Schwellenwerte für Latenz als auch für IOPS für alle Datenpunkte innerhalb eines festgelegten Zeitraums überschritten werden, generiert das System Warnmeldungen, die in der Tabelle der Latenzereignisse angezeigt werden. Dies ermöglicht Ihnen:
+
+* Identifizieren Sie Volumes, die eine Leistungsverschlechterung aufweisen.
+* Unterscheiden Sie zwischen Leistungsproblemen auf Warnstufe und auf kritischer Stufe.
+* Verfolgen Sie Latenztrends im Zeitverlauf, um Speicherkonfigurationen zu optimieren.
+* Ergreifen Sie proaktiv Maßnahmen, bevor Latenz die Arbeitslastleistung beeinträchtigt.
+
+
+
+
+== Bevor Sie beginnen
+
+Für die Nutzung der Latenzanalyse müssen AWS-Anmeldeinformationen in Workload Factory konfiguriert sein. Die Funktion erfordert Zugriff auf CloudWatch-Metriken für alle FSx for ONTAP Volumes, die mit Ihren AWS-Anmeldeinformationen verknüpft sind.
+
+Wenn Sie noch keine AWS-Zugangsdaten konfiguriert haben, siehe link:https://docs.netapp.com/us-en/workload-setup-admin/add-credentials.html["AWS-Anmeldeinformationen hinzufügen"^].
+
+
+
+== Latenzschwellenwerte konfigurieren
+
+Sie können Schwellenwerte für Warn- und kritische Ereignisse konfigurieren. Jeder Ereignistyp umfasst separate Schwellenwerte für Lese- und Schreibvorgänge. Das System wertet diese Schwellenwerte kontinuierlich aus und generiert Warnmeldungen, sobald die Bedingungen erfüllt sind.
+
+
+NOTE: Sie müssen die Schwellenwerte für kritische Ereignisse höher ansetzen als die für Warnereignisse, um eine ordnungsgemäße Eskalation von Warnmeldungen sicherzustellen. Andernfalls können Sie Ihre Konfiguration nicht speichern.
+
+.Über diese Aufgabe
+Damit eine Warnung ausgelöst wird, müssen sowohl der Latenzschwellenwert als auch der IOPS-Schwellenwert für alle Datenpunkte innerhalb des angegebenen Zeitraums überschritten werden. Diese Logik mit zwei Bedingungen trägt dazu bei, Fehlalarme zu reduzieren, indem sichergestellt wird, dass hohe Latenz unter signifikanter Last kontinuierlich aufrechterhalten wird.
+
+.Schritte
+. Melden Sie sich mit einem der folgenden Dienste an: link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["Konsolenerlebnisse"^]Die
+. Wählen Sie das Menü image:workloads-menu-icon.png["Das Hamburger-Menüsymbol"] und wählen Sie dann *EDA* aus.
+. Wählen Sie im EDA-Menü *Latenz* aus.
+. Konfigurieren Sie auf der EDA-Latenzkonfigurationsseite die folgenden Schwellenwerte:
++
+** *Warnereignisse*
++
+*** *Leselatenzschwelle*: Geben Sie die Latenzschwelle in Millisekunden ein. Standard: 6 ms.
+*** *Read IOPS-Schwellenwert*: Geben Sie den IOPS-Schwellenwert in Operationen pro Sekunde ein. Standard: 100 ops/sec.
+*** *Lesezeitraum*: Geben Sie den Zeitraum in Minuten ein (5-20). Standard: 10 Minuten.
+*** *Schreiblatenzschwelle*: Geben Sie die Latenzschwelle in Millisekunden ein. Standard: 8 ms.
+*** *Write IOPS threshold*: Geben Sie den IOPS-Schwellenwert in Operationen pro Sekunde ein. Standard: 100 ops/sec.
+*** *Write time range*: Geben Sie den Zeitbereich in Minuten (5-20) ein. Standard: 10 Minuten.
+
+
+** *Kritische Ereignisse*
++
+*** *Leselatenzschwelle*: Geben Sie die Latenzschwelle in Millisekunden ein. Standard: 12 ms.
+*** *Read IOPS-Schwellenwert*: Geben Sie den IOPS-Schwellenwert in Operationen pro Sekunde ein. Standard: 100 ops/sec.
+*** *Lesezeitraum*: Geben Sie den Zeitraum in Minuten ein (5-20). Standard: 10 Minuten.
+*** *Schreiblatenzschwelle*: Geben Sie die Latenzschwelle in Millisekunden ein. Standard: 15 ms.
+*** *Write IOPS threshold*: Geben Sie den IOPS-Schwellenwert in Operationen pro Sekunde ein. Standard: 100 ops/sec.
+*** *Write time range*: Geben Sie den Zeitbereich in Minuten (5-20) ein. Standard: 10 Minuten.
+
+
+
+
+. Wählen Sie *Übernehmen*.
+
+
+.Ergebnis
+Workload Factory beginnt mit der Erfassung von Latenzmetriken für alle FSx for ONTAP Volumes, die Ihren AWS-Anmeldeinformationen zugeordnet sind. Metriken werden mindestens alle 20 Minuten erfasst. Die Latenzereignistabelle zeigt alle Volumes an, die Ihre konfigurierten Schwellenwerte überschreiten.
+
+
+
+== Warnmeldungen verstehen
+
+Die Funktion zur Latenzanalyse nutzt CloudWatch Alarme zur Überwachung der Volumenleistung. Das Verständnis, wie Warnmeldungen ausgelöst werden, hilft Ihnen, geeignete Schwellenwerte zu konfigurieren und die Ergebnisse zu interpretieren.
+
+
+
+=== Gesammelte Kennzahlen
+
+Das System erfasst die folgenden CloudWatch-Kennzahlen für jedes Volumen:
+
+* *Leselatenzschwelle*: Berechnet als 1000 * m2/(m1+0.000001), wobei m1 = DataReadOperations und m2 = DataReadOperationTime
+* *Schreiblatenzschwelle*: Berechnet als 1000 * m2/(m1+0.000001), wobei m1 = DataWriteOperations und m2 = DataWriteOperationTime
+
+
+
+
+=== Alarm-Auslösebedingungen
+
+Eine Warnung wird ausgelöst, wenn alle der folgenden Bedingungen erfüllt sind:
+
+* Der Latenzschwellenwert wird für den Operationstyp (Lesen oder Schreiben) überschritten.
+* Der IOPS-Schwellenwert wird für den Betriebstyp überschritten.
+* Beide Bedingungen bestehen für alle Datenpunkte innerhalb des konfigurierten Zeitraums fort.
+
+
+Bei voreingestellten Warnschwellenwerten wird beispielsweise eine Lesewarnung nur dann ausgelöst, wenn die Leselatenz 6 ms überschreitet UND die Lese-IOPS 100 Operationen/Sekunde für alle Datenpunkte innerhalb eines 10-minütigen Zeitraums übersteigt.
+
+
+
+=== Schweregrad
+
+* *Warnereignisse*: Weisen auf erhöhte Latenz hin, die möglicherweise Aufmerksamkeit erfordern.
+* *Kritische Ereignisse*: Weisen auf eine schwere Latenz hin, die eine sofortige Untersuchung erfordert.
+
+
+
+
+== Latenzereignisse anzeigen
+
+Die Tabelle mit den Latenzereignissen zeigt alle Warn- und kritischen Ereignisse an, die in den letzten 72 Stunden erkannt wurden. Verwenden Sie diese Tabelle, um die Volume-Leistung zu überwachen und Volumes zu identifizieren, die optimiert werden müssen.
+
+.Weitere Informationen
+* In der Tabelle wird nur der jeweils letzte Sicherheitsverstoß für jedes Volume angezeigt. Wenn ein Volume mehrere Sicherheitsverstöße aufweist, wird nur das aktuellste Ereignis angezeigt.
+* Ereignisse werden nach 72 Stunden automatisch entfernt.
+* Die Tabelle zeigt maximal 200 Ereignisse an. Ältere Ereignisse werden entfernt, wenn neue Ereignisse hinzugefügt werden.
+
+
+.Schritte
+. Im Tab *Latenz* sehen Sie die Tabelle der Latenzereignisse.
+. Überprüfen Sie die Informationen für jedes Ereignis, einschließlich:
++
+** *Schweregrad*: Gibt an, ob das Ereignis kritisch oder eine Warnung ist.
+** *Volume name*: Der Name des betroffenen Volumes.
+** *Volume ID*: Die ID des betroffenen Volumes.
+** *Dateisystem*: Das FSx for ONTAP-Dateisystem, das das Volume enthält.
+** *Erkennungszeitpunkt*: Zeitpunkt, zu dem der Sicherheitsverstoß erkannt wurde
+** *Mediane Latenz*: Der mediane Latenzwert während des Verstoßzeitraums.
+
+
+. Um die Tabelle zu sortieren, wählen Sie eine beliebige Spaltenüberschrift aus. Standardmäßig werden kritische Ereignisse zuerst nach Zeit sortiert angezeigt, gefolgt von Warnereignissen, die ebenfalls nach Zeit sortiert sind.
+. Um ein oder mehrere Ereignisse zu verwerfen, wählen Sie neben jedem Ereignis *Verwerfen* aus.
+. Um der Tabelle Spalten hinzuzufügen, wählen Sie das Spaltensymbol, wählen Sie die Spalten und wählen Sie *Anwenden*.
+
+
+
+
+== Latenzkonfiguration verwalten
+
+Nach der Erstkonfiguration können Sie Ihre Schwellenwerte bearbeiten.
+
+.Schritte
+. Wählen Sie auf der Seite *Latenz* *Bearbeiten* aus.
+. Ändern Sie bei Bedarf einen der Schwellenwerte.
++
+
+NOTE: Stellen Sie sicher, dass die kritischen Schwellenwerte höher als die Warnschwellenwerte bleiben. Das System zeigt eine Fehlermeldung an, wenn Sie die kritischen Schwellenwerte niedriger als die Warnschwellenwerte konfigurieren.
+
+. Wählen Sie *Apply*, um Ihre Änderungen zu speichern.
+
+
+
+
+== Best Practices
+
+Beachten Sie diese Empfehlungen bei der Konfiguration und Verwendung der Latenzanalyse:
+
+* *Reale Schwellenwerte festlegen*: Konfigurieren Sie die Schwellenwerte entsprechend Ihren Arbeitslastanforderungen. Standardwerte bieten einen Ausgangspunkt, könnten aber für Ihre spezifische Umgebung angepasst werden müssen.
+* *Beginnen Sie mit Warnschwellenwerten*: Verwenden Sie Warnereignisse, um grundlegende Leistungserwartungen festzulegen, bevor Sie kritische Schwellenwerte feinabstimmen.
+* *Zeiträume sorgfältig abwägen*: Kürzere Zeiträume (5-10 Minuten) erkennen Probleme schneller, können aber mehr Warnmeldungen auslösen. Längere Zeiträume (15-20 Minuten) reduzieren Fehlalarme, können die Erkennung aber verzögern.
+* *Trends überwachen*: Überprüfen Sie regelmäßig die Tabelle der Latenzereignisse, um Muster oder wiederkehrende Probleme zu identifizieren, die auf zugrunde liegende Konfigurationsprobleme hinweisen könnten.
+* *IOPS- und Latenzschwellenwerte koordinieren*: Die Logik mit zwei Bedingungen bedeutet, dass beide überschritten werden müssen. Das Festlegen sehr hoher IOPS-Schwellenwerte kann Warnmeldungen verhindern, selbst wenn die Latenz problematisch ist.
+* *Überprüfung abgewiesener Ereignisse*: Überprüfen Sie regelmäßig, warum Ereignisse abgewiesen wurden, um Möglichkeiten zur Anpassung der Schwellenwerte oder Infrastrukturverbesserungen zu identifizieren.
+

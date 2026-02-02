@@ -19,6 +19,9 @@ AWS-Anmeldeinformationen und Berechtigungen:: Sie müssen AWS-Zugangsdaten mit L
 
 Die Berechtigungen _Basic_ und _read-only_ werden derzeit nicht unterstützt.
 
+
+NOTE: AWS-Zugangsdaten werden auch für die Nutzung der Latenzüberwachungsfunktion benötigt, die CloudWatch-Metriken zur Analyse der Volumenleistung erfasst. link:task-monitor-latency.html["Erfahren Sie mehr über Latenzüberwachung"].
+
 https://docs.netapp.com/us-en/workload-setup-admin/add-credentials.html["Erfahren Sie, wie Sie AWS-Anmeldeinformationen zu Workload Factory hinzufügen."^]
 
 FSx für ONTAP -Dateisystem:: Sie benötigen mindestens ein FSx for ONTAP -Dateisystem:
