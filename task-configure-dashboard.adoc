@@ -2,16 +2,18 @@
 sidebar: sidebar 
 permalink: task-configure-dashboard.html 
 keywords: configure, dashboard, AWS tags, CloudWatch, FSx for ONTAP, Workload Factory, EDA, electronic design automation, volume details, top volumes, capacity utilization, throughput utilization, IOPS utilization 
-summary: Konfigurieren Sie Ihr EDA-Dashboard, indem Sie Tags hinzufügen, um Kennzahlen zu erfassen. Passen Sie Filter mit Einzel- oder Mehrfachauswahloptionen an, um Ihre Geschäftsanforderungen zu erfüllen. 
+summary: Konfigurieren Sie das EDA-Projekt-Dashboard, indem Sie Tags hinzufügen, um Kennzahlen zu erfassen. Passen Sie Filter mit Einzel- oder Mehrfachauswahloptionen an Ihre Geschäftsanforderungen an. 
 ---
-= Nutzen Sie das Dashboard
+= Nutzen Sie das Projekt-Dashboard
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/
 
 
 [role="lead"]
-Wenn Sie sich zum ersten Mal bei EDA anmelden, können Sie das Dashboard verwenden, um die Projektnutzung über Ihre FSx for ONTAP-Dateisysteme und -Volumes zu beobachten. Das Dashboard enthält mehrere Standardfilter, die Sie verwenden können, um die angezeigten Informationen anzupassen. Zusätzlich können Sie bis zu fünf benutzerdefinierte Filter basierend auf Ihren AWS-Tags erstellen, mit Optionen für Einzel- oder Mehrfachauswahl, um die Daten entsprechend Ihren spezifischen Geschäftsanforderungen zu organisieren und zu filtern.
+Als IT-Administrator oder Projektmanager, der EDA-Workloads betreut, können Sie die Registerkarte Project verwenden, um die Projektnutzung Ihrer FSx for ONTAP-Dateisysteme und -Volumes zu beobachten und zu analysieren. Das Dashboard hilft Ihnen, die Kapazität zu planen, Kosten zu bewerten und datengestützte Entscheidungen zur Ressourcenzuweisung zu treffen. Sie können bis zu fünf benutzerdefinierte Filter basierend auf Ihren AWS-Tags erstellen, mit Optionen für Einzel- oder Mehrfachauswahl, um die Daten gemäß Ihren spezifischen Geschäftsanforderungen wie Projekten, Teams oder Anwendungen zu organisieren und zu filtern.
+
+Das Dashboard bietet Einblick in die Speichernutzungsmuster, hilft Ihnen, ressourcenintensive Projekte zu identifizieren, Kosten zu verfolgen und die Speicherzuweisung zu optimieren, bevor Kapazitäts- oder Leistungsprobleme Ihre EDA-Simulationen beeinträchtigen.
 
 Das Dashboard hilft Ihnen bei der Überwachung der Speichernutzung hinsichtlich zugewiesener Kapazität, genutzter Kapazität, Durchsatz und IOPS. Für die proaktive Überwachung der Latenzleistung siehe link:task-monitor-latency.html["Volume-Latenz überwachen"].
 
@@ -27,9 +29,11 @@ Die von CloudWatch erfassten Metriken umfassen:
 
 == Dashboard einrichten
 
+Durch die Einrichtung benutzerdefinierter Filter können Sie Kennzahlen nach Ihrer Unternehmensstruktur, wie zum Beispiel nach Projekt, Team oder Anwendung, anzeigen. Diese Organisation hilft Ihnen, Kosten genau zu verfolgen, zu erkennen, welche Projekte die meisten Ressourcen verbrauchen, und fundierte Entscheidungen über Ressourcenzuweisung und Budgetplanung zu treffen.
+
 Um das Dashboard effektiv zu nutzen, konfigurieren Sie bis zu fünf AWS-Tags auf Ihren FSx for ONTAP Volumes basierend auf Ihren Geschäftsanforderungen, zum Beispiel Tags, die Projekte oder Geschäftsbereiche repräsentieren. Weitere Informationen finden Sie unter <<Benutzerdefinierte Filter konfigurieren>>.
 
-AWS-Tags sind Metadaten für Ihre AWS-Ressourcen. Sie helfen Ihnen dabei, Ihre AWS-Ressourcen auf verschiedene Weise zu kategorisieren, beispielsweise nach Projekt, Anwendung oder Geschäftsbereich. Weitere Informationen zum Tagging finden Sie unter https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/what-are-tags.html["Was sind Tags?"^] Und  https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/overview.html["AWS Resource Groups Tagging API-Referenz"^]Die
+AWS-Tags sind Metadaten für Ihre AWS-Ressourcen. Sie helfen Ihnen, Ihre AWS-Ressourcen auf verschiedene Weise zu kategorisieren, beispielsweise nach Projekt, Anwendung oder Geschäftsbereich. Weitere Informationen zum Taggen finden Sie unter  https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/what-are-tags.html["Was sind Tags?"^] und  https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/overview.html["AWS Resource Groups Tagging API-Referenz"^].
 
 Sobald die Tag-Konfiguration abgeschlossen ist, geben Sie auf der Seite *Tag-Konfiguration* die AWS-Tag-Schlüsselnamen und die entsprechenden Bezeichnungen an, die in Ihrem Dashboard angezeigt werden sollen.
 
@@ -41,10 +45,16 @@ Ihr Dashboard wird zu einem dynamischen Werkzeug, mit dem Sie Ressourcen organis
 
 === Benutzerdefinierte Filter konfigurieren
 
+
+NOTE: Nur der erste Administrator, der auf das Projekt-Dashboard zugreift, kann benutzerdefinierte Filter konfigurieren, hinzufügen oder löschen. Alle anderen Benutzer, einschließlich nachfolgender Administratoren, haben nur Lesezugriff auf die Filter.
+
+Mit benutzerdefinierten Filtern können Sie Ihre Dashboard-Daten entsprechend der Arbeitsweise Ihres Unternehmens organisieren. Durch die Ausrichtung der Filter an Ihrer Projektstruktur, Ihren Teams oder Kostenstellen können Sie schnell auf die spezifischen Daten zugreifen, die Sie benötigen, ohne sich durch irrelevante Informationen navigieren zu müssen. Dies macht Kapazitätsplanung, Kostenverfolgung und Leistungsüberwachung effizienter.
+
 Sie können bis zu fünf benutzerdefinierte Filter basierend auf Ihren AWS-Tags konfigurieren. Jeder benutzerdefinierte Filter benötigt drei Komponenten: einen Filter-Label-Namen, einen AWS-Tag-Schlüssel-Namen und einen Auswahltyp (Einzel- oder Mehrfachauswahl). Wenn Sie keine benutzerdefinierten Filter konfigurieren, bleiben die Standardfilter (Dateisystem, Volume-Typ und Zeitraum) verfügbar, sodass Sie Ihre Dashboards weiterhin anzeigen und interaktiv nutzen können.
 
 . Melden Sie sich mit einem der folgenden Dienste an: link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["Konsolenerlebnisse"^]Die
 . Wählen Sie das Menü aus image:workloads-menu-icon.png["Über das Hamburger-Menüsymbol kann man zu Workloads wie Speicher, EDA, KI, Datenbanken, VMware und Administration navigieren."] und wählen Sie dann *EDA* aus.
+. Wählen Sie *Project* aus.
 +
 Falls Sie Ihr Dashboard noch nicht konfiguriert haben, werden Sie automatisch dazu aufgefordert.
 
@@ -72,6 +82,8 @@ Sie können einen benutzerdefinierten Filter löschen, indem Sie das Papierkorbs
 
 === Dashboard filtern
 
+Filter helfen Ihnen, sich auf bestimmte Teilmengen Ihrer Speicherressourcen zu konzentrieren, sodass Sie Trends leichter analysieren, Probleme identifizieren und Berichte für Stakeholder erstellen können. Durch die Kombination mehrerer Filter können Sie spezifische Geschäftsfragen beantworten, wie „Wie viel Speicher nutzt mein ASIC project team?“ oder „Welche Volumes in der US-West Region haben die höchsten IOPS?“
+
 Sie können die auf dem Dashboard angezeigten Informationen mit einer Kombination aus Standardfiltern und allen von Ihnen erstellten benutzerdefinierten Filtern filtern.
 
 Die folgenden Standardfilter sind immer verfügbar:
@@ -97,19 +109,21 @@ Um eine Erläuterung der auf einer Karte angezeigten Informationen zu erhalten, 
 
 == Volumendetails anzeigen
 
+Das Verständnis sowohl der aggregierten als auch der individuellen Volumenleistung hilft Ihnen, fundierte Entscheidungen hinsichtlich Kapazitätsplanung und Leistungsoptimierung zu treffen. Die Gesamtansicht zeigt allgemeine Trends, während die Volumenansicht Ihnen hilft, spezifische Volumina zu identifizieren, die möglicherweise Aufmerksamkeit, Optimierung oder zusätzliche Ressourcen erfordern.
+
 Das Dashboard bietet zwei Ansichtsmodi zur Analyse Ihrer Speichermetriken: Gesamtansicht und Volumenansicht. Sie können zwischen diesen Modi mithilfe der auf dem Dashboard verfügbaren Registerkarten wechseln.
 
 
 
 === Gesamtansicht
 
-Die Gesamtansicht (Standard) zeigt aggregierte Metriken aller Volumes an, die Ihren ausgewählten Filtern entsprechen. Diese Ansicht bietet einen Überblick auf hoher Ebene über Ihre gesamte Speicherleistung und zeigt kombinierte Kapazitäts-, IOPS- und Durchsatzmetriken.
+Die Gesamtansicht (Standard) zeigt aggregierte Metriken aller Volumes an, die Ihren ausgewählten Filtern entsprechen. Diese Ansicht bietet einen Überblick auf hoher Ebene über Ihre gesamte Speicherleistung und zeigt kombinierte Kapazitäts-, IOPS- und Durchsatzmetriken. Verwenden Sie diese Ansicht, um allgemeine Trends zu verstehen, den zukünftigen Kapazitätsbedarf zu planen und den gesamten Ressourcenverbrauch projekt- oder teamübergreifend zu berichten.
 
 
 
 === Volumenansicht
 
-Die Volumenansicht zeigt die Leistung einzelner Volumen im Zeitverlauf und listet die Top 10 Volumen für jede Metrik auf. Diese Ansicht hilft Ihnen, bestimmte Volumen zu identifizieren, die den Ressourcenverbrauch antreiben, und deren Verhalten im ausgewählten Zeitraum zu beobachten.
+Die Volumenansicht zeigt die Leistung einzelner Volumen im Zeitverlauf und listet die Top 10 Volumen für jede Metrik auf. Diese Ansicht hilft Ihnen, bestimmte Volumen zu identifizieren, die den Ressourcenverbrauch antreiben, und deren Verhalten im ausgewählten Zeitraum zu beobachten. Verwenden Sie diese Ansicht, um Leistungsengpässe zu finden, Volumen zu identifizieren, die möglicherweise eine Anpassung der Größe benötigen, oder um genau festzustellen, welche spezifischen Projekte oder Workloads die meisten Ressourcen verbrauchen.
 
 Um zur Volume-Ansicht zu wechseln, wählen Sie die Registerkarte *Volume* im Dashboard aus.
 
@@ -129,6 +143,8 @@ Die horizontale Achse zeigt den Zeitbereich an, während eine Legende alle im Di
 
 
 ==== Interaktive Volumendaten
+
+Interaktive Hover-Daten liefern präzise Messwerte zu bestimmten Zeitpunkten und helfen Ihnen, Leistungsänderungen mit spezifischen Ereignissen oder Zeiträumen in Zusammenhang zu bringen. Diese detaillierten Informationen sind wertvoll für die Fehlerbehebung bei Leistungsproblemen, die Validierung von Optimierungsmaßnahmen oder die Erläuterung von Ressourcennutzungsmustern gegenüber Stakeholdern.
 
 Sie können mit dem Mauszeiger über eine beliebige Volumenlinie in den Diagrammen fahren, um detaillierte Informationen anzuzeigen:
 

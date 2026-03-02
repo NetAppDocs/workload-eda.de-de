@@ -27,14 +27,18 @@ sidebar:
       url: "/learn-eda.html"
     - title: Schnellstart
       url: "/quick-start-eda.html"
-  - title: Nutzen Sie das Projekt-Dashboard
+  - title: EDA-Speicherübersicht
     entries:
-    - title: Nutzen Sie das Dashboard
-      url: "/task-configure-dashboard.html"
-  - title: Volume-Latenz überwachen
+    - title: EDA-Speicheroperationen verwalten
+      url: "/task-use-overview-dashboard.html"
+  - title: FSx-Latenzanalyse
     entries:
-    - title: Volume-Latenz überwachen
+    - title: FSx-Volume-Latenz überwachen
       url: "/task-monitor-latency.html"
+  - title: Projektnutzungsanalyse
+    entries:
+    - title: Analysieren Sie die Speichernutzung des Projekts
+      url: "/task-configure-dashboard.html"
   - title: Perforce-Integration nutzen
     entries:
     - title: Erfahren Sie mehr über die Perforce-Integration.
