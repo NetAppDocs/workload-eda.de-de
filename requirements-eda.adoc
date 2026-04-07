@@ -17,10 +17,10 @@ Workload Factory-Login und -Konto:: Du musst https://docs.netapp.com/us-en/workl
 AWS-Anmeldeinformationen und Berechtigungen:: Sie müssen AWS-Zugangsdaten mit Lese-/Schreibberechtigungen zu Workload Factory hinzufügen, was bedeutet, dass Sie Workload Factory im Lese-/Schreibmodus für EDA verwenden werden.
 
 
-Die Berechtigungen _Basic_ und _read-only_ werden derzeit nicht unterstützt.
+Die Berechtigungen _Basic_ und _Read-only_ werden derzeit nicht unterstützt.
 
 
-NOTE: AWS-Zugangsdaten werden auch für die Nutzung der Latenzüberwachungsfunktion benötigt, die CloudWatch-Metriken zur Analyse der Volumenleistung erfasst. link:task-monitor-latency.html["Erfahren Sie mehr über Latenzüberwachung"].
+NOTE: Für die Nutzung der Latenzüberwachungsfunktion, die CloudWatch-Metriken zur Analyse der Volumenleistung erfasst, werden außerdem AWS-Zugangsdaten benötigt. Um die optionale KI-Agentenanalyse für komplexe Latenzszenarien zu aktivieren, müssen Sie zudem einen Amazon Bedrock Modell-ARN angeben. link:task-monitor-latency.html["Erfahren Sie mehr über Latenzüberwachung"].
 
 https://docs.netapp.com/us-en/workload-setup-admin/add-credentials.html["Erfahren Sie, wie Sie AWS-Anmeldeinformationen zu Workload Factory hinzufügen."^]
 

@@ -2,44 +2,44 @@
 sidebar: sidebar 
 permalink: task-use-overview-dashboard.html 
 keywords: cluster overview, cluster dashboard, FSx for ONTAP, cluster health, cluster usage, capacity, throughput, IOPS, EMS events, latency events, performance widgets, clusters table, volume placement, scale up, scale down, CloudWatch metrics, CSV export 
-summary: Über das Übersichts-Dashboard können Sie den Zustand, die Kapazität und den Durchsatz Ihrer FSx for ONTAP Cluster überwachen. Sehen Sie die Clusternutzung im großen Maßstab und treffen Sie fundierte Entscheidungen zur Volume-Platzierung und Kapazitätsskalierung. 
+summary: Über das Übersichts-Dashboard können Sie den Zustand, die Kapazität und den Durchsatz Ihrer FSx for ONTAP-Dateisysteme überwachen. Sehen Sie sich die Speichernutzung im großen Maßstab an und treffen Sie fundierte Entscheidungen hinsichtlich der Volume-Platzierung und Kapazitätserweiterung. 
 ---
-= Verwenden Sie das Übersichts-Dashboard in EDA-Workloads
+= Nutzen Sie das Übersichts-Dashboard in EDA-Workloads
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/
 
 
 [role="lead"]
-Als IT-Administrator, der EDA-Workloads auf Dutzenden von FSx for ONTAP Dateisystemen verwaltet, können Sie das Übersichts-Dashboard verwenden, um häufige tägliche betriebliche Fragen zum Zustand Ihrer Cluster zu beantworten. Verwenden Sie es, um zu bestimmen, wo neue Volumes oder Jobs platziert werden sollen, die Clusternutzung im großen Maßstab zu verstehen und fundierte Entscheidungen zur Skalierung von Kapazität und Durchsatz nach oben oder unten zu treffen.
+Als IT-Administrator, der EDA-Workloads über mehrere FSx for ONTAP-Dateisysteme (ONTAP Cluster) verwaltet, können Sie mithilfe des Übersichts-Dashboards den Zustand und die Auslastung des Clusters schnell beurteilen. Nutzen Sie es, um zu entscheiden, wo neue Volumes oder Jobs platziert werden sollen, Kandidaten für die Verschiebung von Volumes oder SVMs zu identifizieren und festzustellen, wann Kapazität oder Durchsatz skaliert werden müssen.
 
 
 
 == Überblick
 
-Das Übersichts-Dashboard bietet eine zentrale Clusteransicht, die Ihnen hilft, die Clusternutzung hinsichtlich Kapazität, Durchsatz und IOPS schnell zu verstehen und zu bestimmen, wo neue Volumes platziert oder vorhandene Volumes und SVMs verschoben werden sollen.
+Das Übersichts-Dashboard bietet eine zentrale Ansicht Ihrer FSx for ONTAP-Cluster, einschließlich Kapazität und Durchsatz. Nutzen Sie es, um neue Volumes zu platzieren, Workloads neu zu verteilen und die Skalierung von Kapazität oder Durchsatz zu planen.
 
 Das Dashboard umfasst:
 
-* *Cluster-Gesundheitsstatus*: Informationen, die oben im Dashboard zusammengefasst sind und Latenz, Verfügbarkeit und Schutz sowie Sicherheitsereignisse und Kapazitätsempfehlungen über Ihre Cluster hervorheben.
-* *Clustertabelle*: Eine detaillierte, durchsuchbare Tabelle, die Nutzungs- und Leistungsmetriken für jeden FSx for ONTAP Cluster anzeigt, mit Unterstützung für Filterung, Sortierung, Paginierung und CSV-Export.
+* *Cluster-Gesundheitsstatus*: Informationen, die oben im Dashboard zusammengefasst sind und Latenzereignisse, SSD-Auslastung und Kapazitätsempfehlungen sowie ONTAP EMS-Ereignisse in Ihren Dateisystemen hervorheben.
+* *Clustertabelle*: Eine detaillierte, durchsuchbare Tabelle, die Nutzungs- und Leistungsmetriken für jeden Cluster anzeigt und Filter-, Sortier-, Paginierungs- und CSV-Exportfunktionen unterstützt.
 
 
 
 
 == Anforderungen
 
-Bevor Sie das Übersichts-Dashboard verwenden, stellen Sie sicher, dass Sie die folgenden Voraussetzungen erfüllen:
+Bevor Sie das Dashboard verwenden, stellen Sie sicher, dass Sie die folgenden Voraussetzungen erfüllen:
 
-AWS-Anmeldeinformationen mit Ansichtsberechtigungen:: Sie müssen in Workload Factory AWS-Anmeldeinformationen mit mindestens Leseberechtigungen (Anzeigen) für General Storage konfiguriert haben. Anmeldeinformationen, die im Modus _Basic_ konfiguriert sind, werden nicht unterstützt.
+AWS-Anmeldeinformationen mit Ansichtsberechtigungen:: Sie müssen in Workload Factory AWS-Anmeldeinformationen mit mindestens Leseberechtigungen (Anzeigeberechtigungen) für General Storage konfigurieren. _Basic_-Anmeldeinformationen werden nicht unterstützt.
 +
 --
-Wenn Sie keine Anmeldeinformationen mit Anzeigeberechtigungen konfiguriert haben, werden Sie beim Öffnen der Registerkarte Übersicht auf die AWS-Anmeldeinformationseinrichtungsseite weitergeleitet.
+Wenn Sie keine Anmeldeinformationen mit Anzeigeberechtigungen konfiguriert haben, werden Sie beim Öffnen der Registerkarte „Übersicht“ auf die AWS-Anmeldeinformations-Einrichtungsseite weitergeleitet.
 
 Wenn Sie noch keine AWS-Zugangsdaten konfiguriert haben, siehe link:https://docs.netapp.com/us-en/workload-setup-admin/add-credentials.html["AWS-Anmeldeinformationen hinzufügen"^].
 
 --
-Aktivieren Sie das EDA dashboard:: Nachdem die Anmeldeinformationen mit den entsprechenden Ansichtsberechtigungen bestätigt wurden, müssen Sie das Dashboard für Workload Factory aktivieren, damit CloudWatch-Metriken für Ihre FSx for ONTAP-Dateisysteme erfasst werden können.
+Dashboard aktivieren:: Nachdem Workload Factory die Anmeldeinformationen mit Ansichtsberechtigungen bestätigt hat, müssen Sie das Dashboard aktivieren, um mit der Erfassung von CloudWatch-Metriken für Ihre FSx for ONTAP-Dateisysteme zu beginnen.
 
 
 
@@ -55,13 +55,13 @@ NOTE: Die Erfassung der Messwerte kann nach Ihrer Einwilligung einige Zeit in An
 
 
 .Ergebnis
-Workload Factory beginnt mit der Erfassung von CloudWatch-Metriken für alle FSx for ONTAP Dateisysteme, die Ihren konfigurierten AWS-Anmeldeinformationen zugeordnet sind. Das Übersichts-Dashboard wird aktualisiert, sobald Metriken verfügbar sind. Eine Benachrichtigung wird angezeigt, wenn die Erfassung noch läuft.
+Workload Factory beginnt mit der Erfassung von CloudWatch-Metriken für alle FSx for ONTAP Dateisysteme, die Ihren konfigurierten AWS-Anmeldeinformationen zugeordnet sind. Das Dashboard wird aktualisiert, sobald Metriken verfügbar sind. Eine Benachrichtigung wird angezeigt, falls die Erfassung noch läuft.
 
 
 
 == Dashboard filtern
 
-Nutzen Sie die Filter oben im Übersichts-Dashboard, um sich auf die für Ihre aktuelle Aufgabe relevanten Dateisysteme zu konzentrieren. Dies sind Filter auf Workload Factory-Ebene, die sowohl für die Latenz- und ONTAP-Ereignisinformationen als auch für die Clustertabelle gelten.
+Nutzen Sie die Filter oben im Dashboard, um sich auf bestimmte Dateisysteme zu konzentrieren. Diese Filter gelten für die Abschnitte Latenz, Auslastung und ONTAP-Ereignisse sowie für die Clustertabelle.
 
 Verfügbare Filter:
 
@@ -69,41 +69,87 @@ Verfügbare Filter:
 * *AWS account*: Filtern Sie nach einem oder mehreren AWS accounts, die mit Ihren konfigurierten Anmeldeinformationen verknüpft sind.
 
 
-Wenn Sie die Filterauswahl aktualisieren, werden alle Informationen aktualisiert, um nur die übereinstimmenden Dateisysteme und Cluster anzuzeigen.
+Wenn Sie die Filterauswahl aktualisieren, werden alle Informationen aktualisiert, sodass nur die übereinstimmenden Dateisysteme angezeigt werden.
 
 
 
 == Cluster-Gesundheitsstatus
 
-Im oberen Bereich des Übersichts-Dashboards wird eine zusammenfassende Ansicht der Ereignisaktivität und des Integritätsstatus Ihrer gefilterten Cluster angezeigt. Diese Informationen werden nur angezeigt, wenn mindestens ein FSx for ONTAP-Link mit Ihren Dateisystemen verknüpft ist. Wenn keine Links verfügbar sind, werden die Informationen ausgeblendet.
+Im oberen Bereich des Dashboards wird eine Übersicht über den Zustand und die Aktivität Ihrer gefilterten Dateisysteme angezeigt. Diese Informationen werden nur angezeigt, wenn mindestens ein FSx for ONTAP-Link mit Ihren Dateisystemen verknüpft ist. Sind keine Links verfügbar, werden die Informationen ausgeblendet.
+
+* *Latenz*: Zeigt die Anzahl der in den Dateisystemen des betrachteten Bereichs erkannten Latenzereignisse an.
+* *Auslastung*: Zeigt den SSD-Auslastungsstatus an und identifiziert Dateisysteme mit aktiven Kapazitätsempfehlungen.
+* *ONTAP-Ereignisse*: Zeigt die Anzahl der erkannten EMS-Ereignisse an, kategorisiert nach Kapazität, Verfügbarkeit & Schutz sowie Sicherheit & Sonstiges.
+
 
 
 
 === Latenz
 
-Der Abschnitt Latenz zeigt die Anzahl der in den betrachteten Dateisystemen erkannten Latenzereignisse an.
+Zeigt die Anzahl der erkannten Latenzereignisse in den erfassten Dateisystemen an.
 
-* Die Zählung spiegelt die durch das link:task-monitor-latency.html["FSx-Latenzanalyse"] Feature generierten Latenzereignisse wider.
-* Durch Auswahl von *Review* gelangen Sie zur Registerkarte *Latenz*.
+* Wenn Sie *Überprüfen* auswählen, wird die Registerkarte *Latenz* angezeigt.
 * Latenzinformationen können Sie nur anzeigen, wenn Sie die Latenzüberwachung aktiviert haben. Wenn Sie keine Latenzschwellenwerte konfiguriert haben, wählen Sie *Konfigurieren*. Weitere Informationen zur Latenzüberwachung finden Sie unter link:task-monitor-latency.html["FSx-Latenzanalyse"^].
 
 
 
 
-=== Kapazität
+=== Verwendung
 
-Der Abschnitt Kapazität zeigt die Anzahl der EMS-Meldungen im Zusammenhang mit Kapazitätsproblemen sowie die Anzahl der betroffenen Dateisysteme an.
+Zeigt die Anzahl der Dateisysteme im relevanten Bereich an, die mindestens einen Cluster mit einer SSD-Auslastung von über 80% aufweisen, sowie die Anzahl der Dateisysteme mit aktiven Kapazitätsempfehlungen. Dies hilft Ihnen, schnell Dateisysteme zu identifizieren, die möglicherweise Kapazitätsaufmerksamkeit erfordern.
 
-Zu den überwachten EMS-Ereignissen gehören unter anderem:
 
-* Aggregat nahezu voll
-* Aggregat voll
-* Volume fast voll
-* Volume voll
-* Snapshot-Reserve nahezu voll
-* Snapshot-Reserve voll
+
+==== Kapazitätsempfehlungen
+
+Workload Factory führt automatisch einen Kapazitätsempfehlungs-Algorithmus für jedes in Ihrem EDA-Inventar sichtbare FSx for ONTAP-Dateisystem aus. Der Algorithmus scannt alle 24 Stunden und ermittelt, wann SSD-Kapazitätsanpassungen empfohlen werden.
+
+Wenn eine Empfehlung identifiziert wird:
+
+* Sie erhalten umgehend eine Benachrichtigung (E-Mail oder WAD), basierend auf Ihren Workload Factory-Benachrichtigungseinstellungen. Benachrichtigungen werden versendet, sobald eine Empfehlung identifiziert wird, anstatt auf die wöchentliche Zusammenfassung zu warten.
+* In der Zeile der Tabelle „Clusters“ wird für jedes Dateisystem mit einer aktiven Empfehlung eine Glühbirne angezeigt.
+* Es wird die Gesamtzahl der Dateisysteme mit aktiven Empfehlungen angezeigt. Dadurch wird sichergestellt, dass Empfehlungen auch dann sichtbar sind, wenn sich das betroffene Dateisystem nicht auf der ersten Seite der Tabelle befindet.
+
+
+
+
+==== Kapazitätsempfehlungen ansehen und anwenden
+
+.Schritte
+. Melden Sie sich mit einem der folgenden Dienste an: link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["Konsolenerlebnisse"^]Die
+. Wählen Sie das Menü image:workloads-menu-icon.png["Das Hamburger-Menüsymbol"] und wählen Sie dann *EDA* aus.
+. Wählen Sie die Registerkarte *Overview* aus.
+. Suchen Sie in der Tabelle *Clusters* nach einem Dateisystem mit einer Glühbirnenanzeige.
++
+Bewegen Sie den Mauszeiger über das Glühbirnensymbol, um eine Kurzbeschreibung der Empfehlung anzuzeigen.
+
+. Wählen Sie den Clusternamen in der Tabelle aus, um ihn zu öffnen und die Empfehlungen anzuzeigen.
+. Beachten Sie die SSD-Empfehlung und das Kapazitätsdiagramm.
++
+Die Empfehlung erläutert die vorgeschlagene Änderung und die Begründung dafür. Zum Beispiel: _Wir empfehlen, die SSD-Größe basierend auf Ihrem SSD-Nutzungsmuster des Dateisystems zu erhöhen._
+
++
+Die Grafik stellt die aktuelle SSD-Nutzung den historischen Trends gegenüber und zeigt, wie der Kapazitätsempfehlungsalgorithmus die Kapazität im Laufe der Zeit angepasst hätte.
+
+. Wählen Sie oben rechts im Diagramm den Zeitraum aus, um die angezeigte Periode zu ändern. Standardmäßig ist eine Woche eingestellt.
+
+
+
+
+=== ONTAP-Ereignisse
+
+Zeigt die Anzahl der in den Dateisystemen des Geltungsbereichs erkannten EMS-Ereignisse an, kategorisiert nach Kapazität, Verfügbarkeit & Schutz sowie Sicherheit & Sonstiges.
+
+.Kapazität
+Zeigt die Anzahl der EMS-Meldungen im Zusammenhang mit Kapazitätsproblemen sowie die Anzahl der betroffenen Dateisysteme an.
+
+Beispiele für überwachte EMS-Ereignisse sind:
+
+* Aggregat nahezu voll/voll
+* Volume nahezu voll/voll
+* Snapshot-Reserve nahezu voll/voll
 * Verzeichnisgröße voll
-* Flex groups voll
+* FlexGroup voll
 * Inodes voll
 
 
@@ -111,21 +157,15 @@ Eine vollständige Liste der überwachten EMS-Ereignisse finden Sie unter link:h
 
 Durch Auswahl von *Kapazität* gelangen Sie zum Kapazitätsanalyse-Bildschirm in Speicherworkloads.
 
-
-
-=== Verfügbarkeit & Schutz
-
-Der Abschnitt „Availability & protection“ zeigt die Anzahl der EMS-Meldungen im Zusammenhang mit Verfügbarkeit und Datenschutz sowie die Anzahl der betroffenen Dateisysteme an.
+.Verfügbarkeit & Schutz
+Zeigt die Anzahl der EMS-Meldungen im Zusammenhang mit Verfügbarkeit und Datenschutz sowie die Anzahl der betroffenen Dateisysteme an.
 
 Überwachte Ereignisse umfassen FlexCache- und SnapMirror-bezogene EMS-Ereignisse.
 
 Durch Auswahl von *Availability & protection* gelangen Sie zum Analysebildschirm für Verfügbarkeit und Schutz in Storage workloads.
 
-
-
-=== Sicherheit & andere
-
-Der Abschnitt „Sicherheit & Sonstiges“ zeigt die Anzahl der EMS-Meldungen für Ereignisse an, die nicht unter „Kapazität“ oder „Verfügbarkeit & Schutz“ kategorisiert sind, sowie die Anzahl der betroffenen Dateisysteme. Überwachte Ereignisse umfassen Anti-Ransomware-Schutz, NFS-Authentifizierungsfehler und andere.
+.Sicherheit & andere
+Zeigt die Anzahl der EMS-Meldungen für Ereignisse an, die nicht unter Kapazität oder Verfügbarkeit & Schutz kategorisiert sind, sowie die Anzahl der betroffenen Dateisysteme. Zu den überwachten Ereignissen gehören Anti-Ransomware-Schutz, NFS-Authentifizierungsfehler und andere.
 
 Durch Auswahl von *Security & other* gelangen Sie zur Ereignisanalyse-Ansicht in Storage workloads.
 
@@ -133,7 +173,17 @@ Durch Auswahl von *Security & other* gelangen Sie zur Ereignisanalyse-Ansicht in
 
 == Clustertabelle
 
-Die Clustertabelle bietet eine detaillierte Ansicht jedes FSx for ONTAP-Clusters, das Ihren konfigurierten AWS-Anmeldeinformationen zugeordnet ist, gefiltert nach der aktiven Region und den ausgewählten AWS-Konten. Daten werden aus CloudWatch-Metriken gesammelt. Die Tabelle unterstützt Suche, Spaltenfilterung, Paginierung, Spaltenanpassung und CSV-Export.
+Bietet eine detaillierte Ansicht jedes FSx for ONTAP-Dateisystems, das Ihren konfigurierten AWS-Anmeldeinformationen zugeordnet ist, gefiltert nach der aktiven Region und den ausgewählten AWS-Konten. Die Daten werden aus CloudWatch-Metriken erfasst. Die Tabelle unterstützt Suche, Spaltenfilterung, Paginierung, Spaltenanpassung und CSV-Export.
+
+Zu den wichtigsten Kennzahlen gehören:
+
+* Name, Region und AWS-Konto
+* SSD-Kapazitätsmetriken (belegt, gesamt und Auslastungsprozentsatz)
+* Kapazitätspool-Speicher
+* Durchsatzkennzahlen (Durchschnitt, P95, P99 und Maximum der letzten 30 Tage)
+
+
+Verwenden Sie die *SSD-Auslastung*, um Dateisysteme zu identifizieren, die sich ihrer Kapazitätsgrenze nähern. Verwenden Sie die *Durchsatzauslastung (P99)*, um den Durchsatzbedarf mit der bereitgestellten Durchsatz-SKU zu vergleichen. Bewegen Sie den Mauszeiger über die Durchsatz-Spaltenüberschriften, um Berechnungsdetails anzuzeigen.
 
 
 
@@ -145,51 +195,9 @@ Die Clustertabelle bietet eine detaillierte Ansicht jedes FSx for ONTAP-Clusters
 * Die Tabelle ist paginiert. Verwenden Sie die Paginierungssteuerung am unteren Rand der Tabelle, um zwischen den Seiten zu navigieren.
 
 
-Die Tabelle enthält die folgenden Spalten. Standardmäßig angezeigte Spalten sind in der Tabelle gekennzeichnet. Sie können nicht standardmäßige Spalten mit dem Spaltenauswahlwerkzeug hinzufügen oder entfernen. Für Durchsatzspalten bewegen Sie den Mauszeiger über die Spaltenüberschrift, um Details zum 30-tägigen Berechnungszeitraum und zur Nutzungsformel anzuzeigen.
 
-[cols="30,10,60"]
-|===
-| Spalte | Standard | Beschreibung 
+NOTE: Dateisysteme mit aktiven Kapazitätsempfehlungen werden in der Tabelle mit einer Glühbirne gekennzeichnet. Wählen Sie einen Dateisystemnamen aus, um SSD-Kapazitätsmetriken, historische Nutzungstrends und Kapazitätsempfehlungen für dieses Dateisystem anzuzeigen.
 
-
-| Cluster-Name | Ja | Der Name des FSx for ONTAP Cluster. 
-
-
-| Region | Ja | Die AWS-Region, in der der Cluster bereitgestellt ist. 
-
-
-| AWS-Konto | Nein | Das mit dem Cluster verknüpfte AWS account. 
-
-
-| SSD verwendete Kapazität | Ja | Die aktuell genutzte SSD-Speichermenge. 
-
-
-| Gesamte SSD-Kapazität | Ja | Die gesamte bereitgestellte SSD-Speicherkapazität. 
-
-
-| SSD-Nutzung | Ja | Der Prozentsatz der belegten SSD-Kapazität. Verwenden Sie dies, um Cluster zu identifizieren, die sich ihren Kapazitätsgrenzen nähern, bevor sie die Workload-Performance beeinträchtigen. 
-
-
-| Kapazitätspool | Ja | Die Menge an Speicher im Kapazitätspool. 
-
-
-| Durchschnittlicher Durchsatz | Ja | Der durchschnittliche Durchsatz in den letzten 30 Tagen. 
-
-
-| P95-Durchsatz | Nein | Der Durchsatz im 95. Perzentil der letzten 30 Tage. 
-
-
-| P99-Durchsatz | Ja | Der Durchsatz im 99. Perzentil in den letzten 30 Tagen. 
-
-
-| Maximaler Durchsatz | Nein | Der in den letzten 30 Tagen verzeichnete maximale Durchsatz. 
-
-
-| Durchsatznutzung (P99) | Ja | P99-Durchsatz im Verhältnis zum bereitgestellten Durchsatz-SKU. Verwenden Sie dies, um Cluster zu identifizieren, deren Durchsatz konstant nahe oder am bereitgestellten Limit liegt. 
-
-
-| Durchsatz-SKU | Ja | Die bereitgestellte Durchsatzstufe. Vergleichen Sie dies mit der Durchsatznutzung, um zu beurteilen, ob die aktuelle SKU angemessen dimensioniert ist. 
-|===
 
 
 === Spalten anpassen
