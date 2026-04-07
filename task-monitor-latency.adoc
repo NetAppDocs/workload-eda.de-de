@@ -37,19 +37,19 @@ Die Berechtigungen _Basic_ und _Read-only_ werden für die Latenzüberwachung ni
 Wenn Sie noch keine AWS-Zugangsdaten konfiguriert haben, siehe link:https://docs.netapp.com/us-en/workload-setup-admin/add-credentials.html["AWS-Anmeldeinformationen hinzufügen"^].
 
 --
+FSx für ONTAP -Dateisystem:: Sie benötigen mindestens ein FSx for ONTAP-Dateisystem mit in Ihrer AWS-Umgebung bereitgestellten Volumes. Die Latenzüberwachungsfunktion erfasst automatisch Metriken für alle Volumes, die Ihren konfigurierten AWS-Anmeldeinformationen zugeordnet sind.
+Link zu FSx für ONTAP:: Um grundlegende Analyseerkenntnisse in der Tabelle der Latenzereignisse und im Analysebereich anzuzeigen, müssen Sie einen Link mit dem FSx for ONTAP-Dateisystem verknüpfen. Ohne einen Link können zwar weiterhin Ereignisse erkannt werden, aber die Analyse liefert nur eingeschränkte Erkenntnisse. Wenn noch kein Link verknüpft ist, wählen Sie in EDA *Link verknüpfen*, entscheiden Sie, ob Sie einen neuen Link erstellen oder einen bestehenden Link verknüpfen möchten, und wählen Sie dann *Weiter*, um automatisch zur Seite zur Linkerstellung in Storage workloads zu gelangen.
++
+--
+Anleitungen zum Erstellen und Verknüpfen von Links finden Sie unter link:https://docs.netapp.com/us-en/workload-fsx-ontap/create-link.html["Link erstellen"^].
+
+--
 Amazon Bedrock Modell ARN (optional):: Um die optionale KI-Agentenanalysefunktion nutzen zu können, müssen Sie in Ihren Workload Factory-Einstellungen einen Amazon Bedrock-Modell-ARN angeben.
 +
 --
 Weitere Einzelheiten finden Sie unter link:https://docs.netapp.com/us-en/workload-genai/knowledge-base/requirements-knowledge-base.html#basic-genai-requirements["Grundlegende GenAI-Anforderungen"^].
 
 Wenn Sie keine Bedrock-Modell-ARN konfigurieren, können Sie dennoch Latenzüberwachung und automatisierte Basisanalysen nutzen. KI-Agentenanalyse wird nicht verfügbar sein.
-
---
-FSx für ONTAP -Dateisystem:: Sie benötigen mindestens ein FSx for ONTAP-Dateisystem mit in Ihrer AWS-Umgebung bereitgestellten Volumes. Die Latenzüberwachungsfunktion erfasst automatisch Metriken für alle Volumes, die Ihren konfigurierten AWS-Anmeldeinformationen zugeordnet sind.
-Link zu FSx für ONTAP:: Um grundlegende Analyseerkenntnisse in der Tabelle der Latenzereignisse und im Analysebereich anzuzeigen, müssen Sie einen Link mit dem FSx for ONTAP-Dateisystem verknüpfen. Ohne einen Link können zwar weiterhin Ereignisse erkannt werden, aber die Analyse liefert nur eingeschränkte Erkenntnisse. Wenn noch kein Link verknüpft ist, wählen Sie in EDA *Link verknüpfen*, entscheiden Sie, ob Sie einen neuen Link erstellen oder einen bestehenden Link verknüpfen möchten, und wählen Sie dann *Weiter*, um automatisch zur Seite zur Linkerstellung in Storage workloads zu gelangen.
-+
---
-Anleitungen zum Erstellen und Verknüpfen von Links finden Sie unter link:https://docs.netapp.com/us-en/workload-fsx-ontap/create-link.html["Link erstellen"^].
 
 --
 
