@@ -4,7 +4,7 @@ permalink: learn-eda.html
 keywords: software builders, development, benefits, eda, electronic design automation 
 summary: NetApp Workload Factory für EDA hilft Ihnen, die Leistung von FSx für die ONTAP -Nutzung zu optimieren. 
 ---
-= Erfahren Sie mehr über NetApp Workload Factory für EDA
+= Erfahren Sie mehr über Workload Factory für EDA
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/
@@ -21,6 +21,7 @@ Es bietet Folgendes:
 
 * link:task-use-overview-dashboard.html["Übersichts-Dashboard"]: bietet eine zentrale Clusteransicht, die Ihnen hilft, den Zustand, die Kapazität und den Durchsatz des FSx for ONTAP-Clusters zu überwachen, zu bestimmen, wo neue Volumes platziert werden sollen, fundierte Entscheidungen über die Skalierung von Kapazität und Durchsatz zu treffen und automatisierte Kapazitätsempfehlungen zu erhalten.
 * link:task-configure-dashboard.html["Projekt-Dashboard"]: bietet eine zentrale Übersicht über den Speicherverbrauch Ihrer FSx for ONTAP file systems, um Ihnen bei der Planung, Kostenbewertung und Erfassung von Informationen zur Speichernutzung in Ihren Projekten zu helfen.
-* link:task-monitor-latency.html["FSx-Latenzanalyse"]: Überwacht proaktiv die Lese- und Schreiblatenzleistung von Volumes mit konfigurierbaren Warn- und kritischen Ereignisschwellenwerten. Enthält eine automatisierte Basisanalyse mithilfe von ONTAP QoS Delay Center-Metriken sowie eine optionale KI-Agentenanalyse für komplexe Szenarien, die eine tiefere Ursachenidentifikation erfordern.
+* link:task-monitor-latency.html["Volume-Latenz überwachen"]: Überwacht proaktiv die Lese- und Schreiblatenzleistung von Volumes mit konfigurierbaren Warn- und kritischen Ereignisschwellenwerten. Erhalten Sie E-Mail- oder SNS-Benachrichtigungen, wenn Ereignisse erkannt werden. Enthält eine automatisierte Basisanalyse mithilfe von ONTAP QoS Delay Center-Metriken und eine optionale KI-Agentenanalyse für komplexe Szenarien, die eine tiefere Ursachenidentifikation erfordern.
+* link:task-analyze-latency-trends.html["Latenztrends analysieren"]: Nutzen Sie das interaktive Latenzdiagramm, um das Latenzverhalten im Zeitverlauf zu visualisieren, Muster zu erkennen, zu verstehen, ob Leistungsprobleme wiederkehrend oder vereinzelt auftreten, und datengestützte Entscheidungen über Abhilfemaßnahmen zu treffen.
 * link:learn-eda-workloads.html["CI/CD"]: Optimiert und verkürzt die Software-Build-Zeit durch die Nutzung der FSx for ONTAP -Volume-Klonfunktionen.
 

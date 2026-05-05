@@ -4,7 +4,7 @@ permalink: requirements-eda.html
 keywords: Builders, FSx, project, projects. eda, electronic design automation, requirements, setup, workload factory 
 summary: Stellen Sie sicher, dass Workload Factory und AWS ordnungsgemäß eingerichtet sind, bevor Sie NetApp Workload Factory für EDA verwenden. Dazu gehören unter anderem Ihre AWS-Anmeldeinformationen und ein bereitgestelltes FSx for ONTAP -Dateisystem. 
 ---
-= EDA Anforderungen
+= Workload Factory für EDA-Anforderungen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/
@@ -20,7 +20,7 @@ AWS-Anmeldeinformationen und Berechtigungen:: Sie müssen AWS-Zugangsdaten mit L
 Die Berechtigungen _Basic_ und _Read-only_ werden derzeit nicht unterstützt.
 
 
-NOTE: Für die Nutzung der Latenzüberwachungsfunktion, die CloudWatch-Metriken zur Analyse der Volumenleistung erfasst, werden außerdem AWS-Zugangsdaten benötigt. Um die optionale KI-Agentenanalyse für komplexe Latenzszenarien zu aktivieren, müssen Sie zudem einen Amazon Bedrock Modell-ARN angeben. link:task-monitor-latency.html["Erfahren Sie mehr über Latenzüberwachung"].
+NOTE: Für die Nutzung der Latenzüberwachungsfunktion, die CloudWatch-Metriken zur Analyse der Volumenleistung erfasst, sind AWS-Anmeldeinformationen erforderlich. Um Benachrichtigungen über Latenzereignisse zu erhalten, konfigurieren Sie die Benachrichtigungseinstellungen in den Workload Factory-Einstellungen. Um die optionale KI-Agentenanalyse für komplexe Latenzszenarien zu aktivieren, müssen Sie außerdem einen Amazon Bedrock-Modell-ARN angeben. link:task-monitor-latency.html["Erfahren Sie mehr über Latenzüberwachung"].
 
 https://docs.netapp.com/us-en/workload-setup-admin/add-credentials.html["Erfahren Sie, wie Sie AWS-Anmeldeinformationen zu Workload Factory hinzufügen."^]
 
@@ -35,7 +35,7 @@ Dieses FSx for ONTAP Dateisystem muss FlexVol Volumes verwenden. FlexGroup Volum
 * Sie benötigen mindestens ein Volume im Dateisystem mit folgender Konfiguration:
 +
 ** Das Volume muss als NFS-Freigabe konfiguriert sein.
-** Das Dateisystem muss mit einem Link konfiguriert werden. https://docs.netapp.com/us-en/workload-fsx-ontap/links-overview.html["Mehr über Links erfahren"^]Die
+** Das Dateisystem muss mit einem Link konfiguriert werden. https://docs.netapp.com/us-en/workload-fsx-ontap/links-overview.html["Mehr über Links erfahren"^].
 
 
 * Sie müssen die Tag-Schlüssel/Wert-Paare berücksichtigen, die Sie auf die AWS-Ressourcen anwenden möchten, die Teil dieser Bereitstellung sind (optional).

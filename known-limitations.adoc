@@ -4,7 +4,7 @@ permalink: known-limitations.html
 keywords: limitations, builders, eda, electronic design automation 
 summary: Bekannte Einschränkungen kennzeichnen Plattformen, Geräte oder Funktionen, die von dieser Produktversion nicht unterstützt werden oder nicht ordnungsgemäß mit ihr zusammenarbeiten. Lesen Sie diese Einschränkungen sorgfältig durch. 
 ---
-= Bekannte Einschränkungen von NetApp Workload Factory für EDA
+= Bekannte Einschränkungen in Workload Factory für EDA
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/

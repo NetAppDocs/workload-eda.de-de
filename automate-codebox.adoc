@@ -4,7 +4,7 @@ permalink: automate-codebox.html
 keywords: automation, code automation, automate, codebox 
 summary: Mit Codebox können Sie die Host-Bereitstellung, die Datenbankerstellung und vieles mehr automatisieren. 
 ---
-= Automatisieren Sie EDA-Workload-Aufgaben mit Codebox
+= Automatisieren Sie EDA-Workloads mit Codebox
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/
