@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: requirements-eda.html 
-keywords: Builders, FSx, project, projects. eda, electronic design automation, requirements, setup, workload factory 
+keywords: Builders, FSx, project, projects. eda, electronic design automation, requirements, setup, Workload Factory 
 summary: Stellen Sie sicher, dass Workload Factory und AWS ordnungsgemäß eingerichtet sind, bevor Sie NetApp Workload Factory für EDA verwenden. Dazu gehören unter anderem Ihre AWS-Anmeldeinformationen und ein bereitgestelltes FSx for ONTAP -Dateisystem. 
 ---
 = Workload Factory für EDA-Anforderungen
@@ -13,14 +13,14 @@ summary: Stellen Sie sicher, dass Workload Factory und AWS ordnungsgemäß einge
 [role="lead"]
 Stellen Sie sicher, dass Workload Factory und AWS ordnungsgemäß eingerichtet sind, bevor Sie NetApp Workload Factory für EDA verwenden. Dazu gehören unter anderem Ihre AWS-Anmeldeinformationen und ein bereitgestelltes FSx for ONTAP -Dateisystem.
 
-Workload Factory-Login und -Konto:: Du musst https://docs.netapp.com/us-en/workload-setup-admin/sign-up-saas.html["Richten Sie ein Konto bei Workload Factory ein."^] und melden Sie sich mit einem der folgenden Anmeldedaten an: https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["Konsolenerlebnisse"^]Die
+Workload Factory-Anmeldung und -Konto:: Du musst https://docs.netapp.com/us-en/workload-setup-admin/sign-up-saas.html["Richten Sie ein Konto bei Workload Factory ein."^] und melden Sie sich mit einem der folgenden Anmeldedaten an: https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["Konsolenerlebnisse"^]Die
 AWS-Anmeldeinformationen und Berechtigungen:: Sie müssen AWS-Zugangsdaten mit Lese-/Schreibberechtigungen zu Workload Factory hinzufügen, was bedeutet, dass Sie Workload Factory im Lese-/Schreibmodus für EDA verwenden werden.
 
 
 Die Berechtigungen _Basic_ und _Read-only_ werden derzeit nicht unterstützt.
 
 
-NOTE: Für die Nutzung der Latenzüberwachungsfunktion, die CloudWatch-Metriken zur Analyse der Volumenleistung erfasst, sind AWS-Anmeldeinformationen erforderlich. Um Benachrichtigungen über Latenzereignisse zu erhalten, konfigurieren Sie die Benachrichtigungseinstellungen in den Workload Factory-Einstellungen. Um die optionale KI-Agentenanalyse für komplexe Latenzszenarien zu aktivieren, müssen Sie außerdem einen Amazon Bedrock-Modell-ARN angeben. link:task-monitor-latency.html["Erfahren Sie mehr über Latenzüberwachung"].
+NOTE: Für die Nutzung der Latenzüberwachungsfunktion, die CloudWatch-Metriken zur Analyse der Volumenleistung erfasst, sind AWS-Anmeldeinformationen erforderlich. Um Benachrichtigungen über Latenzereignisse zu erhalten, konfigurieren Sie die Benachrichtigungseinstellungen in den Workload Factory-Einstellungen. Um die optionale KI-Agentenanalyse für komplexe Latenzszenarien zu aktivieren, müssen Sie außerdem einen Amazon Bedrock-Modell-ARN angeben. link:learn-latency-monitoring.html["Erfahren Sie mehr über Latenzüberwachung"].
 
 https://docs.netapp.com/us-en/workload-setup-admin/add-credentials.html["Erfahren Sie, wie Sie AWS-Anmeldeinformationen zu Workload Factory hinzufügen."^]
 

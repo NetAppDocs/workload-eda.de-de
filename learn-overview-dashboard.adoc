@@ -1,0 +1,137 @@
+---
+sidebar: sidebar 
+permalink: learn-overview-dashboard.html 
+keywords: cluster overview, cluster dashboard, FSx for ONTAP, cluster health, EMS events, latency events, SSD management, capacity automation, capacity recommendations, decision points 
+summary: Erfahren Sie, wie das Übersichts-Dashboard in Workload Factory für EDA Ihnen dabei hilft, den Zustand, die Kapazität und den Durchsatz Ihres FSx for ONTAP-Clusters in großem Umfang zu überwachen. 
+---
+= Erfahren Sie mehr über das Übersichts-Dashboard in Workload Factory für EDA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Das Übersichts-Dashboard bietet IT-Administratoren eine zentrale Ansicht für die Verwaltung von EDA-Workloads über mehrere FSx for ONTAP-Dateisysteme hinweg. Nutzen Sie es, um schnell den Zustand und die Auslastung des Clusters zu beurteilen, zu entscheiden, wo neue Volumes oder Jobs platziert werden sollen, Kandidaten für die Verschiebung von Volumes oder SVMs zu identifizieren und den Zeitpunkt für die Skalierung von Kapazität oder Durchsatz festzulegen.
+
+
+
+== Überblick
+
+Das Dashboard „Übersicht“ erfasst CloudWatch-Metriken für alle FSx for ONTAP-Dateisysteme, die mit Ihren konfigurierten AWS-Anmeldeinformationen verknüpft sind.
+
+Es beinhaltet:
+
+* *Cluster-Gesundheitsstatus*: Zusammenfassende Informationen oben, die Latenzereignisse, SSD-Auslastung und Kapazitätsempfehlungen sowie ONTAP EMS-Ereignisse in Ihren Dateisystemen hervorheben.
+* *Clustertabelle*: Eine detaillierte, durchsuchbare Tabelle, die Nutzungs- und Leistungsmetriken für jeden Cluster anzeigt und Filter-, Sortier-, Paginierungs- und CSV-Exportfunktionen unterstützt.
+
+
+Es hilft Ihnen:
+
+* Neue Volumes platzieren und Workloads neu verteilen
+* Kapazitäts- oder Durchsatzskalierung planen
+* Überwachung des Clusterzustands im großen Maßstab
+* Treffen Sie fundierte Entscheidungen über die Volumenplatzierung
+* Identifizieren Sie Cluster, die sich ihren Kapazitätsgrenzen nähern
+
+
+
+
+== Dashboard-Komponenten
+
+
+
+=== Cluster-Gesundheitsstatus
+
+Der Cluster-Integritätsstatus bietet eine Momentaufnahme der Aktivität Ihrer gefilterten Dateisysteme. Diese Informationen werden nur angezeigt, wenn mindestens ein FSx for ONTAP-Link mit Ihren Dateisystemen verknüpft ist.
+
+Der Gesundheitszustand umfasst folgende Bereiche:
+
+*Latenz*:: Zeigt die Anzahl der erkannten Latenzereignisse in den erfassten Dateisystemen an. Latenzinformationen können Sie nur anzeigen, wenn Sie die Latenzüberwachung aktiviert haben.
+*SSD Kapazitätsmanagement*:: Zeigt die Anzahl der Dateisysteme mit einer SSD-Auslastung von über 80 % sowie die Anzahl der Dateisysteme mit aktiven Kapazitätsempfehlungen an. Dies hilft Ihnen, schnell Dateisysteme zu identifizieren, die möglicherweise Kapazitätsaufmerksamkeit erfordern.
+*ONTAP-Ereignisse*:: Zeigt die Anzahl der erkannten EMS-Ereignisse an, kategorisiert nach Kapazität, Verfügbarkeit & Schutz sowie Sicherheit & Sonstiges.
+
+
+
+
+=== Clustertabelle
+
+Die Clustertabelle bietet eine detaillierte Ansicht jedes FSx for ONTAP-Dateisystems, gefiltert nach Ihrer aktiven Region und Ihren AWS-Kontoeinstellungen. Die Daten werden aus CloudWatch-Metriken gewonnen.
+
+Nutzen Sie die Tabelle, um:
+
+* Identifizieren Sie Dateisysteme, die sich ihren Kapazitätsgrenzen nähern (Spalte „SSD-Nutzung“)
+* Vergleichen Sie den Durchsatzbedarf mit der bereitgestellten Durchsatz-SKU (Spalte „Durchsatznutzung P99“)
+* Leistungskennzahlen über mehrere Cluster hinweg verfolgen
+* Prüfen Sie den Link-Konfigurationsstatus (Spalte „Zugehöriger Link“) – Die Gültigkeit der Verbindung wird täglich überprüft.
+* Wählen Sie mehrere Cluster für Massenaktualisierungen von Parametern aus
+
+
+
+
+== SSD Kapazitätsmanagement
+
+Das Übersichts-Dashboard bietet intelligentes SSD-Kapazitätsmanagement.
+
+
+
+=== Managementmodi
+
+*Automatisieren*:: Workload Factory erhöht die SSD-Kapazität automatisch anhand vordefinierter Schwellenwerte und Nutzungsmuster. Das System verwaltet die Kapazitätsskalierung ohne manuelle Eingriffe. Dies ist ideal für Umgebungen, in denen eine automatisierte Verwaltung bevorzugt wird.
+*Empfehlen*:: Workload Factory analysiert Ihre SSD-Nutzungsmuster und gibt Empfehlungen zur Kapazitätserweiterung. Sie prüfen und implementieren die Empfehlungen manuell. So behalten Sie die volle Kontrolle über Ihre Kapazitätsentscheidungen und profitieren gleichzeitig von der automatisierten Analyse.
+*Keine*:: Es werden keine Kapazitätsempfehlungen gegeben oder automatisierte Aktionen durchgeführt. Dies ist nützlich, wenn Sie die Kapazität manuell ohne Systemunterstützung verwalten möchten.
+
+
+
+
+=== Kapazitätsempfehlungen
+
+Wenn Workload Factory im Automatisierungs- oder Empfehlungsmodus läuft, führt das System automatisch einen Kapazitätsempfehlungsalgorithmus für jedes FSx for ONTAP-Dateisystem aus. Der Algorithmus scannt alle 24 Stunden und ermittelt, wann SSD-Kapazitätsanpassungen empfohlen werden.
+
+Wenn eine Empfehlung identifiziert wird:
+
+* Sie erhalten eine sofortige Benachrichtigung basierend auf Ihren Workload Factory-Benachrichtigungseinstellungen
+* Dateisysteme mit Empfehlungen können identifiziert werden, indem die Tabelle „Cluster“ nach den Spalten „Zeitstempel der letzten SSD-Erhöhung“ oder „Beschreibung der letzten SSD-Erhöhung“ gefiltert wird.
+* Die Gesamtzahl der Dateisysteme mit aktiven Empfehlungen wird angezeigt
+
+
+Die Empfehlung erläutert die vorgeschlagene Änderung und deren Begründung, beispielsweise: _Wir empfehlen, die SSD-Größe basierend auf Ihrem SSD-Nutzungsmuster des Dateisystems zu erhöhen._
+
+
+
+=== SSD-Verwaltungsparameter
+
+Parameter steuern, wie das Kapazitätsmanagementsystem Ihre SSD-Nutzung analysiert und darauf reagiert:
+
+*Schwellenwert* (10-90%):: Der SSD-Auslastungsgrad, ab dem Kapazitätsempfehlungen oder Automatisierungsaktionen ausgelöst werden. Beispielsweise bedeutet ein Schwellenwert von 80%, dass Empfehlungen oder Aktionen erfolgen, sobald die SSD-Auslastung 80% erreicht. Verfügbar in den Modi „Empfehlen“ und „Automatisieren“.
+*Rückblick* (1-200 Stunden):: Der Zeitraum, der zur Analyse historischer SSD-Nutzungsmuster verwendet wird. Ein längerer Betrachtungszeitraum liefert mehr historischen Kontext für Kapazitätsentscheidungen. Nur im Automate-Modus verfügbar.
+*Ahead* (1-200 Stunden):: Der Zeitraum, der zur Prognose des zukünftigen Kapazitätsbedarfs verwendet wird. Ein längerer Prognosezeitraum plant das Kapazitätswachstum weiter in die Zukunft. Nur im Automate-Modus verfügbar.
+
+
+Sie können diese Parameter für jedes Dateisystem einzeln konfigurieren oder mithilfe der Massenbearbeitung einheitliche Einstellungen für mehrere Dateisysteme anwenden.
+
+
+
+=== Kapazitätsentscheidungspunkte verstehen
+
+Das SSD-Nutzungsdiagramm zeigt Entscheidungspunkte an, die anzeigen, wann Kapazitätsempfehlungen generiert oder Automatisierungsmaßnahmen durchgeführt wurden. Diese visuellen Indikatoren helfen Ihnen, das Verhalten des Kapazitätsmanagement-Algorithmus im Zeitverlauf zu verstehen.
+
+*Empfehlungsentscheidungspunkte*:: Erscheinen, wenn der Kapazitätsempfehlungs-Algorithmus feststellt, dass zusätzliche SSD-Kapazität benötigt wird. Diese Punkte können so häufig wie alle 30 Minuten auftreten, wenn die SSD-Kapazität nicht erhöht wurde. Das Diagramm zeigt nach Möglichkeit alle Entscheidungspunkte an oder fasst sie zusammen, wenn der Zeitraum einzelne Punkte zu dicht macht.
+*Entscheidungspunkte für die Automatisierung*:: Erscheinen, wenn das Automatisierungssystem versucht, die SSD-Kapazität zu erhöhen. Diese Punkte zeigen an, ob die Automatisierungsaktion erfolgreich war oder fehlgeschlagen ist.
+
+
+Nutzen Sie Entscheidungspunkte anhand des historischen SSD-Nutzungsdiagramms, um:
+
+* Verstehen, wie häufig Kapazitätsanpassungen erforderlich sind
+* Prüfen Sie, ob der Automatisierungs- oder der Empfehlungsmodus besser zu Ihren Arbeitslastmustern passt
+* Wiederkehrende Kapazitätsengpässe identifizieren
+* Planen Sie zukünftigen Kapazitätsbedarf basierend auf Wachstumstrends
+* Fehlerbehebung bei fehlgeschlagenen Automatisierungsversuchen
+
+
+
+
+== Verwandte Informationen
+
+* link:task-activate-overview-dashboard.html["Aktivieren Sie das Übersichts-Dashboard"]
+* link:task-use-overview-dashboard.html["Nutzen Sie das Übersichts-Dashboard"]
+

@@ -48,7 +48,7 @@ Sie können ein Projekt erstellen und ein Volume zuweisen, das Ihre Softwareumge
 
 == Automatisierung mit Workload Factory Codebox
 
-Workload Factory führt mit der _Codebox_ eine integrierte Automatisierung ein. Die Codebox bietet folgende Automatisierungsvorteile:
+Workload Factory führt mit der integrierten _Codebox_ eine integrierte Automatisierung ein. Die Codebox bietet folgende Vorteile der Automatisierung:
 
 * *Generierung von Code-Snippets*: Infrastructure-as-Code (IaC)-Snippets werden während der Ressourcenerstellung generiert, wodurch eine nahtlose Integration in bestehende Orchestrierungs-Workflows ermöglicht wird.
 * *Infrastructure-as-code co-pilot*: Die Codebox ist ein Infrastructure-as-code (IaC) co-pilot, der Entwicklern und DevOps dabei hilft, Code zu generieren, um jede von Workload Factory unterstützte Operation auszuführen.
@@ -76,7 +76,6 @@ EDA wird in allen kommerziellen Regionen unterstützt, in denen FSx für ONTAP u
 Die folgenden AWS-Regionen werden nicht unterstützt:
 
 * Regionen Chinas
-* GovCloud (USA)-Regionen
 * Geheime Cloud
 * Streng geheime Cloud
 

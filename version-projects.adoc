@@ -55,4 +55,4 @@ Der Standardname für den Klon ist der Projektname mit einem Suffix aus dem aktu
 
 
 .Ergebnis
-Die Workload Factory erstellt einen neuen Klon des Projekts, und der Klon erscheint als neues Projekt auf der Projektseite.
+Workload Factory erstellt einen neuen Klon des Projekts, und der Klon erscheint als neues Projekt auf der Seite „Projekte“.

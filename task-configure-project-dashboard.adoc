@@ -1,0 +1,70 @@
+---
+sidebar: sidebar 
+permalink: task-configure-project-dashboard.html 
+keywords: configure, dashboard, AWS tags, CloudWatch, FSx for ONTAP, Workload Factory, EDA, custom filters, project tags, team tags 
+summary: Konfigurieren Sie benutzerdefinierte Filter für das Projects-Dashboard, um Kennzahlen nach Ihrer Unternehmensstruktur wie Projekten, Teams oder Anwendungen zu organisieren. 
+---
+= Konfigurieren Sie das Projects-Dashboard in Workload Factory für EDA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Konfigurieren Sie benutzerdefinierte Filter für das Projects-Dashboard, um Kennzahlen entsprechend Ihrer Unternehmensstruktur – wie Projekte, Teams oder Kostenstellen – zu organisieren. Dies hilft Ihnen, Kosten genau zu verfolgen, zu identifizieren, welche Ressourcen den meisten Kapazitätsbedarf haben, und fundierte Entscheidungen zur Ressourcenzuweisung und Budgetplanung zu treffen. Indem Sie die Filter an die Arbeitsweise Ihrer Organisation anpassen, können Sie schnell auf relevante Daten zugreifen und die Effizienz bei der Kapazitätsplanung, Kostenverfolgung und Leistungsüberwachung verbessern.
+
+
+
+== Bevor Sie beginnen
+
+Um benutzerdefinierte Filter effektiv zu nutzen, konfigurieren Sie AWS-Tags auf Ihren FSx for ONTAP Volumes basierend auf Ihren Geschäftsanforderungen—for example, Tags, die Projekte, Teams oder Geschäftseinheiten repräsentieren.
+
+
+
+== Benutzerdefinierte Filter konfigurieren
+
+
+NOTE: Nur der erste Administrator, der auf das Projekt-Dashboard zugreift, kann benutzerdefinierte Filter konfigurieren, hinzufügen oder löschen. Alle anderen Benutzer, einschließlich nachfolgender Administratoren, haben lediglich Lesezugriff auf die Filter.
+
+.Über diese Aufgabe
+Sie können bis zu fünf benutzerdefinierte Filter basierend auf Ihren AWS-Tags konfigurieren. Jeder benutzerdefinierte Filter benötigt drei Komponenten: einen Filter-Label-Namen, einen AWS-Tag-Schlüssel-Namen und einen Auswahltyp (Einzel- oder Mehrfachauswahl).
+
+Wenn Sie keine benutzerdefinierten Filter konfigurieren, bleiben die Standardfilter (Dateisystem, Volume-Typ und Zeitraum) verfügbar, sodass Sie Ihre Dashboards weiterhin anzeigen und interaktiv nutzen können.
+
+.Schritte
+. Melden Sie sich mit einem der folgenden Dienste an: link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["Konsolenerlebnisse"^]Die
+. Wählen Sie das Menü aus image:workloads-menu-icon.png["Über das Hamburger-Menüsymbol kann man zu Workloads wie Speicher, EDA, KI, Datenbanken, VMware und Administration navigieren."] und wählen Sie dann *EDA* aus.
+. Wählen Sie *Projekte* aus.
++
+Falls Sie Ihr Dashboard noch nicht konfiguriert haben, werden Sie automatisch dazu aufgefordert.
+
+. *+ Filter hinzufügen* auswählen.
+. Fügen Sie für jeden benutzerdefinierten Filter, den Sie erstellen möchten, die Details hinzu:
++
+** Filterbezeichnung (der Anzeigename im Dashboard)
+** AWS-Tag-Schlüsselname (der tatsächliche Tag-Schlüssel, der für Ihre Ressourcen verwendet wird)
+** Auswahltyp (Einzel- oder Mehrfachauswahl)
++
+
+NOTE: Filter werden im Dashboard in der Reihenfolge angezeigt, in der Sie sie konfigurieren. Ordnen Sie Ihre am häufigsten verwendeten Filter am besten zuerst an, um einen einfacheren Zugriff zu ermöglichen.
+
+
+
+. Wählen Sie *Übernehmen*.
++
+Sie können einen benutzerdefinierten Filter löschen, indem Sie das Papierkorbsymbol neben diesem Filter auswählen, bevor Sie Ihre Änderungen anwenden.
+
+. Um Ihre Änderungen nach dem Anwenden von Tags oder Filtern anzuzeigen, wählen Sie das Aktualisierungssymbol im Dashboard aus.
+. Um die Dashboard-Konfiguration später zu bearbeiten, wählen Sie *Konfigurieren*.
+
+
+.Ergebnis
+Sobald diese Tags angewendet werden, beginnt Workload Factory mit der Erfassung und Anzeige der relevanten CloudWatch-Metriken. Ihr Dashboard wird zu einem dynamischen Werkzeug, mit dem Sie Ressourcen organisieren, Kosten verfolgen und filtern können – basierend auf Ihren organisatorischen Anforderungen.
+
+
+
+== Verwandte Informationen
+
+* link:learn-project-dashboard.html["Erfahren Sie mehr über das Projects-Dashboard"]
+* link:task-use-project-dashboard.html["Nutzen Sie das Projekt-Dashboard"]
+

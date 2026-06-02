@@ -1,0 +1,137 @@
+---
+sidebar: sidebar 
+permalink: learn-project-dashboard.html 
+keywords: projects dashboard, AWS tags, CloudWatch, FSx for ONTAP, Workload Factory, EDA, electronic design automation, volume details, capacity utilization, throughput utilization, IOPS utilization, custom filters 
+summary: Erfahren Sie, wie das Projekt-Dashboard in Workload Factory for EDA Ihnen dabei hilft, die Speichernutzung von Projekten in FSx for ONTAP Dateisystemen und Volumes zu überwachen und zu analysieren. 
+---
+= Erfahren Sie mehr über das Projects-Dashboard in Workload Factory für EDA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Das Dashboard „Projekte“ unterstützt IT-Administratoren und Projektmanager bei der Überwachung und Analyse der Projektnutzung in FSx for ONTAP Dateisystemen und Volumes. Es bietet Einblick in Speichernutzungsmuster und hilft Ihnen, ressourcenintensive Projekte zu identifizieren, Kosten zu verfolgen und die Speicherzuweisung zu optimieren, bevor Kapazitäts- oder Leistungsprobleme Ihre EDA-Simulationen beeinträchtigen.
+
+
+
+== So funktioniert das Projekt-Dashboard
+
+Das Dashboard „Projekte“ erfasst CloudWatch-Metriken für alle FSx for ONTAP Volumes, die Ihren AWS-Anmeldeinformationen zugeordnet sind. Sie können bis zu fünf benutzerdefinierte Filter basierend auf Ihren AWS-Tags erstellen, um die Daten gemäß Ihren spezifischen Geschäftsanforderungen wie Projekten, Teams oder Anwendungen zu organisieren und zu filtern.
+
+Das Dashboard hilft Ihnen dabei:
+
+* Kapazität planen und Kosten bewerten
+* Treffen Sie datengestützte Entscheidungen zur Ressourcenverteilung
+* Ressourcenintensive Projekte identifizieren
+* Verfolgen Sie die Kosten präzise über Projekte oder Teams hinweg
+* Optimieren Sie die Speicherzuweisung, bevor Probleme auftreten.
+
+
+Für die proaktive Überwachung der Latenzleistung siehe link:learn-latency-monitoring.html["Erfahren Sie mehr über Latenzüberwachung"].
+
+
+
+=== Erfasste CloudWatch-Metriken
+
+Das Dashboard erfasst und zeigt die folgenden CloudWatch Kennzahlen an:
+
+* *Bereitgestellte Kapazität*: Metrik auf Volumenebene, die die bereitgestellte Speicherkapazität darstellt.
+* *Ausgenutzte Kapazität*: Metrik auf Volumenebene, die den genutzten Speicher darstellt.
+* *Durchschnittlicher/Maximaler Durchsatz*: Berechnet als Durchschnitt bzw. Maximum der Summe von DataReadBytes und DataWriteBytes über den angegebenen Zeitraum.
+* *Durchschnittliche/Maximale IOPS*: Berechnet als Durchschnitt bzw. Maximum der Summe von DataReadOperations, DataWriteOperations und MetadataOperations über den angegebenen Zeitraum.
+
+
+
+
+== Benutzerdefinierte Filter
+
+Mit benutzerdefinierten Filtern können Sie Ihre Dashboard-Daten entsprechend der Arbeitsweise Ihres Unternehmens organisieren. Durch die Ausrichtung der Filter an Ihrer Projektstruktur, Ihren Teams oder Kostenstellen können Sie schnell auf die spezifischen Daten zugreifen, die Sie benötigen, ohne sich durch irrelevante Informationen navigieren zu müssen. Dies macht Kapazitätsplanung, Kostenverfolgung und Leistungsüberwachung effizienter.
+
+Sie können bis zu fünf benutzerdefinierte Filter basierend auf Ihren AWS-Tags konfigurieren. Jeder benutzerdefinierte Filter benötigt die folgenden Komponenten:
+
+* *Filterbezeichnung*: Der Name, der im Dashboard angezeigt wird
+* *AWS-Tag-Schlüsselname*: Der tatsächliche AWS-Tag-Schlüssel, der auf Ihren Ressourcen verwendet wird
+* *Auswahltyp*: Einzelauswahl oder Mehrfachauswahl
+
+
+Wenn Sie keine benutzerdefinierten Filter konfigurieren, bleiben die Standardfilter (Dateisystem, Volume-Typ und Zeitraum) verfügbar, sodass Sie Ihre Dashboards weiterhin anzeigen und interaktiv nutzen können.
+
+
+
+=== AWS-Tags
+
+AWS-Tags sind Metadaten für Ihre AWS-Ressourcen. Sie helfen Ihnen, Ihre AWS-Ressourcen auf verschiedene Weise zu kategorisieren, beispielsweise nach Projekt, Anwendung oder Geschäftsbereich.
+
+Um benutzerdefinierte Filter effektiv zu nutzen, konfigurieren Sie AWS-Tags auf Ihren FSx for ONTAP Volumes basierend auf Ihren Geschäftsanforderungen—for example, Tags, die Projekte, Teams oder Geschäftseinheiten repräsentieren.
+
+Weitere Informationen zum Taggen finden Sie unter  https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/what-are-tags.html["Was sind Tags?"^] und  https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/overview.html["AWS Resource Groups Tagging API-Referenz"^].
+
+
+
+== Volumendetails
+
+Das Dashboard bietet verschiedene Ansichtsmodi, mit denen Sie Ihre Speichermetriken auf unterschiedlichen Detailebenen analysieren können.
+
+
+
+=== Gesamtansicht
+
+Die Gesamtansicht (Standard) zeigt aggregierte Metriken aller Volumes an, die Ihren ausgewählten Filtern entsprechen. Diese Ansicht bietet einen Überblick auf hoher Ebene über Ihre gesamte Speicherleistung und zeigt kombinierte Kapazitäts-, IOPS- und Durchsatzmetriken.
+
+Nutzen Sie diese Ansicht, um:
+
+* Allgemeine Trends verstehen
+* Planen Sie für den zukünftigen Kapazitätsbedarf
+* Bericht über den gesamten Ressourcenverbrauch in allen Projekten oder Teams
+
+
+
+
+=== Volumenansicht
+
+Die Volumenansicht zeigt die Leistung einzelner Volumen im Zeitverlauf und listet die Top 10 Volumen für jede Metrik auf. Diese Ansicht hilft Ihnen, bestimmte Volumen zu identifizieren, die den Ressourcenverbrauch antreiben, und deren Verhalten im ausgewählten Zeitraum zu beobachten.
+
+Nutzen Sie diese Ansicht, um:
+
+* Leistungsengpässe finden
+* Identifizieren Sie Volumes, die möglicherweise angepasst werden müssen.
+* Ermitteln Sie genau, welche spezifischen Projekte oder Arbeitslasten die meisten Ressourcen verbrauchen
+
+
+
+
+==== Volumenmetriken angezeigt
+
+Wenn Sie einzelne Volumes anzeigen, zeigt das Dashboard die Top 10 Volumes aus Ihrer Gesamtzahl an Volumes für jede Kennzahl an:
+
+* *Verwendete Kapazität des Volumens*: Zeigt Volumen mit der aktuell höchsten verwendeten Kapazität an.
+* *IOPS*: Zeigt Volumes mit den höchsten durchschnittlichen IOPS im ausgewählten Zeitraum an.
+* *Durchsatz*: Zeigt die Volumes mit dem höchsten durchschnittlichen Durchsatz im ausgewählten Zeitraum an.
+
+
+
+NOTE: Das Dashboard zeigt nur die Top 10 Volumes für jede Kennzahl an. Wenn Sie mehr als 10 Volumes haben, werden einige Volumes möglicherweise nicht in der Detailansicht angezeigt.
+
+Wenn in mehreren Metriken die gleichen Volumes auftreten, verwendet das Dashboard eine einheitliche Farbcodierung in der Legende, um das Verfolgen bestimmter Volumes in verschiedenen Metriken zu erleichtern.
+
+
+
+==== Interaktive Volumendaten
+
+Interaktive Hover-Daten liefern präzise Messwerte zu bestimmten Zeitpunkten und helfen Ihnen, Leistungsänderungen mit spezifischen Ereignissen oder Zeiträumen in Zusammenhang zu bringen. Diese detaillierten Informationen sind wertvoll für die Fehlerbehebung bei Leistungsproblemen, die Validierung von Optimierungsmaßnahmen oder die Erläuterung von Ressourcennutzungsmustern gegenüber Stakeholdern.
+
+Wenn Sie mit dem Mauszeiger über eine beliebige Volumenlinie in den Diagrammen fahren, können Sie Folgendes anzeigen:
+
+* *Ausgenutzte Kapazität des Volumes*: Volumename, genutzte Kapazität zu diesem Zeitpunkt und zugewiesene Kapazität
+* *IOPS*: Name des Volumes, durchschnittliche IOPS für den Zeitraum und maximale IOPS für den Zeitraum
+* *Durchsatz*: Volume-Name, durchschnittlicher Durchsatz für den Zeitraum und maximaler Durchsatz für den Zeitraum
+
+
+
+
+== Verwandte Informationen
+
+* link:task-configure-project-dashboard.html["Konfigurieren Sie das Projects-Dashboard"]
+* link:task-use-project-dashboard.html["Nutzen Sie das Projekt-Dashboard"]
+

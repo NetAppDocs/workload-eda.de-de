@@ -15,16 +15,28 @@ indexpage:
       url: "/quick-start-eda.html"
   - title: EDA-Speicherübersicht
     links:
-    - title: EDA-Speicheroperationen verwalten
+    - title: Erfahren Sie mehr über das Overview Dashboard
+      url: "/learn-overview-dashboard.html"
+    - title: Aktivieren Sie das Übersichts-Dashboard
+      url: "/task-activate-overview-dashboard.html"
+    - title: Nutzen Sie das Übersichts-Dashboard
       url: "/task-use-overview-dashboard.html"
   - title: FSx für ONTAP-Latenzanalyse
     links:
-    - title: Überwachen Sie die FSx for ONTAP Volume-Latenz
-      url: "/task-monitor-latency.html"
+    - title: Erfahren Sie mehr über Latenzüberwachung
+      url: "/learn-latency-monitoring.html"
+    - title: Latenzüberwachung konfigurieren
+      url: "/task-configure-latency-monitoring.html"
+    - title: Latenzprobleme analysieren
+      url: "/task-analyze-latency-issues.html"
   - title: Projektnutzungsanalyse
     links:
-    - title: Analysieren Sie die Speichernutzung des Projekts
-      url: "/task-configure-dashboard.html"
+    - title: Erfahren Sie mehr über das Projects-Dashboard
+      url: "/learn-project-dashboard.html"
+    - title: Konfigurieren Sie das Projects-Dashboard
+      url: "/task-configure-project-dashboard.html"
+    - title: Nutzen Sie das Projekt-Dashboard
+      url: "/task-use-project-dashboard.html"
   - title: Perforce-Integration nutzen
     links:
     - title: Erfahren Sie mehr über die Perforce-Integration.

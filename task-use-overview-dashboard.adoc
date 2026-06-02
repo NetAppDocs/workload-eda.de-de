@@ -1,61 +1,23 @@
 ---
 sidebar: sidebar 
 permalink: task-use-overview-dashboard.html 
-keywords: cluster overview, cluster dashboard, FSx for ONTAP, cluster health, cluster usage, capacity, throughput, IOPS, EMS events, latency events, performance widgets, clusters table, volume placement, scale up, scale down, CloudWatch metrics, CSV export 
-summary: Über das Übersichts-Dashboard können Sie den Zustand, die Kapazität und den Durchsatz Ihrer FSx for ONTAP-Dateisysteme überwachen. Sehen Sie sich die Speichernutzung im großen Maßstab an und treffen Sie fundierte Entscheidungen hinsichtlich der Volume-Platzierung und Kapazitätserweiterung. 
+keywords: cluster overview, filter dashboard, cluster health, capacity recommendations, SSD management, bulk edit, decision points, clusters table, ONTAP events, latency events 
+summary: Über das Übersichts-Dashboard können Sie den Zustand des Clusters überwachen, Kapazitätsempfehlungen anzeigen, SSD-Kapazitätseinstellungen verwalten und Leistungstrends in Ihren FSx for ONTAP-Dateisystemen analysieren. 
 ---
-= EDA-Speicheroperationen verwalten
+= Nutzen Sie das Übersichts-Dashboard in Workload Factory für EDA
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/
 
 
 [role="lead"]
-Als IT-Administrator, der EDA-Workloads über mehrere FSx for ONTAP-Dateisysteme (ONTAP Cluster) verwaltet, können Sie mithilfe des Übersichts-Dashboards den Zustand und die Auslastung des Clusters schnell beurteilen. Nutzen Sie es, um zu entscheiden, wo neue Volumes oder Jobs platziert werden sollen, Kandidaten für die Verschiebung von Volumes oder SVMs zu identifizieren und festzustellen, wann Kapazität oder Durchsatz skaliert werden müssen.
+Über das Übersichts-Dashboard können Sie den Zustand und die Kapazität Ihrer FSx for ONTAP-Dateisysteme überwachen. Filtern Sie Daten, sehen Sie Kapazitätsempfehlungen ein, verwalten Sie SSD-Kapazitätseinstellungen und analysieren Sie Leistungstrends, um fundierte Entscheidungen zur Volume-Platzierung und Kapazitätsskalierung zu treffen.
 
 
 
-== Überblick
+== Bevor Sie beginnen
 
-Das Übersichts-Dashboard bietet eine zentrale Ansicht Ihrer FSx for ONTAP-Cluster, einschließlich Kapazität und Durchsatz. Nutzen Sie es, um neue Volumes zu platzieren, Workloads neu zu verteilen und die Skalierung von Kapazität oder Durchsatz zu planen.
-
-Das Dashboard umfasst:
-
-* *Cluster-Gesundheitsstatus*: Informationen, die oben im Dashboard zusammengefasst sind und Latenzereignisse, SSD-Auslastung und Kapazitätsempfehlungen sowie ONTAP EMS-Ereignisse in Ihren Dateisystemen hervorheben.
-* *Clustertabelle*: Eine detaillierte, durchsuchbare Tabelle, die Nutzungs- und Leistungsmetriken für jeden Cluster anzeigt und Filter-, Sortier-, Paginierungs- und CSV-Exportfunktionen unterstützt.
-
-
-
-
-== Anforderungen
-
-Bevor Sie das Dashboard verwenden, stellen Sie sicher, dass Sie die folgenden Voraussetzungen erfüllen:
-
-AWS-Anmeldeinformationen mit Ansichtsberechtigungen:: Sie müssen in Workload Factory AWS-Anmeldeinformationen mit mindestens Leseberechtigungen (Anzeigeberechtigungen) für General Storage konfigurieren. _Basic_-Anmeldeinformationen werden nicht unterstützt.
-+
---
-Wenn Sie keine Anmeldeinformationen mit Anzeigeberechtigungen konfiguriert haben, werden Sie beim Öffnen der Registerkarte „Übersicht“ auf die AWS-Anmeldeinformations-Einrichtungsseite weitergeleitet.
-
-Wenn Sie noch keine AWS-Zugangsdaten konfiguriert haben, siehe link:https://docs.netapp.com/us-en/workload-setup-admin/add-credentials.html["AWS-Anmeldeinformationen hinzufügen"^].
-
---
-Dashboard aktivieren:: Nachdem Workload Factory die Anmeldeinformationen mit Ansichtsberechtigungen bestätigt hat, müssen Sie das Dashboard aktivieren, um mit der Erfassung von CloudWatch-Metriken für Ihre FSx for ONTAP-Dateisysteme zu beginnen.
-
-
-
-NOTE: Die Erfassung der Messwerte kann nach Ihrer Einwilligung einige Zeit in Anspruch nehmen. Das Dashboard benachrichtigt Sie, während die erste Erfassung läuft.
-
-.Schritte
-. Melden Sie sich mit einem der folgenden Dienste an: link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["Konsolenerlebnisse"^]Die
-. Wählen Sie das Menü image:workloads-menu-icon.png["Das Hamburger-Menüsymbol"] und wählen Sie dann *EDA* aus.
-. Wählen Sie die Registerkarte *Overview* aus.
-. Falls keine Anmeldeinformationen mit Leseberechtigungen gefunden werden, wählen Sie *Anmeldeinformationen hinzufügen* und folgen Sie den Anweisungen, um AWS-Anmeldeinformationen mit Leseberechtigungen zu konfigurieren. Kehren Sie anschließend zur Registerkarte *Übersicht* zurück.
-. Lesen Sie die Zustimmungsaufforderung, in der die CloudWatch-Metriken beschrieben werden, die für Ihre FSx for ONTAP Dateisysteme erfasst werden.
-. Wählen Sie *Activate*, um das Dashboard zu aktivieren und mit der Metrikenerfassung zu beginnen.
-
-
-.Ergebnis
-Workload Factory beginnt mit der Erfassung von CloudWatch-Metriken für alle FSx for ONTAP Dateisysteme, die Ihren konfigurierten AWS-Anmeldeinformationen zugeordnet sind. Das Dashboard wird aktualisiert, sobald Metriken verfügbar sind. Eine Benachrichtigung wird angezeigt, falls die Erfassung noch läuft.
+Sie müssen link:task-activate-overview-dashboard.html["Das Übersichts-Dashboard wurde aktiviert"] haben, bevor Sie es zur Überwachung Ihrer Dateisysteme verwenden können.
 
 
 
@@ -63,67 +25,63 @@ Workload Factory beginnt mit der Erfassung von CloudWatch-Metriken für alle FSx
 
 Nutzen Sie die Filter oben im Dashboard, um sich auf bestimmte Dateisysteme zu konzentrieren. Diese Filter gelten für die Abschnitte Latenz, Auslastung und ONTAP-Ereignisse sowie für die Clustertabelle.
 
-Verfügbare Filter:
-
-* *Region*: Filtern Sie nach einer oder mehreren AWS-Regionen.
-* *AWS account*: Filtern Sie nach einem oder mehreren AWS accounts, die mit Ihren konfigurierten Anmeldeinformationen verknüpft sind.
-
-
-Wenn Sie die Filterauswahl aktualisieren, werden alle Informationen aktualisiert, sodass nur die übereinstimmenden Dateisysteme angezeigt werden.
-
-
-
-== Cluster-Gesundheitsstatus
-
-Im oberen Bereich des Dashboards wird eine Übersicht über den Zustand und die Aktivität Ihrer gefilterten Dateisysteme angezeigt. Diese Informationen werden nur angezeigt, wenn mindestens ein FSx for ONTAP-Link mit Ihren Dateisystemen verknüpft ist. Sind keine Links verfügbar, werden die Informationen ausgeblendet.
-
-* *Latenz*: Zeigt die Anzahl der in den Dateisystemen des betrachteten Bereichs erkannten Latenzereignisse an.
-* *Auslastung*: Zeigt den SSD-Auslastungsstatus an und identifiziert Dateisysteme mit aktiven Kapazitätsempfehlungen.
-* *ONTAP-Ereignisse*: Zeigt die Anzahl der erkannten EMS-Ereignisse an, kategorisiert nach Kapazität, Verfügbarkeit & Schutz sowie Sicherheit & Sonstiges.
-
-
-
-
-=== Latenz
-
-Zeigt die Anzahl der erkannten Latenzereignisse in den erfassten Dateisystemen an.
-
-* Wenn Sie *Überprüfen* auswählen, wird die Registerkarte *Latenz* angezeigt.
-* Latenzinformationen können Sie nur anzeigen, wenn Sie die Latenzüberwachung aktiviert haben. Wenn Sie keine Latenzschwellenwerte konfiguriert haben, wählen Sie *Konfigurieren*. Weitere Informationen zur Latenzüberwachung finden Sie unter link:task-monitor-latency.html["FSx für ONTAP-Latenzanalyse"^].
-
-
-
-
-=== Verwendung
-
-Zeigt die Anzahl der Dateisysteme im relevanten Bereich an, die mindestens einen Cluster mit einer SSD-Auslastung von über 80% aufweisen, sowie die Anzahl der Dateisysteme mit aktiven Kapazitätsempfehlungen. Dies hilft Ihnen, schnell Dateisysteme zu identifizieren, die möglicherweise Kapazitätsaufmerksamkeit erfordern.
-
-
-
-==== Kapazitätsempfehlungen
-
-Workload Factory führt automatisch einen Kapazitätsempfehlungs-Algorithmus für jedes in Ihrem EDA-Inventar sichtbare FSx for ONTAP-Dateisystem aus. Der Algorithmus scannt alle 24 Stunden und ermittelt, wann SSD-Kapazitätsanpassungen empfohlen werden.
-
-Wenn eine Empfehlung identifiziert wird:
-
-* Sie erhalten umgehend eine Benachrichtigung (E-Mail oder WAD), basierend auf Ihren Workload Factory-Benachrichtigungseinstellungen. Benachrichtigungen werden versendet, sobald eine Empfehlung identifiziert wird, anstatt auf die wöchentliche Zusammenfassung zu warten.
-* In der Zeile der Tabelle „Clusters“ wird für jedes Dateisystem mit einer aktiven Empfehlung eine Glühbirne angezeigt.
-* Es wird die Gesamtzahl der Dateisysteme mit aktiven Empfehlungen angezeigt. Dadurch wird sichergestellt, dass Empfehlungen auch dann sichtbar sind, wenn sich das betroffene Dateisystem nicht auf der ersten Seite der Tabelle befindet.
-
-
-
-
-==== Kapazitätsempfehlungen ansehen und anwenden
-
 .Schritte
 . Melden Sie sich mit einem der folgenden Dienste an: link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["Konsolenerlebnisse"^]Die
 . Wählen Sie das Menü image:workloads-menu-icon.png["Das Hamburger-Menüsymbol"] und wählen Sie dann *EDA* aus.
 . Wählen Sie die Registerkarte *Overview* aus.
-. Suchen Sie in der Tabelle *Clusters* nach einem Dateisystem mit einer Glühbirnenanzeige.
+. Nutzen Sie die verfügbaren Filter, um Ihre Ansicht einzugrenzen:
 +
-Bewegen Sie den Mauszeiger über das Glühbirnensymbol, um eine Kurzbeschreibung der Empfehlung anzuzeigen.
+** *AWS-Konten*: Filtern Sie nach einem oder mehreren AWS-Konten, die mit Ihren konfigurierten Anmeldeinformationen verknüpft sind
+** *Anmeldeinformationen*: Filtern Sie nach bestimmten AWS-Anmeldeinformationen, falls Sie mehrere konfiguriert haben
+** *Regionen*: Filtern Sie nach einer oder mehreren AWS-Regionen
 
-. Wählen Sie den Clusternamen in der Tabelle aus, um ihn zu öffnen und die Empfehlungen anzuzeigen.
+
+. Wenn Sie die Filterauswahl aktualisieren, werden alle Informationen aktualisiert, sodass nur die übereinstimmenden Dateisysteme angezeigt werden.
+
+
+
+
+== Cluster-Gesundheitsstatus anzeigen
+
+Im oberen Bereich des Dashboards wird eine Übersicht über den Zustand und die Aktivität Ihrer gefilterten Dateisysteme angezeigt. Diese Informationen werden nur angezeigt, wenn mindestens ein FSx for ONTAP-Link mit Ihren Dateisystemen verknüpft ist.
+
+.Über diese Aufgabe
+Der Gesundheitszustand des Clusters umfasst folgende Schlüsselbereiche:
+
+* *Latenz*: Anzahl der erkannten Latenzereignisse
+* *SSD-Kapazitätsmodus*: SSD-Auslastungsstatus und Dateisysteme mit aktiven Kapazitätsempfehlungen
+* *ONTAP-Ereignisse*: Anzahl der EMS-Ereignisse nach Kategorie (Kapazität, Verfügbarkeit & Schutz, Sicherheit & Sonstiges)
+
+
+.Schritte
+. Überprüfen Sie den Cluster-Gesundheitsstatus oben im Dashboard.
+. So zeigen Sie Latenzereignisse an:
++
+** Wählen Sie *Überprüfen*, um zur Registerkarte *Latenz* zu gelangen.
+** Wenn die Latenzüberwachung nicht konfiguriert ist, wählen Sie *Konfigurieren*, um Latenzschwellenwerte festzulegen
++
+Weitere Informationen zur Latenzüberwachung finden Sie unter link:task-configure-latency-monitoring.html["Latenzüberwachung konfigurieren"^].
+
+
+
+. Um ONTAP-Ereignisse für Ihre FSx for ONTAP-Dateisysteme anzuzeigen, wählen Sie *Review*.
++
+Die ONTAP-Ereignisansichtskarte zeigt die Anzahl der EMS-Ereignisse nach Kategorie (Kapazität, Verfügbarkeit & Schutz sowie Sicherheit & Sonstiges) an. Eine vollständige Liste der überwachten EMS-Ereignisse finden Sie unter link:https://docs.netapp.com/us-en/ontap-cli-9171/index.html["ONTAP CLI-Dokumentation"^].
+
+
+
+
+
+== Kapazitätsempfehlungen ansehen und anwenden
+
+Workload Factory führt automatisch einen Kapazitätsempfehlungsalgorithmus für jedes FSx for ONTAP-Dateisystem aus. Sie können Dateisysteme mit Kapazitätsempfehlungen identifizieren, indem Sie die Tabelle „Cluster“ filtern.
+
+.Schritte
+. Filtern Sie in der Tabelle *Clusters* nach den Spalten *Zeitstempel der letzten SSD-Erhöhung* oder *Beschreibung der letzten SSD-Erhöhung*.
++
+Dateisysteme mit Kapazitätsempfehlungen erscheinen oben in der Tabelle.
+
+. Wählen Sie in der Tabelle einen Dateisystemnamen aus, um ihn zu öffnen und die Empfehlungen anzuzeigen.
 . Beachten Sie die SSD-Empfehlung und das Kapazitätsdiagramm.
 +
 Die Empfehlung erläutert die vorgeschlagene Änderung und die Begründung dafür. Zum Beispiel: _Wir empfehlen, die SSD-Größe basierend auf Ihrem SSD-Nutzungsmuster des Dateisystems zu erhöhen._
@@ -132,91 +90,149 @@ Die Empfehlung erläutert die vorgeschlagene Änderung und die Begründung dafü
 Die Grafik stellt die aktuelle SSD-Nutzung den historischen Trends gegenüber und zeigt, wie der Kapazitätsempfehlungsalgorithmus die Kapazität im Laufe der Zeit angepasst hätte.
 
 . Wählen Sie oben rechts im Diagramm den Zeitraum aus, um die angezeigte Periode zu ändern. Standardmäßig ist eine Woche eingestellt.
++
+Das Diagramm zeigt außerdem Empfehlungs- und Automatisierungsentscheidungspunkte an (sofern der Automatisierungsmodus aktiviert ist). Bewegen Sie den Mauszeiger über einen Entscheidungspunkt, um Details zur Kapazitätsempfehlung oder Automatisierungsaktion in diesem Moment anzuzeigen.
+
+. Um die Empfehlung umzusetzen, befolgen Sie die in der Empfehlungsmitteilung enthaltenen Anweisungen.
 
 
 
 
-=== ONTAP-Ereignisse
+== SSD-Verwaltungsmodus ändern
 
-Zeigt die Anzahl der in den Dateisystemen des Geltungsbereichs erkannten EMS-Ereignisse an, kategorisiert nach Kapazität, Verfügbarkeit & Schutz sowie Sicherheit & Sonstiges.
+Ändern Sie den SSD-Kapazitätsmanagementmodus für einzelne Dateisysteme, um festzulegen, ob Sie manuelle Empfehlungen oder eine automatisierte Kapazitätsskalierung wünschen.
 
-.Kapazität
-Zeigt die Anzahl der EMS-Meldungen im Zusammenhang mit Kapazitätsproblemen sowie die Anzahl der betroffenen Dateisysteme an.
+.Über diese Aufgabe
+SSD-Verwaltungsmodi umfassen:
 
-Beispiele für überwachte EMS-Ereignisse sind:
-
-* Aggregat nahezu voll/voll
-* Volume nahezu voll/voll
-* Snapshot-Reserve nahezu voll/voll
-* Verzeichnisgröße voll
-* FlexGroup voll
-* Inodes voll
+* *Automatisieren*: Automatische Erhöhung der SSD-Kapazität basierend auf vordefinierten Schwellenwerten
+* *Empfehlung*: Kapazitätsempfehlungen erhalten, die Sie manuell prüfen und anwenden
+* *Keine*: Keine Kapazitätsempfehlungen oder automatisierte Aktionen
 
 
-Eine vollständige Liste der überwachten EMS-Ereignisse finden Sie unter link:https://docs.netapp.com/us-en/ontap-cli-9171/index.html["Kapazitätsereignisse"^].
+Im Automatisierungsmodus können Sie die Parameter „Schwellenwert“, „Rückblick“ und „Vorausschau“ konfigurieren, die steuern, wie das Kapazitätsmanagement-System Ihre SSD-Nutzung analysiert und Automatisierungsentscheidungen trifft. Im Empfehlungsmodus können Sie nur den Parameter „Schwellenwert“ konfigurieren.
 
-Durch Auswahl von *Kapazität* gelangen Sie zum Kapazitätsanalyse-Bildschirm in Speicherworkloads.
-
-.Verfügbarkeit & Schutz
-Zeigt die Anzahl der EMS-Meldungen im Zusammenhang mit Verfügbarkeit und Datenschutz sowie die Anzahl der betroffenen Dateisysteme an.
-
-Überwachte Ereignisse umfassen FlexCache- und SnapMirror-bezogene EMS-Ereignisse.
-
-Durch Auswahl von *Availability & protection* gelangen Sie zum Analysebildschirm für Verfügbarkeit und Schutz in Storage workloads.
-
-.Sicherheit & andere
-Zeigt die Anzahl der EMS-Meldungen für Ereignisse an, die nicht unter Kapazität oder Verfügbarkeit & Schutz kategorisiert sind, sowie die Anzahl der betroffenen Dateisysteme. Zu den überwachten Ereignissen gehören Anti-Ransomware-Schutz, NFS-Authentifizierungsfehler und andere.
-
-Durch Auswahl von *Security & other* gelangen Sie zur Ereignisanalyse-Ansicht in Storage workloads.
+* *Schwellenwert* (10–90%): Der SSD-Auslastungsgrad, der Kapazitätsempfehlungen oder Automatisierungsmaßnahmen auslöst
+* *Rückblick* (1–200 Stunden): Der Zeitraum, der zur Analyse historischer SSD-Nutzungsmuster verwendet wird
+* *Ahead* (1-200 Stunden): Der Zeitraum, der zur Prognose des zukünftigen Kapazitätsbedarfs verwendet wird
 
 
-
-== Clustertabelle
-
-Bietet eine detaillierte Ansicht jedes FSx for ONTAP-Dateisystems, das Ihren konfigurierten AWS-Anmeldeinformationen zugeordnet ist, gefiltert nach der aktiven Region und den ausgewählten AWS-Konten. Die Daten werden aus CloudWatch-Metriken erfasst. Die Tabelle unterstützt Suche, Spaltenfilterung, Paginierung, Spaltenanpassung und CSV-Export.
-
-Zu den wichtigsten Kennzahlen gehören:
-
-* Name, Region und AWS-Konto
-* SSD-Kapazitätsmetriken (belegt, gesamt und Auslastungsprozentsatz)
-* Kapazitätspool-Speicher
-* Durchsatzkennzahlen (Durchschnitt, P95, P99 und Maximum der letzten 30 Tage)
+.Schritte
+. Suchen Sie in der Tabelle „Cluster“ den Dateisystemnamen. Öffnen Sie daneben image:icon-action.png["das Aktionsmenü-Symbol"] und wählen Sie *SSD-Kapazitätsmanagement ändern* aus.
+. Wählen Sie Ihren bevorzugten Modus:
++
+** *Keine*: Kapazitätsmanagement deaktivieren
+** *Empfehlung*: Legen Sie den Schwellenwertparameter für die Empfehlungsanalyse fest.
+** *Automatisieren*: Legen Sie die Schwellenwert-, Rückblick- und Vorausschauparameter für die automatisierte Kapazitätsskalierung fest.
 
 
-Verwenden Sie die *SSD-Auslastung*, um Dateisysteme zu identifizieren, die sich ihrer Kapazitätsgrenze nähern. Verwenden Sie die *Durchsatzauslastung (P99)*, um den Durchsatzbedarf mit der bereitgestellten Durchsatz-SKU zu vergleichen. Bewegen Sie den Mauszeiger über die Durchsatz-Spaltenüberschriften, um Berechnungsdetails anzuzeigen.
-
-
-
-=== Suchen und filtern
-
-* Verwenden Sie die Suche, um bestimmte Cluster nach Name, Dateisystem-ID, Region oder anderen Attributen zu suchen.
-* Wählen Sie eine beliebige Spaltenüberschrift aus, um die Tabelle nach dieser Spalte zu sortieren.
-* Verwenden Sie die Filtersteuerungen pro Spalte, um die Ergebnisse innerhalb der Tabelle einzugrenzen.
-* Die Tabelle ist paginiert. Verwenden Sie die Paginierungssteuerung am unteren Rand der Tabelle, um zwischen den Seiten zu navigieren.
-
-
-
-NOTE: Dateisysteme mit aktiven Kapazitätsempfehlungen werden in der Tabelle mit einer Glühbirne gekennzeichnet. Wählen Sie einen Dateisystemnamen aus, um SSD-Kapazitätsmetriken, historische Nutzungstrends und Kapazitätsempfehlungen für dieses Dateisystem anzuzeigen.
-
-
-
-=== Spalten anpassen
-
-So fügen Sie Spalten zur Clustertabelle hinzu oder entfernen sie:
-
-. Wählen Sie das Spaltenauswahlsymbol oberhalb der Tabelle auf der rechten Seite aus.
-. Wählen oder deaktivieren Sie die Spalten, die Sie anzeigen oder ausblenden möchten.
 . Wählen Sie *Übernehmen*.
 
 
+.Ergebnis
+Das Dateisystem verwendet den neuen Modus sofort. Wenn Sie „Empfehlen“ oder „Automatisieren“ ausgewählt haben, verwendet das System die konfigurierten Parameter für die Kapazitätsanalyse und Entscheidungsfindung.
 
 
-=== Tabelle als CSV exportieren
 
-Sie können die aktuell angezeigten Tabellendaten zur weiteren Analyse oder Berichterstellung in eine CSV-Datei exportieren.
+== Massenbearbeitung von SSD-Verwaltungsparametern
 
-. Wenden Sie alle Filter oder Spaltenanpassungen an, die Sie im Export berücksichtigen möchten.
-. Wählen Sie die image:button_download.png["Download"] Schaltfläche über der Clustertabelle aus.
+Passen Sie die SSD-Kapazitätsmanagement-Parameter für mehrere Dateisysteme gleichzeitig an, um einheitliche Einstellungen in allen Clustern anzuwenden.
+
+.Über diese Aufgabe
+Wenn Sie mehrere Dateisysteme für die Massenbearbeitung auswählen:
+
+* Wenn alle ausgewählten Dateisysteme identische Parameterwerte aufweisen, werden diese Werte im Bearbeitungsdialog als Standardwerte angezeigt.
+* Wenn ein ausgewähltes Dateisystem im Modus None ist, werden im Dialogfeld Standardwerte angezeigt.
+* Wenn sich die Parameterwerte in den ausgewählten Dateisystemen unterscheiden, werden im Dialog Standardwerte angezeigt
 
 
-Die CSV-Datei wird heruntergeladen und enthält alle derzeit in der Tabelle sichtbaren Zeilen, einschließlich nur der aktuell angezeigten Spalten.
+.Schritte
+. Wählen Sie auf der Registerkarte *Übersicht* die Dateisysteme aus, die Sie in der Tabelle bearbeiten möchten.
++
+
+TIP: Sie können einzelne Dateisysteme auswählen oder mithilfe des Kontrollkästchens in der Kopfzeile alle sichtbaren Dateisysteme auswählen.
+
+. Wählen Sie *SSD-Kapazitätsmanagement ändern* oberhalb der Tabelle aus.
+. Wählen Sie Ihren bevorzugten Modus.
+. Passen Sie im Bearbeitungsdialog die Parameter Schwellenwert, Rückblick und Voraus nach Bedarf an.
++
+Jedes Parameterfeld enthält eine QuickInfo, die seinen Zweck und den gültigen Bereich beschreibt. Der Dialog zeigt die aktuellen Werte oder Standardwerte basierend auf Ihrer Auswahl an.
+
+. Wählen Sie *Anwenden*, um die Änderungen auf alle ausgewählten Dateisysteme anzuwenden.
+
+
+.Ergebnis
+Die Parameter werden für alle ausgewählten Dateisysteme aktualisiert. Dateisysteme im Recommend- oder Automate-Modus verwenden die neuen Parameter sofort für die Kapazitätsanalyse und Entscheidungsfindung.
+
+
+
+== Analysieren Sie Kapazitätstrends und Entscheidungspunkte
+
+Nutzen Sie das SSD-Nutzungsdiagramm, um das Kapazitätsverhalten im Zeitverlauf zu verstehen und Muster im Kapazitätsmanagement zu identifizieren.
+
+.Über diese Aufgabe
+Die Entscheidungspunkte im Diagramm zeigen an, wann:
+
+* *Empfehlungsentscheidungspunkte*: Der Kapazitätsempfehlungsalgorithmus hat festgestellt, dass zusätzliche SSD-Kapazität benötigt wird. Dies kann bis zu alle 30 Minuten auftreten, wenn die SSD-Kapazität nicht erhöht wurde.
+* *Automatisierungsentscheidungspunkte*: Das Automatisierungssystem hat versucht, die SSD-Kapazität zu erhöhen. Diese Punkte zeigen an, ob die Aktion erfolgreich war oder fehlgeschlagen ist.
+
+
+.Schritte
+. Wählen Sie auf der Registerkarte *Übersicht* einen Dateisystemnamen in der Tabelle aus.
+. Sehen Sie sich das SSD-Nutzungsdiagramm an, das die historischen Kapazitätstrends aufzeigt.
+. Wählen Sie verschiedene Zeiträume aus, um das Kapazitätsverhalten über verschiedene Zeiträume hinweg anzuzeigen.
+. Bewegen Sie den Mauszeiger über Entscheidungspunkte im Diagramm, um Details zu Empfehlungen oder Automatisierungsaktionen zu bestimmten Zeitpunkten anzuzeigen.
+. Nutzen Sie die Erkenntnisse aus dem Diagramm, um:
++
+** Verstehen, wie häufig Kapazitätsanpassungen erforderlich sind
+** Prüfen Sie, ob der Automatisierungs- oder der Empfehlungsmodus besser zu Ihren Arbeitslastmustern passt
+** Wiederkehrende Kapazitätsengpässe identifizieren
+** Planen Sie zukünftigen Kapazitätsbedarf basierend auf Wachstumstrends
+** Fehlerbehebung bei fehlgeschlagenen Automatisierungsversuchen
+
+
+
+
+
+
+== Verwenden Sie die Clustertabelle
+
+Die Clustertabelle bietet eine detaillierte Ansicht jedes FSx for ONTAP Dateisystems mit Leistungs- und Nutzungsmetriken.
+
+.Schritte
+. Überprüfen Sie auf der Registerkarte *Übersicht* die Clustertabelle.
+. Verwenden Sie das Suchfeld, um bestimmte Dateisysteme anhand ihres Namens zu finden.
+. Wählen Sie Spaltenüberschriften aus, um die Daten zu sortieren.
+. Verwenden Sie die *SSD-Auslastung*, um Dateisysteme zu identifizieren, die sich ihrer Kapazitätsgrenze nähern.
+. Verwenden Sie die *Durchsatzauslastung (P99)*, um den Durchsatzbedarf mit der bereitgestellten Durchsatz-SKU zu vergleichen.
++
+Bewegen Sie den Mauszeiger über die Durchsatz-Spaltenüberschriften, um Berechnungsdetails anzuzeigen.
+
+. Um Spalten anzupassen, wählen Sie das Symbol für die Spalteneinstellungen und wählen Sie aus, welche Spalten angezeigt werden sollen.
+. Um Daten zu exportieren, wählen Sie das Export-Symbol, um eine CSV-Datei herunterzuladen.
+. Um Massenoperationen durchzuführen, wählen Sie mehrere Dateisysteme mithilfe der Kontrollkästchen aus und wählen Sie dann *Parameter bearbeiten*.
+
+
+
+
+== Best Practices
+
+Beachten Sie diese Empfehlungen bei der Verwendung des Übersichts-Dashboards:
+
+* *Regelmäßige Überwachung*: Überprüfen Sie das Dashboard regelmäßig, um Trends zu erkennen, bevor sie zu Problemen werden.
+* *Geeignete Schwellenwerte festlegen*: Konfigurieren Sie SSD-Management-Schwellenwerte, die Ihren Arbeitslastmustern und Kapazitätsplanungspräferenzen entsprechen.
+* *Filter effektiv nutzen*: Kombinieren Sie Regions- und Kontofilter, um sich auf bestimmte Teilmengen Ihrer Infrastruktur zu konzentrieren.
+* *Empfehlungen umgehend prüfen*: Filtern Sie die Tabelle „Cluster“ nach dem Zeitstempel der letzten SSD-Erweiterung oder nach der Beschreibung, um Dateisysteme mit Kapazitätsempfehlungen zu identifizieren. Prüfen und befolgen Sie diese Empfehlungen, um Kapazitätsengpässe zu vermeiden.
+* *Wählen Sie den richtigen Modus*: Verwenden Sie den Empfehlungsmodus, wenn Sie die Kapazitätsentscheidungen selbst treffen möchten, oder den Automatisierungsmodus für eine vollautomatische Verwaltung.
+* *Überwachen Sie Entscheidungspunkte*: Überprüfen Sie regelmäßig die Entscheidungspunkte in den Kapazitätsdiagrammen, um das Verhalten des Algorithmus zu verstehen und sicherzustellen, dass die Einstellungen Ihren Anforderungen entsprechen.
+* *Nutzen Sie die Massenbearbeitung*: Bei der Verwaltung mehrerer Dateisysteme verwenden Sie die Massenbearbeitung von Parametern, um einheitliche Kapazitätsmanagement-Richtlinien beizubehalten.
+
+
+
+
+== Verwandte Informationen
+
+* link:learn-overview-dashboard.html["Erfahren Sie mehr über das Overview Dashboard"]
+* link:task-activate-overview-dashboard.html["Aktivieren Sie das Übersichts-Dashboard"]
+* link:task-configure-latency-monitoring.html["Latenzüberwachung konfigurieren"]
+

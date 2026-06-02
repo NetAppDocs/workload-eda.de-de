@@ -1,0 +1,147 @@
+---
+sidebar: sidebar 
+permalink: task-configure-latency-monitoring.html 
+keywords: latency analysis, configure thresholds, CloudWatch alarms, latency monitoring, FSx for ONTAP, warning events, critical events, latency notifications, email notifications, SNS notifications, latency configuration 
+summary: Konfigurieren Sie Latenzüberwachungsschwellenwerte und Benachrichtigungseinstellungen, um Leistungsprobleme mit FSx for ONTAP-Volumes zu erkennen und darauf zu reagieren. 
+---
+= Konfigurieren Sie die Latenzüberwachung in Workload Factory für EDA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Konfigurieren Sie Warn- und kritische Schwellenwerte für Lese- und Schreiblatenzen, um die Leistung von FSx for ONTAP-Volumes zu überwachen. Richten Sie optionale E-Mail- oder Amazon SNS-Benachrichtigungen ein, um Echtzeit-Benachrichtigungen zu erhalten, wenn Latenzereignisse erkannt werden.
+
+
+
+== Bevor Sie beginnen
+
+Stellen Sie sicher, dass Sie die folgenden Anforderungen erfüllen, bevor Sie die Latenzüberwachung konfigurieren.
+
+
+
+=== AWS-Anmeldeinformationen und Berechtigungen
+
+Sie müssen AWS-Anmeldeinformationen mit lesen/schreiben-Berechtigungen zu Workload Factory hinzufügen. Die Funktion zur Latenzüberwachung benötigt Zugriff auf CloudWatch-Metriken für alle FSx for ONTAP Volumes, die Ihren AWS-Anmeldeinformationen zugeordnet sind.
+
+Die Berechtigungen _Basic_ und _Read-only_ werden für die Latenzüberwachung nicht unterstützt.
+
+Wenn Sie noch keine AWS-Zugangsdaten konfiguriert haben, siehe link:https://docs.netapp.com/us-en/workload-setup-admin/add-credentials.html["AWS-Anmeldeinformationen hinzufügen"^].
+
+
+
+=== FSx für ONTAP -Dateisystem
+
+Sie benötigen mindestens ein FSx for ONTAP-Dateisystem mit in Ihrer AWS-Umgebung bereitgestellten Volumes. Die Latenzüberwachungsfunktion erfasst automatisch Metriken für alle Volumes, die Ihren konfigurierten AWS-Anmeldeinformationen zugeordnet sind.
+
+
+
+=== Link zu FSx für ONTAP
+
+Um grundlegende Analyseerkenntnisse anzuzeigen, müssen Sie einen Link mit dem FSx for ONTAP-Dateisystem verknüpfen. Ohne einen Link können zwar weiterhin Ereignisse erkannt werden, aber die Analyse liefert nur eingeschränkte Erkenntnisse. Wenn noch kein Link verknüpft ist, wählen Sie in EDA *Link verknüpfen*, entscheiden Sie, ob Sie einen neuen Link erstellen oder einen bestehenden Link verknüpfen möchten, und wählen Sie dann *Weiter*, um automatisch zur Seite zur Linkerstellung in Storage workloads zu gelangen.
+
+Anleitungen zum Erstellen und Verknüpfen von Links finden Sie unter link:https://docs.netapp.com/us-en/workload-fsx-ontap/create-link.html["Link erstellen"^].
+
+
+
+=== Amazon Bedrock Modell ARN (optional)
+
+Um die optionale KI-Agentenanalysefunktion nutzen zu können, müssen Sie in Ihren Workload Factory-Einstellungen einen Amazon Bedrock-Modell-ARN angeben.
+
+Weitere Einzelheiten finden Sie unter link:https://docs.netapp.com/us-en/workload-genai/knowledge-base/requirements-knowledge-base.html#basic-genai-requirements["Grundlegende GenAI-Anforderungen"^].
+
+Wenn Sie keinen Bedrock-Modell-ARN konfigurieren, können Sie weiterhin die Latenzüberwachung und die automatisierte Basisanalyse nutzen, aber die KI-Agenten-Analyse ist nicht verfügbar.
+
+
+
+=== Benachrichtigungskonfiguration (optional)
+
+Um E-Mail- oder Amazon SNS-Benachrichtigungen bei Latenzereignissen zu erhalten, konfigurieren Sie die Benachrichtigungseinstellungen in den Workload Factory-Einstellungen. Siehe <<Latenzbenachrichtigungen konfigurieren>> für Details.
+
+
+
+== Latenzschwellenwerte konfigurieren
+
+Konfigurieren Sie Warn- und kritische Schwellenwerte für Lese- und Schreibvorgänge. Das System wertet die Schwellenwerte kontinuierlich aus und generiert Warnmeldungen, sobald die Bedingungen erfüllt sind.
+
+
+NOTE: Sie müssen die Schwellenwerte für kritische Ereignisse höher ansetzen als die für Warnereignisse, um eine ordnungsgemäße Eskalation von Warnmeldungen sicherzustellen. Andernfalls können Sie Ihre Konfiguration nicht speichern.
+
+
+NOTE: Die in EDA festgelegten Latenzschwellenwerte gelten standardmäßig für Ihr gesamtes Konto. Sie können auch individuelle Volume-Latenzschwellenwerte in allgemeinen Speicher-Workloads festlegen, und diese Volume-Einstellungen haben für das jeweilige Volume Priorität. Das Aktualisieren von Kontoschwellenwerten in EDA ändert keine Volume-Einstellungen.
+
+.Schritte
+. Melden Sie sich mit einem der folgenden Dienste an: link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["Konsolenerlebnisse"^]Die
+. Wählen Sie das Menü image:workloads-menu-icon.png["Das Hamburger-Menüsymbol"] und wählen Sie dann *EDA* aus.
+. Wählen Sie die Registerkarte *Latenz* aus.
+. Konfigurieren Sie auf der Seite zur EDA-Latenzkonfiguration die Schwellenwerte für:
++
+** Leseverzögerung (Warnung und kritisch)
+** Schreiblatenz (Warnung und kritisch)
+** IOPS-Schwellenwerte für jeden
+** Zeiträume für die Bewertung
+
+
+. Wählen Sie *Anwenden*, um Ihre Konfiguration zu speichern.
+
+
+.Ergebnis
+Workload Factory beginnt mit der Erfassung von Latenzmetriken für alle FSx for ONTAP Volumes, die Ihren AWS-Anmeldeinformationen zugeordnet sind. Metriken werden mindestens alle 20 Minuten erfasst. Alle Volumes, die Ihre konfigurierten Schwellenwerte überschreiten, werden in der Latenzereignistabelle angezeigt.
+
+
+
+== Latenzbenachrichtigungen konfigurieren
+
+Konfigurieren Sie E-Mail- oder Amazon SNS-Benachrichtigungen, um bei Latenzereignissen Warnmeldungen zu erhalten. Benachrichtigungen werden jedes Mal versendet, wenn ein Volume Ihre konfigurierten Schwellenwerte überschreitet, sodass Sie sich der Leistungsprobleme in Echtzeit bewusst sind.
+
+Latenzbenachrichtigungen werden dateisystembezogen versendet. Wenn ein oder mehrere Volumes in einem Dateisystem die Latenzschwellenwerte überschreiten, erhalten Sie eine einzelne Benachrichtigung mit einer Liste aller betroffenen Volumes.
+
+
+NOTE: Sind mehr als 10 Volumes betroffen, werden in der E-Mail die ersten 10 Volumes angezeigt und die Anzahl der zusätzlich betroffenen Volumes angegeben. Sie können alle betroffenen Volumes in der Workload Factory console einsehen.
+
+Benachrichtigungskanäle:
+
+* *E-Mail*: Wird an die in Ihren Workload Factory-Benachrichtigungseinstellungen konfigurierten E-Mail-Adressen gesendet
+* *Amazon SNS*: Veröffentlicht in Ihrem konfigurierten SNS-Thema zur Integration mit anderen Systemen
+
+
+Informationen zum Aktivieren von Benachrichtigungen finden Sie unter link:https://docs.netapp.com/us-en/workload-setup-admin/configure-notifications.html#wf-console-email-notifications["Benachrichtigungseinstellungen konfigurieren"].
+
+
+
+== Latenzkonfiguration verwalten
+
+Nach der Erstkonfiguration können Sie Ihre Schwellenwerte nach Bedarf anpassen.
+
+.Schritte
+. Wählen Sie auf der Seite *Latenz* *Bearbeiten* aus.
+. Ändern Sie bei Bedarf einen der Schwellenwerte.
++
+
+NOTE: Stellen Sie sicher, dass die kritischen Schwellenwerte höher als die Warnschwellenwerte bleiben. Das System zeigt eine Fehlermeldung an, wenn Sie die kritischen Schwellenwerte niedriger als die Warnschwellenwerte konfigurieren.
+
+. Wählen Sie *Apply*, um Ihre Änderungen zu speichern.
+
+
+
+
+== Best Practices
+
+Beachten Sie diese Empfehlungen bei der Konfiguration der Latenzüberwachung:
+
+* *Reale Schwellenwerte festlegen*: Konfigurieren Sie die Schwellenwerte entsprechend Ihren Arbeitslastanforderungen. Standardwerte bieten einen Ausgangspunkt, könnten aber für Ihre spezifische Umgebung angepasst werden müssen.
+* *Beginnen Sie mit Warnschwellenwerten*: Verwenden Sie Warnereignisse, um grundlegende Leistungserwartungen festzulegen, bevor Sie kritische Schwellenwerte feinabstimmen.
+* *Zeiträume sorgfältig abwägen*: Kürzere Zeiträume (5-10 Minuten) erkennen Probleme schneller, können aber mehr Warnmeldungen auslösen. Längere Zeiträume (15-20 Minuten) reduzieren Fehlalarme, können die Erkennung aber verzögern.
+* *IOPS- und Latenzschwellenwerte koordinieren*: Die Logik mit zwei Bedingungen bedeutet, dass beide überschritten werden müssen. Das Festlegen sehr hoher IOPS-Schwellenwerte kann Warnmeldungen verhindern, selbst wenn die Latenz problematisch ist.
+* *Überprüfung abgewiesener Ereignisse*: Überprüfen Sie regelmäßig, warum Ereignisse abgewiesen wurden, um Möglichkeiten zur Anpassung der Schwellenwerte oder Infrastrukturverbesserungen zu identifizieren.
+
+
+
+
+== Verwandte Informationen
+
+* link:learn-latency-monitoring.html["Erfahren Sie mehr über Latenzüberwachung"]
+* link:task-analyze-latency-issues.html["Latenzprobleme analysieren"]
+* link:task-analyze-latency-trends.html["Latenztrends analysieren"]
+

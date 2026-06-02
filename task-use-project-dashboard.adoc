@@ -1,0 +1,128 @@
+---
+sidebar: sidebar 
+permalink: task-use-project-dashboard.html 
+keywords: dashboard, AWS tags, CloudWatch, FSx for ONTAP, Workload Factory, EDA, volume details, top volumes, capacity utilization, throughput utilization, IOPS utilization, filter dashboard 
+summary: Über das Dashboard „Projekte“ können Sie die Speichernutzung überwachen, Daten nach Projekten oder Teams filtern und die Volumenleistung analysieren, um die Ressourcenzuweisung zu optimieren. 
+---
+= Nutzen Sie das Projekt-Dashboard in Workload Factory für EDA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Über das Dashboard „Projekte“ können Sie die Speichernutzung Ihrer FSx for ONTAP-Dateisysteme und -Volumes überwachen. Filtern Sie die Daten nach Projekten, Teams oder Anwendungen und analysieren Sie sowohl die aggregierte als auch die individuelle Volume-Performance, um fundierte Entscheidungen über Kapazitätsplanung und Ressourcenoptimierung zu treffen.
+
+
+
+== Bevor Sie beginnen
+
+Sie sollten link:task-configure-project-dashboard.html["konfigurierte benutzerdefinierte Filter"] für das Projekt-Dashboard haben. Falls Sie keine benutzerdefinierten Filter konfiguriert haben, können Sie weiterhin die Standardfilter (Dateisystem, Volume-Typ und Zeitbereich) verwenden.
+
+
+
+== Dashboard filtern
+
+Filter helfen Ihnen, sich auf bestimmte Teilmengen Ihrer Speicherressourcen zu konzentrieren, sodass Sie Trends leichter analysieren, Probleme identifizieren und Berichte für Stakeholder erstellen können. Durch die Kombination mehrerer Filter können Sie spezifische Geschäftsfragen beantworten, wie „Wie viel Speicher nutzt mein ASIC project team?“ oder „Welche Volumes in der US-West Region haben die höchsten IOPS?“
+
+.Über diese Aufgabe
+Sie können die auf dem Dashboard angezeigten Informationen mithilfe einer Kombination aus Standardfiltern und von Ihnen konfigurierten benutzerdefinierten Filtern filtern.
+
+.Schritte
+. Melden Sie sich mit einem der folgenden Dienste an: link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["Konsolenerlebnisse"^]Die
+. Wählen Sie das Menü image:workloads-menu-icon.png["Das Hamburger-Menüsymbol"] und wählen Sie dann *EDA* aus.
+. Wählen Sie *Project* aus.
+. Wählen Sie die Filter aus, die Sie aus den verfügbaren Optionen anwenden möchten:
++
+** Standardfilter (Dateisystem, Volume-Typ, Zeitbereich)
+** Alle von Ihnen konfigurierten benutzerdefinierten Filter
+
+
+. Wählen Sie das Aktualisierungssymbol, um die Dashboard-Informationen basierend auf Ihren Filterauswahlen zu aktualisieren.
+. Um eine Erläuterung der auf einer Karte angezeigten Informationen zu erhalten, wählen Sie das Informationssymbol für diese Karte aus.
+
+
+
+
+== Volumendetails anzeigen
+
+Das Verständnis sowohl der aggregierten als auch der individuellen Volumenleistung hilft Ihnen, fundierte Entscheidungen hinsichtlich Kapazitätsplanung und Leistungsoptimierung zu treffen. Die Gesamtansicht zeigt allgemeine Trends, während die Volumenansicht Ihnen hilft, spezifische Volumina zu identifizieren, die möglicherweise Aufmerksamkeit, Optimierung oder zusätzliche Ressourcen erfordern.
+
+
+
+=== Aggregierte Volumenstatistiken anzeigen
+
+Die Gesamtansicht zeigt aggregierte Kennzahlen über alle Volumes hinweg an, die Ihren ausgewählten Filtern entsprechen.
+
+.Schritte
+. Stellen Sie im Reiter *Projekt* sicher, dass der Reiter *Gesamt* ausgewählt ist (dies ist die Standardansicht).
+. Überprüfen Sie die angezeigten Kennzahlen:
++
+** Gesamtkapazität über alle Volumina hinweg
+** Aggregierte IOPS
+** Aggregierter Durchsatz
+
+
+. Nutzen Sie diese Ansicht, um allgemeine Trends zu verstehen und zukünftigen Kapazitätsbedarf zu planen.
+
+
+
+
+=== Anzeige der individuellen Volume-Performance
+
+Die Volumenansicht zeigt die Leistung einzelner Volumen im Zeitverlauf und listet die Top 10 Volumen für jede Metrik auf.
+
+.Schritte
+. Im Reiter *Projekt* wählen Sie den Reiter *Volume* aus.
+. Überprüfen Sie die Volumenkennzahlen:
++
+** *Verwendete Kapazität des Volumens*: Zeigt Volumen mit der höchsten aktuell verwendeten Kapazität an
+** *IOPS*: Zeigt die Volumes mit den höchsten durchschnittlichen IOPS im ausgewählten Zeitraum
+** *Durchsatz*: Zeigt Volumes mit dem höchsten durchschnittlichen Durchsatz im ausgewählten Zeitraum an
++
+
+NOTE: Das Dashboard zeigt nur die Top 10 Volumes für jede Kennzahl an. Wenn Sie mehr als 10 Volumes haben, werden einige Volumes möglicherweise nicht in der Detailansicht angezeigt.
+
+
+
+. Bewegen Sie den Mauszeiger über eine beliebige Volumenlinie in den Diagrammen, um detaillierte Informationen anzuzeigen:
++
+** *Ausgenutzte Kapazität des Volumes*: Volumename, genutzte Kapazität zu diesem Zeitpunkt und zugewiesene Kapazität
+** *IOPS*: Name des Volumes, durchschnittliche IOPS für den Zeitraum und maximale IOPS für den Zeitraum
+** *Durchsatz*: Volume-Name, durchschnittlicher Durchsatz für den Zeitraum und maximaler Durchsatz für den Zeitraum
+
+
+. Anhand der Legende lassen sich spezifische Volumina identifizieren. Wenn dieselben Volumina in mehreren Metriken auftreten, verwendet das Dashboard eine einheitliche Farbkennzeichnung, um die Nachverfolgung der Volumina zu vereinfachen.
+
+
+.Ergebnis
+Diese interaktiven Daten helfen Ihnen:
+
+* Analyse von Volumenleistungsmustern
+* Potenzielle Engpässe identifizieren
+* Ermitteln Sie Volumes, die möglicherweise ein Rightsizing benötigen
+* Ermitteln Sie genau, welche spezifischen Projekte oder Arbeitslasten die meisten Ressourcen verbrauchen
+
+
+
+
+== Best Practices
+
+Beachten Sie diese Empfehlungen bei der Verwendung des Projects-Dashboards:
+
+* *Regelmäßige Überwachung*: Überprüfen Sie das Dashboard regelmäßig, um Trends zu erkennen, bevor sie zu Problemen werden.
+* *Filter strategisch kombinieren*: Verwenden Sie mehrere Filter zusammen, um spezifische Geschäftsfragen zur Ressourcennutzung zu beantworten.
+* *Vergleichen Sie die Ansichten*: Nutzen Sie sowohl die Gesamt- als auch die Volumenansicht gemeinsam—die Gesamtansicht für die Planung und die Volumenansicht für die Fehlersuche.
+* *Verfolgen Sie die Entwicklung über die Zeit*: Nutzen Sie verschiedene Zeiträume, um zu erkennen, ob es sich bei den Leistungsmustern um normale Schwankungen handelt oder ob ein Trend erkennbar ist.
+* *Dokumentieren Sie Baselines*: Notieren Sie die normalen Leistungsniveaus Ihrer Volumes, damit Sie Anomalien schnell erkennen können.
+* *Aufgrund der gewonnenen Erkenntnisse handeln*: Nutzen Sie die Volumenleistungsdaten, um proaktiv Entscheidungen über Ressourcenzuweisung, Dimensionierung oder Optimierung zu treffen, bevor Probleme die Workloads beeinträchtigen.
+
+
+
+
+== Verwandte Informationen
+
+* link:learn-project-dashboard.html["Erfahren Sie mehr über das Projects-Dashboard"]
+* link:task-configure-project-dashboard.html["Konfigurieren Sie das Projects-Dashboard"]
+* link:learn-latency-monitoring.html["Erfahren Sie mehr über Latenzüberwachung"]
+

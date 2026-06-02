@@ -17,7 +17,7 @@ Nachdem ein Latenzereignis erkannt wurde, können Sie mithilfe des interaktiven 
 
 == Bevor Sie beginnen
 
-Sie müssen link:task-monitor-latency.html["konfigurierte Latenzüberwachung"] und mindestens ein Latenzereignis erkannt haben.
+Sie müssen link:task-configure-latency-monitoring.html["konfigurierte Latenzüberwachung"] und mindestens ein Latenzereignis erkannt haben.
 
 
 
