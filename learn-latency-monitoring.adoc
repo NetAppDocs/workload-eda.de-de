@@ -35,7 +35,7 @@ Sie können separate Schwellenwerte konfigurieren für:
 * Kritischer Schweregrad
 
 
-Alle erkannten Ereignisse erscheinen in der Tabelle der Latenzereignisse. Wenn Benachrichtigungen eingerichtet sind, wird zusätzlich eine E-Mail oder eine Amazon SNS-Nachricht mit Details zu den betroffenen Volumes empfangen.
+Alle erkannten Ereignisse werden in der Tabelle der Latenzereignisse angezeigt. Wenn Benachrichtigungen eingerichtet sind, erhalten Sie außerdem eine E-Mail oder eine Amazon SNS Nachricht mit Details zu den betroffenen Volumes. Die Häufigkeit der Benachrichtigungen kann gesteuert werden, entweder täglich pro Dateisystem oder alle 20 Minuten.
 
 
 

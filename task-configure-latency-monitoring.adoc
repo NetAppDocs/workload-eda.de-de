@@ -91,7 +91,11 @@ Workload Factory erfasst Latenzmetriken für alle FSx for ONTAP Volumes, die mit
 
 == Latenzbenachrichtigungen konfigurieren
 
-E-Mail- oder Amazon SNS-Benachrichtigungen können eingerichtet werden, um Benachrichtigungen zu erhalten, wenn eine hohe Latenz erkannt wird. Eine Benachrichtigung wird jedes Mal gesendet, wenn ein Volume die von Ihnen festgelegten Schwellenwerte überschreitet, sodass unmittelbar bekannt ist, ob ein Leistungsproblem vorliegt.
+E-Mail- oder Amazon SNS-Benachrichtigungen können eingerichtet werden, um Benachrichtigungen zu erhalten, wenn eine hohe Latenz erkannt wird. Die Benachrichtigungshäufigkeit kann mit zwei Optionen gesteuert werden:
+
+* *Tägliche Erinnerung (Empfohlen)*: Es erfolgt eine Benachrichtigung, wenn ein neuer Sicherheitsverstoß in einem Dateisystem auftritt. Nach dem Versenden einer Benachrichtigung für ein Dateisystem wird 24 Stunden gewartet, bevor eine weitere Benachrichtigung für dasselbe Dateisystem gesendet wird.
+* *Benachrichtigung bei Latenzüberschreitung (alle 20 Minuten)*: Es erfolgt eine Benachrichtigung, wenn eine Überschreitung festgestellt wird, höchstens einmal alle 20 Minuten.
+
 
 Latenzbenachrichtigungen werden dateisystembezogen versendet. Wenn ein oder mehrere Volumes in einem Dateisystem die Latenzschwellenwerte überschreiten, erhalten Sie eine einzelne Benachrichtigung mit einer Liste aller betroffenen Volumes.
 
