@@ -11,25 +11,25 @@ summary: Konfigurieren Sie benutzerdefinierte Filter für das Projects-Dashboard
 
 
 [role="lead"]
-Konfigurieren Sie benutzerdefinierte Filter für das Projects-Dashboard, um Kennzahlen entsprechend Ihrer Unternehmensstruktur – wie Projekte, Teams oder Kostenstellen – zu organisieren. Dies hilft Ihnen, Kosten genau zu verfolgen, zu identifizieren, welche Ressourcen den meisten Kapazitätsbedarf haben, und fundierte Entscheidungen zur Ressourcenzuweisung und Budgetplanung zu treffen. Indem Sie die Filter an die Arbeitsweise Ihrer Organisation anpassen, können Sie schnell auf relevante Daten zugreifen und die Effizienz bei der Kapazitätsplanung, Kostenverfolgung und Leistungsüberwachung verbessern.
+Im Projekt-Dashboard lassen sich benutzerdefinierte Filter einrichten, um Daten so zu organisieren, dass sie den Geschäftsprozessen entsprechen, zum Beispiel nach Projekt, Team oder Kostenstelle. Dadurch werden Kosten übersichtlicher dargestellt, es lässt sich erkennen, welche Ressourcen die meiste Kapazität nutzen, und fundiertere Entscheidungen zu Budgets und Personal können getroffen werden. Wenn die Filter der Struktur Ihrer Organisation entsprechen, lassen sich die benötigten Daten schnell finden und Kapazität, Kosten sowie Leistung effizienter verwalten.
 
 
 
 == Bevor Sie beginnen
 
-Um benutzerdefinierte Filter effektiv zu nutzen, konfigurieren Sie AWS-Tags auf Ihren FSx for ONTAP Volumes basierend auf Ihren Geschäftsanforderungen—for example, Tags, die Projekte, Teams oder Geschäftseinheiten repräsentieren.
+Um benutzerdefinierte Filter zu verwenden, AWS-Tags zu Ihren FSx for ONTAP Volumes entsprechend Ihren Anforderungen hinzufügen, wie zum Beispiel Tags für Projekte, Teams oder Geschäftsbereiche.
 
 
 
 == Benutzerdefinierte Filter konfigurieren
 
 
-NOTE: Nur der erste Administrator, der auf das Projekt-Dashboard zugreift, kann benutzerdefinierte Filter konfigurieren, hinzufügen oder löschen. Alle anderen Benutzer, einschließlich nachfolgender Administratoren, haben lediglich Lesezugriff auf die Filter.
+NOTE: Nur der erste Administrator, der das Projects Dashboard öffnet, kann benutzerdefinierte Filter erstellen, ändern oder löschen. Alle anderen Benutzer, einschließlich anderer Administratoren, können die Filter nur anzeigen.
 
 .Über diese Aufgabe
-Sie können bis zu fünf benutzerdefinierte Filter basierend auf Ihren AWS-Tags konfigurieren. Jeder benutzerdefinierte Filter benötigt drei Komponenten: einen Filter-Label-Namen, einen AWS-Tag-Schlüssel-Namen und einen Auswahltyp (Einzel- oder Mehrfachauswahl).
+Sie können bis zu fünf benutzerdefinierte Filter mithilfe Ihrer AWS-Tags konfigurieren. Jeder Filter benötigt Folgendes: eine Filterbezeichnung, einen AWS-Tag-Schlüssel und einen Auswahltyp (einzeln oder mehrfach).
 
-Wenn Sie keine benutzerdefinierten Filter konfigurieren, bleiben die Standardfilter (Dateisystem, Volume-Typ und Zeitraum) verfügbar, sodass Sie Ihre Dashboards weiterhin anzeigen und interaktiv nutzen können.
+Wenn Sie keine benutzerdefinierten Filter konfigurieren, stehen Ihnen die Standardfilter, Dateisystem, Volume-Typ und Zeitbereich weiterhin zur Verfügung, sodass Sie Ihre Dashboards weiterhin anzeigen und verwenden können.
 
 .Schritte
 . Melden Sie sich mit einem der folgenden Dienste an: link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["Konsolenerlebnisse"^]Die
@@ -46,7 +46,7 @@ Falls Sie Ihr Dashboard noch nicht konfiguriert haben, werden Sie automatisch da
 ** Auswahltyp (Einzel- oder Mehrfachauswahl)
 +
 
-NOTE: Filter werden im Dashboard in der Reihenfolge angezeigt, in der Sie sie konfigurieren. Ordnen Sie Ihre am häufigsten verwendeten Filter am besten zuerst an, um einen einfacheren Zugriff zu ermöglichen.
+NOTE: Die Filter werden im Dashboard in der von Ihnen festgelegten Reihenfolge angezeigt. Die am häufigsten verwendeten Filter sollten oben platziert werden, damit sie leichter zugänglich sind.
 
 
 
@@ -59,7 +59,7 @@ Sie können einen benutzerdefinierten Filter löschen, indem Sie das Papierkorbs
 
 
 .Ergebnis
-Sobald diese Tags angewendet werden, beginnt Workload Factory mit der Erfassung und Anzeige der relevanten CloudWatch-Metriken. Ihr Dashboard wird zu einem dynamischen Werkzeug, mit dem Sie Ressourcen organisieren, Kosten verfolgen und filtern können – basierend auf Ihren organisatorischen Anforderungen.
+Wenn diese Tags angewendet werden, beginnt Workload Factory mit dem Sammeln und Anzeigen der zugehörigen CloudWatch-Metriken. Das Dashboard unterstützt bei der Organisation von Ressourcen, der Nachverfolgung von Kosten und dem Filtern von Elementen entsprechend der jeweiligen Anforderungen.
 
 
 

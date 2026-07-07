@@ -1,10 +1,10 @@
-= Erweiterte Dashboard-Filterung mit anpassbaren Tags
+= Erweiterte Dashboard-Filterung mit anpassbaren Tags in EDA-Workloads
 :allow-uri-read: 
 
 
 
 
-=== Erweiterte Dashboard-Filterung mit anpassbaren Tags
+=== Erweiterte Dashboard-Filterung mit anpassbaren Tags in EDA-Workloads
 
 Sie können nun bis zu fünf benutzerdefinierte Filter im EDA-Dashboard basierend auf Ihren AWS-Tags konfigurieren. Jeder benutzerdefinierte Filter enthält einen Labelnamen, einen AWS-Tag-Schlüssel und einen Auswahltyp (Einzel- oder Mehrfachauswahl).
 

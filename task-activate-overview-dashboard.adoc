@@ -11,7 +11,7 @@ summary: Aktivieren Sie das Übersichts-Dashboard, um mit dem Sammeln von CloudW
 
 
 [role="lead"]
-Aktivieren Sie das Übersichts-Dashboard, um mit der Erfassung von CloudWatch-Metriken für Ihre FSx for ONTAP Dateisysteme zu beginnen. Nach der Aktivierung bietet das Dashboard eine zentrale Überwachung von Clusterzustand, Kapazität und Durchsatz.
+Das Übersichts-Dashboard kann aktiviert werden, um CloudWatch-Metriken für Ihre FSx for ONTAP Dateisysteme zu erfassen. Im Dashboard werden Clusterzustand, Kapazität und Durchsatz an einem Ort angezeigt.
 
 
 
@@ -33,10 +33,10 @@ Wenn Sie noch keine AWS-Zugangsdaten konfiguriert haben, siehe link:https://docs
 
 == Dashboard aktivieren
 
-Nachdem Workload Factory die Anmeldeinformationen mit Ansichtsberechtigungen bestätigt hat, müssen Sie das Dashboard aktivieren, um mit der Erfassung von CloudWatch-Metriken für Ihre FSx for ONTAP-Dateisysteme zu beginnen.
+Nachdem Workload Factory die Anmeldeinformationen mit Ansichtsberechtigungen überprüft hat, wird das Dashboard aktiviert, um CloudWatch-Metriken für Ihre FSx for ONTAP Dateisysteme zu erfassen.
 
 
-NOTE: Die Erfassung der Messwerte kann nach Ihrer Einwilligung einige Zeit in Anspruch nehmen. Das Dashboard benachrichtigt Sie, während die erste Erfassung läuft.
+NOTE: Nachdem Sie Ihre Einwilligung erteilt haben, kann die Erfassung der Messwerte etwas Zeit in Anspruch nehmen. Das Dashboard benachrichtigt Sie, während die erste Erfassung läuft.
 
 .Schritte
 . Melden Sie sich mit einem der folgenden Dienste an: link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["Konsolenerlebnisse"^]Die
@@ -48,7 +48,7 @@ NOTE: Die Erfassung der Messwerte kann nach Ihrer Einwilligung einige Zeit in An
 
 
 .Ergebnis
-Workload Factory beginnt mit der Erfassung von CloudWatch-Metriken für alle FSx for ONTAP Dateisysteme, die Ihren konfigurierten AWS-Anmeldeinformationen zugeordnet sind. Das Dashboard wird aktualisiert, sobald Metriken verfügbar sind. Eine Benachrichtigung wird angezeigt, falls die Erfassung noch läuft.
+Workload Factory beginnt mit der Erfassung von CloudWatch Metriken für alle FSx for ONTAP Dateisysteme, die mit Ihren AWS-Anmeldeinformationen verknüpft sind. Das Dashboard wird aktualisiert, sobald die Metriken verfügbar sind. Während der Datenerfassung erscheint eine Benachrichtigung.
 
 
 

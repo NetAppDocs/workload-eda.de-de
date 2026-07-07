@@ -11,17 +11,17 @@ summary: NetApp Workload Factory für EDA hilft Ihnen, die Leistung von FSx für
 
 
 [role="lead"]
-Workload Factory für EDA hilft Ihnen, FSx für ONTAP über mehrere Dateisysteme hinweg zu optimieren. Sie können die Leistung optimieren und die Betriebskosten senken, indem Sie Speicherparameter automatisieren, Leistungsbeschränkungen analysieren und Einblicke in EDA-Projekte gewinnen.
+Workload Factory für EDA unterstützt Sie bei der Verwaltung von Amazon FSx für ONTAP über mehrere Dateisysteme hinweg. Die Leistung wird verbessert und die Kosten werden gesenkt, indem Speichereinstellungen automatisch angepasst, Latenzprobleme erkannt und Einblicke in Ihre EDA-Projekte bereitgestellt werden.
 
 Es ist so konzipiert, dass es sich nahtlos in Ihre Infrastructure as Code (IaC)-Frameworks integrieren lässt.
 
-Workload Factory for EDA bietet Dashboards sowie Frameworks und Dienstprogramme zur Speicherautomatisierung, die Ihnen bei der Verwaltung mehrerer FSx for ONTAP Dateisysteme helfen.
+Workload Factory for EDA bietet Dashboards, Automatisierungstools und Hilfsprogramme, die bei der Verwaltung mehrerer FSx for ONTAP Dateisysteme unterstützen.
 
 Es bietet Folgendes:
 
-* link:learn-overview-dashboard.html["Übersichts-Dashboard"]: Bietet eine zentrale Clusteransicht, mit der Sie den Zustand, die Kapazität und den Durchsatz Ihres FSx for ONTAP-Clusters überwachen, den optimalen Standort für neue Volumes bestimmen, fundierte Entscheidungen zur Skalierung von Kapazität und Durchsatz treffen sowie automatische Kapazitätsempfehlungen erhalten oder die automatische Kapazitätsskalierung aktivieren können. Sehen Sie sich historische Entscheidungspunkte an, um das Verhalten des Algorithmus im Zeitverlauf zu verstehen.
-* link:learn-latency-monitoring.html["Volume-Latenz überwachen"]: Überwacht proaktiv die Lese- und Schreiblatenzleistung von Volumes mit konfigurierbaren Warn- und kritischen Ereignisschwellenwerten. Erhalten Sie E-Mail- oder SNS-Benachrichtigungen, wenn Ereignisse erkannt werden. Enthält eine automatisierte Basisanalyse mithilfe von ONTAP QoS Delay Center-Metriken und eine optionale KI-Agentenanalyse für komplexe Szenarien, die eine tiefere Ursachenidentifikation erfordern.
-* link:task-analyze-latency-trends.html["Latenztrends analysieren"]: Nutzen Sie das interaktive Latenzdiagramm, um das Latenzverhalten im Zeitverlauf zu visualisieren, Muster zu erkennen, zu verstehen, ob Leistungsprobleme wiederkehrend oder vereinzelt auftreten, und datengestützte Entscheidungen über Abhilfemaßnahmen zu treffen.
-* link:learn-project-dashboard.html["Projekt-Dashboard"]: bietet eine zentrale Übersicht über den Speicherverbrauch Ihrer FSx for ONTAP file systems, um Ihnen bei der Planung, Kostenbewertung und Erfassung von Informationen zur Speichernutzung in Ihren Projekten zu helfen.
-* link:learn-eda-workloads.html["CI/CD"]: Optimiert und verkürzt die Software-Build-Zeit durch die Nutzung der FSx for ONTAP -Volume-Klonfunktionen.
+* link:learn-overview-dashboard.html["Übersichts-Dashboard"]: Bietet eine zentrale Übersicht über Ihren FSx for ONTAP Cluster, sodass Sie Zustand, Kapazität und Durchsatz überwachen können. Damit lässt sich entscheiden, wo neue Volumes platziert werden, wann eine Erhöhung von Kapazität oder Durchsatz sinnvoll ist, und es werden automatische Kapazitätsempfehlungen bereitgestellt oder die automatische Skalierung kann aktiviert werden. Auch eine Überprüfung früherer Entscheidungen ist möglich, um nachzuvollziehen, wie sich die Empfehlungen des Systems im Laufe der Zeit verändert haben.
+* link:learn-latency-monitoring.html["Volume-Latenz überwachen"]Überwacht die Lese- und Schreiblatenz von Volumes und ermöglicht die Festlegung von Warn- und kritischen Schwellenwerten. Bei Überschreitung dieser Schwellenwerte erfolgt eine Benachrichtigung per E-Mail oder SNS. Enthält eine automatisierte Basisanalyse anhand von ONTAP QoS Delay Center-Metriken sowie eine optionale KI-Analyse für komplexere Probleme, die eine tiefere Ursachenidentifikation erfordern.
+* link:task-analyze-latency-trends.html["Latenztrends analysieren"]Synchronisierte Leistungsdiagramme für Latenz, IOPS und Durchsatz zeigen, wie sich diese Metriken im Zeitverlauf verändern. So lassen sich Muster erkennen, feststellen, ob Probleme wiederholt oder nur einmalig auftreten, und fundierte Entscheidungen zu Korrekturen treffen.
+* link:learn-project-dashboard.html["Projekt-Dashboard"]: Zeigt die Speichernutzung all Ihrer FSx for ONTAP Dateisysteme an einem Ort an, unterstützt bei der Kapazitätsplanung, Kostenschätzung und zeigt, wie jedes Projekt Speicher verwendet.
+* link:learn-eda-workloads.html["CI/CD"]: Beschleunigt Software-Builds durch schnelles Klonen von FSx for ONTAP Volumes.
 

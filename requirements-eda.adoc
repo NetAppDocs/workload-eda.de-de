@@ -20,7 +20,7 @@ AWS-Anmeldeinformationen und Berechtigungen:: Sie müssen AWS-Zugangsdaten mit L
 Die Berechtigungen _Basic_ und _Read-only_ werden derzeit nicht unterstützt.
 
 
-NOTE: Für die Nutzung der Latenzüberwachungsfunktion, die CloudWatch-Metriken zur Analyse der Volumenleistung erfasst, sind AWS-Anmeldeinformationen erforderlich. Um Benachrichtigungen über Latenzereignisse zu erhalten, konfigurieren Sie die Benachrichtigungseinstellungen in den Workload Factory-Einstellungen. Um die optionale KI-Agentenanalyse für komplexe Latenzszenarien zu aktivieren, müssen Sie außerdem einen Amazon Bedrock-Modell-ARN angeben. link:learn-latency-monitoring.html["Erfahren Sie mehr über Latenzüberwachung"].
+NOTE: AWS-Anmeldeinformationen sind ebenfalls erforderlich, um die Latenzüberwachungsfunktion zu nutzen, die CloudWatch-Metriken zur Analyse der Volumenleistung erfasst. Für den Erhalt von Benachrichtigungen zu Latenzereignissen werden die Benachrichtigungseinstellungen in den Workload Factory-Einstellungen konfiguriert. Für die Aktivierung der optionalen KI-Analyse bei komplexen Latenzszenarien ist außerdem ein Amazon Bedrock Modell-ARN bereitzustellen. link:learn-latency-monitoring.html["Erfahren Sie mehr über Latenzüberwachung"].
 
 https://docs.netapp.com/us-en/workload-setup-admin/add-credentials.html["Erfahren Sie, wie Sie AWS-Anmeldeinformationen zu Workload Factory hinzufügen."^]
 

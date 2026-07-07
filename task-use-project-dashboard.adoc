@@ -11,7 +11,7 @@ summary: Über das Dashboard „Projekte“ können Sie die Speichernutzung übe
 
 
 [role="lead"]
-Über das Dashboard „Projekte“ können Sie die Speichernutzung Ihrer FSx for ONTAP-Dateisysteme und -Volumes überwachen. Filtern Sie die Daten nach Projekten, Teams oder Anwendungen und analysieren Sie sowohl die aggregierte als auch die individuelle Volume-Performance, um fundierte Entscheidungen über Kapazitätsplanung und Ressourcenoptimierung zu treffen.
+Das Projects Dashboard bietet eine Übersicht über die Speichernutzung Ihrer FSx for ONTAP File Systems und Volumes. Die Daten lassen sich nach Projekt, Team oder Anwendung filtern. Sowohl die Gesamtleistung als auch die Leistung pro Volume werden angezeigt, was die Kapazitätsplanung unterstützt und eine effizientere Ressourcennutzung ermöglicht.
 
 
 
@@ -23,7 +23,7 @@ Sie sollten link:task-configure-project-dashboard.html["konfigurierte benutzerde
 
 == Dashboard filtern
 
-Filter helfen Ihnen, sich auf bestimmte Teilmengen Ihrer Speicherressourcen zu konzentrieren, sodass Sie Trends leichter analysieren, Probleme identifizieren und Berichte für Stakeholder erstellen können. Durch die Kombination mehrerer Filter können Sie spezifische Geschäftsfragen beantworten, wie „Wie viel Speicher nutzt mein ASIC project team?“ oder „Welche Volumes in der US-West Region haben die höchsten IOPS?“
+Durch Filter können Sie sich auf bestimmte Gruppen von Speicherressourcen konzentrieren. Dies erleichtert das Erkennen von Trends, das Auffinden von Problemen und das Erstellen von Berichten für Stakeholder. Durch die Kombination mehrerer Filter lassen sich gezielte Fragen beantworten, wie zum Beispiel: „Wie viel Speicher verwendet das ASIC project team?“ oder „Welche Volumes in der US-West Region haben die höchsten IOPS?“
 
 .Über diese Aufgabe
 Sie können die auf dem Dashboard angezeigten Informationen mithilfe einer Kombination aus Standardfiltern und von Ihnen konfigurierten benutzerdefinierten Filtern filtern.
@@ -46,16 +46,16 @@ Sie können die auf dem Dashboard angezeigten Informationen mithilfe einer Kombi
 
 == Volumendetails anzeigen
 
-Das Verständnis sowohl der aggregierten als auch der individuellen Volumenleistung hilft Ihnen, fundierte Entscheidungen hinsichtlich Kapazitätsplanung und Leistungsoptimierung zu treffen. Die Gesamtansicht zeigt allgemeine Trends, während die Volumenansicht Ihnen hilft, spezifische Volumina zu identifizieren, die möglicherweise Aufmerksamkeit, Optimierung oder zusätzliche Ressourcen erfordern.
+Die Betrachtung sowohl der Gesamtleistung des Volumens als auch der einzelnen Volumina hilft bei der Kapazitätsplanung und Leistungsverbesserung. Die Gesamtansicht zeigt allgemeine Trends. Die Volumenansicht ermöglicht das Auffinden bestimmter Volumina, die möglicherweise Aufmerksamkeit, Optimierung oder zusätzliche Ressourcen benötigen.
 
 
 
 === Aggregierte Volumenstatistiken anzeigen
 
-Die Gesamtansicht zeigt aggregierte Kennzahlen über alle Volumes hinweg an, die Ihren ausgewählten Filtern entsprechen.
+Die Gesamtansicht zeigt kombinierte Kennzahlen für alle Volumen, die Ihren Filtern entsprechen.
 
 .Schritte
-. Stellen Sie im Reiter *Projekt* sicher, dass der Reiter *Gesamt* ausgewählt ist (dies ist die Standardansicht).
+. Öffnen Sie die Registerkarte **Projekt** und stellen Sie sicher, dass die Registerkarte **Gesamt** ausgewählt ist. Dies ist die Standardansicht.
 . Überprüfen Sie die angezeigten Kennzahlen:
 +
 ** Gesamtkapazität über alle Volumina hinweg
@@ -63,17 +63,17 @@ Die Gesamtansicht zeigt aggregierte Kennzahlen über alle Volumes hinweg an, die
 ** Aggregierter Durchsatz
 
 
-. Nutzen Sie diese Ansicht, um allgemeine Trends zu verstehen und zukünftigen Kapazitätsbedarf zu planen.
+. Diese Ansicht zeigt Trends und unterstützt die Planung des zukünftigen Kapazitätsbedarfs.
 
 
 
 
 === Anzeige der individuellen Volume-Performance
 
-Die Volumenansicht zeigt die Leistung einzelner Volumen im Zeitverlauf und listet die Top 10 Volumen für jede Metrik auf.
+Die Volumenansicht zeigt, wie jedes Volumen im Zeitverlauf arbeitet. Es werden die zehn wichtigsten Volumina für jede Kennzahl hervorgehoben.
 
 .Schritte
-. Im Reiter *Projekt* wählen Sie den Reiter *Volume* aus.
+. Im **Projekt** Tab den **Volume** Tab auswählen.
 . Überprüfen Sie die Volumenkennzahlen:
 +
 ** *Verwendete Kapazität des Volumens*: Zeigt Volumen mit der höchsten aktuell verwendeten Kapazität an
@@ -81,7 +81,7 @@ Die Volumenansicht zeigt die Leistung einzelner Volumen im Zeitverlauf und liste
 ** *Durchsatz*: Zeigt Volumes mit dem höchsten durchschnittlichen Durchsatz im ausgewählten Zeitraum an
 +
 
-NOTE: Das Dashboard zeigt nur die Top 10 Volumes für jede Kennzahl an. Wenn Sie mehr als 10 Volumes haben, werden einige Volumes möglicherweise nicht in der Detailansicht angezeigt.
+NOTE: Wenn Sie mehr als 10 Volumes haben, werden die übrigen nicht in der Detailansicht angezeigt.
 
 
 
@@ -92,16 +92,16 @@ NOTE: Das Dashboard zeigt nur die Top 10 Volumes für jede Kennzahl an. Wenn Sie
 ** *Durchsatz*: Volume-Name, durchschnittlicher Durchsatz für den Zeitraum und maximaler Durchsatz für den Zeitraum
 
 
-. Anhand der Legende lassen sich spezifische Volumina identifizieren. Wenn dieselben Volumina in mehreren Metriken auftreten, verwendet das Dashboard eine einheitliche Farbkennzeichnung, um die Nachverfolgung der Volumina zu vereinfachen.
+. Mit der Legende lässt sich jedes Volume identifizieren. Die gleichen Volumes werden in allen Metriken mit denselben Farben dargestellt, sodass sie einfach nachverfolgt werden können.
 
 
 .Ergebnis
-Diese interaktiven Daten helfen Ihnen:
+Diese Daten können verwendet werden, um:
 
-* Analyse von Volumenleistungsmustern
-* Potenzielle Engpässe identifizieren
-* Ermitteln Sie Volumes, die möglicherweise ein Rightsizing benötigen
-* Ermitteln Sie genau, welche spezifischen Projekte oder Arbeitslasten die meisten Ressourcen verbrauchen
+* Nutzungsmuster analysieren
+* Mögliche Engpässe erkennen
+* Volumen finden, die möglicherweise in der Größe angepasst werden müssen
+* Anzeigen, welche Projekte oder Arbeitslasten die meisten Ressourcen verwenden
 
 
 
@@ -110,12 +110,12 @@ Diese interaktiven Daten helfen Ihnen:
 
 Beachten Sie diese Empfehlungen bei der Verwendung des Projects-Dashboards:
 
-* *Regelmäßige Überwachung*: Überprüfen Sie das Dashboard regelmäßig, um Trends zu erkennen, bevor sie zu Problemen werden.
-* *Filter strategisch kombinieren*: Verwenden Sie mehrere Filter zusammen, um spezifische Geschäftsfragen zur Ressourcennutzung zu beantworten.
-* *Vergleichen Sie die Ansichten*: Nutzen Sie sowohl die Gesamt- als auch die Volumenansicht gemeinsam—die Gesamtansicht für die Planung und die Volumenansicht für die Fehlersuche.
-* *Verfolgen Sie die Entwicklung über die Zeit*: Nutzen Sie verschiedene Zeiträume, um zu erkennen, ob es sich bei den Leistungsmustern um normale Schwankungen handelt oder ob ein Trend erkennbar ist.
-* *Dokumentieren Sie Baselines*: Notieren Sie die normalen Leistungsniveaus Ihrer Volumes, damit Sie Anomalien schnell erkennen können.
-* *Aufgrund der gewonnenen Erkenntnisse handeln*: Nutzen Sie die Volumenleistungsdaten, um proaktiv Entscheidungen über Ressourcenzuweisung, Dimensionierung oder Optimierung zu treffen, bevor Probleme die Workloads beeinträchtigen.
+* Das Dashboard sollte regelmäßig überprüft werden, damit Muster erkannt werden, bevor sie zu Problemen werden.
+* Mehrere Filter können gleichzeitig verwendet werden, um spezifische Fragen zur Ressourcennutzung zu beantworten.
+* Beide Ansichten bieten Vorteile: Total dient der Kapazitätsplanung, Volume hilft bei der Identifizierung und Behebung von Problemen.
+* Den Zeitraum ändern, um zu erkennen, ob die Veränderungen normal sind oder Teil eines wachsenden Trends.
+* Normale Leistungswerte werden aufgezeichnet, sodass ungewöhnliches Verhalten später leichter erkannt werden kann.
+* Nutzen Sie die Erkenntnisse aus den Daten, um Ressourcen anzupassen, Volumes zu vergrößern oder die Leistung zu verbessern, bevor Arbeitslasten beeinträchtigt werden.
 
 
 

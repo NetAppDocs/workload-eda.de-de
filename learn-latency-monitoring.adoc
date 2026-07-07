@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: learn-latency-monitoring.html 
 keywords: latency analysis, CloudWatch alarms, volume latency, read latency, write latency, critical events, warning events, latency thresholds, IOPS thresholds, latency monitoring, FSx for ONTAP, root cause analysis, QoS delay center, automated analysis 
-summary: Erfahren Sie, wie die Latenzüberwachung in Workload Factory für EDA Ihnen hilft, Leistungsprobleme mit FSx for ONTAP Volumes mithilfe einer automatisierten Basisanalyse und einer optionalen KI-Agentenanalyse zu erkennen und zu analysieren. 
+summary: Die Latenzüberwachung in Workload Factory für EDA unterstützt die Erkennung und Analyse von Leistungsproblemen bei FSx for ONTAP Volumes mithilfe einer automatisierten Basisanalyse und einer optionalen KI-Analyse. 
 ---
 = Erfahren Sie mehr über Latenzüberwachung in Workload Factory für EDA
 :allow-uri-read: 
@@ -11,21 +11,21 @@ summary: Erfahren Sie, wie die Latenzüberwachung in Workload Factory für EDA I
 
 
 [role="lead"]
-Die Latenzüberwachung in Workload Factory für EDA hilft Ihnen, Leistungsengpässe in Ihren FSx for ONTAP Volumes proaktiv zu erkennen und zu beheben. Das System überwacht die Lese- und Schreiblatenz mithilfe von CloudWatch-Metriken und bietet eine automatisierte Analyse, um Ihnen zu helfen, die Ursache von Leistungsproblemen zu verstehen.
+Die Latenzüberwachung in Workload Factory für EDA unterstützt bei der Erkennung und Behebung von Leistungseinbußen in Ihren FSx for ONTAP Volumes. Dabei werden Lese- und Schreiblatenzen mithilfe von CloudWatch-Metriken erfasst und die Daten automatisch analysiert, um die Ursache von Leistungsproblemen zu identifizieren.
 
 
 
 == Wie Latenzüberwachung funktioniert
 
-Die Latenzanalyse erfasst CloudWatch-Metriken für Lese- und Schreibvorgänge auf allen FSx for ONTAP Volumes, die Ihren AWS-Anmeldeinformationen zugeordnet sind. Das System wertet diese Metriken kontinuierlich anhand konfigurierbarer Schwellenwerte aus, um Leistungsprobleme frühzeitig zu erkennen.
+Die Latenzanalyse erfasst CloudWatch-Metriken für Lese- und Schreibaktivitäten auf allen mit Ihrem AWS-Konto verbundenen FSx for ONTAP Volumes. Diese Metriken werden kontinuierlich anhand definierter Grenzwerte überprüft, um Leistungsprobleme frühzeitig zu erkennen.
 
-Wird ein Latenzereignis erkannt, führt Workload Factory automatisch eine Basisanalyse mithilfe von ONTAP QoS Delay Center-Metriken durch, um den primären Latenzverursacher zu identifizieren. Für komplexere Szenarien mit Daten- oder Clusterkomponenten können Sie optional eine KI-Agentenanalyse ausführen, um detaillierte Root-Cause-Erklärungen, Listen betroffener Clients und spezifische Abhilfeschritte zu erhalten.
+Bei steigender Latenz überprüft Workload Factory automatisch die ONTAP QoS-Verzögerungsmetriken, um die Hauptursache der Verlangsamung zu identifizieren. Bei komplexeren Problemen mit Daten oder Cluster-Komponenten kann eine optionale KI-Analyse ausgeführt werden, die die wahrscheinliche Ursache liefert, betroffene Clients identifiziert und Schritte zur Problemlösung vorschlägt.
 
 
 
 === Alarmgenerierung
 
-Eine Warnung wird generiert, wenn sowohl der Latenz- als auch der IOPS-Schwellenwert für alle Datenpunkte innerhalb des konfigurierten Zeitraums überschritten werden. Dieser Ansatz mit zwei Bedingungen reduziert Fehlalarme, indem sichergestellt wird, dass die erhöhte Latenz kontinuierlich unter realer Last anhält.
+Eine Warnung wird nur dann ausgelöst, wenn diese Bedingungen für den gesamten ausgewählten Zeitraum zutreffen: Die Latenz bleibt über ihrem Schwellenwert und die IOPS bleiben über ihrem Schwellenwert. Die Anforderung beider Bedingungen reduziert Fehlalarme, da so sichergestellt wird, dass hohe Latenzzeiten auftreten, während das System eine tatsächliche Arbeitslast verarbeitet.
 
 Sie können separate Schwellenwerte konfigurieren für:
 
@@ -35,7 +35,7 @@ Sie können separate Schwellenwerte konfigurieren für:
 * Kritischer Schweregrad
 
 
-Alle erkannten Ereignisse werden in der Tabelle der Latenzereignisse angezeigt, und wenn Sie Benachrichtigungen konfiguriert haben, erhalten Sie E-Mail- oder Amazon SNS-Benachrichtigungen mit Details zu den betroffenen Volumes.
+Alle erkannten Ereignisse erscheinen in der Tabelle der Latenzereignisse. Wenn Benachrichtigungen eingerichtet sind, wird zusätzlich eine E-Mail oder eine Amazon SNS-Nachricht mit Details zu den betroffenen Volumes empfangen.
 
 
 
@@ -84,27 +84,28 @@ Workload Factory bietet zwei Analyseebenen, die Ihnen bei der Behebung von Laten
 
 === Grundlagenanalyse
 
-Wird ein Latenzereignis erkannt, führt Workload Factory automatisch eine Basisanalyse mithilfe von ONTAP QoS Delay Center-Metriken durch, um die Komponente zu identifizieren, die die Latenz verursacht (z. B. FlexCache, Kapazitätspool, QoS-Grenzwerte, Festplatte, Daten, Cluster oder andere Subsysteme). Diese Analyse ermöglicht die schnelle Identifizierung der Latenzquelle ohne manuelle Untersuchung.
-
-Eine grundlegende Analyse ist für alle Latenzereignisse verfügbar, wenn Sie einen Link mit dem FSx for ONTAP-Dateisystem verknüpft haben. Ohne einen Link können Ereignisse weiterhin erkannt werden, aber die Analyse liefert nur eingeschränkte Einblicke.
+Tritt ein Latenzereignis auf, führt Workload Factory automatisch eine Basisanalyse durch, um die Ursache zu ermitteln. Dabei werden ONTAP QoS Delay Center-Metriken genutzt, um die für die Verlangsamung verantwortliche Komponente zu identifizieren, beispielsweise FlexCache, den Kapazitätspool, QoS-Grenzwerte, Festplatten, Daten, den Cluster oder ein anderes Subsystem. Damit lässt sich die Quelle der Latenz schnell identifizieren, ohne dass eine manuelle Untersuchung erforderlich ist.
 
 
-NOTE: Es kann geringfügige Abweichungen zwischen den Latenzwerten aus der ONTAP-QoS-Analyse und den CloudWatch-Daten geben, da unterschiedliche Erfassungsmethoden verwendet werden. Die Basisanalyse verwendet ONTAP-Daten zur Ursachenidentifikation.
+NOTE: Eine detaillierte Komponentenübersicht ist nur dann sichtbar, wenn eine Verbindung mit dem FSx for ONTAP Dateisystem besteht. Wenn keine Verbindung besteht, können dennoch Diagramme für Latenz, IOPS und Durchsatz angezeigt werden.
+
+
+NOTE: Die Latenzwerte aus der ONTAP QoS-Analyse und CloudWatch können geringfügig abweichen, da die Daten auf unterschiedliche Weise erfasst werden. Die Basisanalyse verwendet ONTAP Daten, um die Ursache zu ermitteln.
 
 
 
-=== KI-Agentenanalyse
+=== AI-Analyse
 
-Während eine einfache Analyse die Latenzquelle identifiziert, erfordern komplexe Szenarien mit Daten oder Clusterkomponenten oft eine tiefergehende Untersuchung. Die KI-Agenten-Analyse bietet diese tiefere Ebene der Fehlerbehebung, indem sie Probleme wie Bully-Volumes, nicht optimale Konfigurationen oder Scale-out-Anforderungen identifiziert, die eine einfache Analyse nicht erkennen kann.
+Während grundlegende Analysen die Ursache von Latenzzeiten identifizieren können, erfordern komplexere Situationen mit Daten oder Clusterkomponenten oft eine tiefergehende Untersuchung. KI-Analysen ermöglichen diese detailliertere Fehlerbehebung, indem sie Probleme wie überlastete Volumes, fehlerhafte Konfigurationen oder den Bedarf an zusätzlicher Kapazität aufdecken, Probleme, die bei grundlegenden Analysen möglicherweise übersehen werden.
 
-Bei der Durchführung einer KI-Agentenanalyse liefert das System:
+Bei der Durchführung einer KI-Analyse stellt das System Folgendes bereit:
 
 * *Mögliche Ursache*: Detaillierte Erklärung, was das Latenzproblem verursacht
 * *Betroffene Clients*: Liste der von der Latenz betroffenen EC2-Instanznamen
 * *Mögliche Abhilfemaßnahmen*: Zwei oder mehr konkrete Maßnahmen zur Behebung des Problems
 
 
-Für die Analyse mit KI-Agenten ist ein Amazon Bedrock-Modell-ARN erforderlich, der in Ihren Workload Factory-Einstellungen konfiguriert ist. Falls Bedrock nicht konfiguriert ist, können Sie dennoch Latenzüberwachung und automatisierte Basisanalyse nutzen.
+Für die KI-Analyse ist eine Amazon Bedrock model ARN in Ihren Workload Factory Einstellungen erforderlich. Wenn Bedrock nicht eingerichtet ist, stehen weiterhin Latenzüberwachung und grundlegende automatisierte Analyse zur Verfügung.
 
 
 

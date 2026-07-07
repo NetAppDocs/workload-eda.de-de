@@ -1,10 +1,10 @@
-= Klonunterstützung
+= Klonunterstützung in Workload Factory für Builders
 :allow-uri-read: 
 
 
 
 
-=== Klonunterstützung
+=== Klonunterstützung in Workload Factory für Builders
 
 Sie können jetzt ein Projekt in BlueXP Workload Factory for Builders klonen. Wenn Sie ein Projekt klonen, erstellt Builders ein neues Projekt aus einem Snapshot mit der gleichen Konfiguration wie das Original. Das Klonen ist nützlich, um schnell ähnliche Projekte zu erstellen oder zu Testzwecken. Sie können den neuen Projektklon gemäß den Anweisungen in Builders einbinden.
 

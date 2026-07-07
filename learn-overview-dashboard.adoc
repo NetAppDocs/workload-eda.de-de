@@ -11,7 +11,7 @@ summary: Erfahren Sie, wie das Übersichts-Dashboard in Workload Factory für ED
 
 
 [role="lead"]
-Das Übersichts-Dashboard bietet IT-Administratoren eine zentrale Ansicht für die Verwaltung von EDA-Workloads über mehrere FSx for ONTAP-Dateisysteme hinweg. Nutzen Sie es, um schnell den Zustand und die Auslastung des Clusters zu beurteilen, zu entscheiden, wo neue Volumes oder Jobs platziert werden sollen, Kandidaten für die Verschiebung von Volumes oder SVMs zu identifizieren und den Zeitpunkt für die Skalierung von Kapazität oder Durchsatz festzulegen.
+Das Übersichts-Dashboard bietet IT-Administratoren eine zentrale Plattform zur Überwachung von EDA-Workloads über mehrere FSx for ONTAP Dateisysteme hinweg. Damit lassen sich Systemzustand und Auslastung schnell überprüfen, geeignete Speicherorte für neue Volumes oder Jobs auswählen, Volumes oder SVMs identifizieren, die möglicherweise verschoben werden müssen, sowie der Zeitpunkt erkennen, zu dem eine Kapazitäts- oder Durchsatzerhöhung erforderlich ist.
 
 
 
@@ -21,8 +21,8 @@ Das Dashboard „Übersicht“ erfasst CloudWatch-Metriken für alle FSx for ONT
 
 Es beinhaltet:
 
-* *Cluster-Gesundheitsstatus*: Zusammenfassende Informationen oben, die Latenzereignisse, SSD-Auslastung und Kapazitätsempfehlungen sowie ONTAP EMS-Ereignisse in Ihren Dateisystemen hervorheben.
-* *Clustertabelle*: Eine detaillierte, durchsuchbare Tabelle, die Nutzungs- und Leistungsmetriken für jeden Cluster anzeigt und Filter-, Sortier-, Paginierungs- und CSV-Exportfunktionen unterstützt.
+* *Cluster-Gesundheitsstatus*: Eine Zusammenfassung oben hebt Latenzereignisse, SSD-Auslastung, Kapazitätsempfehlungen und ONTAP EMS-Ereignisse in Ihren Dateisystemen hervor.
+* *Clustertabelle*: Eine durchsuchbare Tabelle, die Nutzung und Leistung für jedes Cluster anzeigt. Es besteht die Möglichkeit, die Daten zu filtern und zu sortieren, zwischen Seiten zu wechseln und sie als CSV-Datei zu exportieren.
 
 
 Es hilft Ihnen:
@@ -42,11 +42,11 @@ Es hilft Ihnen:
 
 === Cluster-Gesundheitsstatus
 
-Der Cluster-Integritätsstatus bietet eine Momentaufnahme der Aktivität Ihrer gefilterten Dateisysteme. Diese Informationen werden nur angezeigt, wenn mindestens ein FSx for ONTAP-Link mit Ihren Dateisystemen verknüpft ist.
+Der Clusterstatus bietet eine schnelle Übersicht über die Aktivität der von Ihnen ausgewählten Dateisysteme. Dies erscheint nur, wenn mindestens eine FSx for ONTAP Verbindung zu Ihren Dateisystemen besteht.
 
 Der Gesundheitszustand umfasst folgende Bereiche:
 
-*Latenz*:: Zeigt die Anzahl der erkannten Latenzereignisse in den erfassten Dateisystemen an. Latenzinformationen können Sie nur anzeigen, wenn Sie die Latenzüberwachung aktiviert haben.
+*Latenz*:: Zeigt die Anzahl der in den ausgewählten Dateisystemen gefundenen Latenzereignisse an. Diese Information erscheint nur, wenn die Latenzüberwachung aktiviert ist.
 *SSD Kapazitätsmanagement*:: Zeigt die Anzahl der Dateisysteme mit einer SSD-Auslastung von über 80 % sowie die Anzahl der Dateisysteme mit aktiven Kapazitätsempfehlungen an. Dies hilft Ihnen, schnell Dateisysteme zu identifizieren, die möglicherweise Kapazitätsaufmerksamkeit erfordern.
 *ONTAP-Ereignisse*:: Zeigt die Anzahl der erkannten EMS-Ereignisse an, kategorisiert nach Kapazität, Verfügbarkeit & Schutz sowie Sicherheit & Sonstiges.
 
@@ -70,28 +70,26 @@ Nutzen Sie die Tabelle, um:
 
 == SSD Kapazitätsmanagement
 
-Das Übersichts-Dashboard bietet intelligentes SSD-Kapazitätsmanagement.
-
 
 
 === Managementmodi
 
-*Automatisieren*:: Workload Factory erhöht die SSD-Kapazität automatisch anhand vordefinierter Schwellenwerte und Nutzungsmuster. Das System verwaltet die Kapazitätsskalierung ohne manuelle Eingriffe. Dies ist ideal für Umgebungen, in denen eine automatisierte Verwaltung bevorzugt wird.
-*Empfehlen*:: Workload Factory analysiert Ihre SSD-Nutzungsmuster und gibt Empfehlungen zur Kapazitätserweiterung. Sie prüfen und implementieren die Empfehlungen manuell. So behalten Sie die volle Kontrolle über Ihre Kapazitätsentscheidungen und profitieren gleichzeitig von der automatisierten Analyse.
-*Keine*:: Es werden keine Kapazitätsempfehlungen gegeben oder automatisierte Aktionen durchgeführt. Dies ist nützlich, wenn Sie die Kapazität manuell ohne Systemunterstützung verwalten möchten.
+*Automatisieren*:: Workload Factory fügt automatisch zusätzlichen SSD-Speicherplatz hinzu, sobald festgelegte Nutzungsgrenzen erreicht sind. Dies geschieht automatisch, sodass keine manuelle Arbeit erforderlich ist. Dies eignet sich gut für Umgebungen, die eine automatische Verwaltung bevorzugen.
+*Empfehlen*:: Workload Factory analysiert, wie Sie Ihre SSDs verwenden, und schlägt vor, wann die Kapazität erhöht werden sollte. Diese Vorschläge werden überprüft und es wird entschieden, ob sie angewendet werden. Dadurch bleibt die volle Kontrolle über Kapazitätsänderungen erhalten, während dennoch von der automatisierten Analyse profitiert wird.
+*Keine*:: Das System gibt keine Kapazitätsempfehlungen und führt keine automatisierten Aktionen aus. Diese Option ist geeignet, wenn Sie die Kapazität selbst verwalten möchten.
 
 
 
 
 === Kapazitätsempfehlungen
 
-Wenn Workload Factory im Automatisierungs- oder Empfehlungsmodus läuft, führt das System automatisch einen Kapazitätsempfehlungsalgorithmus für jedes FSx for ONTAP-Dateisystem aus. Der Algorithmus scannt alle 24 Stunden und ermittelt, wann SSD-Kapazitätsanpassungen empfohlen werden.
+Wenn Workload Factory sich im Automate- oder Recommend-Modus befindet, überprüft es automatisch jedes FSx for ONTAP Dateisystem und führt einen Kapazitätsempfehlungs-Algorithmus aus. Das System scannt alle 24 Stunden, um festzustellen, ob die SSD-Kapazität angepasst werden sollte.
 
 Wenn eine Empfehlung identifiziert wird:
 
-* Sie erhalten eine sofortige Benachrichtigung basierend auf Ihren Workload Factory-Benachrichtigungseinstellungen
-* Dateisysteme mit Empfehlungen können identifiziert werden, indem die Tabelle „Cluster“ nach den Spalten „Zeitstempel der letzten SSD-Erhöhung“ oder „Beschreibung der letzten SSD-Erhöhung“ gefiltert wird.
-* Die Gesamtzahl der Dateisysteme mit aktiven Empfehlungen wird angezeigt
+* Sie erhalten eine sofortige Benachrichtigung basierend auf Ihren Workload Factory Benachrichtigungseinstellungen.
+* Dateisysteme mit Empfehlungen lassen sich identifizieren, indem die Tabelle „Cluster“ mithilfe der Spalten **Zeitstempel der letzten SSD-Erhöhung** oder **Beschreibung der letzten SSD-Erhöhung** gefiltert wird.
+* Die Benutzeroberfläche zeigt die Gesamtzahl der Dateisysteme an, für die aktuell aktive Empfehlungen vorliegen.
 
 
 Die Empfehlung erläutert die vorgeschlagene Änderung und deren Begründung, beispielsweise: _Wir empfehlen, die SSD-Größe basierend auf Ihrem SSD-Nutzungsmuster des Dateisystems zu erhöhen._
@@ -102,30 +100,30 @@ Die Empfehlung erläutert die vorgeschlagene Änderung und deren Begründung, be
 
 Parameter steuern, wie das Kapazitätsmanagementsystem Ihre SSD-Nutzung analysiert und darauf reagiert:
 
-*Schwellenwert* (10-90%):: Der SSD-Auslastungsgrad, ab dem Kapazitätsempfehlungen oder Automatisierungsaktionen ausgelöst werden. Beispielsweise bedeutet ein Schwellenwert von 80%, dass Empfehlungen oder Aktionen erfolgen, sobald die SSD-Auslastung 80% erreicht. Verfügbar in den Modi „Empfehlen“ und „Automatisieren“.
+*Schwellenwert* (10-90%):: Der SSD-Auslastungsgrad, ab dem Kapazitätsempfehlungen oder Automatisierungsaktionen ausgelöst werden. Beispielsweise bedeutet ein Schwellenwert von 80 %, dass Empfehlungen oder Aktionen erfolgen, sobald die SSD-Auslastung 80 % erreicht. Diese Einstellung ist sowohl im Recommend- als auch im Automate-Modus verfügbar.
 *Rückblick* (1-200 Stunden):: Der Zeitraum, der zur Analyse historischer SSD-Nutzungsmuster verwendet wird. Ein längerer Betrachtungszeitraum liefert mehr historischen Kontext für Kapazitätsentscheidungen. Nur im Automate-Modus verfügbar.
 *Ahead* (1-200 Stunden):: Der Zeitraum, der zur Prognose des zukünftigen Kapazitätsbedarfs verwendet wird. Ein längerer Prognosezeitraum plant das Kapazitätswachstum weiter in die Zukunft. Nur im Automate-Modus verfügbar.
 
 
-Sie können diese Parameter für jedes Dateisystem einzeln konfigurieren oder mithilfe der Massenbearbeitung einheitliche Einstellungen für mehrere Dateisysteme anwenden.
+Sie können diese Parameter für jedes Dateisystem einzeln festlegen oder die Massenbearbeitung verwenden, um dieselben Einstellungen auf mehrere Dateisysteme anzuwenden.
 
 
 
 === Kapazitätsentscheidungspunkte verstehen
 
-Das SSD-Nutzungsdiagramm zeigt Entscheidungspunkte an, die anzeigen, wann Kapazitätsempfehlungen generiert oder Automatisierungsmaßnahmen durchgeführt wurden. Diese visuellen Indikatoren helfen Ihnen, das Verhalten des Kapazitätsmanagement-Algorithmus im Zeitverlauf zu verstehen.
+Das SSD-Nutzungsdiagramm zeigt an, wann das System Kapazitätsempfehlungen ausgesprochen oder automatische Maßnahmen ergriffen hat. Diese Markierungen zeigen, wie sich der Kapazitätsmanagement-Algorithmus im Zeitverlauf verhalten hat.
 
-*Empfehlungsentscheidungspunkte*:: Erscheinen, wenn der Kapazitätsempfehlungs-Algorithmus feststellt, dass zusätzliche SSD-Kapazität benötigt wird. Diese Punkte können so häufig wie alle 30 Minuten auftreten, wenn die SSD-Kapazität nicht erhöht wurde. Das Diagramm zeigt nach Möglichkeit alle Entscheidungspunkte an oder fasst sie zusammen, wenn der Zeitraum einzelne Punkte zu dicht macht.
-*Entscheidungspunkte für die Automatisierung*:: Erscheinen, wenn das Automatisierungssystem versucht, die SSD-Kapazität zu erhöhen. Diese Punkte zeigen an, ob die Automatisierungsaktion erfolgreich war oder fehlgeschlagen ist.
+*Empfehlungsentscheidungspunkte*:: Erscheinen, wenn das System erkennt, dass mehr SSD-Kapazität benötigt wird. Wenn die Kapazität nicht erhöht wurde, können diese Punkte so häufig wie alle 30 Minuten erscheinen. Das Diagramm zeigt jeden Entscheidungspunkt, wenn möglich. Wenn der gewählte Zeitraum zu dicht ist, werden die Punkte zusammengefasst.
+*Entscheidungspunkte für die Automatisierung*:: Diese Meldungen erscheinen, wenn das Automatisierungssystem versucht, die SSD-Kapazität zu erhöhen. Sie zeigen, ob die Aktion erfolgreich war oder fehlgeschlagen ist.
 
 
-Nutzen Sie Entscheidungspunkte anhand des historischen SSD-Nutzungsdiagramms, um:
+Das SSD-Nutzungsverlaufsdiagramm dient dazu:
 
-* Verstehen, wie häufig Kapazitätsanpassungen erforderlich sind
-* Prüfen Sie, ob der Automatisierungs- oder der Empfehlungsmodus besser zu Ihren Arbeitslastmustern passt
-* Wiederkehrende Kapazitätsengpässe identifizieren
-* Planen Sie zukünftigen Kapazitätsbedarf basierend auf Wachstumstrends
-* Fehlerbehebung bei fehlgeschlagenen Automatisierungsversuchen
+* Anzeigen, wie oft die Speichergröße geändert werden muss
+* Es kann festgestellt werden, ob der Automatisierungsmodus oder der Empfehlungsmodus besser zu den Nutzungsmustern passt.
+* Wiederholte Speicherengpässe erkennen
+* Zukünftiger Speicherbedarf kann auf Grundlage des Wachstums im Zeitverlauf geplant werden.
+* Untersuchung der Gründe für das Scheitern der Automatisierungsversuche
 
 
 

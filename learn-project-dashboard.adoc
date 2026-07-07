@@ -11,21 +11,21 @@ summary: Erfahren Sie, wie das Projekt-Dashboard in Workload Factory for EDA Ihn
 
 
 [role="lead"]
-Das Dashboard „Projekte“ unterstützt IT-Administratoren und Projektmanager bei der Überwachung und Analyse der Projektnutzung in FSx for ONTAP Dateisystemen und Volumes. Es bietet Einblick in Speichernutzungsmuster und hilft Ihnen, ressourcenintensive Projekte zu identifizieren, Kosten zu verfolgen und die Speicherzuweisung zu optimieren, bevor Kapazitäts- oder Leistungsprobleme Ihre EDA-Simulationen beeinträchtigen.
+Das Projects Dashboard ermöglicht IT-Administratoren und Projektmanagern die Übersicht darüber, wie Projekte Speicher in FSx for ONTAP File Systems und Volumes nutzen. Es zeigt Speichernutzungsmuster an, sodass Projekte mit dem höchsten Ressourcenverbrauch erkannt, Kosten nachverfolgt und der Speicher angepasst werden können, bevor Kapazitäts- oder Leistungsprobleme EDA-Simulationen beeinträchtigen.
 
 
 
 == So funktioniert das Projekt-Dashboard
 
-Das Dashboard „Projekte“ erfasst CloudWatch-Metriken für alle FSx for ONTAP Volumes, die Ihren AWS-Anmeldeinformationen zugeordnet sind. Sie können bis zu fünf benutzerdefinierte Filter basierend auf Ihren AWS-Tags erstellen, um die Daten gemäß Ihren spezifischen Geschäftsanforderungen wie Projekten, Teams oder Anwendungen zu organisieren und zu filtern.
+Das Dashboard „Projekte“ zeigt CloudWatch Kennzahlen für alle FSx for ONTAP Volumes an, die mit Ihren AWS-Anmeldeinformationen verknüpft sind. Es können bis zu fünf Filter mithilfe von AWS-Tags erstellt werden, um die Daten nach Projekt, Team, Anwendung oder anderen Kategorien zu organisieren und anzuzeigen.
 
 Das Dashboard hilft Ihnen dabei:
 
-* Kapazität planen und Kosten bewerten
-* Treffen Sie datengestützte Entscheidungen zur Ressourcenverteilung
-* Ressourcenintensive Projekte identifizieren
-* Verfolgen Sie die Kosten präzise über Projekte oder Teams hinweg
-* Optimieren Sie die Speicherzuweisung, bevor Probleme auftreten.
+* Kapazität planen und Kosten verstehen
+* Daten dienen als Grundlage für Entscheidungen zur Ressourcenzuweisung.
+* Projekte mit hohem Ressourcenverbrauch erkennen
+* Kosten nach Projekt oder Team nachverfolgen
+* Speicher anpassen, bevor Probleme auftreten
 
 
 Für die proaktive Überwachung der Latenzleistung siehe link:learn-latency-monitoring.html["Erfahren Sie mehr über Latenzüberwachung"].
@@ -46,16 +46,16 @@ Das Dashboard erfasst und zeigt die folgenden CloudWatch Kennzahlen an:
 
 == Benutzerdefinierte Filter
 
-Mit benutzerdefinierten Filtern können Sie Ihre Dashboard-Daten entsprechend der Arbeitsweise Ihres Unternehmens organisieren. Durch die Ausrichtung der Filter an Ihrer Projektstruktur, Ihren Teams oder Kostenstellen können Sie schnell auf die spezifischen Daten zugreifen, die Sie benötigen, ohne sich durch irrelevante Informationen navigieren zu müssen. Dies macht Kapazitätsplanung, Kostenverfolgung und Leistungsüberwachung effizienter.
+Benutzerdefinierte Filter helfen dabei, Dashboard-Daten so zu organisieren, dass sie den Arbeitsabläufen Ihres Unternehmens entsprechen. Filter können nach Projekt, Team oder Kostenstelle gesetzt werden, sodass die benötigten Daten schnell gefunden werden, ohne irrelevante Informationen durchsuchen zu müssen. Dadurch wird die Kapazitätsplanung, Kostenverfolgung und Leistungsüberwachung erleichtert.
 
-Sie können bis zu fünf benutzerdefinierte Filter basierend auf Ihren AWS-Tags konfigurieren. Jeder benutzerdefinierte Filter benötigt die folgenden Komponenten:
+Sie können bis zu fünf benutzerdefinierte Filter basierend auf Ihren AWS-Tags konfigurieren.
 
 * *Filterbezeichnung*: Der Name, der im Dashboard angezeigt wird
 * *AWS-Tag-Schlüsselname*: Der tatsächliche AWS-Tag-Schlüssel, der auf Ihren Ressourcen verwendet wird
 * *Auswahltyp*: Einzelauswahl oder Mehrfachauswahl
 
 
-Wenn Sie keine benutzerdefinierten Filter konfigurieren, bleiben die Standardfilter (Dateisystem, Volume-Typ und Zeitraum) verfügbar, sodass Sie Ihre Dashboards weiterhin anzeigen und interaktiv nutzen können.
+Wenn Sie keine benutzerdefinierten Filter konfigurieren, stehen die Standardfilter Dateisystem, Volume-Typ und Zeitbereich weiterhin zur Verfügung, sodass Sie Ihre Dashboards anzeigen und verwenden können.
 
 
 
@@ -63,7 +63,7 @@ Wenn Sie keine benutzerdefinierten Filter konfigurieren, bleiben die Standardfil
 
 AWS-Tags sind Metadaten für Ihre AWS-Ressourcen. Sie helfen Ihnen, Ihre AWS-Ressourcen auf verschiedene Weise zu kategorisieren, beispielsweise nach Projekt, Anwendung oder Geschäftsbereich.
 
-Um benutzerdefinierte Filter effektiv zu nutzen, konfigurieren Sie AWS-Tags auf Ihren FSx for ONTAP Volumes basierend auf Ihren Geschäftsanforderungen—for example, Tags, die Projekte, Teams oder Geschäftseinheiten repräsentieren.
+Um benutzerdefinierte Filter zu verwenden, fügen Sie Ihren FSx for ONTAP Volumes AWS-Tags hinzu, die Ihren Anforderungen entsprechen, z. B. Tags für Projekte, Teams oder Geschäftsbereiche.
 
 Weitere Informationen zum Taggen finden Sie unter  https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/what-are-tags.html["Was sind Tags?"^] und  https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/overview.html["AWS Resource Groups Tagging API-Referenz"^].
 
@@ -77,7 +77,7 @@ Das Dashboard bietet verschiedene Ansichtsmodi, mit denen Sie Ihre Speichermetri
 
 === Gesamtansicht
 
-Die Gesamtansicht (Standard) zeigt aggregierte Metriken aller Volumes an, die Ihren ausgewählten Filtern entsprechen. Diese Ansicht bietet einen Überblick auf hoher Ebene über Ihre gesamte Speicherleistung und zeigt kombinierte Kapazitäts-, IOPS- und Durchsatzmetriken.
+Die Gesamtansicht (Standard) zeigt kombinierte Metriken für alle Volumes an, die Ihren ausgewählten Filtern entsprechen. Sie bietet einen schnellen Überblick über die gesamte Speicherleistung, einschließlich Gesamtkapazität, IOPS und Durchsatz.
 
 Nutzen Sie diese Ansicht, um:
 
@@ -90,13 +90,16 @@ Nutzen Sie diese Ansicht, um:
 
 === Volumenansicht
 
-Die Volumenansicht zeigt die Leistung einzelner Volumen im Zeitverlauf und listet die Top 10 Volumen für jede Metrik auf. Diese Ansicht hilft Ihnen, bestimmte Volumen zu identifizieren, die den Ressourcenverbrauch antreiben, und deren Verhalten im ausgewählten Zeitraum zu beobachten.
+Die Volumenansicht zeigt, wie einzelne Volumes im Zeitverlauf arbeiten. Es werden die Top 10 Volumes für jede Metrik angezeigt. Dies erleichtert die Übersicht darüber, welche Volumes die meisten Ressourcen nutzen und wie sie sich im ausgewählten Zeitraum verhalten.
 
 Nutzen Sie diese Ansicht, um:
 
-* Leistungsengpässe finden
-* Identifizieren Sie Volumes, die möglicherweise angepasst werden müssen.
-* Ermitteln Sie genau, welche spezifischen Projekte oder Arbeitslasten die meisten Ressourcen verbrauchen
+* Ermitteln, was die Leistung verlangsamt
++
+** Speichervolumes identifizieren, bei denen möglicherweise eine Größenanpassung erforderlich ist
+** Anzeigen, welche Projekte oder Arbeitslasten die meisten Ressourcen verwenden
+
+
 
 
 
@@ -113,13 +116,13 @@ Wenn Sie einzelne Volumes anzeigen, zeigt das Dashboard die Top 10 Volumes aus I
 
 NOTE: Das Dashboard zeigt nur die Top 10 Volumes für jede Kennzahl an. Wenn Sie mehr als 10 Volumes haben, werden einige Volumes möglicherweise nicht in der Detailansicht angezeigt.
 
-Wenn in mehreren Metriken die gleichen Volumes auftreten, verwendet das Dashboard eine einheitliche Farbcodierung in der Legende, um das Verfolgen bestimmter Volumes in verschiedenen Metriken zu erleichtern.
+Wenn in mehreren Metriken die gleichen Volumes vorkommen, verwendet das Dashboard in der Legende die gleichen Farben, sodass diese Volumes in den verschiedenen Metriken leicht nachverfolgt werden können.
 
 
 
 ==== Interaktive Volumendaten
 
-Interaktive Hover-Daten liefern präzise Messwerte zu bestimmten Zeitpunkten und helfen Ihnen, Leistungsänderungen mit spezifischen Ereignissen oder Zeiträumen in Zusammenhang zu bringen. Diese detaillierten Informationen sind wertvoll für die Fehlerbehebung bei Leistungsproblemen, die Validierung von Optimierungsmaßnahmen oder die Erläuterung von Ressourcennutzungsmustern gegenüber Stakeholdern.
+Fahren Sie mit dem Mauszeiger über das Diagramm, um die genauen Werte zu bestimmten Zeitpunkten anzuzeigen. Dies erleichtert die Verknüpfung von Leistungsänderungen mit Ereignissen oder Zeiträumen. Die detaillierten Daten können dabei unterstützen, Leistungsprobleme zu erkennen, die Wirksamkeit von Optimierungen zu bestätigen und anderen die Ressourcennutzung zu erläutern.
 
 Wenn Sie mit dem Mauszeiger über eine beliebige Volumenlinie in den Diagrammen fahren, können Sie Folgendes anzeigen:
 

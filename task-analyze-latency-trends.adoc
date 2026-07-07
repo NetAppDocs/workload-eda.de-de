@@ -11,29 +11,33 @@ summary: Nutzen Sie das interaktive Latenzdiagramm, um die Latenztrends im Zeitv
 
 
 [role="lead"]
-Nachdem ein Latenzereignis erkannt wurde, können Sie mithilfe des interaktiven Diagramms das Latenzverhalten des Volumes im Zeitverlauf analysieren. Dies hilft Ihnen, Muster zu erkennen, zu verstehen, ob Leistungsprobleme wiederkehrend oder vereinzelt auftreten, und datengestützte Entscheidungen zur Behebung zu treffen.
+Nachdem ein Latenzereignis erkannt wurde, kann mithilfe des interaktiven Diagramms die zeitliche Entwicklung von Latenz und Volumen verfolgt werden. Dies erleichtert das Erkennen von Mustern, das Feststellen, ob das Problem häufig oder nur einmal auftritt, und die Entscheidung über die Behebung auf Basis der Daten.
 
 
 
 == Bevor Sie beginnen
 
-Sie müssen link:task-configure-latency-monitoring.html["konfigurierte Latenzüberwachung"] und mindestens ein Latenzereignis erkannt haben.
+Sie müssen link:task-configure-latency-monitoring.html["konfigurierte Latenzüberwachung"] und mindestens ein Latenzereignis erkannt haben. Leistungsdiagramme sind einsehbar, wenn AWS-Zugangsdaten vorhanden sind. Für die Anzeige der Komponentenaufschlüsselung ist ein Link erforderlich.
 
 
 
 == Latenztrends analysieren
 
-Das Latenzdiagramm bietet eine visuelle Darstellung des Volumen-Latenzverhaltens im Zeitverlauf.
+Die Registerkarte *Über die Zeit* bietet Leistungsdiagramme, die bei der Analyse des Volumenverhaltens unterstützen: Latenz, IOPS und Durchsatz.
 
 .Über diese Aufgabe
-Das Latenzdiagramm zeigt CloudWatch-Latenzdaten für das betroffene Volume an. Das Diagramm zeigt automatisch die Lese- oder Schreiblatenz an, je nachdem, welcher Alarm das Ereignis ausgelöst hat. Sie können den Zeitraum anpassen, um das Latenzverhalten über verschiedene Zeiträume zu betrachten.
+Die Diagramme zeigen CloudWatch Kennzahlen für das betroffene Volumen. Alle Diagramme verwenden dieselbe Zeitachse. Es werden automatisch Lese- oder Schreibkennzahlen angezeigt, abhängig davon, welcher Alarm das Ereignis ausgelöst hat.
 
-Es beinhaltet:
+Sie können den Zeitraum ändern, um die Leistung über verschiedene Zeiträume hinweg zu betrachten. Sie können auch zwischen den Operationen „Alle“, „Lesen“, „Schreiben“ oder „Metadaten“ wechseln.
 
-* *Latenz-Metriklinie*: Zeigt die tatsächlichen Latenzwerte (in Millisekunden) an, die im Laufe der Zeit von CloudWatch erfasst wurden.
-* *Schwellenwertlinien*: Gepunktete horizontale Linien, die Ihre konfigurierten Warn- und kritischen Schwellenwerte anzeigen
-* *Überschreitungsindikatoren*: Visuelle Markierungen, die anzeigen, wann und wie oft Schwellenwerte während des Zeitraums überschritten wurden
-* *Details zum Verstoß*: Für jeden Verstoß werden der mittlere Latenzwert, der Prozentsatz über dem Schwellenwert, die QoS-Verzögerungszentrumsdaten und die Erkennungszeit angezeigt.
+Die Visualisierung umfasst:
+
+* *Latenzdiagramm*: Zeigt die tatsächlichen Latenzwerte (in Millisekunden), die im Laufe der Zeit über CloudWatch erfasst wurden, mit Schwellenwertlinien und Indikatoren für Grenzwertüberschreitungen.
+* *IOPS-Diagramm*: Zeigt die tatsächliche Latenz in Millisekunden von CloudWatch im Zeitverlauf. Schwellenwertlinien markieren die festgelegten Grenzwerte, und Markierungen zeigen, wann diese Grenzwerte überschritten wurden. Es werden außerdem die Operationen pro Sekunde mit einer Schwellenwertlinie und Markierungen für vergangene Überschreitungen angezeigt. Die Leseaktivität zeigt DataReadOperations, und die Schreibaktivität zeigt DataWriteOperations.
+* *Durchsatzdiagramm*: Zeigt Datentransferraten. Bei Lesevorgängen werden DataReadBytes angezeigt. Bei Schreibvorgängen werden DataWriteBytes angezeigt. Wenn im Filter **Metadaten** ausgewählt ist, zeigt das Durchsatzdiagramm keine Daten.
+* *Schwellenwertlinien*: Gepunktete horizontale Linien zeigen die Warn- und kritischen Grenzwerte an, die Sie in den Diagrammen für Latenz und IOPS festgelegt haben.
+* *Überschreitungsindikatoren*: Visuelle Markierungen, die anzeigen, wann Schwellenwerte überschritten wurden und wie oft dies im betrachteten Zeitraum geschah.
+* *Details zum Sicherheitsverstoß*: Für jeden Sicherheitsverstoß sind die mittlere Verzögerung, der Prozentsatz über dem Grenzwert, die Daten des QoS-Verzögerungszentrums und der Zeitpunkt der Erkennung ersichtlich.
 
 
 .Schritte
@@ -42,43 +46,41 @@ Es beinhaltet:
 Das Panel zur Latenzanalyse öffnet sich.
 
 . Wählen Sie die Registerkarte *Over time* aus.
-. Schauen Sie sich die standardmäßige Diagrammansicht an, die Latenzdaten der letzten 3 Stunden anzeigt.
-. Ändern Sie den Zeitbereich, um verschiedene Perioden zu analysieren und Muster zu erkennen.
-. Beobachten Sie die Latenz-Trendlinie im Verhältnis zu den Schwellenwertlinien.
-. Überprüfen Sie die Indikatoren für Sicherheitsverstöße im Diagramm:
-+
-Werden die Schwellenwerte während des angezeigten Zeitraums mehrfach überschritten, zeigen Überschreitungsmarkierungen an, wann die Schwellenwerte überschritten wurden.
-
-. Um Einzelheiten zum Sicherheitsvorfall anzuzeigen, bewegen Sie den Mauszeiger über einen Indikator für den Sicherheitsvorfall oder wählen Sie ihn aus.
+. Die Standardansicht zeigt Leistungsdiagramme für Latenz, IOPS und Durchsatz der letzten 3 Stunden.
+. Optional kann mit dem Filter *Typ* zwischen den Operationen Alle, Lesen, Schreiben oder Metadaten umgeschaltet werden. Der Standardwert entspricht dem Ereignistyp (Lesen für Leseereignisse, Schreiben für Schreibereignisse).
+. Den Zeitraum ändern, um andere Zeiträume zu überprüfen und nach Mustern zu suchen.
+. Die Trendlinien für Latenz, IOPS und Durchsatz können geprüft werden. Die Diagramme für IOPS und Latenz enthalten Schwellenwertlinien zum Vergleich.
+. In den Diagrammen nach Indikatoren für Überschreitungen suchen. Diese Indikatoren erscheinen, wenn Schwellenwerte innerhalb des ausgewählten Zeitraums mehrfach überschritten werden.
+. Weitere Details werden angezeigt, wenn der Mauszeiger über einen Verstoßindikator bewegt oder dieser ausgewählt wird.
 . Überprüfen Sie die Zusammenfassung der Verstöße:
 +
-Das Diagramm zeigt die Gesamtzahl der während des ausgewählten Zeitraums festgestellten Warn- oder kritischen Verstöße.
+Das Diagramm zeigt die Gesamtzahl der Warn- oder kritischen Verstöße während des ausgewählten Zeitraums.
 
 . Nutzen Sie die Erkenntnisse aus den Diagrammen, um:
 +
-** Ermitteln Sie, ob Latenzprobleme vereinzelt oder wiederkehrend auftreten
-** Identifizieren Sie tageszeitliche Muster, die mit hoher Latenz korrelieren
-** Beurteilen Sie, ob die Latenzspitzen kurz oder kontinuierlich sind
-** Korrelieren Sie Latenzereignisse mit Arbeitslastmustern oder Systemänderungen
+** Es kann festgestellt werden, ob Latenzprobleme einmalig oder wiederholt auftreten.
+** Tageszeiten erkennen, zu denen die Latenz höher ist
+** Feststellen, ob Latenzspitzen kurz- oder langanhaltend sind
+** Latenzereignisse mit Arbeitslastmustern oder Systemänderungen vergleichen
 
 
 
 
 .Ergebnis
-Sie erhalten einen umfassenden Überblick über das Latenzverhalten des Volumes im Zeitverlauf, was Ihnen hilft, fundierte Entscheidungen darüber zu treffen, ob sofortige Abhilfemaßnahmen erforderlich sind, Schwellenwerte angepasst werden müssen oder zugrunde liegende Infrastrukturprobleme untersucht werden müssen.
+Sie können sehen, wie sich die Latenz des Volumens im Laufe der Zeit verändert. Dies unterstützt die Entscheidung, ob aktuell Maßnahmen erforderlich sind, Alarmgrenzen angepasst werden sollten oder eine Überprüfung auf Systemprobleme sinnvoll ist.
 
 
-NOTE: Das Latenzdiagramm zeigt CloudWatch-Metrikdaten, die aufgrund unterschiedlicher Erfassungsmethoden geringfügig von den ONTAP QoS-Verzögerungszentrum-Daten abweichen können. Beide Datenquellen werden für eine umfassende Analyse bereitgestellt.
+NOTE: Das Latenzdiagramm verwendet CloudWatch-Metriken. Diese können geringfügig von den ONTAP QoS-Verzögerungszentrum-Daten abweichen, da sie auf unterschiedliche Weise erfasst werden. Beide werden angezeigt, um einen umfassenderen Überblick zu bieten.
 
 
 
 == Graphinterpretation
 
-Beachten Sie diese Empfehlungen bei der Analyse von Latenztrends:
+Diese Tipps sind bei der Überprüfung von Änderungen der Reaktionszeit hilfreich:
 
-* *Verwenden Sie mehrere Zeiträume*: Analysieren Sie das Diagramm über verschiedene Zeiträume hinweg, um zwischen einzelnen Leistungsspitzen und kontinuierlicher Leistungsverschlechterung zu unterscheiden. Beginnen Sie mit der 24H-Ansicht für den Kontext, zoomen Sie dann in kürzere Zeiträume, um spezifische Vorfälle zu analysieren, oder erweitern Sie auf 72H, um tägliche Muster zu erkennen.
-* *Schwellenwerte visuell vergleichen*: Nutzen Sie die Schwellenwertlinien im Diagramm, um zu beurteilen, ob die von Ihnen konfigurierten Warn- und kritischen Werte für Ihre Arbeitslastmuster geeignet sind. Wenn die Latenz den Schwellenwert häufig erreicht, ihn aber nicht überschreitet, prüfen Sie, ob Ihr Schwellenwert zu hoch eingestellt ist. Wenn Sie viele kurze Schwellenwertüberschreitungen feststellen, die den Betrieb nicht beeinträchtigen, ist Ihr Schwellenwert möglicherweise zu empfindlich.
-* *Tagesmuster erkennen*: Nutzen Sie die 24H- und 72H-Ansichten, um tageszeitliche Muster zu identifizieren. Treten Latenzspitzen zu vorhersehbaren Zeiten auf, können Sie ressourcenintensive Vorgänge proaktiv in Zeiten geringer Auslastung planen oder die Kapazität zur Bewältigung von Lastspitzen erhöhen.
-* *Unterscheidung der Spike-Typen*: Kurze, abrupte Spitzen deuten auf vorübergehende Probleme hin (wie eine temporäre Ressourcenkonkurrenz), während kontinuierlich erhöhte Latenz auf systemische Probleme (wie Kapazitätsengpässe oder Konfigurationsprobleme) hindeutet. Jede erfordert unterschiedliche Behebungsansätze.
-* *Trends nach Änderungen überwachen*: Nach dem Anpassen von Schwellenwerten, dem Hinzufügen von Kapazität oder dem Ändern von Konfigurationen sollten Sie den Graphen mindestens 72 Stunden lang beobachten, um sicherzustellen, dass Ihre Änderungen den gewünschten Effekt haben.
+* *Mehrere Zeiträume verwenden*: Die Diagramme in verschiedenen Zeitbereichen zeigen den Unterschied zwischen kurzfristigen Spitzen und anhaltenden Verlangsamungen. Die 24-Stunden-Ansicht bietet einen Gesamtüberblick. Anschließend lässt sich durch das Heranzoomen auf kürzere Zeiträume gezielt nach bestimmten Vorfällen suchen, oder die 72-Stunden-Ansicht zeigt tägliche Muster.
+* *Schwellenwerte visuell vergleichen*: Die Schwellenwertlinien im Diagramm können genutzt werden, um zu prüfen, ob die Warn- und kritischen Einstellungen zur Arbeitslast passen. Wenn die Latenz häufig nahe an den Schwellenwert heranreicht, ihn aber nicht überschreitet, könnte der Schwellenwert zu hoch sein. Wenn viele kurze Spitzenwerte auftreten, die den Schwellenwert überschreiten, aber den Betrieb nicht beeinträchtigen, könnte der Schwellenwert zu empfindlich sein.
+* *Tagesmuster erkennen*: Die 24-Stunden- und 72-Stunden-Ansichten ermöglichen das Erkennen von Mustern im Tagesverlauf. Wenn Latenzspitzen zu denselben Zeiten auftreten, empfiehlt sich das Einplanen ressourcenintensiver Aufgaben in ruhigeren Zeiträumen oder das Hinzufügen zusätzlicher Kapazität für stark ausgelastete Zeiten.
+* *Unterscheidung der Spike-Typen*: Kurze Spikes deuten in der Regel auf vorübergehende Probleme hin, wie zum Beispiel kurzzeitige Ressourcenengpässe. Latenz, die über längere Zeit hoch bleibt, weist auf tieferliegende Systemprobleme hin, wie begrenzte Kapazität oder Konfigurationsprobleme. Jede Situation erfordert eine andere Lösung.
+* *Trends nach Änderungen überwachen*: Nach dem Anpassen von Schwellenwerten, dem Hinzufügen von Kapazität oder dem Ändern von Einstellungen wird empfohlen, den Graphen mindestens 72 Stunden lang zu beobachten, um sicherzustellen, dass die Änderungen funktioniert haben.
 

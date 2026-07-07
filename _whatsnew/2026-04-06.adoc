@@ -23,15 +23,15 @@ https://docs.netapp.com/us-en/workload-eda/task-use-overview-dashboard.html#capa
 
 === Automatisierte KI-Latenzanalyse
 
-Die Latenzanalyse umfasst nun auch die Analyse von KI-Agenten.
+Die Latenzanalyse umfasst nun auch die KI-Analyse.
 
-Bei komplexen Szenarien mit Daten- oder Clusterlatenz können Sie eine KI-Agentenanalyse aufrufen, um Folgendes zu erhalten:
+Bei komplexen Szenarien mit Daten- oder Clusterlatenz kann eine KI-Analyse aufgerufen werden, um Folgendes zu erhalten:
 
 * Detaillierte Ursachenanalyse
 * Liste der betroffenen EC2-Clients
 * Spezifische Abhilfemaßnahmen
 
 
-Die Analyse mittels KI-Agent erfordert die Konfiguration des Amazon Bedrock-Modell-ARN und ist bedarfsgesteuert verfügbar, wenn eine Basisanalyse eine weiterführende Untersuchung empfiehlt. Der KI-Agent kann Probleme wie übermäßige Speicherauslastung, suboptimale Mount-Point-Konfigurationen, FlexGroup-Rebalancing-Bedarf und Skalierungsanforderungen identifizieren.
+Die KI-Analyse erfordert die Konfiguration des Amazon Bedrock Modell-ARN und ist bedarfsgesteuert verfügbar, wenn eine Basisanalyse eine weiterführende Untersuchung empfiehlt. Der KI-Agent kann Probleme wie übermäßige Speicherauslastung, nicht optimale Mount-Point-Konfigurationen, FlexGroup Rebalancing-Bedarf und Scale-out-Anforderungen identifizieren.
 
-https://docs.netapp.com/us-en/workload-eda/task-monitor-latency.html#run-ai-agent-analysis["Erfahren Sie mehr über die Analyse von KI-Agenten"^].
+https://docs.netapp.com/us-en/workload-eda/task-monitor-latency.html#run-ai-agent-analysis["Weitere Informationen zur KI-Analyse"^].
