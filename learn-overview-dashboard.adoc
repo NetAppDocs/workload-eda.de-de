@@ -15,6 +15,7 @@ Das Übersichts-Dashboard bietet IT-Administratoren eine zentrale Plattform zur 
 
 
 
+[[overview]]
 == Überblick
 
 Das Dashboard „Übersicht“ erfasst CloudWatch-Metriken für alle FSx for ONTAP-Dateisysteme, die mit Ihren konfigurierten AWS-Anmeldeinformationen verknüpft sind.
@@ -36,10 +37,12 @@ Es hilft Ihnen:
 
 
 
+[[dashboard-components]]
 == Dashboard-Komponenten
 
 
 
+[[cluster-health-status]]
 === Cluster-Gesundheitsstatus
 
 Der Clusterstatus bietet eine schnelle Übersicht über die Aktivität der von Ihnen ausgewählten Dateisysteme. Dies erscheint nur, wenn mindestens eine FSx for ONTAP Verbindung zu Ihren Dateisystemen besteht.
@@ -53,6 +56,7 @@ Der Gesundheitszustand umfasst folgende Bereiche:
 
 
 
+[[clusters-table]]
 === Clustertabelle
 
 Die Clustertabelle bietet eine detaillierte Ansicht jedes FSx for ONTAP-Dateisystems, gefiltert nach Ihrer aktiven Region und Ihren AWS-Kontoeinstellungen. Die Daten werden aus CloudWatch-Metriken gewonnen.
@@ -68,10 +72,12 @@ Nutzen Sie die Tabelle, um:
 
 
 
+[[ssd-capacity-management]]
 == SSD Kapazitätsmanagement
 
 
 
+[[management-modes]]
 === Managementmodi
 
 *Automatisieren*:: Workload Factory fügt automatisch zusätzlichen SSD-Speicherplatz hinzu, sobald festgelegte Nutzungsgrenzen erreicht sind. Dies geschieht automatisch, sodass keine manuelle Arbeit erforderlich ist. Dies eignet sich gut für Umgebungen, die eine automatische Verwaltung bevorzugen.
@@ -81,6 +87,7 @@ Nutzen Sie die Tabelle, um:
 
 
 
+[[capacity-recommendations]]
 === Kapazitätsempfehlungen
 
 Wenn Workload Factory sich im Automate- oder Recommend-Modus befindet, überprüft es automatisch jedes FSx for ONTAP Dateisystem und führt einen Kapazitätsempfehlungs-Algorithmus aus. Das System scannt alle 24 Stunden, um festzustellen, ob die SSD-Kapazität angepasst werden sollte.
@@ -96,6 +103,7 @@ Die Empfehlung erläutert die vorgeschlagene Änderung und deren Begründung, be
 
 
 
+[[ssd-management-parameters]]
 === SSD-Verwaltungsparameter
 
 Parameter steuern, wie das Kapazitätsmanagementsystem Ihre SSD-Nutzung analysiert und darauf reagiert:
@@ -109,6 +117,7 @@ Sie können diese Parameter für jedes Dateisystem einzeln festlegen oder die Ma
 
 
 
+[[understanding-capacity-decision-points]]
 === Kapazitätsentscheidungspunkte verstehen
 
 Das SSD-Nutzungsdiagramm zeigt an, wann das System Kapazitätsempfehlungen ausgesprochen oder automatische Maßnahmen ergriffen hat. Diese Markierungen zeigen, wie sich der Kapazitätsmanagement-Algorithmus im Zeitverlauf verhalten hat.
@@ -128,6 +137,7 @@ Das SSD-Nutzungsverlaufsdiagramm dient dazu:
 
 
 
+[[related-information]]
 == Verwandte Informationen
 
 * link:task-activate-overview-dashboard.html["Aktivieren Sie das Übersichts-Dashboard"]

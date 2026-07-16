@@ -15,6 +15,7 @@ Das Projects Dashboard ermöglicht IT-Administratoren und Projektmanagern die Ü
 
 
 
+[[how-the-projects-dashboard-works]]
 == So funktioniert das Projekt-Dashboard
 
 Das Dashboard „Projekte“ zeigt CloudWatch Kennzahlen für alle FSx for ONTAP Volumes an, die mit Ihren AWS-Anmeldeinformationen verknüpft sind. Es können bis zu fünf Filter mithilfe von AWS-Tags erstellt werden, um die Daten nach Projekt, Team, Anwendung oder anderen Kategorien zu organisieren und anzuzeigen.
@@ -32,6 +33,7 @@ Für die proaktive Überwachung der Latenzleistung siehe link:learn-latency-moni
 
 
 
+[[cloudwatch-metrics-collected]]
 === Erfasste CloudWatch-Metriken
 
 Das Dashboard erfasst und zeigt die folgenden CloudWatch Kennzahlen an:
@@ -44,6 +46,7 @@ Das Dashboard erfasst und zeigt die folgenden CloudWatch Kennzahlen an:
 
 
 
+[[custom-filters]]
 == Benutzerdefinierte Filter
 
 Benutzerdefinierte Filter helfen dabei, Dashboard-Daten so zu organisieren, dass sie den Arbeitsabläufen Ihres Unternehmens entsprechen. Filter können nach Projekt, Team oder Kostenstelle gesetzt werden, sodass die benötigten Daten schnell gefunden werden, ohne irrelevante Informationen durchsuchen zu müssen. Dadurch wird die Kapazitätsplanung, Kostenverfolgung und Leistungsüberwachung erleichtert.
@@ -59,6 +62,7 @@ Wenn Sie keine benutzerdefinierten Filter konfigurieren, stehen die Standardfilt
 
 
 
+[[aws-tags]]
 === AWS-Tags
 
 AWS-Tags sind Metadaten für Ihre AWS-Ressourcen. Sie helfen Ihnen, Ihre AWS-Ressourcen auf verschiedene Weise zu kategorisieren, beispielsweise nach Projekt, Anwendung oder Geschäftsbereich.
@@ -69,12 +73,14 @@ Weitere Informationen zum Taggen finden Sie unter  https://docs.aws.amazon.com/w
 
 
 
+[[volume-details]]
 == Volumendetails
 
 Das Dashboard bietet verschiedene Ansichtsmodi, mit denen Sie Ihre Speichermetriken auf unterschiedlichen Detailebenen analysieren können.
 
 
 
+[[total-view]]
 === Gesamtansicht
 
 Die Gesamtansicht (Standard) zeigt kombinierte Metriken für alle Volumes an, die Ihren ausgewählten Filtern entsprechen. Sie bietet einen schnellen Überblick über die gesamte Speicherleistung, einschließlich Gesamtkapazität, IOPS und Durchsatz.
@@ -88,6 +94,7 @@ Nutzen Sie diese Ansicht, um:
 
 
 
+[[volume-view]]
 === Volumenansicht
 
 Die Volumenansicht zeigt, wie einzelne Volumes im Zeitverlauf arbeiten. Es werden die Top 10 Volumes für jede Metrik angezeigt. Dies erleichtert die Übersicht darüber, welche Volumes die meisten Ressourcen nutzen und wie sie sich im ausgewählten Zeitraum verhalten.
@@ -133,6 +140,7 @@ Wenn Sie mit dem Mauszeiger über eine beliebige Volumenlinie in den Diagrammen 
 
 
 
+[[related-information]]
 == Verwandte Informationen
 
 * link:task-configure-project-dashboard.html["Konfigurieren Sie das Projects-Dashboard"]

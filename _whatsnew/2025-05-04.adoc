@@ -4,6 +4,7 @@
 
 
 
+[[updated-permissions-terminology-in-workload-factory-for-eda]]
 === Aktualisierte Berechtigungsterminologie in Workload Factory für EDA
 
 Die Benutzeroberfläche und die Dokumentation von Workload Factory verwenden nun „read-only“ für Leseberechtigungen und „read/write“ für Automatisierungsberechtigungen.

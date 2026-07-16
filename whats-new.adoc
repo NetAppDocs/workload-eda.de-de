@@ -15,31 +15,30 @@ Erfahren Sie mehr über die Neuerungen der EDA-Funktionalität von Workload Fact
 
 
 
+[[5-july-2026]]
 == 5. Juli 2026
 
 
 
-=== Erweiterte Latenzanalyse mit IOPS und Durchsatzdiagrammen
+[[enhanced-latency-analysis-with-synchronized-latency-iops-and-throughput-charts]]
+=== Erweiterte Latenzanalyse mit synchronisierten Diagrammen für Latenz, IOPS und Durchsatz
 
-Das Panel zur Latenzanalyse zeigt nun synchronisierte Leistungsdiagramme auf der Registerkarte *Über die Zeit*:
+Das Panel zur Latenzanalyse enthält nun eine Seite mit *detaillierter Latenzanalyse* und synchronisierten Leistungsdiagrammen:
 
 * *Latenzdiagramm*: Zeigt, wie sich die Latenz im Laufe der Zeit verändert, mit Schwellenwertlinien und Warnmeldungen, wenn Grenzwerte überschritten werden.
 * *IOPS Diagramm*: Zeigt die Operationen pro Sekunde, mit Schwellenwertlinien und Indikatoren für vergangene Grenzwertüberschreitungen.
-* *Durchsatzdiagramm*: Zeigt Datentransferraten (DataReadBytes oder DataWriteBytes).
+* *Durchsatzdiagramm*: Zeigt Datentransferraten (DataReadBytes oder DataWriteBytes). Wenn im Filter Metadaten ausgewählt sind, zeigt das Durchsatzdiagramm keine Daten.
 
 
 Alle Diagramme verwenden die gleiche Zeitleiste und zeigen automatisch die korrekten Metriken an, abhängig davon, ob das Ereignis ein Lese- oder Schreibvorgang ist.
 
-Ein neuer Filter ermöglicht das Umschalten zwischen „Alle“, „Lesen“, „Schreiben“ oder „Metadaten“-Operationen für eine detailliertere Analyse.
-
-Diese Diagramme helfen dabei zu erkennen, wie Latenz, IOPS und Durchsatz miteinander zusammenhängen, was die Identifizierung der Ursache von Leistungsproblemen und die Entscheidung über deren Behebung erleichtert.
-
-Leistungsdiagramme sind jetzt nur verfügbar, wenn AWS-Zugangsdaten angegeben werden. FSx for ONTAP Verbindungen sind nur für die Komponentenaufschlüsselung in der Basis- und KI-Analyse erforderlich.
+Sie können die Ansicht anpassen und Latenzspitzen mit Änderungen der IOPS und des Durchsatzes korrelieren. Markierungen für Grenzwertverletzungen und Details beim Überfahren mit der Maus helfen dabei zu erkennen, wann Schwellenwerte überschritten wurden, und wichtige Kennzahlen für die erkannte Grenzwertverletzung zu überprüfen.
 
 https://docs.netapp.com/us-en/workload-eda/task-analyze-latency-trends.html["Wie sich Latenztrends mit mehreren Diagrammen analysieren lassen"^].
 
 
 
+[[set-latency-notification-frequency]]
 === Häufigkeit der Latenzbenachrichtigung festlegen
 
 Sie können nun auswählen, wie häufig Sie E-Mail-Benachrichtigungen über Latenzüberschreitungen erhalten:
@@ -60,10 +59,12 @@ https://docs.netapp.com/us-en/workload-eda/task-configure-latency-monitoring.htm
 
 
 
+[[31-may-2026]]
 == 31. Mai 2026
 
 
 
+[[ssd-capacity-increase-management-modes-and-automation]]
 === SSD-Kapazitätserhöhung, Verwaltungsmodi und Automatisierung
 
 Workload Factory bietet jetzt Verwaltungsmodi zur SSD-Kapazitätserweiterung, die Ihren betrieblichen Präferenzen entsprechen:
@@ -79,6 +80,7 @@ link:https://docs.netapp.com/us-en/workload-eda/task-use-overview-dashboard.html
 
 
 
+[[bulk-edit-ssd-capacity-increase-management-parameters]]
 === Massenbearbeitung der Parameter für das Management der SSD-Kapazitätserhöhung
 
 Über das Übersichts-Dashboard können Sie nun die Parameter für die SSD-Kapazitätserweiterung über mehrere Dateisysteme hinweg anpassen. Wählen Sie dazu in der Tabelle „Cluster“ einen oder mehrere Cluster aus und bearbeiten Sie die Werte für Schwellenwert (10–90 %), Rückblick (1–200 Stunden) und Vorausschau (1–200 Stunden) gleichzeitig.
@@ -89,6 +91,7 @@ link:https://docs.netapp.com/us-en/workload-eda/task-use-overview-dashboard.html
 
 
 
+[[capacity-decision-points-visualization]]
 === Visualisierung von Kapazitätsentscheidungspunkten
 
 Das SSD-Nutzungsdiagramm zeigt nun Entscheidungspunkte an, die angeben, wann Kapazitätsempfehlungen generiert oder automatisierte Aktionen durchgeführt wurden.
@@ -103,6 +106,7 @@ link:https://docs.netapp.com/us-en/workload-eda/task-use-overview-dashboard.html
 
 
 
+[[link-configured-status-in-clusters-table]]
 === Link-Konfigurationsstatus in der Clustertabelle
 
 Die Tabelle „Cluster“ im Übersichts-Dashboard enthält nun eine Spalte „Zugehöriger Link“, die anzeigt, ob ein FSx for ONTAP-Link für jedes Dateisystem konfiguriert ist. Der Verbindungsstatus wird täglich überprüft, sodass Sie Dateisysteme identifizieren können, die eine Linkkonfiguration benötigen oder bei denen Verbindungsprobleme auftreten.
@@ -111,16 +115,19 @@ link:https://docs.netapp.com/us-en/workload-eda/task-use-overview-dashboard.html
 
 
 
+[[support-for-aws-govcloud-us-in-netapp-workload-factory]]
 === Unterstützung für AWS GovCloud (US) in NetApp Workload Factory
 
 NetApp Workload Factory unterstützt AWS GovCloud (US)-Konten. Mit einem GovCloud (US)-Konto können Sie Speicher-Workloads in den AWS GovCloud (US)-Regionen bereitstellen und verwalten.
 
 
 
+[[3-may-2026]]
 == 3. Mai 2026
 
 
 
+[[email-and-sns-notifications-for-latency-events]]
 === E-Mail- und SNS-Benachrichtigungen für Latenzereignisse
 
 Sie können jetzt automatische Benachrichtigungen erhalten, wenn Latenzereignisse auf Ihren FSx for ONTAP Volumes erkannt werden. Konfigurieren Sie E-Mail- oder Amazon SNS-Benachrichtigungen in den Workload Factory-Einstellungen, um Echtzeit-Benachrichtigungen zu erhalten, wenn Volumes Ihre konfigurierten Latenzschwellenwerte überschreiten.
@@ -131,6 +138,7 @@ https://docs.netapp.com/us-en/workload-eda/task-monitor-latency.html#configure-l
 
 
 
+[[latency-trend-visualization-with-interactive-graphs]]
 === Latenztrendvisualisierung mit interaktiven Diagrammen
 
 Das Panel zur Latenzanalyse verfügt nun über eine Registerkartenoberfläche für eine umfassende Latenzanalyse:
@@ -147,10 +155,12 @@ https://docs.netapp.com/us-en/workload-eda/task-analyze-latency-trends.html["Erf
 
 
 
+[[6-april-2026]]
 == 6. April 2026
 
 
 
+[[eda-capacity-recommendations]]
 === EDA-Kapazitätsempfehlungen
 
 Workload Factory analysiert nun automatisch die SSD-Kapazität jedes FSx for ONTAP-Clusters in Ihrem EDA-Inventar und generiert Kapazitätsempfehlungen, wenn Anpassungen erforderlich sind. Der Algorithmus wird einmal alle 24 Stunden für jeden Cluster ausgeführt.
@@ -168,6 +178,7 @@ https://docs.netapp.com/us-en/workload-eda/task-use-overview-dashboard.html#capa
 
 
 
+[[automated-ai-latency-analysis]]
 === Automatisierte KI-Latenzanalyse
 
 Die Latenzanalyse umfasst nun auch die KI-Analyse.
@@ -185,10 +196,12 @@ https://docs.netapp.com/us-en/workload-eda/task-monitor-latency.html#run-ai-agen
 
 
 
+[[1-march-2026]]
 == 1. März 2026
 
 
 
+[[overview-dashboard-for-eda-storage-management]]
 === Übersichts-Dashboard für EDA-Speicherverwaltung
 
 Als IT-Administrator, der Dutzende von FSx for ONTAP-Dateisystemen verwaltet, können Sie mithilfe des Übersichts-Dashboards häufig gestellte Fragen zum Clusterzustand, zur Auslastung und zur Volume-Platzierung beantworten.
@@ -205,6 +218,7 @@ https://docs.netapp.com/us-en/workload-eda/task-use-overview-dashboard.html["Erf
 
 
 
+[[automated-latency-analysis]]
 === Automatisierte Latenzanalyse
 
 Die Latenzanalyse umfasst nun auch eine automatisierte Basisanalyse. Wenn Latenzereignisse erkannt werden, analysiert das System automatisch die ONTAP QoS Delay Center-Metriken, um die Ursache der Latenzprobleme zu identifizieren.
@@ -213,6 +227,7 @@ Die Basisanalyse wertet QoS-Richtlinien, Festplattenleistung, Netzwerkprobleme u
 
 
 
+[[new-ask-me-bookmark-available-in-workload-factory]]
 === Neues „Ask Me“-Lesezeichen in Workload Factory verfügbar
 
 Wir haben auf jedem Bildschirm in der Workload Factory-Konsole ein neues Ask Me-Lesezeichen hinzugefügt. Diese Verbesserung macht es für Sie einfacher und schneller, auf Ask Me zuzugreifen, wann immer Sie Hilfe benötigen. Ask Me ist unser KI-Assistent, der es Ihnen ermöglicht, Fragen zu Ihren eigenen Workload-Umgebungen zu stellen, personalisierte Einblicke direkt aus Ihrer Umgebung zu erhalten und auf frühere Konversationen zuzugreifen.
@@ -223,10 +238,12 @@ link:https://docs.netapp.com/us-en/workload-setup-admin/workload-factory-overvie
 
 
 
+[[1-february-2026]]
 == 1. Februar 2026
 
 
 
+[[enhanced-dashboard-filtering-with-customizable-tags-in-eda-workloads]]
 === Erweiterte Dashboard-Filterung mit anpassbaren Tags in EDA-Workloads
 
 Sie können nun bis zu fünf benutzerdefinierte Filter im EDA-Dashboard basierend auf Ihren AWS-Tags konfigurieren. Jeder benutzerdefinierte Filter enthält einen Labelnamen, einen AWS-Tag-Schlüssel und einen Auswahltyp (Einzel- oder Mehrfachauswahl).
@@ -239,6 +256,7 @@ https://docs.netapp.com/us-en/workload-eda/task-configure-dashboard.html["Erfahr
 
 
 
+[[volume-details-view-for-granular-performance-analysis]]
 === Volumendetailansicht für granulare Leistungsanalyse
 
 Das Dashboard bietet nun zwei Ansichtsmodi: Gesamtansicht und Volumenansicht. Die Gesamtansicht zeigt aggregierte Kennzahlen über alle Volumina hinweg, während die Volumenansicht die individuelle Performance der Top 10 Volumina im Zeitverlauf anzeigt.
@@ -249,6 +267,7 @@ https://docs.netapp.com/us-en/workload-eda/task-configure-dashboard.html#view-vo
 
 
 
+[[latency-analysis-for-proactive-performance-monitoring]]
 === Latenzanalyse für proaktive Leistungsüberwachung
 
 Die Latenzanalyse ermöglicht es Ihnen, die Lese- und Schreiblatenz Ihrer FSx for ONTAP-Dateisysteme zu überwachen. Sie können anpassbare Warn- und kritische Ereignisschwellenwerte konfigurieren, um Leistungsengpässe proaktiv zu identifizieren, bevor sie Ihre EDA-Workloads beeinträchtigen.
@@ -261,10 +280,12 @@ https://docs.netapp.com/us-en/workload-eda/task-monitor-latency.html["Erfahren S
 
 
 
+[[4-january-2026]]
 == 4. Januar 2026
 
 
 
+[[netapp-workload-factory-for-builders-now-netapp-workload-factory-for-eda]]
 === NetApp Workload Factory for Builders heißt jetzt NetApp Workload Factory for EDA
 
 Workload Factory for Builders heißt jetzt Workload Factory for EDA. Die Namensänderung spiegelt den Fokus auf EDA-Workloads (Electronic Design Automation) wider.
@@ -273,26 +294,31 @@ Workload Factory für EDA hilft Ihnen, FSx für ONTAP über mehrere Dateisysteme
 
 
 
+[[ask-me-ai-assistant-home-page-integration]]
 === Integration des KI-Assistenten auf der Startseite
 
 Auf der Startseite der Workload Factory-Konsole ist der KI-Assistent „Ask me“ integriert, mit dem Sie Fragen zu Ihrer eigenen Speicherlandschaft stellen, personalisierte Einblicke direkt aus Ihrer Umgebung erhalten und auf frühere Konversationen zurückgreifen können. Sie können mit „Fragen Sie mich“ interagieren, um Ihre Workloads zu verstehen, Probleme zu beheben und mehr über Workload Factory zu erfahren – alles, ohne die Konsole zu verlassen.
 
 
 
+[[5-october-2025]]
 == 5. Oktober 2025
 
 
 
+[[bluexp-workload-factory-now-netapp-workload-factory]]
 === BlueXP workload factory jetzt NetApp Workload Factory
 
 BlueXP wurde umbenannt und neu gestaltet, um seine Rolle bei der Verwaltung Ihrer Dateninfrastruktur besser widerzuspiegeln. Aus diesem Grund wurde die BlueXP workload factory in NetApp Workload Factory umbenannt.
 
 
 
+[[16-june-2025]]
 == 16. Juni 2025
 
 
 
+[[clone-support-in-workload-factory-for-builders]]
 === Klonunterstützung in Workload Factory für Builders
 
 Sie können jetzt ein Projekt in BlueXP Workload Factory for Builders klonen. Wenn Sie ein Projekt klonen, erstellt Builders ein neues Projekt aus einem Snapshot mit der gleichen Konfiguration wie das Original. Das Klonen ist nützlich, um schnell ähnliche Projekte zu erstellen oder zu Testzwecken. Sie können den neuen Projektklon gemäß den Anweisungen in Builders einbinden.
@@ -301,20 +327,24 @@ https://docs.netapp.com/us-en/workload-builders/version-projects.html["Versionen
 
 
 
+[[4-may-2025]]
 == 4. Mai 2025
 
 
 
+[[updated-permissions-terminology-in-workload-factory-for-eda]]
 === Aktualisierte Berechtigungsterminologie in Workload Factory für EDA
 
 Die Benutzeroberfläche und die Dokumentation von Workload Factory verwenden nun „read-only“ für Leseberechtigungen und „read/write“ für Automatisierungsberechtigungen.
 
 
 
+[[1-december-2024]]
 == 1. Dezember 2024
 
 
 
+[[builders-workload-initial-release]]
 === Erste Veröffentlichung der Builder-Workload
 
 BlueXP Workload Factory for Builders vereinfacht die Nutzung und den Zugriff auf Softwareversionen und macht so die Notwendigkeit von benutzerdefinierten Tools oder Skripten überflüssig. Es ermöglicht Ihnen, Softwareversionen als Instant Clones zu nutzen, die in Perforce Helix Core als komfortabler Arbeitsbereich für Ihre Entwicklungsprozesse integriert sind und so Zeit und Ressourcen sparen.

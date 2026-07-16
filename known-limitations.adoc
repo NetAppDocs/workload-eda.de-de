@@ -15,6 +15,7 @@ Bekannte Einschränkungen kennzeichnen Plattformen, Geräte oder Funktionen, die
 
 
 
+[[operator-permissions-required]]
 == Erforderliche Bedienerberechtigungen
 
 NetApp Workload Factory für EDA benötigt Bedienerberechtigungen, um ordnungsgemäß zu funktionieren.

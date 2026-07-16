@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: task-analyze-latency-trends.html 
-keywords: latency graph, latency visualization, latency trends, breach patterns, latency spikes, latency patterns, time range analysis, breach frequency 
-summary: Nutzen Sie das interaktive Latenzdiagramm, um die Latenztrends im Zeitverlauf zu analysieren, Muster zu erkennen und die Wirksamkeit von Abhilfemaßnahmen zu verfolgen. 
+keywords: latency graph, latency visualization, latency trends, breach patterns, latency spikes, latency patterns, time range analysis, breach frequency, iops, throughput 
+summary: Mit den interaktiven Grafiken lassen sich Volumenlatenz-Trends im Zeitverlauf analysieren, Muster erkennen und die Wirksamkeit von Abhilfemaßnahmen nachverfolgen. 
 ---
 = Analysieren Sie Latenztrends für EDA in Workload Factory
 :allow-uri-read: 
@@ -11,51 +11,55 @@ summary: Nutzen Sie das interaktive Latenzdiagramm, um die Latenztrends im Zeitv
 
 
 [role="lead"]
-Nachdem ein Latenzereignis erkannt wurde, kann mithilfe des interaktiven Diagramms die zeitliche Entwicklung von Latenz und Volumen verfolgt werden. Dies erleichtert das Erkennen von Mustern, das Feststellen, ob das Problem häufig oder nur einmal auftritt, und die Entscheidung über die Behebung auf Basis der Daten.
+Nachdem eine Latenzüberschreitung festgestellt wurde, lassen sich mithilfe der Diagramme Veränderungen der Volumenlatenz, IOPS und des Durchsatzes im Zeitverlauf nachvollziehen. So lassen sich Muster erkennen und überprüfen, ob die Behebung die Performance verbessert hat.
 
 
 
+[[before-you-begin]]
 == Bevor Sie beginnen
 
-Sie müssen link:task-configure-latency-monitoring.html["konfigurierte Latenzüberwachung"] und mindestens ein Latenzereignis erkannt haben. Leistungsdiagramme sind einsehbar, wenn AWS-Zugangsdaten vorhanden sind. Für die Anzeige der Komponentenaufschlüsselung ist ein Link erforderlich.
+Es werden link:task-configure-latency-monitoring.html["konfigurierte Latenzüberwachung"] und mindestens ein erkannter Sicherheitsverstoß benötigt. Für die Anzeige der Diagramme müssen AWS-Zugangsdaten verfügbar sein. Für die Anzeige der Aufschlüsselung der QoS-Latenzkomponenten muss das Dateisystem verknüpft sein.
 
 
 
+[[analyze-latency-trends]]
 == Latenztrends analysieren
 
-Die Registerkarte *Über die Zeit* bietet Leistungsdiagramme, die bei der Analyse des Volumenverhaltens unterstützen: Latenz, IOPS und Durchsatz.
+Die Seite *Detaillierte Latenzanalyse* bietet Leistungsdiagramme zur Analyse des Volumenverhaltens im Zeitverlauf: Latenz, IOPS und Durchsatz.
 
 .Über diese Aufgabe
-Die Diagramme zeigen CloudWatch Kennzahlen für das betroffene Volumen. Alle Diagramme verwenden dieselbe Zeitachse. Es werden automatisch Lese- oder Schreibkennzahlen angezeigt, abhängig davon, welcher Alarm das Ereignis ausgelöst hat.
+Die Diagramme zeigen CloudWatch Kennzahlen für das betroffene Volumen. Alle Diagramme verwenden dieselbe Zeitachse. Die Kennzahlen werden automatisch basierend darauf angezeigt, welcher Alarm das Ereignis ausgelöst hat.
 
 Sie können den Zeitraum ändern, um die Leistung über verschiedene Zeiträume hinweg zu betrachten. Sie können auch zwischen den Operationen „Alle“, „Lesen“, „Schreiben“ oder „Metadaten“ wechseln.
 
 Die Visualisierung umfasst:
 
-* *Latenzdiagramm*: Zeigt die tatsächlichen Latenzwerte (in Millisekunden), die im Laufe der Zeit über CloudWatch erfasst wurden, mit Schwellenwertlinien und Indikatoren für Grenzwertüberschreitungen.
-* *IOPS-Diagramm*: Zeigt die tatsächliche Latenz in Millisekunden von CloudWatch im Zeitverlauf. Schwellenwertlinien markieren die festgelegten Grenzwerte, und Markierungen zeigen, wann diese Grenzwerte überschritten wurden. Es werden außerdem die Operationen pro Sekunde mit einer Schwellenwertlinie und Markierungen für vergangene Überschreitungen angezeigt. Die Leseaktivität zeigt DataReadOperations, und die Schreibaktivität zeigt DataWriteOperations.
-* *Durchsatzdiagramm*: Zeigt Datentransferraten. Bei Lesevorgängen werden DataReadBytes angezeigt. Bei Schreibvorgängen werden DataWriteBytes angezeigt. Wenn im Filter **Metadaten** ausgewählt ist, zeigt das Durchsatzdiagramm keine Daten.
-* *Schwellenwertlinien*: Gepunktete horizontale Linien zeigen die Warn- und kritischen Grenzwerte an, die Sie in den Diagrammen für Latenz und IOPS festgelegt haben.
-* *Überschreitungsindikatoren*: Visuelle Markierungen, die anzeigen, wann Schwellenwerte überschritten wurden und wie oft dies im betrachteten Zeitraum geschah.
-* *Details zum Sicherheitsverstoß*: Für jeden Sicherheitsverstoß sind die mittlere Verzögerung, der Prozentsatz über dem Grenzwert, die Daten des QoS-Verzögerungszentrums und der Zeitpunkt der Erkennung ersichtlich.
+* *Latenzdiagramm*: Zeigt die Volumenlatenz (ms) im Zeitverlauf mit Warn- und kritischen Schwellenwertlinien sowie Überschreitungsmarkierungen.
+* *IOPS Diagramm*: Zeigt die IOPS im Zeitverlauf mit Schwellenwerten und Überschreitungsmarkierungen (sofern konfiguriert).
+* *Durchsatzdiagramm*: Zeigt den Durchsatz im Zeitverlauf für den ausgewählten Zeitraum. Wenn im Filter **Metadaten** ausgewählt ist, zeigt das Durchsatzdiagramm keine Daten an.
+* *Schwellenwertlinien*: Gepunktete horizontale Linien zeigen Warn- und kritische Schwellenwerte.
+* *Verletzungsmarkierungen*: Visuelle Markierungen zeigen erkannte Sicherheitsverletzungen an. Beim Überfahren einer Markierung mit dem Mauszeiger werden Schweregrad, Erkennungszeitpunkt, CloudWatch Medianlatenz (ms) und die Aufschlüsselung der QoS-Latenzkomponenten angezeigt.
 
 
 .Schritte
-. Wählen Sie im Tab *Latenz* ein Latenzereignis aus der Ereignistabelle aus.
+. Auf der Registerkarte *Latenz* das Ereignis in der Spalte Schweregrad auswählen.
 +
 Das Panel zur Latenzanalyse öffnet sich.
 
-. Wählen Sie die Registerkarte *Over time* aus.
-. Die Standardansicht zeigt Leistungsdiagramme für Latenz, IOPS und Durchsatz der letzten 3 Stunden.
-. Optional kann mit dem Filter *Typ* zwischen den Operationen Alle, Lesen, Schreiben oder Metadaten umgeschaltet werden. Der Standardwert entspricht dem Ereignistyp (Lesen für Leseereignisse, Schreiben für Schreibereignisse).
+. Das Latenzdiagramm und die Zusammenfassung der Grenzwertüberschreitungen für den ausgewählten *Zeitraum* und *Typ* werden angezeigt.
+. *Vollständige Analyse anzeigen* öffnet die *Detaillierte Latenzanalyse*.
+. In *Latenzdiagrammen* lassen sich der *Zeitrahmen* (zum Beispiel 72 Stunden) und der *Typ* (Lesen/Schreiben/Metadaten) zur Anpassung der Diagramme auswählen.
+. Diagramme für Folgendes anzeigen:
++
+** *Latenz* (ms) mit Warn-/kritischen Schwellenwertlinien
+** *IOPS* mit Schwellenwertlinien (falls konfiguriert)
+** *Durchsatz* im gleichen Zeitraum
+
+
+. Verwenden Sie die Spike-Markierungen und die Zusammenfassung der Verstöße (zum Beispiel „1 kritischer Verstoß in diesem Zeitraum erkannt“), um Latenzerhöhungen mit IOPS- und Durchsatzänderungen zu korrelieren.
 . Den Zeitraum ändern, um andere Zeiträume zu überprüfen und nach Mustern zu suchen.
 . Die Trendlinien für Latenz, IOPS und Durchsatz können geprüft werden. Die Diagramme für IOPS und Latenz enthalten Schwellenwertlinien zum Vergleich.
-. In den Diagrammen nach Indikatoren für Überschreitungen suchen. Diese Indikatoren erscheinen, wenn Schwellenwerte innerhalb des ausgewählten Zeitraums mehrfach überschritten werden.
-. Weitere Details werden angezeigt, wenn der Mauszeiger über einen Verstoßindikator bewegt oder dieser ausgewählt wird.
-. Überprüfen Sie die Zusammenfassung der Verstöße:
-+
-Das Diagramm zeigt die Gesamtzahl der Warn- oder kritischen Verstöße während des ausgewählten Zeitraums.
-
+. Fahren Sie mit dem Mauszeiger über eine Verletzungsmarkierung, um Details zur Verletzung anzuzeigen (Schweregrad, Zeitpunkt der Erkennung, mittlere CW-Latenz und QoS-Latenzkomponenten).
 . Nutzen Sie die Erkenntnisse aus den Diagrammen, um:
 +
 ** Es kann festgestellt werden, ob Latenzprobleme einmalig oder wiederholt auftreten.
@@ -70,10 +74,11 @@ Das Diagramm zeigt die Gesamtzahl der Warn- oder kritischen Verstöße während 
 Sie können sehen, wie sich die Latenz des Volumens im Laufe der Zeit verändert. Dies unterstützt die Entscheidung, ob aktuell Maßnahmen erforderlich sind, Alarmgrenzen angepasst werden sollten oder eine Überprüfung auf Systemprobleme sinnvoll ist.
 
 
-NOTE: Das Latenzdiagramm verwendet CloudWatch-Metriken. Diese können geringfügig von den ONTAP QoS-Verzögerungszentrum-Daten abweichen, da sie auf unterschiedliche Weise erfasst werden. Beide werden angezeigt, um einen umfassenderen Überblick zu bieten.
+NOTE: Die Diagramme verwenden CloudWatch Metriken. Diese können geringfügig von den in QoS gemeldeten Latenzkomponenten abweichen, da sie auf unterschiedliche Weise erfasst werden.
 
 
 
+[[graph-interpretation]]
 == Graphinterpretation
 
 Diese Tipps sind bei der Überprüfung von Änderungen der Reaktionszeit hilfreich:

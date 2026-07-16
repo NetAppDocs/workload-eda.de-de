@@ -15,12 +15,14 @@ Im Projekt-Dashboard lassen sich benutzerdefinierte Filter einrichten, um Daten 
 
 
 
+[[before-you-begin]]
 == Bevor Sie beginnen
 
 Um benutzerdefinierte Filter zu verwenden, AWS-Tags zu Ihren FSx for ONTAP Volumes entsprechend Ihren Anforderungen hinzufügen, wie zum Beispiel Tags für Projekte, Teams oder Geschäftsbereiche.
 
 
 
+[[configure-custom-filters]]
 == Benutzerdefinierte Filter konfigurieren
 
 
@@ -63,6 +65,7 @@ Wenn diese Tags angewendet werden, beginnt Workload Factory mit dem Sammeln und 
 
 
 
+[[related-information]]
 == Verwandte Informationen
 
 * link:learn-project-dashboard.html["Erfahren Sie mehr über das Projects-Dashboard"]

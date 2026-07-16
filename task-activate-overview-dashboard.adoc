@@ -15,12 +15,14 @@ Das Übersichts-Dashboard kann aktiviert werden, um CloudWatch-Metriken für Ihr
 
 
 
+[[before-you-begin]]
 == Bevor Sie beginnen
 
 Stellen Sie sicher, dass Sie die folgenden Anforderungen erfüllen, bevor Sie das Dashboard aktivieren.
 
 
 
+[[aws-credentials-with-view-permissions]]
 === AWS-Anmeldeinformationen mit Ansichtsberechtigungen
 
 Sie müssen in Workload Factory AWS-Anmeldeinformationen mit mindestens Leseberechtigungen (Anzeigeberechtigungen) für General Storage konfigurieren. _Basic_-Anmeldeinformationen werden nicht unterstützt.
@@ -31,6 +33,7 @@ Wenn Sie noch keine AWS-Zugangsdaten konfiguriert haben, siehe link:https://docs
 
 
 
+[[activate-the-dashboard]]
 == Dashboard aktivieren
 
 Nachdem Workload Factory die Anmeldeinformationen mit Ansichtsberechtigungen überprüft hat, wird das Dashboard aktiviert, um CloudWatch-Metriken für Ihre FSx for ONTAP Dateisysteme zu erfassen.
@@ -52,6 +55,7 @@ Workload Factory beginnt mit der Erfassung von CloudWatch Metriken für alle FSx
 
 
 
+[[next-steps]]
 == Nächste Schritte
 
 Nach der Aktivierung des Dashboards können Sie:
@@ -63,6 +67,7 @@ Nach der Aktivierung des Dashboards können Sie:
 
 
 
+[[related-information]]
 == Verwandte Informationen
 
 * link:learn-overview-dashboard.html["Erfahren Sie mehr über das Overview Dashboard"]

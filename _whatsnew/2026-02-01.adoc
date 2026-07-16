@@ -4,6 +4,7 @@
 
 
 
+[[enhanced-dashboard-filtering-with-customizable-tags-in-eda-workloads]]
 === Erweiterte Dashboard-Filterung mit anpassbaren Tags in EDA-Workloads
 
 Sie können nun bis zu fünf benutzerdefinierte Filter im EDA-Dashboard basierend auf Ihren AWS-Tags konfigurieren. Jeder benutzerdefinierte Filter enthält einen Labelnamen, einen AWS-Tag-Schlüssel und einen Auswahltyp (Einzel- oder Mehrfachauswahl).
@@ -16,6 +17,7 @@ https://docs.netapp.com/us-en/workload-eda/task-configure-dashboard.html["Erfahr
 
 
 
+[[volume-details-view-for-granular-performance-analysis]]
 === Volumendetailansicht für granulare Leistungsanalyse
 
 Das Dashboard bietet nun zwei Ansichtsmodi: Gesamtansicht und Volumenansicht. Die Gesamtansicht zeigt aggregierte Kennzahlen über alle Volumina hinweg, während die Volumenansicht die individuelle Performance der Top 10 Volumina im Zeitverlauf anzeigt.
@@ -26,6 +28,7 @@ https://docs.netapp.com/us-en/workload-eda/task-configure-dashboard.html#view-vo
 
 
 
+[[latency-analysis-for-proactive-performance-monitoring]]
 === Latenzanalyse für proaktive Leistungsüberwachung
 
 Die Latenzanalyse ermöglicht es Ihnen, die Lese- und Schreiblatenz Ihrer FSx for ONTAP-Dateisysteme zu überwachen. Sie können anpassbare Warn- und kritische Ereignisschwellenwerte konfigurieren, um Leistungsengpässe proaktiv zu identifizieren, bevor sie Ihre EDA-Workloads beeinträchtigen.

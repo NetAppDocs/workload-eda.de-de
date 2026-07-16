@@ -21,6 +21,7 @@ link:https://docs.netapp.com/us-en/storage-management-fsx-ontap/start/concept-fs
 
 
 
+[[support-registration-overview]]
 == Übersicht zur Support-Registrierung
 
 Die Registrierung Ihrer Support-Abonnement-ID (Ihre 20-stellige Seriennummer 960xxxxxxxxx, die Sie auf der Seite „Supportressourcen“ in der NetApp Console finden) dient als Ihre einzige Support-Abonnement-ID. Jedes NetApp -Supportabonnement auf Kontoebene muss registriert werden.
@@ -29,12 +30,14 @@ Durch die Registrierung werden Funktionen wie das Öffnen von Support-Tickets un
 
 
 
+[[register-your-account-for-netapp-support]]
 == Registrieren Sie Ihr Konto für den NetApp Support.
 
 Um sich für den Support zu registrieren und die Supportberechtigung zu aktivieren, muss ein Benutzer Ihres Kontos ein NetApp Support Site-Konto mit seinem NetApp Console -Login verknüpfen. Wie Sie sich für den NetApp -Support registrieren, hängt davon ab, ob Sie bereits ein NetApp Support Site (NSS)-Konto besitzen.
 
 
 
+[[existing-customer-with-an-nss-account]]
 === Bestandskunde mit NSS-Konto
 
 Wenn Sie NetApp Kunde mit einem NSS-Konto sind, müssen Sie sich lediglich über die NetApp Console für den Support registrieren.
@@ -61,6 +64,7 @@ Beachten Sie, dass andere NetApp Console Benutzer diesen Support-Registrierungss
 
 
 
+[[existing-customer-but-no-nss-account]]
 === Bestandskunde, aber kein NSS-Konto
 
 Wenn Sie bereits NetApp Kunde sind und über bestehende Lizenzen und Seriennummern, aber _kein_ NSS-Konto verfügen, müssen Sie ein NSS-Konto erstellen und es mit Ihrem NetApp Console -Login verknüpfen.
@@ -77,6 +81,7 @@ Wenn Sie bereits NetApp Kunde sind und über bestehende Lizenzen und Seriennumme
 
 
 
+[[brand-new-to-netapp]]
 === Ganz neu bei NetApp
 
 Wenn Sie NetApp noch nicht kennen und kein NSS-Konto haben, befolgen Sie die nachstehenden Schritte.

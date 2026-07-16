@@ -1,30 +1,28 @@
-= Erweiterte Latenzanalyse mit IOPS und Durchsatzdiagrammen
+= Erweiterte Latenzanalyse mit synchronisierten Diagrammen für Latenz, IOPS und Durchsatz
 :allow-uri-read: 
 
 
 
 
-=== Erweiterte Latenzanalyse mit IOPS und Durchsatzdiagrammen
+[[enhanced-latency-analysis-with-synchronized-latency-iops-and-throughput-charts]]
+=== Erweiterte Latenzanalyse mit synchronisierten Diagrammen für Latenz, IOPS und Durchsatz
 
-Das Panel zur Latenzanalyse zeigt nun synchronisierte Leistungsdiagramme auf der Registerkarte *Über die Zeit*:
+Das Panel zur Latenzanalyse enthält nun eine Seite mit *detaillierter Latenzanalyse* und synchronisierten Leistungsdiagrammen:
 
 * *Latenzdiagramm*: Zeigt, wie sich die Latenz im Laufe der Zeit verändert, mit Schwellenwertlinien und Warnmeldungen, wenn Grenzwerte überschritten werden.
 * *IOPS Diagramm*: Zeigt die Operationen pro Sekunde, mit Schwellenwertlinien und Indikatoren für vergangene Grenzwertüberschreitungen.
-* *Durchsatzdiagramm*: Zeigt Datentransferraten (DataReadBytes oder DataWriteBytes).
+* *Durchsatzdiagramm*: Zeigt Datentransferraten (DataReadBytes oder DataWriteBytes). Wenn im Filter Metadaten ausgewählt sind, zeigt das Durchsatzdiagramm keine Daten.
 
 
 Alle Diagramme verwenden die gleiche Zeitleiste und zeigen automatisch die korrekten Metriken an, abhängig davon, ob das Ereignis ein Lese- oder Schreibvorgang ist.
 
-Ein neuer Filter ermöglicht das Umschalten zwischen „Alle“, „Lesen“, „Schreiben“ oder „Metadaten“-Operationen für eine detailliertere Analyse.
-
-Diese Diagramme helfen dabei zu erkennen, wie Latenz, IOPS und Durchsatz miteinander zusammenhängen, was die Identifizierung der Ursache von Leistungsproblemen und die Entscheidung über deren Behebung erleichtert.
-
-Leistungsdiagramme sind jetzt nur verfügbar, wenn AWS-Zugangsdaten angegeben werden. FSx for ONTAP Verbindungen sind nur für die Komponentenaufschlüsselung in der Basis- und KI-Analyse erforderlich.
+Sie können die Ansicht anpassen und Latenzspitzen mit Änderungen der IOPS und des Durchsatzes korrelieren. Markierungen für Grenzwertverletzungen und Details beim Überfahren mit der Maus helfen dabei zu erkennen, wann Schwellenwerte überschritten wurden, und wichtige Kennzahlen für die erkannte Grenzwertverletzung zu überprüfen.
 
 https://docs.netapp.com/us-en/workload-eda/task-analyze-latency-trends.html["Wie sich Latenztrends mit mehreren Diagrammen analysieren lassen"^].
 
 
 
+[[set-latency-notification-frequency]]
 === Häufigkeit der Latenzbenachrichtigung festlegen
 
 Sie können nun auswählen, wie häufig Sie E-Mail-Benachrichtigungen über Latenzüberschreitungen erhalten:

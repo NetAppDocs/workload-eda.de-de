@@ -15,6 +15,7 @@ Sie können EDA-Projekte verwalten, um zu steuern, wie Ihr Code und Ihre Artefak
 
 
 
+[[create-a-project]]
 == Erstellen eines Projekts
 
 Sie können ein neues EDA-Projekt erstellen, um die Datenschutzfunktionen Ihres FSx for ONTAP Dateisystems für Ihren Code und Ihre Artefakte zu nutzen. .Schritte
@@ -70,6 +71,7 @@ Das Projekt wurde erstellt und erscheint in der Projektliste auf der Projektseit
 
 
 
+[[view-existing-projects]]
 == Bestehende Projekte ansehen
 
 Sie können bestehende Projekte, die in NetApp Workload Factory für EDA erstellt wurden, durch Befolgen dieser Schritte anzeigen.
@@ -84,6 +86,7 @@ Sie können bestehende Projekte, die in NetApp Workload Factory für EDA erstell
 
 
 
+[[edit-a-project]]
 == Ein Projekt bearbeiten
 
 Sie können die Einstellungen eines Projekts jederzeit bearbeiten.
@@ -100,6 +103,7 @@ Sie können die Einstellungen eines Projekts jederzeit bearbeiten.
 
 
 
+[[view-a-projects-workspaces]]
 == Arbeitsbereiche eines Projekts anzeigen
 
 Ein Klon oder Snapshot eines Projekts wird als Arbeitsbereich bezeichnet. Wenn Sie einen Arbeitsbereich erstellen, wird dieser so lange beibehalten, wie es die Betriebsrichtlinie des Projekts zulässt. Sie können die vorhandenen Arbeitsbereiche für ein Projekt anzeigen, indem Sie diese Schritte befolgen.
@@ -116,6 +120,7 @@ Ein Klon oder Snapshot eines Projekts wird als Arbeitsbereich bezeichnet. Wenn S
 
 
 
+[[delete-a-project]]
 == Ein Projekt löschen
 
 Sie können ein Projekt löschen, wenn es nicht mehr benötigt wird, indem Sie diese Schritte befolgen.

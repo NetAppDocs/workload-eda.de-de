@@ -15,6 +15,7 @@ Die Latenzüberwachung in Workload Factory für EDA unterstützt bei der Erkennu
 
 
 
+[[how-latency-monitoring-works]]
 == Wie Latenzüberwachung funktioniert
 
 Die Latenzanalyse erfasst CloudWatch-Metriken für Lese- und Schreibaktivitäten auf allen mit Ihrem AWS-Konto verbundenen FSx for ONTAP Volumes. Diese Metriken werden kontinuierlich anhand definierter Grenzwerte überprüft, um Leistungsprobleme frühzeitig zu erkennen.
@@ -23,6 +24,7 @@ Bei steigender Latenz überprüft Workload Factory automatisch die ONTAP QoS-Ver
 
 
 
+[[alert-generation]]
 === Alarmgenerierung
 
 Eine Warnung wird nur dann ausgelöst, wenn diese Bedingungen für den gesamten ausgewählten Zeitraum zutreffen: Die Latenz bleibt über ihrem Schwellenwert und die IOPS bleiben über ihrem Schwellenwert. Die Anforderung beider Bedingungen reduziert Fehlalarme, da so sichergestellt wird, dass hohe Latenzzeiten auftreten, während das System eine tatsächliche Arbeitslast verarbeitet.
@@ -39,12 +41,14 @@ Alle erkannten Ereignisse werden in der Tabelle der Latenzereignisse angezeigt. 
 
 
 
+[[understanding-alerts]]
 == Warnmeldungen verstehen
 
 Das Verständnis, wie Warnmeldungen ausgelöst werden, hilft Ihnen, geeignete Schwellenwerte zu konfigurieren und die Ergebnisse zu interpretieren.
 
 
 
+[[metrics-collected]]
 === Gesammelte Kennzahlen
 
 Das System erfasst die folgenden CloudWatch-Kennzahlen für jedes Volumen:
@@ -55,6 +59,7 @@ Das System erfasst die folgenden CloudWatch-Kennzahlen für jedes Volumen:
 
 
 
+[[alert-trigger-conditions]]
 === Alarm-Auslösebedingungen
 
 Eine Warnung wird ausgelöst, wenn alle der folgenden Bedingungen erfüllt sind:
@@ -68,6 +73,7 @@ Bei voreingestellten Warnschwellenwerten wird beispielsweise eine Lesewarnung nu
 
 
 
+[[event-severity]]
 === Schweregrad
 
 * *Warnereignisse*: Weisen auf erhöhte Latenzzeiten hin, die möglicherweise Aufmerksamkeit erfordern
@@ -76,12 +82,14 @@ Bei voreingestellten Warnschwellenwerten wird beispielsweise eine Lesewarnung nu
 
 
 
+[[latency-analysis]]
 == Latenzanalyse
 
 Workload Factory bietet zwei Analyseebenen, die Ihnen bei der Behebung von Latenzproblemen helfen.
 
 
 
+[[basic-analysis]]
 === Grundlagenanalyse
 
 Tritt ein Latenzereignis auf, führt Workload Factory automatisch eine Basisanalyse durch, um die Ursache zu ermitteln. Dabei werden ONTAP QoS Delay Center-Metriken genutzt, um die für die Verlangsamung verantwortliche Komponente zu identifizieren, beispielsweise FlexCache, den Kapazitätspool, QoS-Grenzwerte, Festplatten, Daten, den Cluster oder ein anderes Subsystem. Damit lässt sich die Quelle der Latenz schnell identifizieren, ohne dass eine manuelle Untersuchung erforderlich ist.
@@ -94,6 +102,7 @@ NOTE: Die Latenzwerte aus der ONTAP QoS-Analyse und CloudWatch können geringfü
 
 
 
+[[ai-analysis]]
 === AI-Analyse
 
 Während grundlegende Analysen die Ursache von Latenzzeiten identifizieren können, erfordern komplexere Situationen mit Daten oder Clusterkomponenten oft eine tiefergehende Untersuchung. KI-Analysen ermöglichen diese detailliertere Fehlerbehebung, indem sie Probleme wie überlastete Volumes, fehlerhafte Konfigurationen oder den Bedarf an zusätzlicher Kapazität aufdecken, Probleme, die bei grundlegenden Analysen möglicherweise übersehen werden.
@@ -109,6 +118,7 @@ Für die KI-Analyse ist eine Amazon Bedrock model ARN in Ihren Workload Factory 
 
 
 
+[[related-information]]
 == Verwandte Informationen
 
 * link:task-configure-latency-monitoring.html["Latenzüberwachung konfigurieren"]

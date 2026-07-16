@@ -15,12 +15,14 @@ Das Übersichts-Dashboard bietet eine Übersicht über den Zustand und die Kapaz
 
 
 
+[[before-you-begin]]
 == Bevor Sie beginnen
 
 Sie müssen link:task-activate-overview-dashboard.html["Das Übersichts-Dashboard wurde aktiviert"] haben, bevor Sie es zur Überwachung Ihrer Dateisysteme verwenden können.
 
 
 
+[[filter-the-dashboard]]
 == Dashboard filtern
 
 Verwenden Sie die Filter oben im Dashboard, um bestimmte Dateisysteme anzuzeigen. Die Filter gelten für die Abschnitte Latenz, Auslastung, ONTAP-Ereignisse und die Clustertabelle.
@@ -41,6 +43,7 @@ Verwenden Sie die Filter oben im Dashboard, um bestimmte Dateisysteme anzuzeigen
 
 
 
+[[view-cluster-health-status]]
 == Cluster-Gesundheitsstatus anzeigen
 
 Ganz oben im Dashboard wird eine Zusammenfassung des Zustands und der Aktivität der ausgewählten Dateisysteme angezeigt. Dies erscheint nur, wenn mindestens eine FSx for ONTAP Verbindung zu Ihren Dateisystemen besteht.
@@ -72,6 +75,7 @@ Die ONTAP-Ereignisansichtskarte zeigt die Anzahl der EMS-Ereignisse nach Kategor
 
 
 
+[[view-and-apply-capacity-recommendations]]
 == Kapazitätsempfehlungen ansehen und anwenden
 
 Workload Factory führt automatisch eine Kapazitätsempfehlung für jedes FSx for ONTAP Dateisystem aus. Dateisysteme mit Empfehlungen lassen sich durch Filtern der Tabelle „Cluster“ finden.
@@ -98,6 +102,7 @@ Das Diagramm zeigt außerdem Empfehlungs- und Automatisierungsentscheidungspunkt
 
 
 
+[[change-ssd-management-mode]]
 == SSD-Verwaltungsmodus ändern
 
 Für jedes Dateisystem kann festgelegt werden, wie die SSD-Kapazität verwaltet wird: manuelle Empfehlungen erhalten oder automatische Skalierung zulassen.
@@ -134,6 +139,7 @@ Das Dateisystem wechselt sofort in den neuen Modus. Bei Auswahl von „Empfehlen
 
 
 
+[[bulk-edit-ssd-management-parameters]]
 == Massenbearbeitung von SSD-Verwaltungsparametern
 
 SSD-Kapazitätseinstellungen für mehrere Dateisysteme gleichzeitig ändern, sodass die gleichen Einstellungen für alle Cluster gelten.
@@ -166,6 +172,7 @@ Die Parameter werden für alle ausgewählten Dateisysteme aktualisiert. Dateisys
 
 
 
+[[analyze-capacity-trends-and-decision-points]]
 == Analysieren Sie Kapazitätstrends und Entscheidungspunkte
 
 Das SSD-Nutzungsdiagramm zeigt, wie sich die Speichernutzung im Laufe der Zeit verändert und ermöglicht das Erkennen von Mustern.
@@ -195,6 +202,7 @@ Die Entscheidungspunkte im Diagramm zeigen an, wann:
 
 
 
+[[use-the-clusters-table]]
 == Verwenden Sie die Clustertabelle
 
 Die Clustertabelle bietet eine detaillierte Übersicht über jedes FSx for ONTAP Dateisystem mit Leistungs- und Nutzungsmetriken.
@@ -215,6 +223,7 @@ Bewegen Sie den Mauszeiger über die Durchsatz-Spaltenüberschriften, um Berechn
 
 
 
+[[best-practices]]
 == Best Practices
 
 Beachten Sie diese Empfehlungen bei der Verwendung des Übersichts-Dashboards:
@@ -230,6 +239,7 @@ Beachten Sie diese Empfehlungen bei der Verwendung des Übersichts-Dashboards:
 
 
 
+[[related-information]]
 == Verwandte Informationen
 
 * link:learn-overview-dashboard.html["Erfahren Sie mehr über das Overview Dashboard"]

@@ -15,12 +15,14 @@ Warn- und kritische Grenzwerte für Lese- und Schreiblatenz können festgelegt w
 
 
 
+[[before-you-begin]]
 == Bevor Sie beginnen
 
 Stellen Sie sicher, dass Sie die folgenden Anforderungen erfüllen, bevor Sie die Latenzüberwachung konfigurieren.
 
 
 
+[[aws-credentials-and-permissions]]
 === AWS-Anmeldeinformationen und Berechtigungen
 
 Sie müssen AWS-Anmeldeinformationen mit lesen/schreiben-Berechtigungen zu Workload Factory hinzufügen. Die Funktion zur Latenzüberwachung benötigt Zugriff auf CloudWatch-Metriken für alle FSx for ONTAP Volumes, die Ihren AWS-Anmeldeinformationen zugeordnet sind.
@@ -31,12 +33,14 @@ Wenn Sie noch keine AWS-Zugangsdaten konfiguriert haben, siehe link:https://docs
 
 
 
+[[fsx-for-ontap-file-system]]
 === FSx für ONTAP -Dateisystem
 
 Sie benötigen mindestens ein FSx for ONTAP-Dateisystem mit in Ihrer AWS-Umgebung bereitgestellten Volumes.
 
 
 
+[[link-to-fsx-for-ontap]]
 === Link zu FSx für ONTAP
 
 Um die Komponentenaufschlüsselung in der Basisanalyse anzuzeigen, muss ein Link mit dem FSx for ONTAP Dateisystem verknüpft werden. Ohne einen Link sind weiterhin Latenz-, IOPS- und Durchsatzdiagramme sichtbar. Falls noch kein Link verknüpft ist, in EDA *Link verknüpfen* auswählen, festlegen, ob ein neuer Link erstellt oder ein bestehender Link verknüpft werden soll, und anschließend *Weiter* auswählen, um automatisch zur Seite zur Linkerstellung in Storage workloads zu gelangen.
@@ -45,6 +49,7 @@ Anleitungen zum Erstellen und Verknüpfen von Links finden Sie unter link:https:
 
 
 
+[[amazon-bedrock-model-arn-optional]]
 === Amazon Bedrock Modell ARN (optional)
 
 (Optional) Um die KI-Analyse zu nutzen, ist in den Workload Factory-Einstellungen ein Amazon Bedrock Modell-ARN anzugeben. Ohne diesen sind weiterhin Latenzüberwachung und grundlegende Analysen möglich.
@@ -53,12 +58,14 @@ Weitere Einzelheiten finden Sie unter link:https://docs.netapp.com/us-en/workloa
 
 
 
+[[notification-configuration-optional]]
 === Benachrichtigungskonfiguration (optional)
 
 Um E-Mail- oder Amazon SNS-Benachrichtigungen bei Latenzereignissen zu erhalten, konfigurieren Sie die Benachrichtigungseinstellungen in den Workload Factory-Einstellungen. Siehe <<Latenzbenachrichtigungen konfigurieren>> für Details.
 
 
 
+[[configure-latency-thresholds]]
 == Latenzschwellenwerte konfigurieren
 
 Warn- und kritische Grenzwerte für Lese- und Schreibvorgänge werden festgelegt. Das System überprüft diese Grenzwerte kontinuierlich und sendet eine Warnung, wenn sie erreicht werden.
@@ -89,6 +96,7 @@ Workload Factory erfasst Latenzmetriken für alle FSx for ONTAP Volumes, die mit
 
 
 
+[[configure-latency-notifications]]
 == Latenzbenachrichtigungen konfigurieren
 
 E-Mail- oder Amazon SNS-Benachrichtigungen können eingerichtet werden, um Benachrichtigungen zu erhalten, wenn eine hohe Latenz erkannt wird. Die Benachrichtigungshäufigkeit kann mit zwei Optionen gesteuert werden:
@@ -112,6 +120,7 @@ Informationen zum Aktivieren von Benachrichtigungen finden Sie unter link:https:
 
 
 
+[[manage-latency-configuration]]
 == Latenzkonfiguration verwalten
 
 Nach der Einrichtung können Sie Ihre Schwellenwerte jederzeit ändern.
@@ -128,6 +137,7 @@ NOTE: Der kritische Schwellenwert muss höher als der Warnschwellenwert festgele
 
 
 
+[[best-practices]]
 == Best Practices
 
 Beachten Sie diese Empfehlungen bei der Konfiguration der Latenzüberwachung:
@@ -141,6 +151,7 @@ Beachten Sie diese Empfehlungen bei der Konfiguration der Latenzüberwachung:
 
 
 
+[[related-information]]
 == Verwandte Informationen
 
 * link:learn-latency-monitoring.html["Erfahren Sie mehr über Latenzüberwachung"]

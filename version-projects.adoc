@@ -15,6 +15,7 @@ Arbeiten Sie mit verschiedenen Versionen Ihrer EDA-Projekte, indem Sie direkt in
 
 
 
+[[create-a-snapshot-of-a-project]]
 == Erstellen Sie eine Momentaufnahme eines Projekts
 
 Sie können einen Snapshot eines Projekts erstellen, indem Sie diese Schritte befolgen.
@@ -31,6 +32,7 @@ Sie können einen Snapshot eines Projekts erstellen, indem Sie diese Schritte be
 
 
 
+[[create-a-clone-of-a-project]]
 == Erstelle eine Kopie eines Projekts
 
 Klonen Sie ein EDA-Projekt aus einem Snapshot, indem Sie diese Schritte befolgen. Wenn Sie einen Klon erstellen, wird ein neues bearbeitbares Volume erstellt, das den Klon enthält.

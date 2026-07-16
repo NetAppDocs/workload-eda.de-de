@@ -15,6 +15,7 @@ NetApp bietet Support für Workload Factory und seine Cloud-Dienste auf vielfäl
 
 
 
+[[get-support-for-fsx-for-ontap]]
 == Erhalten Sie Unterstützung für FSx für ONTAP
 
 Technische Unterstützung zu FSx for ONTAP, seiner Infrastruktur oder einer Lösung, die diesen Dienst nutzt, finden Sie in der Dokumentation der Workload Factory für dieses Produkt unter „Hilfe“.
@@ -25,6 +26,7 @@ Um technischen Support speziell für Workload Factory und seine Speicherlösunge
 
 
 
+[[use-self-support-options]]
 == Nutzen Sie Möglichkeiten zur Selbsthilfe
 
 Diese Optionen stehen Ihnen 24 Stunden am Tag, 7 Tage die Woche kostenlos zur Verfügung:
@@ -45,6 +47,7 @@ Treten Sie der Workload Factory-Community bei, um laufende Diskussionen zu verfo
 
 
 
+[[create-a-case-with-netapp-support]]
 == Erstellen Sie einen Fall mit dem NetApp Support
 
 Zusätzlich zu den oben genannten Self-Support-Optionen können Sie nach der Aktivierung des Supports mit einem NetApp -Support-Spezialisten zusammenarbeiten, um alle Probleme zu lösen.
@@ -99,6 +102,7 @@ Dieser Fehler könnte bedeuten, dass das NSS-Konto und das zugehörige Unternehm
 
 
 
+[[manage-your-support-cases-preview]]
 == Verwalten Sie Ihre Supportfälle (Vorschau)
 
 Aktive und abgeschlossene Supportfälle können Sie direkt in der NetApp Console einsehen und verwalten. Sie können die mit Ihrem NSS-Konto und Ihrem Unternehmen verbundenen Fälle verwalten.

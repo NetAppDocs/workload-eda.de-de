@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: task-analyze-latency-issues.html 
-keywords: latency analysis, analyze latency, latency events, root cause analysis, QoS delay center, AI analysis, latency troubleshooting, volume latency, basic analysis, affected clients, remediation steps 
-summary: Latenzereignisse können angezeigt und analysiert werden, um Leistungsprobleme mit FSx für ONTAP Volumes zu identifizieren. Mit automatischer Basisanalyse und optionaler KI-Analyse werden die Ursache und Lösungsvorschläge ermittelt. 
+keywords: latency analysis, analyze latency, latency events, root cause analysis, QoS delay center, AI analysis, latency troubleshooting, volume latency, basic analysis, affected clients, remediation steps, iops, throughput 
+summary: Latenzereignisse können angezeigt und analysiert werden, um Leistungsprobleme mit FSx für ONTAP Volumes zu identifizieren. Mithilfe grundlegender Analysen und optionaler KI-Analysen lassen sich die Ursache und Lösungsvorschläge ermitteln. 
 ---
 = Latenzprobleme in Workload Factory für EDA analysieren
 :allow-uri-read: 
@@ -15,15 +15,17 @@ Erkannte Verzögerungen werden angezeigt, und automatisierte Tools unterstützen
 
 
 
+[[before-you-begin]]
 == Bevor Sie beginnen
 
 Sie müssen link:task-configure-latency-monitoring.html["konfigurierte Latenzüberwachung"] haben, bevor Sie Latenzereignisse anzeigen und analysieren können.
 
 
 
-== Latenzereignisse anzeigen
+[[view-volumes-with-latency-above-threshold]]
+== Volumen mit einer Latenz oberhalb des Schwellenwerts anzeigen
 
-Die Tabelle der Latenzereignisse zeigt alle Warn- und kritischen Ereignisse der letzten 72 Stunden an einem Ort.
+Die Tabelle „Volumes mit Latenz über dem Schwellenwert“ zeigt Volumes, die in den letzten 72 Stunden den Warn- oder kritischen Latenzschwellenwert überschritten haben.
 
 .Über diese Aufgabe
 * Es wird nur der jeweils aktuellste Sicherheitsverstoß für jedes Volume angezeigt. Frühere Verstöße für dasselbe Volume werden nicht angezeigt.
@@ -36,95 +38,71 @@ Die Tabelle der Latenzereignisse zeigt alle Warn- und kritischen Ereignisse der 
 . Melden Sie sich mit einem der folgenden Dienste an: link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["Konsolenerlebnisse"^]Die
 . Wählen Sie das Menü image:workloads-menu-icon.png["Das Hamburger-Menüsymbol"] und wählen Sie dann *EDA* aus.
 . Wählen Sie die Registerkarte *Latenz* aus.
-. Überprüfen Sie die Informationen zu jedem Ereignis in der Tabelle der Latenzereignisse.
+. Die Informationen zu jedem Ereignis in der Tabelle werden angezeigt.
 . Um Details zu einem Latenzereignis anzuzeigen, wählen Sie das Ereignis in der Spalte *Schweregrad* aus. Dadurch wird ein Latenzanalyse-Panel für dieses Ereignis geöffnet.
 . Um die Tabelle zu sortieren, wählen Sie eine beliebige Spaltenüberschrift aus. Standardmäßig werden kritische Ereignisse zuerst nach Zeit sortiert angezeigt, gefolgt von Warnereignissen, ebenfalls nach Zeit sortiert.
 . Um ein oder mehrere Ereignisse zu verwerfen, wählen Sie neben dem jeweiligen Ereignis image:icon-action.png["Das Aktionsmenü-Symbol"]*Verwerfen*.
 . Um der Tabelle Spalten hinzuzufügen, wählen Sie image:column-icon.png["Das Spaltensymbol"], wählen Sie die Spalten aus und wählen Sie *Anwenden*.
-. Um Latenztrends im Zeitverlauf zu analysieren, wählen Sie ein Ereignis aus, um das Latenzanalyse-Panel zu öffnen. Verwenden Sie die Registerkarte *Zeitverlauf*, um das interaktive Latenzdiagramm anzuzeigen. Siehe link:task-analyze-latency-trends.html["Latenztrends analysieren"] für Details.
+. Das Panel zur Latenzanalyse bietet einen schnellen Überblick über die Verletzung, einschließlich eines Latenzdiagramms und Steuerelementen für Zeitraum und Typ. *Vollständige Analyse anzeigen* öffnet die detaillierte Latenzanalyseseite mit Basisanalyse, optionaler KI-Analyse und zusätzlichen Diagrammen. Siehe link:task-analyze-latency-trends.html["Latenztrends analysieren"] für Details.
 
 
 
 
+[[analyze-a-latency-event]]
 == Analysiere ein Latenzereignis
+
+.Bevor Sie beginnen
+Konfigurieren Sie einen Amazon Bedrock-Modell-ARN in den Workload Factory-Einstellungen, siehe link:https://docs.netapp.com/us-en/workload-genai/knowledge-base/requirements-knowledge-base.html#basic-genai-requirements["Grundlegende GenAI-Anforderungen"^].
 
 Eine einfache Analyse hilft Ihnen, schnell die Ursachen für Verlangsamungen zu finden, ohne dass eine manuelle Untersuchung erforderlich ist.
 
 
 
+[[latency-analysis-panel]]
 === Latenzanalyse-Panel
 
-Wählen Sie ein Latenzereignis in der Spalte *Schweregrad* aus, um das Latenzanalyse-Panel für dieses Ereignis zu öffnen. Das Panel enthält Registerkarten, die verschiedene Ansichten des Latenzereignisses bieten:
+Ein Latenzereignis in der Spalte *Schweregrad* öffnet das Analysefenster für dieses Ereignis. Das Fenster enthält Registerkarten, die verschiedene Ansichten des Latenzereignisses bieten.
 
-* *Übersicht*: Zeigt grundlegende Ergebnisse, die identifizieren, welche Komponente die Verzögerung verursacht
-* *Im Zeitverlauf*: Zeigt ein interaktives Latenzdiagramm mit historischen Daten
+Wenn eine Amazon Bedrock Modell-ARN konfiguriert ist, kann eine KI-Analyse für Daten- und Clusterszenarien durchgeführt werden. Wenn Bedrock nicht konfiguriert ist, wird ein Link zur Storage Workloads Konfigurationsseite für dieses Dateisystem bereitgestellt, wo der Bedrock-Zugriff eingerichtet werden kann.
 
+* *Basis*: Zeigt die Ergebnisse einer automatischen Analyse an. Bei Verknüpfung mit dem Dateisystem wird eine Aufschlüsselung der Komponenten angezeigt und die Komponente, die die Verzögerung verursacht, identifiziert. Besteht keine Verknüpfung, erfolgt eine Aufforderung, eine hinzuzufügen. Ein interaktives Latenzdiagramm der CloudWatch-Metriken für das betroffene Volume wird angezeigt. Es werden entweder Lese- oder Schreibmetriken angezeigt, abhängig davon, welcher Alarm das Ereignis ausgelöst hat. Verschiedene Zeiträume können ausgewählt und ein Filter verwendet werden, um alle, Lese-, Schreib- oder Metadatenoperationen anzuzeigen.
+* *KI-Analyse*: Zeigt eine tiefergehende Untersuchung zur Ermittlung der spezifischen Ursache und potenzieller Abhilfemaßnahmen.
+* *Detaillierte Latenzanalyse*: Zeigt interaktive Diagramme der CloudWatch-Metriken für das betroffene Volume. Diese Diagramme zeigen Latenz, IOPS und Durchsatz im Zeitverlauf. Es werden entweder Lese- oder Schreibmetriken angezeigt, abhängig davon, welcher Alarm das Ereignis ausgelöst hat. Verschiedene Zeiträume und ein Filter ermöglichen die Anzeige von Alle, Lese-, Schreib- oder Metadatenoperationen.
 
-
-
-==== Registerkarte „Übersicht“
-
-Die Registerkarte *Übersicht* zeigt die Ergebnisse einer automatischen Analyse an. Wenn die Datei mit dem Dateisystem verknüpft ist, wird eine Aufschlüsselung der Komponenten angezeigt und es wird dargestellt, welche Komponente die Verzögerung verursacht. Falls keine Verknüpfung besteht, erfolgt eine Aufforderung, eine hinzuzufügen.
-
-Wenn eine Amazon Bedrock Modell-ARN konfiguriert ist, ermöglicht die Registerkarte **Übersicht** die Durchführung von KI-Analysen für Daten- und Clusterszenarien. Wenn Bedrock nicht konfiguriert ist, zeigt die Registerkarte einen Link zur Storage Workloads Konfigurationsseite für dieses Dateisystem, auf der der Bedrock-Zugriff eingerichtet werden kann.
-
-
-
-==== Registerkarte „Over time“
-
-Die Registerkarte **Zeitverlauf** zeigt interaktive Diagramme der CloudWatch-Metriken für das betroffene Volume. Diese Diagramme zeigen Latenz, IOPS und Durchsatz im Zeitverlauf. Es werden entweder Lese- oder Schreibmetriken angezeigt, abhängig davon, welcher Alarm das Ereignis ausgelöst hat. Verschiedene Zeitbereiche (1H, 3H, 12H, 24H, 72H) und ein Filter zur Anzeige von Alle, Lese-, Schreib- oder Metadatenoperationen stehen zur Auswahl.
 
 Detaillierte Anweisungen zur Verwendung der Diagramme sind unter link:task-analyze-latency-trends.html["Latenztrends analysieren"] zu finden.
 
 
 
+[[steps]]
 === Schritte
 
 . Suchen Sie auf der Registerkarte *Latenz* das Ereignis, das Sie analysieren möchten.
 . Wählen Sie in der Spalte *Schweregrad* ein Latenzereignis aus, um ein Analysefenster für dieses Ereignis zu öffnen.
-. Die Registerkarte *Übersicht* anzeigen. Wenn eine Verbindung besteht, kann die Komponentenaufschlüsselung geöffnet werden, um die Ursache der Verzögerung zu sehen. Wenn keine Verbindung besteht, kann die Aufforderung zum Verknüpfen einer Verbindung ausgewählt werden, um die Komponenten zu analysieren.
-. Optional können Sie die Registerkarte *Im Zeitverlauf* auswählen, um die Latenztrends für das betroffene Volume anzuzeigen.
-. Falls die Latenz einer genaueren Untersuchung bedarf, etwa aufgrund möglicher Daten- oder Clusterprobleme, kann die KI-Analyse ausgeführt werden.
-
-
-
-
-== KI-Analyse durchführen
-
-Die KI-Analyse ermöglicht eine tiefergehende Untersuchung, um die genaue Ursache und mögliche Abhilfemaßnahmen zu ermitteln.
-
-.Bevor Sie beginnen
-Konfigurieren Sie einen Amazon Bedrock-Modell-ARN in den Workload Factory-Einstellungen, siehe link:https://docs.netapp.com/us-en/workload-genai/knowledge-base/requirements-knowledge-base.html#basic-genai-requirements["Grundlegende GenAI-Anforderungen"^].
-
-.Über diese Aufgabe
-Wenn eine KI-Analyse ausgeführt wird, aktualisiert das System automatisch die Basisdaten der Analyse und verwendet diese als Eingabe für die KI-Analyse.
-
-.Schritte
-. Suchen Sie auf der Registerkarte *Latenz* das Ereignis, das Sie analysieren möchten.
-. Wählen Sie in der Spalte *Schweregrad* ein Latenzereignis aus, um ein Analysefenster für dieses Ereignis zu öffnen.
+. Die Registerkarte *Grundlagen* wird angezeigt. Wenn eine Verbindung besteht, kann die Komponentenaufschlüsselung geöffnet werden, um die Ursache der Verzögerung zu sehen. Wenn keine Verbindung besteht, kann die Aufforderung ausgewählt werden, um eine Verbindung herzustellen und die Komponenten zu analysieren.
+. Im Tab *KI-Analyse* auf *Analysieren* auswählen, um die Ergebnisse einer tiefergehenden Untersuchung wie mögliche Daten- oder Clusterprobleme anzuzeigen. Dies unterstützt die Bestimmung der spezifischen Ursache und potenzieller Abhilfemaßnahmen.
 +
-Wenn kein Link mit dem Dateisystem verknüpft ist, wird eine Aufforderung angezeigt, die Sie auffordert, einen Link mit dem betroffenen Dateisystem zu verknüpfen. Wählen Sie die Aufforderung aus, um zur Link-Einrichtungsseite für dieses Dateisystem weitergeleitet zu werden.
+Die Ergebnisse einschließlich folgender Punkte werden angezeigt:
 
-. Überprüfen Sie die Registerkarte *Übersicht*, um die grundlegenden Analyseergebnisse zu verstehen und die Latenzquelle zu identifizieren.
-. Wenn die Latenzquelle als Daten oder Cluster identifiziert ist, kann mit *Analysieren* eine KI-Analyse gestartet werden.
-. Die Ergebnisse einschließlich folgender Punkte werden angezeigt:
 +
 ** Mögliche Ursachenerklärung
 ** Liste der betroffenen EC2-Clients
 ** Empfohlene Abhilfemaßnahmen
 
 
+. *Vollständige Analyse anzeigen* zeigt die vollständigen Ergebnisse der KI-Analyse, einschließlich Leistungsdiagrammen, die Volumenlatenz, IOPS und Durchsatz aus CloudWatch-Metriken über den ausgewählten Zeitraum darstellen.
 . Die empfohlenen Schritte zur Behebung des Latenzproblems beachten.
 . Nachdem Sie die Änderungen vorgenommen haben, in der Tabelle der Latenzereignisse lässt sich überprüfen, ob das Problem behoben ist.
 
 
 
 
+[[best-practices]]
 == Best Practices
 
 Beachten Sie diese Empfehlungen bei der Analyse von Latenzproblemen:
 
-* *Trends überwachen*: Die Tabelle der Latenzereignisse sollte regelmäßig überprüft werden, um Muster oder wiederkehrende Probleme zu erkennen, die auf Konfigurationsprobleme hinweisen könnten.
+* *Trends überwachen*: Die Tabelle der Volumes mit Latenz über dem Schwellenwert sollte regelmäßig überprüft werden, um Muster oder wiederkehrende Probleme zu erkennen, die auf Konfigurationsprobleme hindeuten könnten.
 * *KI-Analysen strategisch einsetzen*: KI-Analysen kommen bei der Datenprüfung zum Einsatz, wenn grundlegende Analysen dies nahelegen. KI-Analysen können tiefere Einblicke in komplexe Leistungsprobleme ermöglichen, die eine detaillierte Fehlerbehebung erfordern.
 * *Überprüfung abgewiesener Ereignisse*: Es empfiehlt sich, regelmäßig zu überprüfen, warum Ereignisse abgewiesen wurden, um festzustellen, ob Schwellenwerte angepasst oder das System verbessert werden sollte.
 
@@ -133,6 +111,7 @@ Für bewährte Methoden zur Analyse von Latenztrends siehe link:task-analyze-lat
 
 
 
+[[related-information]]
 == Verwandte Informationen
 
 * link:learn-latency-monitoring.html["Erfahren Sie mehr über Latenzüberwachung"]

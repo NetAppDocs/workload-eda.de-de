@@ -15,12 +15,14 @@ Das Projects Dashboard bietet eine Übersicht über die Speichernutzung Ihrer FS
 
 
 
+[[before-you-begin]]
 == Bevor Sie beginnen
 
 Sie sollten link:task-configure-project-dashboard.html["konfigurierte benutzerdefinierte Filter"] für das Projekt-Dashboard haben. Falls Sie keine benutzerdefinierten Filter konfiguriert haben, können Sie weiterhin die Standardfilter (Dateisystem, Volume-Typ und Zeitbereich) verwenden.
 
 
 
+[[filter-the-dashboard]]
 == Dashboard filtern
 
 Durch Filter können Sie sich auf bestimmte Gruppen von Speicherressourcen konzentrieren. Dies erleichtert das Erkennen von Trends, das Auffinden von Problemen und das Erstellen von Berichten für Stakeholder. Durch die Kombination mehrerer Filter lassen sich gezielte Fragen beantworten, wie zum Beispiel: „Wie viel Speicher verwendet das ASIC project team?“ oder „Welche Volumes in der US-West Region haben die höchsten IOPS?“
@@ -44,12 +46,14 @@ Sie können die auf dem Dashboard angezeigten Informationen mithilfe einer Kombi
 
 
 
+[[view-volume-details]]
 == Volumendetails anzeigen
 
 Die Betrachtung sowohl der Gesamtleistung des Volumens als auch der einzelnen Volumina hilft bei der Kapazitätsplanung und Leistungsverbesserung. Die Gesamtansicht zeigt allgemeine Trends. Die Volumenansicht ermöglicht das Auffinden bestimmter Volumina, die möglicherweise Aufmerksamkeit, Optimierung oder zusätzliche Ressourcen benötigen.
 
 
 
+[[view-aggregated-volume-metrics]]
 === Aggregierte Volumenstatistiken anzeigen
 
 Die Gesamtansicht zeigt kombinierte Kennzahlen für alle Volumen, die Ihren Filtern entsprechen.
@@ -68,6 +72,7 @@ Die Gesamtansicht zeigt kombinierte Kennzahlen für alle Volumen, die Ihren Filt
 
 
 
+[[view-individual-volume-performance]]
 === Anzeige der individuellen Volume-Performance
 
 Die Volumenansicht zeigt, wie jedes Volumen im Zeitverlauf arbeitet. Es werden die zehn wichtigsten Volumina für jede Kennzahl hervorgehoben.
@@ -106,6 +111,7 @@ Diese Daten können verwendet werden, um:
 
 
 
+[[best-practices]]
 == Best Practices
 
 Beachten Sie diese Empfehlungen bei der Verwendung des Projects-Dashboards:
@@ -120,6 +126,7 @@ Beachten Sie diese Empfehlungen bei der Verwendung des Projects-Dashboards:
 
 
 
+[[related-information]]
 == Verwandte Informationen
 
 * link:learn-project-dashboard.html["Erfahren Sie mehr über das Projects-Dashboard"]
