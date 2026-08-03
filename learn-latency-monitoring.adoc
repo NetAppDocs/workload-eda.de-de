@@ -23,6 +23,9 @@ Die Latenzanalyse erfasst CloudWatch-Metriken für Lese- und Schreibaktivitäten
 Bei steigender Latenz überprüft Workload Factory automatisch die ONTAP QoS-Verzögerungsmetriken, um die Hauptursache der Verlangsamung zu identifizieren. Bei komplexeren Problemen mit Daten oder Cluster-Komponenten kann eine optionale KI-Analyse ausgeführt werden, die die wahrscheinliche Ursache liefert, betroffene Clients identifiziert und Schritte zur Problemlösung vorschlägt.
 
 
+NOTE: Wenn Ihr Kontoadministrator die KI-Funktionen deaktiviert hat, wird eine Meldung angezeigt und die KI-Analyse kann nicht verwendet werden. Wenden Sie sich an Ihren Administrator oder  https://docs.netapp.com/us-en/workload-setup-admin/manage-genai-features.html["Informationen zur KI-Administration"^].
+
+
 
 [[alert-generation]]
 === Alarmgenerierung
@@ -107,14 +110,20 @@ NOTE: Die Latenzwerte aus der ONTAP QoS-Analyse und CloudWatch können geringfü
 
 Während grundlegende Analysen die Ursache von Latenzzeiten identifizieren können, erfordern komplexere Situationen mit Daten oder Clusterkomponenten oft eine tiefergehende Untersuchung. KI-Analysen ermöglichen diese detailliertere Fehlerbehebung, indem sie Probleme wie überlastete Volumes, fehlerhafte Konfigurationen oder den Bedarf an zusätzlicher Kapazität aufdecken, Probleme, die bei grundlegenden Analysen möglicherweise übersehen werden.
 
+Die Verfügbarkeit der KI-Analyse hängt von Ihren Kontoeinstellungen ab:
+
+* *NetApp-verwaltete KI-Credits aktiviert*: KI-Analysen sind ohne zusätzliche Bedrock-Einrichtung möglich.
+* *Vom Administrator deaktiviert*: KI-Optionen sind nicht verfügbar.
+
+
+Wenn NetApp-verwaltete KI-Guthaben aktiviert sind, Ihr monatliches Budget aber erreicht ist, steht keine KI-Analyse zur Verfügung und eine Meldung wird angezeigt.
+
 Bei der Durchführung einer KI-Analyse stellt das System Folgendes bereit:
 
 * *Mögliche Ursache*: Detaillierte Erklärung, was das Latenzproblem verursacht
 * *Betroffene Clients*: Liste der von der Latenz betroffenen EC2-Instanznamen
 * *Mögliche Abhilfemaßnahmen*: Zwei oder mehr konkrete Maßnahmen zur Behebung des Problems
 
-
-Für die KI-Analyse ist eine Amazon Bedrock model ARN in Ihren Workload Factory Einstellungen erforderlich. Wenn Bedrock nicht eingerichtet ist, stehen weiterhin Latenzüberwachung und grundlegende automatisierte Analyse zur Verfügung.
 
 
 

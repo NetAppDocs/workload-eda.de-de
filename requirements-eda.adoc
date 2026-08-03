@@ -20,7 +20,7 @@ AWS-Anmeldeinformationen und Berechtigungen:: Sie müssen AWS-Zugangsdaten mit L
 Die Berechtigungen _Basic_ und _Read-only_ werden derzeit nicht unterstützt.
 
 
-NOTE: AWS-Anmeldeinformationen sind ebenfalls erforderlich, um die Latenzüberwachungsfunktion zu nutzen, die CloudWatch-Metriken zur Analyse der Volumenleistung erfasst. Für den Erhalt von Benachrichtigungen zu Latenzereignissen werden die Benachrichtigungseinstellungen in den Workload Factory-Einstellungen konfiguriert. Für die Aktivierung der optionalen KI-Analyse bei komplexen Latenzszenarien ist außerdem ein Amazon Bedrock Modell-ARN bereitzustellen. link:learn-latency-monitoring.html["Erfahren Sie mehr über Latenzüberwachung"].
+NOTE: Für die Nutzung der Latenzüberwachungsfunktion, die CloudWatch-Metriken zur Analyse der Volumenleistung erfasst, werden auch AWS-Anmeldeinformationen benötigt. Benachrichtigungen über Latenzereignisse sind verfügbar, wenn die Benachrichtigungseinstellungen in den Workload Factory Einstellungen konfiguriert sind. Eine optionale KI-Analyse für komplexe Latenzszenarien ist verfügbar, wenn die von NetApp verwaltete KI-Analyse aktiviert ist. link:learn-latency-monitoring.html["Erfahren Sie mehr über Latenzüberwachung"].
 
 https://docs.netapp.com/us-en/workload-setup-admin/add-credentials.html["Erfahren Sie, wie Sie AWS-Anmeldeinformationen zu Workload Factory hinzufügen."^]
 
@@ -35,7 +35,7 @@ Dieses FSx for ONTAP Dateisystem muss FlexVol Volumes verwenden. FlexGroup Volum
 * Sie benötigen mindestens ein Volume im Dateisystem mit folgender Konfiguration:
 +
 ** Das Volume muss als NFS-Freigabe konfiguriert sein.
-** Das Dateisystem muss mit einem Link konfiguriert werden. https://docs.netapp.com/us-en/workload-fsx-ontap/links-overview.html["Mehr über Links erfahren"^].
+** Das Dateisystem muss mit einem Link konfiguriert werden. link:https://docs.netapp.com/us-en/workload-fsx-ontap/links-overview.html["Mehr über Links erfahren"^].
 
 
 * Sie müssen die Tag-Schlüssel/Wert-Paare berücksichtigen, die Sie auf die AWS-Ressourcen anwenden möchten, die Teil dieser Bereitstellung sind (optional).

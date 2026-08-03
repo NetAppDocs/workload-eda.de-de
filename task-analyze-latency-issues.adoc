@@ -25,11 +25,10 @@ Sie müssen link:task-configure-latency-monitoring.html["konfigurierte Latenzüb
 [[view-volumes-with-latency-above-threshold]]
 == Volumen mit einer Latenz oberhalb des Schwellenwerts anzeigen
 
-Die Tabelle „Volumes mit Latenz über dem Schwellenwert“ zeigt Volumes, die in den letzten 72 Stunden den Warn- oder kritischen Latenzschwellenwert überschritten haben.
+Die Tabelle „Volumes mit Latenz oberhalb des Schwellenwerts“ zeigt Volumes, die den Warn- oder kritischen Latenzschwellenwert überschritten haben.
 
 .Über diese Aufgabe
 * Es wird nur der jeweils aktuellste Sicherheitsverstoß für jedes Volume angezeigt. Frühere Verstöße für dasselbe Volume werden nicht angezeigt.
-* Ereignisse werden nach 72 Stunden automatisch entfernt.
 * Es werden maximal 200 Ereignisse angezeigt. Ältere Ereignisse werden entfernt, sobald neue hinzugefügt werden.
 * Ereignisse werden auch ohne Dateisystemverknüpfung angezeigt. Eine Verknüpfung ist erforderlich, um grundlegende Analysedetails anzuzeigen oder KI-Analysen auszuführen.
 
@@ -51,8 +50,10 @@ Die Tabelle „Volumes mit Latenz über dem Schwellenwert“ zeigt Volumes, die 
 [[analyze-a-latency-event]]
 == Analysiere ein Latenzereignis
 
-.Bevor Sie beginnen
-Konfigurieren Sie einen Amazon Bedrock-Modell-ARN in den Workload Factory-Einstellungen, siehe link:https://docs.netapp.com/us-en/workload-genai/knowledge-base/requirements-knowledge-base.html#basic-genai-requirements["Grundlegende GenAI-Anforderungen"^].
+Die Latenzanalyse ermöglicht es, schnell die Ursachen von Verlangsamungen zu identifizieren, ohne eine manuelle Untersuchung durchführen zu müssen.
+
+
+NOTE: Um KI-Analysen nutzen zu können, muss die von NetApp verwaltete KI aktiviert sein. Weitere Informationen finden sich unter link:https://docs.netapp.com/us-en/workload-setup-admin/manage-genai-features.html["KI-Funktionen verwalten"^].
 
 Eine einfache Analyse hilft Ihnen, schnell die Ursachen für Verlangsamungen zu finden, ohne dass eine manuelle Untersuchung erforderlich ist.
 
@@ -63,7 +64,7 @@ Eine einfache Analyse hilft Ihnen, schnell die Ursachen für Verlangsamungen zu 
 
 Ein Latenzereignis in der Spalte *Schweregrad* öffnet das Analysefenster für dieses Ereignis. Das Fenster enthält Registerkarten, die verschiedene Ansichten des Latenzereignisses bieten.
 
-Wenn eine Amazon Bedrock Modell-ARN konfiguriert ist, kann eine KI-Analyse für Daten- und Clusterszenarien durchgeführt werden. Wenn Bedrock nicht konfiguriert ist, wird ein Link zur Storage Workloads Konfigurationsseite für dieses Dateisystem bereitgestellt, wo der Bedrock-Zugriff eingerichtet werden kann.
+Die Verfügbarkeit der KI-Analyse hängt von Ihren Kontoeinstellungen ab. Wenn die von NetApp verwaltete KI aktiviert ist, kann die KI-Analyse ohne Einrichtung von Bedrock durchgeführt werden. Die KI-Analyse ist nicht verfügbar, wenn das monatliche Kreditlimit erreicht ist oder Ihr Administrator die KI-Funktionen deaktiviert.
 
 * *Basis*: Zeigt die Ergebnisse einer automatischen Analyse an. Bei Verknüpfung mit dem Dateisystem wird eine Aufschlüsselung der Komponenten angezeigt und die Komponente, die die Verzögerung verursacht, identifiziert. Besteht keine Verknüpfung, erfolgt eine Aufforderung, eine hinzuzufügen. Ein interaktives Latenzdiagramm der CloudWatch-Metriken für das betroffene Volume wird angezeigt. Es werden entweder Lese- oder Schreibmetriken angezeigt, abhängig davon, welcher Alarm das Ereignis ausgelöst hat. Verschiedene Zeiträume können ausgewählt und ein Filter verwendet werden, um alle, Lese-, Schreib- oder Metadatenoperationen anzuzeigen.
 * *KI-Analyse*: Zeigt eine tiefergehende Untersuchung zur Ermittlung der spezifischen Ursache und potenzieller Abhilfemaßnahmen.
@@ -80,7 +81,7 @@ Detaillierte Anweisungen zur Verwendung der Diagramme sind unter link:task-analy
 . Suchen Sie auf der Registerkarte *Latenz* das Ereignis, das Sie analysieren möchten.
 . Wählen Sie in der Spalte *Schweregrad* ein Latenzereignis aus, um ein Analysefenster für dieses Ereignis zu öffnen.
 . Die Registerkarte *Grundlagen* wird angezeigt. Wenn eine Verbindung besteht, kann die Komponentenaufschlüsselung geöffnet werden, um die Ursache der Verzögerung zu sehen. Wenn keine Verbindung besteht, kann die Aufforderung ausgewählt werden, um eine Verbindung herzustellen und die Komponenten zu analysieren.
-. Im Tab *KI-Analyse* auf *Analysieren* auswählen, um die Ergebnisse einer tiefergehenden Untersuchung wie mögliche Daten- oder Clusterprobleme anzuzeigen. Dies unterstützt die Bestimmung der spezifischen Ursache und potenzieller Abhilfemaßnahmen.
+. Im Tab *KI-Analyse* steht (sofern verfügbar) die Option *Analysieren* zur Verfügung, um die Ergebnisse einer tiefergehenden Untersuchung anzuzeigen, beispielsweise zu möglichen Daten- oder Clusterproblemen. Dies unterstützt die Bestimmung der spezifischen Ursache und potenzieller Abhilfemaßnahmen.
 +
 Die Ergebnisse einschließlich folgender Punkte werden angezeigt:
 

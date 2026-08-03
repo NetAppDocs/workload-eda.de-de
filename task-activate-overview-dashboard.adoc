@@ -25,7 +25,7 @@ Stellen Sie sicher, dass Sie die folgenden Anforderungen erfüllen, bevor Sie da
 [[aws-credentials-with-view-permissions]]
 === AWS-Anmeldeinformationen mit Ansichtsberechtigungen
 
-Sie müssen in Workload Factory AWS-Anmeldeinformationen mit mindestens Leseberechtigungen (Anzeigeberechtigungen) für General Storage konfigurieren. _Basic_-Anmeldeinformationen werden nicht unterstützt.
+Sie müssen in Workload Factory AWS-Anmeldeinformationen mit mindestens Leseberechtigungen (Anzeigeberechtigungen) für General Storage konfigurieren. _Basic_ Anmeldeinformationen werden nicht unterstützt, da sie nicht die erforderlichen Leseberechtigungen für CloudWatch-Metriken enthalten.
 
 Wenn Sie keine Anmeldeinformationen mit Anzeigeberechtigungen konfiguriert haben, werden Sie beim Öffnen der Registerkarte „Übersicht“ auf die AWS-Anmeldeinformations-Einrichtungsseite weitergeleitet.
 
@@ -61,15 +61,7 @@ Workload Factory beginnt mit der Erfassung von CloudWatch Metriken für alle FSx
 Nach der Aktivierung des Dashboards können Sie:
 
 * link:task-use-overview-dashboard.html["Nutzen Sie das Übersichts-Dashboard"]um den Zustand und die Kapazität des Clusters zu überwachen
-* SSD-Kapazitätsmanagement-Modi konfigurieren (Automatisieren, Empfehlen oder Keine)
+* link:task-use-overview-dashboard.html#change-ssd-management-mode["SSD-Kapazitätsmanagementmodi aktivieren und konfigurieren"] (Empfehlen, Automatisieren oder Keine)
+* link:task-use-overview-dashboard.html#change-throughput-management-mode["Durchsatzmanagementmodi aktivieren und konfigurieren"] (Empfehlen, Automatisieren oder Keine)
 * Richten Sie Filter ein, um sich auf bestimmte Regionen oder AWS accounts zu konzentrieren.
-
-
-
-
-[[related-information]]
-== Verwandte Informationen
-
-* link:learn-overview-dashboard.html["Erfahren Sie mehr über das Overview Dashboard"]
-* link:task-use-overview-dashboard.html["Nutzen Sie das Übersichts-Dashboard"]
 

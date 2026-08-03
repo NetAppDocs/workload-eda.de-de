@@ -34,7 +34,7 @@ Sie können ein neues EDA-Projekt erstellen, um die Datenschutzfunktionen Ihres 
 ... *Region*: Wählen Sie die Region aus, in der sich dieses FSx for ONTAP-Dateisystem befindet.
 ... *FSx for ONTAP-Dateisystem*: Wählen Sie ein FSx for ONTAP-Dateisystem aus, das mit diesem Projekt verwendet werden soll.
 +
-Sie können nur Dateisysteme auswählen, die mit einem Link konfiguriert sind. https://docs.netapp.com/us-en/workload-fsx-ontap/links-overview.html["Mehr über Links erfahren"^].
+Sie können nur Dateisysteme auswählen, die mit einem Link konfiguriert sind. link:https://docs.netapp.com/us-en/workload-fsx-ontap/links-overview.html["Mehr über Links erfahren"^].
 
 ... *Volume auswählen*: Wählen Sie ein Volume aus, auf dem das Projekt gespeichert werden soll; EDA verwendet dieses Volume als Software-Repository.
 +

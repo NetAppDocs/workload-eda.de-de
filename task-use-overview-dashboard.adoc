@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: task-use-overview-dashboard.html 
-keywords: cluster overview, filter dashboard, cluster health, capacity recommendations, SSD management, bulk edit, decision points, clusters table, ONTAP events, latency events 
-summary: Über das Übersichts-Dashboard können Sie den Zustand des Clusters überwachen, Kapazitätsempfehlungen anzeigen, SSD-Kapazitätseinstellungen verwalten und Leistungstrends in Ihren FSx for ONTAP-Dateisystemen analysieren. 
+keywords: cluster overview, filter dashboard, cluster health, capacity recommendations, SSD management, throughput management, bulk edit, decision points, clusters table, ONTAP events, latency events 
+summary: Das Übersichts-Dashboard dient zur Überwachung des Cluster-Zustands, zur Anzeige von Kapazitätsempfehlungen, zur Verwaltung von SSD- und Durchsatzeinstellungen sowie zur Analyse von Leistungstrends in den FSx for ONTAP Dateisystemen. 
 ---
 = Nutzen Sie das Übersichts-Dashboard in Workload Factory für EDA
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Über das Übersichts-Dashboard können Sie den Zustand des Clusters ü
 
 
 [role="lead"]
-Das Übersichts-Dashboard bietet eine Übersicht über den Zustand und die Kapazität Ihrer FSx for ONTAP Dateisysteme. Eine Filterung der Daten, das Anzeigen von Kapazitätsempfehlungen, das Anpassen der SSD-Kapazitätseinstellungen sowie die Überprüfung von Leistungstrends unterstützen bei der Entscheidung, wo Volumes platziert werden und wann eine Kapazitätserweiterung sinnvoll ist.
+Das Übersichts-Dashboard bietet eine Übersicht über den Zustand und die Kapazität Ihrer FSx for ONTAP Dateisysteme. Eine Filterung der Daten, das Anzeigen von Kapazitätsempfehlungen, das Anpassen von SSD- und Durchsatzeinstellungen sowie das Überprüfen von Leistungstrends unterstützen bei der Entscheidung, wo Volumes platziert werden und wann eine Kapazitätserweiterung sinnvoll ist.
 
 
 
@@ -52,7 +52,12 @@ Ganz oben im Dashboard wird eine Zusammenfassung des Zustands und der Aktivität
 Der Gesundheitszustand des Clusters umfasst folgende Schlüsselbereiche:
 
 * *Latenz*: Anzahl der erkannten Latenzereignisse
-* *SSD-Kapazitätsmodus*: SSD-Auslastungsstatus und Dateisysteme mit aktiven Kapazitätsempfehlungen
+* *Elastizität des Dateisystems*:
++
+** *SSD-Kapazität*: Zeigt, wie viele Dateisysteme Automate, Recommend oder None zur Verwaltung der SSD-Kapazität verwenden.
+** *Durchsatz*: Zeigt, wie viele Dateisysteme Automate, Recommend oder None zur Durchsatzverwaltung verwenden.
+
+
 * *ONTAP-Ereignisse*: Anzahl der EMS-Ereignisse nach Kategorie (Kapazität, Verfügbarkeit & Schutz, Sicherheit & Sonstiges)
 
 
@@ -75,25 +80,25 @@ Die ONTAP-Ereignisansichtskarte zeigt die Anzahl der EMS-Ereignisse nach Kategor
 
 
 
-[[view-and-apply-capacity-recommendations]]
-== Kapazitätsempfehlungen ansehen und anwenden
+[[view-and-apply-capacity-or-throughput-recommendations]]
+== Kapazitäts- oder Durchsatzempfehlungen anzeigen und anwenden
 
-Workload Factory führt automatisch eine Kapazitätsempfehlung für jedes FSx for ONTAP Dateisystem aus. Dateisysteme mit Empfehlungen lassen sich durch Filtern der Tabelle „Cluster“ finden.
+Workload Factory führt automatisch Empfehlungen für jedes FSx for ONTAP Dateisystem durch. Dateisysteme mit Empfehlungen lassen sich durch Filtern der Clusters-Tabelle finden.
 
 .Schritte
-. Filtern Sie in der Tabelle *Clusters* nach den Spalten *Zeitstempel der letzten SSD-Erhöhung* oder *Beschreibung der letzten SSD-Erhöhung*.
+. In der Tabelle *Cluster* nach den relevanten Zeit- oder Detailspalten filtern.
 +
-Dateisysteme mit Kapazitätsempfehlungen erscheinen oben in der Tabelle.
+Dateisysteme mit Kapazitäts- oder Durchsatzempfehlungen erscheinen oben in der Tabelle.
 
-. Wählen Sie in der Tabelle einen Dateisystemnamen aus, um ihn zu öffnen und die Empfehlungen anzuzeigen.
-. Beachten Sie die SSD-Empfehlung und das Kapazitätsdiagramm.
+. Ein Dateisystemname in der Tabelle öffnet die Clusterdetails.
+. Die Empfehlung und die Grafik werden angezeigt.
 +
 Die Empfehlung erläutert die vorgeschlagene Änderung und die Begründung dafür. Zum Beispiel: _Wir empfehlen, die SSD-Größe basierend auf Ihrem SSD-Nutzungsmuster des Dateisystems zu erhöhen._
 
 +
-Die Grafik stellt die aktuelle SSD-Nutzung den historischen Trends gegenüber und zeigt, wie der Kapazitätsempfehlungsalgorithmus die Kapazität im Laufe der Zeit angepasst hätte.
+Die Grafik zeigt die aktuelle Nutzung zusammen mit den historischen Trends.
 
-. Wählen Sie oben rechts im Diagramm den Zeitraum aus, um die angezeigte Periode zu ändern. Standardmäßig ist eine Woche eingestellt.
+. Wählen Sie oben rechts im Diagramm den Zeitraum aus, um die angezeigte Periode zu ändern.
 +
 Das Diagramm zeigt außerdem Empfehlungs- und Automatisierungsentscheidungspunkte an (sofern der Automatisierungsmodus aktiviert ist). Bewegen Sie den Mauszeiger über einen Entscheidungspunkt, um Details zur Kapazitätsempfehlung oder Automatisierungsaktion in diesem Moment anzuzeigen.
 
@@ -107,28 +112,20 @@ Das Diagramm zeigt außerdem Empfehlungs- und Automatisierungsentscheidungspunkt
 
 Für jedes Dateisystem kann festgelegt werden, wie die SSD-Kapazität verwaltet wird: manuelle Empfehlungen erhalten oder automatische Skalierung zulassen.
 
-.Über diese Aufgabe
-SSD-Verwaltungsmodi umfassen:
-
-* *Automatisieren*: Automatische Erhöhung der SSD-Kapazität basierend auf vordefinierten Schwellenwerten
-* *Empfehlung*: Kapazitätsempfehlungen erhalten, die manuell geprüft und angewendet werden
-* *Keine*: Keine Kapazitätsempfehlungen oder automatisierte Aktionen
-
-
-Im Automatisierungsmodus können Sie die Parameter „Schwellenwert“, „Rückblick“ und „Vorausschau“ konfigurieren, die steuern, wie das Kapazitätsmanagement-System Ihre SSD-Nutzung analysiert und Automatisierungsentscheidungen trifft. Im Empfehlungsmodus können Sie nur den Parameter „Schwellenwert“ konfigurieren.
-
-* *Schwellenwert* (10–90%): Der SSD-Auslastungsgrad, der Kapazitätsempfehlungen oder Automatisierungsmaßnahmen auslöst
-* *Rückblick* (1–200 Stunden): Der Zeitraum, der zur Analyse historischer SSD-Nutzungsmuster verwendet wird
-* *Ahead* (1-200 Stunden): Der Zeitraum, der zur Prognose des zukünftigen Kapazitätsbedarfs verwendet wird
-
-
 .Schritte
 . Suchen Sie in der Tabelle „Cluster“ den Dateisystemnamen. Öffnen Sie daneben image:icon-action.png["das Aktionsmenü-Symbol"] und wählen Sie *SSD-Kapazitätsmanagement ändern* aus.
+. *SSD Kapazitätsmanagement aktivieren* auswählen und anschließend *Anwenden* auswählen.
 . Wählen Sie Ihren bevorzugten Modus:
 +
-** *Keine*: Kapazitätsmanagement deaktivieren
-** *Empfehlung*: Legen Sie den Schwellenwertparameter für die Empfehlungsanalyse fest.
-** *Automatisieren*: Legen Sie die Schwellenwert-, Rückblick- und Vorausschauparameter für die automatisierte Kapazitätsskalierung fest.
+** *Nur benachrichtigen (Empfohlen-Modus)*
+** *Automatisieren*
+
+
+. Die Parameter für das SSD-Kapazitätsmanagement konfigurieren:
++
+** *Schwellenwert (%)*: SSD-Auslastung in Prozent, die eine Empfehlung auslöst
+** *Rückblick (%)*: Historische Nutzungsdatenperiode für die Analyse
+** *Vorausschau (%)*: Prognostizierte Nutzung für die zukünftige Kapazitätsplanung
 
 
 . Wählen Sie *Übernehmen*.
@@ -139,18 +136,42 @@ Das Dateisystem wechselt sofort in den neuen Modus. Bei Auswahl von „Empfehlen
 
 
 
-[[bulk-edit-ssd-management-parameters]]
-== Massenbearbeitung von SSD-Verwaltungsparametern
+[[change-throughput-management-mode]]
+== Durchsatzmanagementmodus ändern
 
-SSD-Kapazitätseinstellungen für mehrere Dateisysteme gleichzeitig ändern, sodass die gleichen Einstellungen für alle Cluster gelten.
+Für jedes Dateisystem kann festgelegt werden, wie die Durchsatzsteigerung verwaltet wird.
 
-.Über diese Aufgabe
-Wenn Sie mehrere Dateisysteme für die Massenbearbeitung auswählen:
+.Schritte
+. Auf der Registerkarte *Übersicht* sind in der Tabelle „Cluster“ ein oder mehrere Dateisysteme auszuwählen.
+. *Durchsatzmanagement ändern* auswählen.
+. *Durchsatzmanagement aktivieren* auswählen und dann *Anwenden* auswählen.
+. Wählen Sie Ihren bevorzugten Modus:
++
+** *Nur benachrichtigen (Empfohlen-Modus)*
+** *Automatisieren*
 
-* Wenn alle ausgewählten Dateisysteme die gleichen Einstellungen verwenden, werden diese Einstellungen im Bearbeitungsdialog als Standard angezeigt.
-* Wenn ein ausgewähltes Dateisystem im Modus „None“ ist, werden im Dialogfeld Standardwerte angezeigt.
-* Falls die Parameterwerte in den ausgewählten Dateisystemen voneinander abweichen, werden im Dialogfeld Standardwerte angezeigt.
 
+. Im Dialog werden die Parameter für das Durchsatzmanagement konfiguriert:
++
+** *Auswertungszeitraum (Stunden)*: Zeitraum für die Analyse von Durchsatzmustern
+** *Überschrittene Kennzahlen (%)*: Prozentualer Schwellenwert zur Feststellung einer Überschreitung
+** *Zeitraum aufeinanderfolgender Verstöße (Stunden)*: Dauer aufeinanderfolgender Verstöße vor einer Maßnahme
+** *Minimale Latenz (ms)*: Latenzschwellenwert zur Bestimmung der Durchsatzsteigerung
+** *Maximaler Durchsatz (SKUs)*: Maximal zulässige SKU für den Durchsatz
+
+
+. Wählen Sie *Übernehmen*.
+
+
+.Ergebnis
+Die ausgewählten Dateisysteme wechseln sofort in den neuen Durchsatzmodus.
+
+
+
+[[bulk-edit-management-parameters]]
+== Parameter für das Massenbearbeitungsmanagement
+
+Einstellungen für mehrere Dateisysteme gleichzeitig ändern, sodass die gleichen Einstellungen für alle Cluster gelten.
 
 .Schritte
 . Wählen Sie auf der Registerkarte *Übersicht* die Dateisysteme aus, die Sie in der Tabelle bearbeiten möchten.
@@ -158,9 +179,9 @@ Wenn Sie mehrere Dateisysteme für die Massenbearbeitung auswählen:
 
 TIP: Sie können einzelne Dateisysteme auswählen oder mithilfe des Kontrollkästchens in der Kopfzeile alle sichtbaren Dateisysteme auswählen.
 
-. Wählen Sie *SSD-Kapazitätsmanagement ändern* oberhalb der Tabelle aus.
+. *SSD-Kapazitätsmanagement ändern* oder *Durchsatzmanagement ändern* oberhalb der Tabelle auswählen.
 . Wählen Sie Ihren bevorzugten Modus.
-. Passen Sie im Bearbeitungsdialog die Parameter Schwellenwert, Rückblick und Voraus nach Bedarf an.
+. Im Bearbeitungsdialog können die Parameter nach Bedarf angepasst werden.
 +
 Jedes Parameterfeld enthält eine QuickInfo, die seinen Zweck und den gültigen Bereich beschreibt. Der Dialog zeigt die aktuellen Werte oder Standardwerte basierend auf Ihrer Auswahl an.
 
@@ -168,7 +189,7 @@ Jedes Parameterfeld enthält eine QuickInfo, die seinen Zweck und den gültigen 
 
 
 .Ergebnis
-Die Parameter werden für alle ausgewählten Dateisysteme aktualisiert. Dateisysteme im Recommend- oder Automate-Modus verwenden die neuen Parameter sofort für die Kapazitätsanalyse und Entscheidungsfindung.
+Die Parameter werden für alle ausgewählten Dateisysteme aktualisiert. Dateisysteme im Recommend- oder Automate-Modus verwenden die neuen Parameter sofort für Analysen und Entscheidungsfindung.
 
 
 
@@ -180,7 +201,7 @@ Das SSD-Nutzungsdiagramm zeigt, wie sich die Speichernutzung im Laufe der Zeit v
 .Über diese Aufgabe
 Die Entscheidungspunkte im Diagramm zeigen an, wann:
 
-* *Empfehlungsentscheidungspunkte*: Der Kapazitätsempfehlungsalgorithmus hat festgestellt, dass zusätzliche SSD-Kapazität benötigt wird. Dies kann bis zu alle 30 Minuten auftreten, wenn die SSD-Kapazität nicht erhöht wurde.
+* *Empfehlungsentscheidungspunkte*: Der Kapazitätsempfehlungsalgorithmus hat festgestellt, dass zusätzliche SSD-Kapazität benötigt wird.
 * *Automatisierungsentscheidungspunkte*: Das Automatisierungssystem hat versucht, die SSD-Kapazität zu erhöhen. Diese Punkte zeigen, ob die Aktion erfolgreich war oder fehlgeschlagen ist.
 
 
@@ -218,7 +239,6 @@ Bewegen Sie den Mauszeiger über die Durchsatz-Spaltenüberschriften, um Berechn
 
 . Um Spalten anzupassen, wählen Sie das Symbol für die Spalteneinstellungen und wählen Sie aus, welche Spalten angezeigt werden sollen.
 . Um Daten zu exportieren, wählen Sie das Export-Symbol, um eine CSV-Datei herunterzuladen.
-. Um Massenoperationen durchzuführen, wählen Sie mehrere Dateisysteme mithilfe der Kontrollkästchen aus und wählen Sie dann *Parameter bearbeiten*.
 
 
 
@@ -229,12 +249,12 @@ Bewegen Sie den Mauszeiger über die Durchsatz-Spaltenüberschriften, um Berechn
 Beachten Sie diese Empfehlungen bei der Verwendung des Übersichts-Dashboards:
 
 * *Regelmäßige Überwachung*: Das Dashboard sollte regelmäßig überprüft werden, um Trends zu erkennen, bevor sie zu Problemen werden.
-* **Klare Schwellenwerte festlegen**: SSD-Management-Schwellenwerte auswählen, die zu Ihrer Arbeitslast und Ihren Kapazitätsplänen passen.
+* **Klare Schwellenwerte festlegen**: SSD-Nutzungsschwellenwerte und Durchsatzparameter auswählen, die zur jeweiligen Arbeitslast und zu den Kapazitätsplänen passen.
 * **Filter verwenden**: Regions- und Kontofilter können angewendet werden, um sich auf die Teile der Infrastruktur zu konzentrieren, die überprüft werden sollen.
-* **Empfehlungen schnell prüfen**: Die Cluster-Tabelle kann nach **Zeitstempel der letzten SSD-Erweiterung** oder Beschreibung gefiltert werden, um Dateisysteme mit Kapazitätsempfehlungen zu finden. Diese können überprüft und entsprechende Maßnahmen ergriffen werden, um Speicherplatzengpässe zu vermeiden.
-* **Den passenden Modus auswählen**: Der Modus **Empfehlung** eignet sich, wenn Kapazitätsänderungen selbst genehmigt werden sollen. Der Modus **Automatisierung** ist geeignet, wenn das System die Kapazität automatisch verwaltet.
+* **Empfehlungen schnell prüfen**: Die Tabelle „Cluster“ kann gefiltert werden, um Dateisysteme mit Kapazitäts- oder Durchsatzempfehlungen zu finden. Diese können überprüft und entsprechende Maßnahmen ergriffen werden, um Speicherplatzmangel zu vermeiden.
+* **Den richtigen Modus wählen**: Der Modus **Empfehlen** eignet sich, wenn Kapazitäts- oder Durchsatzänderungen selbst genehmigt werden sollen. Der Modus **Automatisieren** ist geeignet, wenn das System Kapazität oder Durchsatz automatisch verwalten soll.
 * **Entscheidungspunkte beobachten**: Entscheidungspunkte in den Kapazitätsdiagrammen prüfen, um zu sehen, wie das System Entscheidungen trifft, und bestätigen, dass die Einstellungen für die eigenen Anforderungen geeignet sind.
-* **Massenbearbeitung**: Bei der Verwaltung vieler Dateisysteme sorgt die Massenbearbeitung für einheitliche Kapazitätseinstellungen.
+* **Massenbearbeitung**: Bei der Verwaltung vieler Dateisysteme sorgt die Massenbearbeitung für konsistente Einstellungen.
 
 
 

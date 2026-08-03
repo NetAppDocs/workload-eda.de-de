@@ -40,7 +40,7 @@ Wenn Sie keine benutzerdefinierten Filter konfigurieren, stehen Ihnen die Standa
 +
 Falls Sie Ihr Dashboard noch nicht konfiguriert haben, werden Sie automatisch dazu aufgefordert.
 
-. *+ Filter hinzufügen* auswählen.
+. *Filter hinzufügen* auswählen.
 . Fügen Sie für jeden benutzerdefinierten Filter, den Sie erstellen möchten, die Details hinzu:
 +
 ** Filterbezeichnung (der Anzeigename im Dashboard)

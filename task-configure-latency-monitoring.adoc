@@ -29,7 +29,7 @@ Sie müssen AWS-Anmeldeinformationen mit lesen/schreiben-Berechtigungen zu Workl
 
 Die Berechtigungen _Basic_ und _Read-only_ werden für die Latenzüberwachung nicht unterstützt.
 
-Wenn Sie noch keine AWS-Zugangsdaten konfiguriert haben, siehe link:https://docs.netapp.com/us-en/workload-setup-admin/add-credentials.html["AWS-Anmeldeinformationen hinzufügen"^].
+Falls die AWS-Zugangsdaten noch nicht konfiguriert wurden, siehe link:https://docs.netapp.com/us-en/workload-setup-admin/add-credentials.html["AWS-Anmeldeinformationen hinzufügen"^].
 
 
 
@@ -45,16 +45,14 @@ Sie benötigen mindestens ein FSx for ONTAP-Dateisystem mit in Ihrer AWS-Umgebun
 
 Um die Komponentenaufschlüsselung in der Basisanalyse anzuzeigen, muss ein Link mit dem FSx for ONTAP Dateisystem verknüpft werden. Ohne einen Link sind weiterhin Latenz-, IOPS- und Durchsatzdiagramme sichtbar. Falls noch kein Link verknüpft ist, in EDA *Link verknüpfen* auswählen, festlegen, ob ein neuer Link erstellt oder ein bestehender Link verknüpft werden soll, und anschließend *Weiter* auswählen, um automatisch zur Seite zur Linkerstellung in Storage workloads zu gelangen.
 
-Anleitungen zum Erstellen und Verknüpfen von Links finden Sie unter link:https://docs.netapp.com/us-en/workload-fsx-ontap/create-link.html["Link erstellen"^].
+Anweisungen zum Erstellen und Verknüpfen von Links sind unter link:https://docs.netapp.com/us-en/workload-fsx-ontap/create-link.html["Link erstellen"^] zu finden.
 
 
 
-[[amazon-bedrock-model-arn-optional]]
-=== Amazon Bedrock Modell ARN (optional)
+[[turn-on-ai-settings]]
+=== KI-Einstellungen einschalten
 
-(Optional) Um die KI-Analyse zu nutzen, ist in den Workload Factory-Einstellungen ein Amazon Bedrock Modell-ARN anzugeben. Ohne diesen sind weiterhin Latenzüberwachung und grundlegende Analysen möglich.
-
-Weitere Einzelheiten finden Sie unter link:https://docs.netapp.com/us-en/workload-genai/knowledge-base/requirements-knowledge-base.html#basic-genai-requirements["Grundlegende GenAI-Anforderungen"^].
+Wenn Ihr Kontoadministrator die KI-Funktionen deaktiviert hat, wird eine Meldung angezeigt und die KI-Analyse kann nicht genutzt werden. Wenden Sie sich an Ihren Administrator oder siehe link:https://docs.netapp.com/us-en/workload-setup-admin/manage-genai-features.html["Informationen zur KI-Administration"^].
 
 
 
@@ -92,7 +90,7 @@ NOTE: Die in EDA festgelegten Latenzschwellenwerte gelten standardmäßig für I
 
 
 .Ergebnis
-Workload Factory erfasst Latenzmetriken für alle FSx for ONTAP Volumes, die mit Ihren AWS-Anmeldeinformationen verknüpft sind. Diese Metriken werden mindestens alle 20 Minuten erfasst. Volumes, die Ihre festgelegten Schwellenwerte überschreiten, erscheinen in der Tabelle der Latenzereignisse.
+Workload Factory erfasst Latenzmetriken für alle FSx for ONTAP Volumes, die mit Ihren AWS-Anmeldeinformationen verknüpft sind. Volumes, die Ihre festgelegten Schwellenwerte überschreiten, erscheinen in der Tabelle der Latenzereignisse.
 
 
 
@@ -116,7 +114,7 @@ Benachrichtigungskanäle:
 * *Amazon SNS*: Veröffentlicht in Ihrem konfigurierten SNS-Thema zur Integration mit anderen Systemen
 
 
-Informationen zum Aktivieren von Benachrichtigungen finden Sie unter link:https://docs.netapp.com/us-en/workload-setup-admin/configure-notifications.html#wf-console-email-notifications["Benachrichtigungseinstellungen konfigurieren"].
+Zum Aktivieren von Benachrichtigungen siehe link:https://docs.netapp.com/us-en/workload-setup-admin/configure-notifications.html#wf-console-email-notifications["Benachrichtigungseinstellungen konfigurieren"].
 
 
 

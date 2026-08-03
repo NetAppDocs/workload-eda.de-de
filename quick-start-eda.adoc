@@ -53,7 +53,7 @@ link:task-configure-project-dashboard.html["Erfahren Sie, wie Sie das Projects-D
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Sechs"]FSx für ONTAP Latenzanalyse konfigurieren
 [role="quick-margin-para"]
-Latenzschwellenwerte können eingerichtet werden, um Leistungsprobleme proaktiv zu identifizieren und zu beheben, bevor sie die Simulationslaufzeit beeinträchtigen. Warn- und kritische Benachrichtigungen lassen sich konfigurieren, E-Mail- oder SNS-Benachrichtigungen für den Empfang von Echtzeit-Benachrichtigungen einrichten, automatisierte Basisanalysen nutzen und optional KI-Analysen für komplexe Szenarien durch die Konfiguration einer Amazon Bedrock Modell-ARN aktivieren.
+Latenzschwellenwerte können eingerichtet werden, um Leistungsprobleme proaktiv zu identifizieren und zu beheben, bevor sie die Simulationslaufzeit beeinflussen. Warn- und kritische Benachrichtigungen lassen sich konfigurieren, E-Mail- oder SNS-Benachrichtigungen ermöglichen den Empfang von Echtzeit-Benachrichtigungen, automatisierte Basisanalysen können genutzt und optional KI-Analysen für komplexe Szenarien eingesetzt werden.
 
 [role="quick-margin-para"]
 link:task-configure-latency-monitoring.html["Erfahren Sie, wie Sie die Latenzüberwachung konfigurieren"^]. Sobald Ereignisse erkannt wurden, können Sie link:task-analyze-latency-trends.html["Latenztrends analysieren"^] das interaktive Diagramm verwenden.
