@@ -200,7 +200,7 @@ Workload Factory analysiert nun automatisch die SSD-Kapazität jedes FSx for ONT
 
 Wenn eine Empfehlung identifiziert wird:
 
-* Sie erhalten umgehend eine E-Mail oder eine WAD-Benachrichtigung (nicht Teil der wöchentlichen Zusammenfassung).
+* Sie erhalten umgehend eine E-Mail oder eine Well-Architected-Benachrichtigung (nicht Teil der wöchentlichen Zusammenfassung).
 * In der Tabelle „Cluster“ wird für den betroffenen Cluster eine Glühbirnenanzeige eingeblendet.
 * Eine Zusammenfassung im Übersichts-Dashboard zeigt die Gesamtzahl der Cluster mit aktiven Empfehlungen an.
 

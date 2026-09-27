@@ -453,7 +453,6 @@
   <block id="7b0ddde1961cce4426c7f0cf5da65e0d" category="doc">EDA-Kapazitätsempfehlungen</block>
   <block id="edb815136867c3359e368e3f925ae387" category="paragraph">Workload Factory analysiert nun automatisch die SSD-Kapazität jedes FSx for ONTAP-Clusters in Ihrem EDA-Inventar und generiert Kapazitätsempfehlungen, wenn Anpassungen erforderlich sind. Der Algorithmus wird einmal alle 24 Stunden für jeden Cluster ausgeführt.</block>
   <block id="1f9c155d60450baccee27bca630b6497" category="paragraph">Wenn eine Empfehlung identifiziert wird:</block>
-  <block id="8d65ccbe024d7453ace82bd13b7980d8" category="list-text">Sie erhalten umgehend eine E-Mail oder eine WAD-Benachrichtigung (nicht Teil der wöchentlichen Zusammenfassung).</block>
   <block id="8e5fe5a1e14c6d69b9c457c33f0204a7" category="list-text">In der Tabelle „Cluster“ wird für den betroffenen Cluster eine Glühbirnenanzeige eingeblendet.</block>
   <block id="c38bddc25aeb4374d71816e0b71a53a0" category="list-text">Eine Zusammenfassung im Übersichts-Dashboard zeigt die Gesamtzahl der Cluster mit aktiven Empfehlungen an.</block>
   <block id="1471ae7120155f3a06fa9c0a62a7f3f5" category="paragraph">Wählen Sie einen Cluster mit einer aktiven Empfehlung aus, um die Empfehlung anzuzeigen, in der die vorgeschlagene Änderung und die Begründung erläutert werden.</block>
@@ -1093,4 +1092,5 @@
   <block id="0ecfcdfed86b687b39299cccc3380def" category="list-text">**Den richtigen Modus wählen**: Der Modus **Empfehlen** eignet sich, wenn Kapazitäts- oder Durchsatzänderungen selbst genehmigt werden sollen. Der Modus **Automatisieren** ist geeignet, wenn das System Kapazität oder Durchsatz automatisch verwalten soll.</block>
   <block id="88a7c4b8bd498e193a117097af5581b1" category="list-text">**Massenbearbeitung**: Bei der Verwaltung vieler Dateisysteme sorgt die Massenbearbeitung für konsistente Einstellungen.</block>
   <block id="951a51b60db3d63eb71726cd5fe6fbad" category="section-title">3. August 2026</block>
+  <block id="73c57946c156d22b4a35f2e089180ab4" category="list-text">Sie erhalten umgehend eine E-Mail oder eine Well-Architected-Benachrichtigung (nicht Teil der wöchentlichen Zusammenfassung).</block>
 </blocks>
