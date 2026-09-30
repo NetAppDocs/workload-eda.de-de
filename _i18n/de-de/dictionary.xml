@@ -621,11 +621,6 @@
   <block id="fa0b4e3f4266abe4ec93e3058cfcd2aa" category="section-title">Kapazitätsentscheidungspunkte verstehen</block>
   <block id="c27f88e562f3ed3c4000570673348297" category="list-text">*Empfehlungsentscheidungspunkte*</block>
   <block id="153ea1a28a0f56dba57777e1680e1f76" category="list-text">*Entscheidungspunkte für die Automatisierung*</block>
-  <block id="8aa0b0a22cf225f503177c8f1de7df3c" category="list-text">Verstehen, wie häufig Kapazitätsanpassungen erforderlich sind</block>
-  <block id="dc036d0aefd6c43f7e0e90f879128e16" category="list-text">Prüfen Sie, ob der Automatisierungs- oder der Empfehlungsmodus besser zu Ihren Arbeitslastmustern passt</block>
-  <block id="274e06045627d8934cd9bb52e8c64f53" category="list-text">Wiederkehrende Kapazitätsengpässe identifizieren</block>
-  <block id="38e979158d55ae25a36aba4d97b0a8b4" category="list-text">Planen Sie zukünftigen Kapazitätsbedarf basierend auf Wachstumstrends</block>
-  <block id="2814ccd9bf1ef1faffa5931e29ee7f74" category="list-text">Fehlerbehebung bei fehlgeschlagenen Automatisierungsversuchen</block>
   <block id="0a77401b929110d42e7c36ac77c37872" category="inline-link-macro">Aktivieren Sie das Übersichts-Dashboard</block>
   <block id="b20e509aee340813d832ff54146a6123" category="list-text"><block ref="b20e509aee340813d832ff54146a6123" category="inline-link-macro-rx"></block></block>
   <block id="a35e94495c93c5d785f8b1240c15be6a" category="inline-link-macro">Nutzen Sie das Übersichts-Dashboard</block>
@@ -739,21 +734,9 @@
   <block id="76a0ca3e805dbf2778413ce26855f65b" category="paragraph">Das Diagramm zeigt außerdem Empfehlungs- und Automatisierungsentscheidungspunkte an (sofern der Automatisierungsmodus aktiviert ist). Bewegen Sie den Mauszeiger über einen Entscheidungspunkt, um Details zur Kapazitätsempfehlung oder Automatisierungsaktion in diesem Moment anzuzeigen.</block>
   <block id="37b5b20fd94de2275a255ae79e7ac8f0" category="list-text">Um die Empfehlung umzusetzen, befolgen Sie die in der Empfehlungsmitteilung enthaltenen Anweisungen.</block>
   <block id="95138c66b91ee03084dfba9068536d5e" category="section-title">SSD-Verwaltungsmodus ändern</block>
-  <block id="6d8ccfb06da581a2d86feacefa3b4869" category="inline-image-macro">das Aktionsmenü-Symbol</block>
-  <block id="c9eecdb0eb0ca75174ea4d40e628f365" category="list-text">Suchen Sie in der Tabelle „Cluster“ den Dateisystemnamen. Öffnen Sie daneben <block ref="db26b5e8c520e1d883813594c799d7f7" category="inline-image-macro-rx" type="image"></block> und wählen Sie *SSD-Kapazitätsmanagement ändern* aus.</block>
   <block id="b689124bbd04a08329d8f616990fa06d" category="list-text">Wählen Sie Ihren bevorzugten Modus:</block>
-  <block id="cc009bfb1b3b40af528a54a164d8b953" category="list-text">Wählen Sie auf der Registerkarte *Übersicht* die Dateisysteme aus, die Sie in der Tabelle bearbeiten möchten.</block>
-  <block id="8cd7391e66f29fd726ffdf9a59961f54" category="admonition">Sie können einzelne Dateisysteme auswählen oder mithilfe des Kontrollkästchens in der Kopfzeile alle sichtbaren Dateisysteme auswählen.</block>
-  <block id="b97c770bb654f2ef0b93eb759a99c159" category="list-text">Wählen Sie Ihren bevorzugten Modus.</block>
-  <block id="43c2e4748a7a87eb44a6cb86329b0750" category="paragraph">Jedes Parameterfeld enthält eine QuickInfo, die seinen Zweck und den gültigen Bereich beschreibt. Der Dialog zeigt die aktuellen Werte oder Standardwerte basierend auf Ihrer Auswahl an.</block>
-  <block id="3f254e874f94d9cc6daffdbea2c76012" category="list-text">Wählen Sie *Anwenden*, um die Änderungen auf alle ausgewählten Dateisysteme anzuwenden.</block>
   <block id="84a7874f129070a914f70dd3d70a6716" category="section-title">Analysieren Sie Kapazitätstrends und Entscheidungspunkte</block>
   <block id="4dbca2bab9fb0222adee0d079e0d2127" category="paragraph">Die Entscheidungspunkte im Diagramm zeigen an, wann:</block>
-  <block id="322cceacdd52c951c88a1d93df7f0dd8" category="list-text">Wählen Sie auf der Registerkarte *Übersicht* einen Dateisystemnamen in der Tabelle aus.</block>
-  <block id="c7967065af6ac7703ee14f60f2812ccb" category="list-text">Sehen Sie sich das SSD-Nutzungsdiagramm an, das die historischen Kapazitätstrends aufzeigt.</block>
-  <block id="6f6089a81e1a8064861733b4969654d6" category="list-text">Wählen Sie verschiedene Zeiträume aus, um das Kapazitätsverhalten über verschiedene Zeiträume hinweg anzuzeigen.</block>
-  <block id="8d33ce28efafbfe7600930c556bcfd55" category="list-text">Bewegen Sie den Mauszeiger über Entscheidungspunkte im Diagramm, um Details zu Empfehlungen oder Automatisierungsaktionen zu bestimmten Zeitpunkten anzuzeigen.</block>
-  <block id="4d43a6d1e695bf0a99e5bc33d3ca3fda" category="list-text">Nutzen Sie die Erkenntnisse aus dem Diagramm, um:</block>
   <block id="e307894bdae8efc4f4fdacf666cf2573" category="section-title">Verwenden Sie die Clustertabelle</block>
   <block id="88dc1144edaa697995919551780b6e93" category="list-text">Überprüfen Sie auf der Registerkarte *Übersicht* die Clustertabelle.</block>
   <block id="8e6be07248fc78ed27f8d01305999436" category="list-text">Verwenden Sie das Suchfeld, um bestimmte Dateisysteme anhand ihres Namens zu finden.</block>
@@ -827,7 +810,6 @@
   <block id="a3eb814e72de4d40c0767efe37beafe1" category="list-text">Die Benutzeroberfläche zeigt die Gesamtzahl der Dateisysteme an, für die aktuell aktive Empfehlungen vorliegen.</block>
   <block id="f7f59f0b5632d026e80fe90b1eec8f63" category="list-text">Der SSD-Auslastungsgrad, ab dem Kapazitätsempfehlungen oder Automatisierungsaktionen ausgelöst werden. Beispielsweise bedeutet ein Schwellenwert von 80 %, dass Empfehlungen oder Aktionen erfolgen, sobald die SSD-Auslastung 80 % erreicht. Diese Einstellung ist sowohl im Recommend- als auch im Automate-Modus verfügbar.</block>
   <block id="d5a40446a028d90d5bf46fe40624722d" category="paragraph">Sie können diese Parameter für jedes Dateisystem einzeln festlegen oder die Massenbearbeitung verwenden, um dieselben Einstellungen auf mehrere Dateisysteme anzuwenden.</block>
-  <block id="1b07a2acaea0fa364496ba3afb977975" category="paragraph">Das SSD-Nutzungsdiagramm zeigt an, wann das System Kapazitätsempfehlungen ausgesprochen oder automatische Maßnahmen ergriffen hat. Diese Markierungen zeigen, wie sich der Kapazitätsmanagement-Algorithmus im Zeitverlauf verhalten hat.</block>
   <block id="47daf1022723b90d90f96e2d735e2267" category="list-text">Diese Meldungen erscheinen, wenn das Automatisierungssystem versucht, die SSD-Kapazität zu erhöhen. Sie zeigen, ob die Aktion erfolgreich war oder fehlgeschlagen ist.</block>
   <block id="5d75c0e68111b8bb5d2e043a495c6e39" category="paragraph">Das SSD-Nutzungsverlaufsdiagramm dient dazu:</block>
   <block id="9515f88eb47a770a2eae21e430e5b3ff" category="list-text">Anzeigen, wie oft die Speichergröße geändert werden muss</block>
@@ -1008,7 +990,6 @@
   <block id="929261095300bce39be28cdc60e46b85" category="list-text">*Elastizität des Dateisystems*</block>
   <block id="20ed77fd0e548f70d1a8b8bd340ed628" category="list-text">*SSD-Kapazität*: Zeigt, wie viele Dateisysteme Automate, Recommend oder None zur Verwaltung der SSD-Kapazität verwenden.</block>
   <block id="f811d9a1edf56398351dffaef0b6506e" category="list-text">*Durchsatz*: Zeigt, wie viele Dateisysteme Automate, Recommend oder None zur Durchsatzverwaltung verwenden.</block>
-  <block id="94e78450902ff8802101a87715f2120e" category="paragraph">Ein Dateisystem kann ausgewählt werden, um Clusterdetails einschließlich Clusterinformationen, SSD-Kapazitätswerte und das Diagramm „SSD-Kapazität im Zeitverlauf“ anzuzeigen.</block>
   <block id="7ae10da71cdf204162f214a176b66232" category="list-text">*Nur benachrichtigen (Empfohlen-Modus)*</block>
   <block id="a50d39f8ae7bb4152ca8de0ad153c7d5" category="list-text">Wenn das SSD Kapazitätsmanagement nicht aktiviert ist, gibt das System keine Kapazitätsempfehlungen ab und führt keine automatisierten Aktionen durch. Diese Option eignet sich, wenn Sie die Kapazität selbst verwalten möchten.</block>
   <block id="f015d9c2fdd7ed0dc64dd7b4f0a18c1f" category="list-text">*Vorschau* (1-200 Stunden)</block>
@@ -1028,7 +1009,6 @@
   <block id="622a5b145e5cdfd92b8124baf3f8e5d7" category="list-text">*Minimale Latenz (ms)* (Standard 10 ms)</block>
   <block id="4067af77fe7df9f9047c8c4eeb9490b5" category="list-text">*SKU mit maximalem Durchsatz* (Standard None)</block>
   <block id="e4612c732ae1c64db60c83cb8cae8381" category="section-title">Empfehlungen zur Elastizität des Dateisystems</block>
-  <block id="cc8b8287cb9875fcd93e6deecaaa1c10" category="paragraph">Wenn Workload Factory sich im Automate- oder Recommend-Modus befindet, überprüft es automatisch jedes FSx for ONTAP Dateisystem und führt einen Kapazitätsempfehlungsalgorithmus aus. Das System scannt regelmäßig, um festzustellen, ob die SSD-Kapazität oder der Durchsatz angepasst werden sollte.</block>
   <block id="1c5b8d97751372161e201f333f1b4f62" category="list-text">Dateisysteme mit Empfehlungen lassen sich durch Filtern der Tabelle „Cluster“ identifizieren.</block>
   <block id="25dc82340ec038ecbda8ab79823e242a" category="list-text">Diese Punkte erscheinen, wenn das System erkennt, dass mehr SSD-Kapazität benötigt wird. Wenn die Kapazität nicht erhöht wurde, können diese Punkte bis zu alle 30 Minuten erscheinen. Das Diagramm zeigt jeden Entscheidungspunkt, wenn möglich. Wenn der gewählte Zeitraum zu dicht ist, werden die Punkte zusammengefasst.</block>
   <block id="d5781ee1e2ae2729d18fc69fc41ec67a" category="paragraph">Sie können nur Dateisysteme auswählen, die mit einem Link konfiguriert sind. <block ref="959c1faca1dbb57f8dac1b5058bf9c58" category="inline-link-macro-rx"></block>.</block>
@@ -1064,7 +1044,6 @@
   <block id="33c83a7b34dbfa47935b0be5b097865d" category="list-text">Die Empfehlung und die Grafik werden angezeigt.</block>
   <block id="fd896caec9b1904e01ed5b6a90b096d9" category="paragraph">Die Grafik zeigt die aktuelle Nutzung zusammen mit den historischen Trends.</block>
   <block id="7269a303313716fe145ba2b18acc49d7" category="list-text">Wählen Sie oben rechts im Diagramm den Zeitraum aus, um die angezeigte Periode zu ändern.</block>
-  <block id="c7ac58faf1984cf107f3421908d2207c" category="list-text">*SSD Kapazitätsmanagement aktivieren* auswählen und anschließend *Anwenden* auswählen.</block>
   <block id="da35cbad278570472c076b6042a5b528" category="list-text">Die Parameter für das SSD-Kapazitätsmanagement konfigurieren:</block>
   <block id="166c4a53ef8fc50b9b03ca91c1c677bc" category="list-text">*Schwellenwert (%)*: SSD-Auslastung in Prozent, die eine Empfehlung auslöst</block>
   <block id="87ad0cdc7f64b3a67d168c0b688707d9" category="list-text">*Rückblick (%)*: Historische Nutzungsdatenperiode für die Analyse</block>
@@ -1073,19 +1052,11 @@
   <block id="86161e58ce8677bff58de719cb9f29a8" category="paragraph">Für jedes Dateisystem kann festgelegt werden, wie die Durchsatzsteigerung verwaltet wird.</block>
   <block id="441fc54d05bba2a603a05c500cf068c7" category="list-text">Auf der Registerkarte *Übersicht* sind in der Tabelle „Cluster“ ein oder mehrere Dateisysteme auszuwählen.</block>
   <block id="0231f044766e71e4fe49a62ba8e8bbbe" category="list-text">*Durchsatzmanagement ändern* auswählen.</block>
-  <block id="652aab445f49bb41fa3e8774b5719cf2" category="list-text">*Durchsatzmanagement aktivieren* auswählen und dann *Anwenden* auswählen.</block>
-  <block id="16393cf33b95f8ff007d76d513b875d7" category="list-text">Im Dialog werden die Parameter für das Durchsatzmanagement konfiguriert:</block>
   <block id="083678f0efe5919237188ee0ee5d0b90" category="list-text">*Auswertungszeitraum (Stunden)*: Zeitraum für die Analyse von Durchsatzmustern</block>
   <block id="ed38b15c549d9cd41a86a3787f5fee23" category="list-text">*Überschrittene Kennzahlen (%)*: Prozentualer Schwellenwert zur Feststellung einer Überschreitung</block>
-  <block id="5e1e1daa7e6d115a54180e147895003e" category="list-text">*Zeitraum aufeinanderfolgender Verstöße (Stunden)*: Dauer aufeinanderfolgender Verstöße vor einer Maßnahme</block>
   <block id="91455d18a42b79b1a34df0d97bfbaffd" category="list-text">*Minimale Latenz (ms)*: Latenzschwellenwert zur Bestimmung der Durchsatzsteigerung</block>
   <block id="0a2daf37cc4cac8c9a3da95290e9a399" category="list-text">*Maximaler Durchsatz (SKUs)*: Maximal zulässige SKU für den Durchsatz</block>
   <block id="6b482ace535080820ca5dea3bb557cb6" category="paragraph">Die ausgewählten Dateisysteme wechseln sofort in den neuen Durchsatzmodus.</block>
-  <block id="be76a5f710c434b57d7bb9106913548d" category="section-title">Parameter für das Massenbearbeitungsmanagement</block>
-  <block id="399db4c92643ea16a6e10865b34f5b4f" category="paragraph">Einstellungen für mehrere Dateisysteme gleichzeitig ändern, sodass die gleichen Einstellungen für alle Cluster gelten.</block>
-  <block id="93343e8a72e86eb0283fa9c6fb77b48b" category="list-text">*SSD-Kapazitätsmanagement ändern* oder *Durchsatzmanagement ändern* oberhalb der Tabelle auswählen.</block>
-  <block id="a707a072d0b2b11d2c3e5a2160f9cd48" category="list-text">Im Bearbeitungsdialog können die Parameter nach Bedarf angepasst werden.</block>
-  <block id="80c68bda2149e685b2c9d4a63c1abe0b" category="paragraph">Die Parameter werden für alle ausgewählten Dateisysteme aktualisiert. Dateisysteme im Recommend- oder Automate-Modus verwenden die neuen Parameter sofort für Analysen und Entscheidungsfindung.</block>
   <block id="232af3ec8ca37d39f0b49ddb6c81830a" category="list-text">*Empfehlungsentscheidungspunkte*: Der Kapazitätsempfehlungsalgorithmus hat festgestellt, dass zusätzliche SSD-Kapazität benötigt wird.</block>
   <block id="0d606a9207ef786e2b3dc99ea3fe3ad8" category="list-text">**Klare Schwellenwerte festlegen**: SSD-Nutzungsschwellenwerte und Durchsatzparameter auswählen, die zur jeweiligen Arbeitslast und zu den Kapazitätsplänen passen.</block>
   <block id="c6e183b5112db7515b7bc4904a3b374b" category="list-text">**Empfehlungen schnell prüfen**: Die Tabelle „Cluster“ kann gefiltert werden, um Dateisysteme mit Kapazitäts- oder Durchsatzempfehlungen zu finden. Diese können überprüft und entsprechende Maßnahmen ergriffen werden, um Speicherplatzmangel zu vermeiden.</block>
@@ -1093,4 +1064,30 @@
   <block id="88a7c4b8bd498e193a117097af5581b1" category="list-text">**Massenbearbeitung**: Bei der Verwaltung vieler Dateisysteme sorgt die Massenbearbeitung für konsistente Einstellungen.</block>
   <block id="951a51b60db3d63eb71726cd5fe6fbad" category="section-title">3. August 2026</block>
   <block id="73c57946c156d22b4a35f2e089180ab4" category="list-text">Sie erhalten umgehend eine E-Mail oder eine Well-Architected-Benachrichtigung (nicht Teil der wöchentlichen Zusammenfassung).</block>
+  <block id="08b543f700a568688a9f78d874d0ce8b" category="doc">Verbesserte Benachrichtigungen zur SSD-Kapazität</block>
+  <block id="f37e9239265205bdf39af7b4def6f75a" category="paragraph">Benachrichtigungen zum SSD Kapazitätsmanagement enthalten jetzt detaillierte Fehlermeldungen zur Fehlerbehebung bei Automatisierungsfehlern. Benachrichtigungen werden bei erfolgreichen Kapazitätserhöhungen, Fehlern bei Erhöhungsvorgängen, fehlgeschlagenen Kapazitätsprüfungen, Schwellenwertwarnungen und Empfehlungen gesendet. Die Fehlerdetails enthalten spezifische Fehlerursachen wie fehlende Berechtigungen, laufende gleichzeitige Aktualisierungen, AWS Cooldown-Zeiten oder Probleme beim Abrufen von CloudWatch Metriken.</block>
+  <block id="4a3354724a06bbb8040fa512f39a5e07" category="inline-link-macro">Informationen zum SSD Kapazitätsmanagement</block>
+  <block id="3e69b701694082d892b97eb050525650" category="paragraph"><block ref="bc2811c6501476df42adeca777dc6dd3" category="inline-link-macro-rx"></block>.</block>
+  <block id="b1b09cb9ca77b33ed95a7406fab56623" category="section-title">Wöchentlicher Zeitrahmen für Latenzdiagramme</block>
+  <block id="a5ff2097c50c86e897e35110fe5629d9" category="paragraph">Die Diagramme zur Latenzanalyse unterstützen nun zusätzlich zu den bestehenden Optionen (1 Stunde, 3 Stunden, 12 Stunden, 24 Stunden, 72 Stunden) auch einen Zeitraum von einer Woche. Die Wochenansicht dient dazu, längerfristige Muster und Trends im Latenzverhalten von Volumes zu erkennen.</block>
+  <block id="8d6933264e6e5f9ec4a93a7936daf177" category="inline-link-macro">Informationen zur Latenztrendanalyse</block>
+  <block id="f00c9e117aa43f7e65780e53b18b74a8" category="paragraph"><block ref="8280dff077bedc5ff5df29e3a9ab24f4" category="inline-link-macro-rx"></block>.</block>
+  <block id="dad79f11b2960d3be921e97689e00796" category="section-title">Verbesserte Dateisystemsichtbarkeit in der Benutzeroberfläche</block>
+  <block id="856b733ee2011b50fb74e26e28353b8c" category="paragraph">Workload Factory bietet Ihnen jetzt eine übersichtlichere Darstellung Ihrer Dateisysteme in der Benutzeroberfläche. In der Dateisystemübersicht lassen sich Trends bei der SSD-Kapazität und der Durchsatznutzung, Workload-Zusammenfassungen und detaillierte Konfigurationsinformationen direkt einsehen.</block>
+  <block id="05d2715aacab706b61cab6ab5eae577f" category="paragraph">Ein Dateisystem kann ausgewählt werden, um Clusterdetails wie Clusterinformationen, SSD-Kapazität und Diagramme anzuzeigen. In der Clusterdetailansicht können Sie mithilfe der Optionen *Durchsatz* und *SSD Capacity* zwischen den Ansichten wechseln.</block>
+  <block id="44ad493c3ed3456875890a0633967832" category="paragraph">Die Durchsatzansicht zeigt den Client-Durchsatz und die Ressourcenauslastung. Die SSD Kapazitätsansicht zeigt SSD-Nutzungstrends und Kapazitätsempfehlungen.</block>
+  <block id="0575d3bb4ddf703c8919e95c56fd6669" category="paragraph">Wenn sich Workload Factory im Automatisierungs- oder Empfehlungsmodus befindet, prüft es automatisch jedes FSx for ONTAP Dateisystem und empfiehlt Kapazitätsänderungen. Es scannt das System regelmäßig, um festzustellen, ob die SSD-Kapazität oder der Durchsatz angepasst werden sollten. Wenn die Verwaltung aktiviert ist, zeigt die Dateisystemdetailseite die SSD-Kapazität und den Durchsatz zusammen mit historischen Trends und empfohlenen Anpassungspunkten an.</block>
+  <block id="3b39aa368232f477c3b4544b63a58a94" category="paragraph">Das SSD-Nutzungsdiagramm zeigt an, wann das System die empfohlene Kapazität geändert oder automatische Anpassungen vorgenommen hat. Diese Markierungen veranschaulichen, wie das System die Kapazität im Laufe der Zeit verwaltet hat. Wenn das SSD Kapazitätsmanagement deaktiviert ist, zeigt das Diagramm nur die bisherige Nutzung an und keine Empfehlungen oder automatischen Aktionen.</block>
+  <block id="cc23b0ef8b8c73f4efb0ced4281250f3" category="list-text">In der Tabelle „Clusters“ ist der Dateisystemname zu suchen und auszuwählen, anschließend ist *Kapazitätsmanagement für SSD ändern* auszuwählen.</block>
+  <block id="d9a44929e0eea557983dbb6917008a70" category="list-text">*Durchsatzmanagement aktivieren* wird ausgewählt.</block>
+  <block id="1cbae666f242dee35d801763ff6c587f" category="list-text">Unter *Auslastungsschwelle (%)* wird der Auslastungsgrad festgelegt, der Empfehlungen oder Automatisierungsaktionen auslöst.</block>
+  <block id="e920df7cb27871af178ff85a428a8b4e" category="list-text">In *Erweiterte Konfiguration* werden die Durchsatzverwaltungsparameter konfiguriert:</block>
+  <block id="39122245b5363dc3871538d2ef59784e" category="list-text">*Fenster für aufeinanderfolgende Verstöße (Stunden)*: Dauer aufeinanderfolgender Verstöße vor dem Ergreifen von Maßnahmen</block>
+  <block id="a9d111294543c201d767519d991c1b8d" category="list-text">*Kennzahlen für aufeinanderfolgende Verstöße (%)*: Prozentualer Schwellenwert zur Bestimmung aufeinanderfolgender Verstöße</block>
+  <block id="d385fd0ac858ff17553d407851f64c48" category="paragraph">Wenn das SSD Kapazitätsmanagement deaktiviert ist, zeigt das Diagramm nur die bisherige Nutzung an und keine Empfehlungen oder Automatisierungsentscheidungen.</block>
+  <block id="1de4de358ec9c3a1cd36180e2c13a443" category="list-text">Auf der Registerkarte *Übersicht* wird in der Tabelle ein Dateisystemname ausgewählt. In der Clusterdetailansicht wird die Option *Durchsatz* oder *SSD-Kapazität* ausgewählt, um die Diagrammdarstellung zu wechseln.</block>
+  <block id="a01346bc61a98c025144199b0893e264" category="paragraph">Wenn *Durchsatz* ausgewählt wird, zeigt das Diagramm den Client-Durchsatz und die Auslastung an, sodass die Nachfrage mit dem konfigurierten Durchsatzniveau und den Schwellenwerten verglichen werden kann.</block>
+  <block id="e56ecd5b4053d7385c23bb7c3422bdd5" category="paragraph">Wenn *SSD Capacity* ausgewählt wird, zeigt das Diagramm die SSD-Nutzung an, einschließlich historischer Kapazitätstrends und Entscheidungspunkte für die Kapazität.</block>
+  <block id="d73906b15c9fc84c1806084ce8720a42" category="paragraph">Wählen Sie verschiedene Zeiträume aus, um Durchsatz- oder Kapazitätstrends über unterschiedliche Zeiträume hinweg anzuzeigen. . Bewegen Sie den Mauszeiger über Entscheidungspunkte im Diagramm, um Details zu Empfehlungen oder Automatisierungsaktionen zu bestimmten Zeitpunkten anzuzeigen. . Die Erkenntnisse aus dem Diagramm helfen Ihnen dabei: * zu verstehen, wie häufig Kapazitätsanpassungen erforderlich sind * zu bewerten, ob der Automatisierungs- oder Empfehlungsmodus besser zu Ihren Workload-Mustern passt * wiederkehrende Kapazitätsengpässe zu identifizieren * zukünftigen Kapazitätsbedarf auf der Grundlage von Wachstumstrends zu planen * fehlgeschlagene Automatisierungsversuche zu beheben</block>
+  <block id="301497b54979bb49bba5249c4f44b4ad" category="section-title">27. September 2026</block>
 </blocks>

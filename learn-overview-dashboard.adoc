@@ -77,7 +77,9 @@ Nutzen Sie die Tabelle, um:
 * Wählen Sie mehrere Cluster für Massenaktualisierungen von Parametern aus
 
 
-Ein Dateisystem kann ausgewählt werden, um Clusterdetails einschließlich Clusterinformationen, SSD-Kapazitätswerte und das Diagramm „SSD-Kapazität im Zeitverlauf“ anzuzeigen.
+Ein Dateisystem kann ausgewählt werden, um Clusterdetails wie Clusterinformationen, SSD-Kapazität und Diagramme anzuzeigen. In der Clusterdetailansicht können Sie mithilfe der Optionen *Durchsatz* und *SSD Capacity* zwischen den Ansichten wechseln.
+
+Die Durchsatzansicht zeigt den Client-Durchsatz und die Ressourcenauslastung. Die SSD Kapazitätsansicht zeigt SSD-Nutzungstrends und Kapazitätsempfehlungen.
 
 
 
@@ -150,7 +152,7 @@ Erweiterte Durchsatzparameter sind im erweiterbaren Abschnitt *Advanced configur
 [[file-system-elasticity-recommendations]]
 == Empfehlungen zur Elastizität des Dateisystems
 
-Wenn Workload Factory sich im Automate- oder Recommend-Modus befindet, überprüft es automatisch jedes FSx for ONTAP Dateisystem und führt einen Kapazitätsempfehlungsalgorithmus aus. Das System scannt regelmäßig, um festzustellen, ob die SSD-Kapazität oder der Durchsatz angepasst werden sollte.
+Wenn sich Workload Factory im Automatisierungs- oder Empfehlungsmodus befindet, prüft es automatisch jedes FSx for ONTAP Dateisystem und empfiehlt Kapazitätsänderungen. Es scannt das System regelmäßig, um festzustellen, ob die SSD-Kapazität oder der Durchsatz angepasst werden sollten. Wenn die Verwaltung aktiviert ist, zeigt die Dateisystemdetailseite die SSD-Kapazität und den Durchsatz zusammen mit historischen Trends und empfohlenen Anpassungspunkten an.
 
 Wenn eine Empfehlung identifiziert wird:
 
@@ -166,7 +168,7 @@ Die Empfehlung erläutert die vorgeschlagene Änderung und deren Begründung, be
 [[understanding-capacity-decision-points]]
 === Kapazitätsentscheidungspunkte verstehen
 
-Das SSD-Nutzungsdiagramm zeigt an, wann das System Kapazitätsempfehlungen ausgesprochen oder automatische Maßnahmen ergriffen hat. Diese Markierungen zeigen, wie sich der Kapazitätsmanagement-Algorithmus im Zeitverlauf verhalten hat.
+Das SSD-Nutzungsdiagramm zeigt an, wann das System die empfohlene Kapazität geändert oder automatische Anpassungen vorgenommen hat. Diese Markierungen veranschaulichen, wie das System die Kapazität im Laufe der Zeit verwaltet hat. Wenn das SSD Kapazitätsmanagement deaktiviert ist, zeigt das Diagramm nur die bisherige Nutzung an und keine Empfehlungen oder automatischen Aktionen.
 
 *Empfehlungsentscheidungspunkte*:: Diese Punkte erscheinen, wenn das System erkennt, dass mehr SSD-Kapazität benötigt wird. Wenn die Kapazität nicht erhöht wurde, können diese Punkte bis zu alle 30 Minuten erscheinen. Das Diagramm zeigt jeden Entscheidungspunkt, wenn möglich. Wenn der gewählte Zeitraum zu dicht ist, werden die Punkte zusammengefasst.
 *Entscheidungspunkte für die Automatisierung*:: Diese Meldungen erscheinen, wenn das Automatisierungssystem versucht, die SSD-Kapazität zu erhöhen. Sie zeigen, ob die Aktion erfolgreich war oder fehlgeschlagen ist.

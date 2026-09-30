@@ -113,11 +113,10 @@ Das Diagramm zeigt außerdem Empfehlungs- und Automatisierungsentscheidungspunkt
 Für jedes Dateisystem kann festgelegt werden, wie die SSD-Kapazität verwaltet wird: manuelle Empfehlungen erhalten oder automatische Skalierung zulassen.
 
 .Schritte
-. Suchen Sie in der Tabelle „Cluster“ den Dateisystemnamen. Öffnen Sie daneben image:icon-action.png["das Aktionsmenü-Symbol"] und wählen Sie *SSD-Kapazitätsmanagement ändern* aus.
-. *SSD Kapazitätsmanagement aktivieren* auswählen und anschließend *Anwenden* auswählen.
+. In der Tabelle „Clusters“ ist der Dateisystemname zu suchen und auszuwählen, anschließend ist *Kapazitätsmanagement für SSD ändern* auszuwählen.
 . Wählen Sie Ihren bevorzugten Modus:
 +
-** *Nur benachrichtigen (Empfohlen-Modus)*
+** *Empfehlen*
 ** *Automatisieren*
 
 
@@ -144,18 +143,20 @@ Für jedes Dateisystem kann festgelegt werden, wie die Durchsatzsteigerung verwa
 .Schritte
 . Auf der Registerkarte *Übersicht* sind in der Tabelle „Cluster“ ein oder mehrere Dateisysteme auszuwählen.
 . *Durchsatzmanagement ändern* auswählen.
-. *Durchsatzmanagement aktivieren* auswählen und dann *Anwenden* auswählen.
+. *Durchsatzmanagement aktivieren* wird ausgewählt.
 . Wählen Sie Ihren bevorzugten Modus:
 +
 ** *Nur benachrichtigen (Empfohlen-Modus)*
 ** *Automatisieren*
 
 
-. Im Dialog werden die Parameter für das Durchsatzmanagement konfiguriert:
+. Unter *Auslastungsschwelle (%)* wird der Auslastungsgrad festgelegt, der Empfehlungen oder Automatisierungsaktionen auslöst.
+. In *Erweiterte Konfiguration* werden die Durchsatzverwaltungsparameter konfiguriert:
 +
 ** *Auswertungszeitraum (Stunden)*: Zeitraum für die Analyse von Durchsatzmustern
 ** *Überschrittene Kennzahlen (%)*: Prozentualer Schwellenwert zur Feststellung einer Überschreitung
-** *Zeitraum aufeinanderfolgender Verstöße (Stunden)*: Dauer aufeinanderfolgender Verstöße vor einer Maßnahme
+** *Fenster für aufeinanderfolgende Verstöße (Stunden)*: Dauer aufeinanderfolgender Verstöße vor dem Ergreifen von Maßnahmen
+** *Kennzahlen für aufeinanderfolgende Verstöße (%)*: Prozentualer Schwellenwert zur Bestimmung aufeinanderfolgender Verstöße
 ** *Minimale Latenz (ms)*: Latenzschwellenwert zur Bestimmung der Durchsatzsteigerung
 ** *Maximaler Durchsatz (SKUs)*: Maximal zulässige SKU für den Durchsatz
 
@@ -165,31 +166,6 @@ Für jedes Dateisystem kann festgelegt werden, wie die Durchsatzsteigerung verwa
 
 .Ergebnis
 Die ausgewählten Dateisysteme wechseln sofort in den neuen Durchsatzmodus.
-
-
-
-[[bulk-edit-management-parameters]]
-== Parameter für das Massenbearbeitungsmanagement
-
-Einstellungen für mehrere Dateisysteme gleichzeitig ändern, sodass die gleichen Einstellungen für alle Cluster gelten.
-
-.Schritte
-. Wählen Sie auf der Registerkarte *Übersicht* die Dateisysteme aus, die Sie in der Tabelle bearbeiten möchten.
-+
-
-TIP: Sie können einzelne Dateisysteme auswählen oder mithilfe des Kontrollkästchens in der Kopfzeile alle sichtbaren Dateisysteme auswählen.
-
-. *SSD-Kapazitätsmanagement ändern* oder *Durchsatzmanagement ändern* oberhalb der Tabelle auswählen.
-. Wählen Sie Ihren bevorzugten Modus.
-. Im Bearbeitungsdialog können die Parameter nach Bedarf angepasst werden.
-+
-Jedes Parameterfeld enthält eine QuickInfo, die seinen Zweck und den gültigen Bereich beschreibt. Der Dialog zeigt die aktuellen Werte oder Standardwerte basierend auf Ihrer Auswahl an.
-
-. Wählen Sie *Anwenden*, um die Änderungen auf alle ausgewählten Dateisysteme anzuwenden.
-
-
-.Ergebnis
-Die Parameter werden für alle ausgewählten Dateisysteme aktualisiert. Dateisysteme im Recommend- oder Automate-Modus verwenden die neuen Parameter sofort für Analysen und Entscheidungsfindung.
 
 
 
@@ -203,23 +179,20 @@ Die Entscheidungspunkte im Diagramm zeigen an, wann:
 
 * *Empfehlungsentscheidungspunkte*: Der Kapazitätsempfehlungsalgorithmus hat festgestellt, dass zusätzliche SSD-Kapazität benötigt wird.
 * *Automatisierungsentscheidungspunkte*: Das Automatisierungssystem hat versucht, die SSD-Kapazität zu erhöhen. Diese Punkte zeigen, ob die Aktion erfolgreich war oder fehlgeschlagen ist.
++
+Wenn das SSD Kapazitätsmanagement deaktiviert ist, zeigt das Diagramm nur die bisherige Nutzung an und keine Empfehlungen oder Automatisierungsentscheidungen.
+
 
 
 .Schritte
-. Wählen Sie auf der Registerkarte *Übersicht* einen Dateisystemnamen in der Tabelle aus.
-. Sehen Sie sich das SSD-Nutzungsdiagramm an, das die historischen Kapazitätstrends aufzeigt.
-. Wählen Sie verschiedene Zeiträume aus, um das Kapazitätsverhalten über verschiedene Zeiträume hinweg anzuzeigen.
-. Bewegen Sie den Mauszeiger über Entscheidungspunkte im Diagramm, um Details zu Empfehlungen oder Automatisierungsaktionen zu bestimmten Zeitpunkten anzuzeigen.
-. Nutzen Sie die Erkenntnisse aus dem Diagramm, um:
-+
-** Verstehen, wie häufig Kapazitätsanpassungen erforderlich sind
-** Prüfen Sie, ob der Automatisierungs- oder der Empfehlungsmodus besser zu Ihren Arbeitslastmustern passt
-** Wiederkehrende Kapazitätsengpässe identifizieren
-** Planen Sie zukünftigen Kapazitätsbedarf basierend auf Wachstumstrends
-** Fehlerbehebung bei fehlgeschlagenen Automatisierungsversuchen
+. Auf der Registerkarte *Übersicht* wird in der Tabelle ein Dateisystemname ausgewählt. In der Clusterdetailansicht wird die Option *Durchsatz* oder *SSD-Kapazität* ausgewählt, um die Diagrammdarstellung zu wechseln.
 
 
+Wenn *Durchsatz* ausgewählt wird, zeigt das Diagramm den Client-Durchsatz und die Auslastung an, sodass die Nachfrage mit dem konfigurierten Durchsatzniveau und den Schwellenwerten verglichen werden kann.
 
+Wenn *SSD Capacity* ausgewählt wird, zeigt das Diagramm die SSD-Nutzung an, einschließlich historischer Kapazitätstrends und Entscheidungspunkte für die Kapazität.
+
+Wählen Sie verschiedene Zeiträume aus, um Durchsatz- oder Kapazitätstrends über unterschiedliche Zeiträume hinweg anzuzeigen. . Bewegen Sie den Mauszeiger über Entscheidungspunkte im Diagramm, um Details zu Empfehlungen oder Automatisierungsaktionen zu bestimmten Zeitpunkten anzuzeigen. . Die Erkenntnisse aus dem Diagramm helfen Ihnen dabei: * zu verstehen, wie häufig Kapazitätsanpassungen erforderlich sind * zu bewerten, ob der Automatisierungs- oder Empfehlungsmodus besser zu Ihren Workload-Mustern passt * wiederkehrende Kapazitätsengpässe zu identifizieren * zukünftigen Kapazitätsbedarf auf der Grundlage von Wachstumstrends zu planen * fehlgeschlagene Automatisierungsversuche zu beheben
 
 
 
