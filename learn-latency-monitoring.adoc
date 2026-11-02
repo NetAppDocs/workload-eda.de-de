@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: learn-latency-monitoring.html 
-keywords: latency analysis, CloudWatch alarms, volume latency, read latency, write latency, critical events, warning events, latency thresholds, IOPS thresholds, latency monitoring, FSx for ONTAP, root cause analysis, QoS delay center, automated analysis 
+keywords: latency analysis, CloudWatch alarms, volume latency, read latency, write latency, critical events, warning events, latency thresholds, IOPS thresholds, latency monitoring, FSx for ONTAP, root cause analysis, QoS delay center, automated analysis, file system pressure 
 summary: Die Latenzüberwachung in Workload Factory für EDA unterstützt die Erkennung und Analyse von Leistungsproblemen bei FSx for ONTAP Volumes mithilfe einer automatisierten Basisanalyse und einer optionalen KI-Analyse. 
 ---
 = Erfahren Sie mehr über Latenzüberwachung in Workload Factory für EDA
@@ -124,6 +124,13 @@ Bei der Durchführung einer KI-Analyse stellt das System Folgendes bereit:
 * *Betroffene Clients*: Liste der von der Latenz betroffenen EC2-Instanznamen
 * *Mögliche Abhilfemaßnahmen*: Zwei oder mehr konkrete Maßnahmen zur Behebung des Problems
 
+
+
+
+[[file-system-pressure]]
+=== Belastung des Dateisystems
+
+Bei Volumes mit einer Latenzwarnung kann eine bedarfsgesteuerte Prüfung ausgeführt werden, um festzustellen, ob das Dateisystem zum Zeitpunkt des Ereignisses so stark ausgelastet war, dass die Performance beeinträchtigt wurde. Die Prüfung wertet die 40 Minuten der CloudWatch Daten vor dem Ereignis aus und gibt entweder *Ausgelastet* oder *Nicht ausgelastet* zurück. Ein Ergebnis *Ausgelastet* bedeutet, dass die Wahrscheinlichkeit, dass die Dateisystemauslastung die Performance und Latenz beeinträchtigt hat, bei über 80 % liegt. Die Prüfung enthält außerdem einen Link zur FSx for ONTAP Ressource, damit die zugehörigen Metriken überprüft werden können.
 
 
 

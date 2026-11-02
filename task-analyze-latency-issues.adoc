@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-analyze-latency-issues.html 
-keywords: latency analysis, analyze latency, latency events, root cause analysis, QoS delay center, AI analysis, latency troubleshooting, volume latency, basic analysis, affected clients, remediation steps, iops, throughput 
+keywords: latency analysis, analyze latency, latency events, root cause analysis, QoS delay center, AI analysis, latency troubleshooting, volume latency, basic analysis, affected clients, remediation steps, iops, throughput, analysis status 
 summary: Latenzereignisse können angezeigt und analysiert werden, um Leistungsprobleme mit FSx für ONTAP Volumes zu identifizieren. Mithilfe grundlegender Analysen und optionaler KI-Analysen lassen sich die Ursache und Lösungsvorschläge ermitteln. 
 ---
 = Latenzprobleme in Workload Factory für EDA analysieren
@@ -37,7 +37,6 @@ Die Tabelle „Volumes mit Latenz oberhalb des Schwellenwerts“ zeigt Volumes, 
 . Melden Sie sich mit einem der folgenden Dienste an: link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["Konsolenerlebnisse"^]Die
 . Wählen Sie das Menü image:workloads-menu-icon.png["Das Hamburger-Menüsymbol"] und wählen Sie dann *EDA* aus.
 . Wählen Sie die Registerkarte *Latenz* aus.
-. Die Informationen zu jedem Ereignis in der Tabelle werden angezeigt.
 . Um Details zu einem Latenzereignis anzuzeigen, wählen Sie das Ereignis in der Spalte *Schweregrad* aus. Dadurch wird ein Latenzanalyse-Panel für dieses Ereignis geöffnet.
 . Um die Tabelle zu sortieren, wählen Sie eine beliebige Spaltenüberschrift aus. Standardmäßig werden kritische Ereignisse zuerst nach Zeit sortiert angezeigt, gefolgt von Warnereignissen, ebenfalls nach Zeit sortiert.
 . Um ein oder mehrere Ereignisse zu verwerfen, wählen Sie neben dem jeweiligen Ereignis image:icon-action.png["Das Aktionsmenü-Symbol"]*Verwerfen*.
@@ -92,6 +91,7 @@ Die Ergebnisse einschließlich folgender Punkte werden angezeigt:
 
 
 . *Vollständige Analyse anzeigen* zeigt die vollständigen Ergebnisse der KI-Analyse, einschließlich Leistungsdiagrammen, die Volumenlatenz, IOPS und Durchsatz aus CloudWatch-Metriken über den ausgewählten Zeitraum darstellen.
+. Zum Aktualisieren der Ergebnisse kann *Analyse erneut ausführen* ausgewählt werden. Dadurch wird eine neue Analyse für das Volume gestartet, und der Bereich wird nach Abschluss der Analyse aktualisiert.
 . Die empfohlenen Schritte zur Behebung des Latenzproblems beachten.
 . Nachdem Sie die Änderungen vorgenommen haben, in der Tabelle der Latenzereignisse lässt sich überprüfen, ob das Problem behoben ist.
 

@@ -185,6 +185,26 @@ Das SSD-Nutzungsverlaufsdiagramm dient dazu:
 
 
 
+[[understanding-throughput-decision-points]]
+=== Verständnis der Entscheidungspunkte beim Durchsatz
+
+Das Diagramm zum Client-Durchsatz zeigt an, wann sich der vom System empfohlene Durchsatz geändert hat oder der Durchsatz automatisch angepasst wurde. Diese Markierungen erscheinen auch in der Diagrammlegende. Wenn die Durchsatzverwaltung deaktiviert ist, zeigt das Diagramm nur den bisherigen Durchsatz und keine Empfehlungen oder automatischen Änderungen an.
+
+*Empfehlungsentscheidungspunkte*:: Wird angezeigt, wenn das System erkennt, dass der Durchsatz erhöht werden muss. Beim Bewegen des Mauszeigers über einen Entscheidungspunkt werden die Details angezeigt. Wenn mehrere Empfehlungen zum gleichen Zeitstempel auftreten, zeigt der Punkt die Anzahl der Empfehlungen und die Details der neuesten Empfehlung an.
+*Entscheidungspunkte für die Automatisierung*:: Wird angezeigt, wenn das Automatisierungssystem versucht, den Durchsatz zu erhöhen. Beim Bewegen des Mauszeigers über einen Entscheidungspunkt werden die Details angezeigt. Wenn die Erhöhung erfolgreich war, wird auch die neue SKU angezeigt. Wenn sie fehlschlug, wird stattdessen eine kurze Erklärung angezeigt. Wenn mehrere Fehler gleichzeitig auftreten, zeigt der Punkt die Anzahl der Fehler und die Details des zuletzt aufgetretenen Fehlers an.
+
+
+Mithilfe des Client-Durchsatzdiagramms lassen sich folgende Punkte ermitteln:
+
+* Wie oft Sie einen höheren Durchsatz benötigen
+* Je nach Ihren Anforderungen kann der Automatisierungs- oder der Empfehlungsmodus besser geeignet sein.
+* Ermittlung wiederkehrender Durchsatzgrenzen
+* Die Planung des künftigen Durchsatzbedarfs sollte das im Laufe der Zeit zunehmende Nutzungsvolumen berücksichtigen.
+* Untersuchung der Gründe für das Scheitern der Automatisierungsversuche
+
+
+
+
 [[related-information]]
 == Verwandte Informationen
 

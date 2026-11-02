@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-analyze-latency-trends.html 
-keywords: latency graph, latency visualization, latency trends, breach patterns, latency spikes, latency patterns, time range analysis, breach frequency, iops, throughput 
+keywords: latency graph, latency visualization, latency trends, breach patterns, latency spikes, latency patterns, time range analysis, breach frequency, iops, throughput, file system pressure 
 summary: Mit den interaktiven Grafiken lassen sich Volumenlatenz-Trends im Zeitverlauf analysieren, Muster erkennen und die Wirksamkeit von Abhilfemaßnahmen nachverfolgen. 
 ---
 = Analysieren Sie Latenztrends für EDA in Workload Factory

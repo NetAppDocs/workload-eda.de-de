@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-use-overview-dashboard.html 
-keywords: cluster overview, filter dashboard, cluster health, capacity recommendations, SSD management, throughput management, bulk edit, decision points, clusters table, ONTAP events, latency events 
+keywords: cluster overview, filter dashboard, cluster health, capacity recommendations, SSD management, throughput management, bulk edit, decision points, throughput decision points, clusters table, ONTAP events, latency events 
 summary: Das Übersichts-Dashboard dient zur Überwachung des Cluster-Zustands, zur Anzeige von Kapazitätsempfehlungen, zur Verwaltung von SSD- und Durchsatzeinstellungen sowie zur Analyse von Leistungstrends in den FSx for ONTAP Dateisystemen. 
 ---
 = Nutzen Sie das Übersichts-Dashboard in Workload Factory für EDA
@@ -47,19 +47,6 @@ Verwenden Sie die Filter oben im Dashboard, um bestimmte Dateisysteme anzuzeigen
 == Cluster-Gesundheitsstatus anzeigen
 
 Ganz oben im Dashboard wird eine Zusammenfassung des Zustands und der Aktivität der ausgewählten Dateisysteme angezeigt. Dies erscheint nur, wenn mindestens eine FSx for ONTAP Verbindung zu Ihren Dateisystemen besteht.
-
-.Über diese Aufgabe
-Der Gesundheitszustand des Clusters umfasst folgende Schlüsselbereiche:
-
-* *Latenz*: Anzahl der erkannten Latenzereignisse
-* *Elastizität des Dateisystems*:
-+
-** *SSD-Kapazität*: Zeigt, wie viele Dateisysteme Automate, Recommend oder None zur Verwaltung der SSD-Kapazität verwenden.
-** *Durchsatz*: Zeigt, wie viele Dateisysteme Automate, Recommend oder None zur Durchsatzverwaltung verwenden.
-
-
-* *ONTAP-Ereignisse*: Anzahl der EMS-Ereignisse nach Kategorie (Kapazität, Verfügbarkeit & Schutz, Sicherheit & Sonstiges)
-
 
 .Schritte
 . Überprüfen Sie den Cluster-Gesundheitsstatus oben im Dashboard.
@@ -169,30 +156,31 @@ Die ausgewählten Dateisysteme wechseln sofort in den neuen Durchsatzmodus.
 
 
 
-[[analyze-capacity-trends-and-decision-points]]
-== Analysieren Sie Kapazitätstrends und Entscheidungspunkte
+[[analyze-capacity-and-throughput-trends-and-decision-points]]
+== Analyse von Kapazitäts- und Durchsatztrends sowie Entscheidungspunkten
 
 Das SSD-Nutzungsdiagramm zeigt, wie sich die Speichernutzung im Laufe der Zeit verändert und ermöglicht das Erkennen von Mustern.
 
-.Über diese Aufgabe
-Die Entscheidungspunkte im Diagramm zeigen an, wann:
-
-* *Empfehlungsentscheidungspunkte*: Der Kapazitätsempfehlungsalgorithmus hat festgestellt, dass zusätzliche SSD-Kapazität benötigt wird.
-* *Automatisierungsentscheidungspunkte*: Das Automatisierungssystem hat versucht, die SSD-Kapazität zu erhöhen. Diese Punkte zeigen, ob die Aktion erfolgreich war oder fehlgeschlagen ist.
-+
-Wenn das SSD Kapazitätsmanagement deaktiviert ist, zeigt das Diagramm nur die bisherige Nutzung an und keine Empfehlungen oder Automatisierungsentscheidungen.
-
-
-
 .Schritte
-. Auf der Registerkarte *Übersicht* wird in der Tabelle ein Dateisystemname ausgewählt. In der Clusterdetailansicht wird die Option *Durchsatz* oder *SSD-Kapazität* ausgewählt, um die Diagrammdarstellung zu wechseln.
+. Auf der Registerkarte *Übersicht* wird in der Tabelle ein Dateisystemname ausgewählt.
+. In der Cluster-Detailansicht kann durch Auswahl der Option *Durchsatz* oder *SSD-Kapazität* die Diagrammanzeige gewechselt werden.
++
+** Wenn *Durchsatz* ausgewählt wird, zeigt das Diagramm den Client-Durchsatz und die Auslastung an, sodass die Nachfrage mit dem konfigurierten Durchsatzniveau und den Schwellenwerten verglichen werden kann.
+** Wenn *SSD Capacity* ausgewählt wird, zeigt das Diagramm die SSD-Nutzung an, einschließlich historischer Kapazitätstrends und Entscheidungspunkte für die Kapazität.
 
 
-Wenn *Durchsatz* ausgewählt wird, zeigt das Diagramm den Client-Durchsatz und die Auslastung an, sodass die Nachfrage mit dem konfigurierten Durchsatzniveau und den Schwellenwerten verglichen werden kann.
+. Wählen Sie verschiedene Zeiträume aus, um Durchsatz- oder Kapazitätstrends über unterschiedliche Zeiträume hinweg anzuzeigen.
+. Bewegen Sie den Mauszeiger über Entscheidungspunkte im Diagramm, um Details zu Empfehlungen oder Automatisierungsaktionen zu bestimmten Zeitpunkten anzuzeigen.
+. Nutzen Sie die Erkenntnisse aus dem Diagramm, um:
++
+** Verstehen, wie häufig Kapazitätsanpassungen erforderlich sind
+** Prüfen Sie, ob der Automatisierungs- oder der Empfehlungsmodus besser zu Ihren Arbeitslastmustern passt
+** Wiederkehrende Kapazitätsengpässe identifizieren
+** Planen Sie zukünftigen Kapazitätsbedarf basierend auf Wachstumstrends
+** Fehlerbehebung bei fehlgeschlagenen Automatisierungsversuchen
 
-Wenn *SSD Capacity* ausgewählt wird, zeigt das Diagramm die SSD-Nutzung an, einschließlich historischer Kapazitätstrends und Entscheidungspunkte für die Kapazität.
 
-Wählen Sie verschiedene Zeiträume aus, um Durchsatz- oder Kapazitätstrends über unterschiedliche Zeiträume hinweg anzuzeigen. . Bewegen Sie den Mauszeiger über Entscheidungspunkte im Diagramm, um Details zu Empfehlungen oder Automatisierungsaktionen zu bestimmten Zeitpunkten anzuzeigen. . Die Erkenntnisse aus dem Diagramm helfen Ihnen dabei: * zu verstehen, wie häufig Kapazitätsanpassungen erforderlich sind * zu bewerten, ob der Automatisierungs- oder Empfehlungsmodus besser zu Ihren Workload-Mustern passt * wiederkehrende Kapazitätsengpässe zu identifizieren * zukünftigen Kapazitätsbedarf auf der Grundlage von Wachstumstrends zu planen * fehlgeschlagene Automatisierungsversuche zu beheben
+
 
 
 

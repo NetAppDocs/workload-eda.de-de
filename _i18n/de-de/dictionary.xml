@@ -720,9 +720,6 @@
   <block id="b6c7799b0c3cb63df1897b6e33e5ffe9" category="list-text">*Anmeldeinformationen*: Filtern Sie nach bestimmten AWS-Anmeldeinformationen, falls Sie mehrere konfiguriert haben</block>
   <block id="dd10257a52cc4af5c67ff37ab0bb4d74" category="list-text">*Regionen*: Filtern Sie nach einer oder mehreren AWS-Regionen</block>
   <block id="fb3123e7d905f809c3bdf82e3ceca6af" category="section-title">Cluster-Gesundheitsstatus anzeigen</block>
-  <block id="7da261fafbc98c685b2c0c780ccdbcf1" category="paragraph">Der Gesundheitszustand des Clusters umfasst folgende Schlüsselbereiche:</block>
-  <block id="ac97fe213f96cc9db6b4ee38d70f798b" category="list-text">*Latenz*: Anzahl der erkannten Latenzereignisse</block>
-  <block id="a51f6183fddbec434723cff9a6cb22f0" category="list-text">*ONTAP-Ereignisse*: Anzahl der EMS-Ereignisse nach Kategorie (Kapazität, Verfügbarkeit &amp; Schutz, Sicherheit &amp; Sonstiges)</block>
   <block id="c569953f651916e8d6fb2a2e26996486" category="list-text">Überprüfen Sie den Cluster-Gesundheitsstatus oben im Dashboard.</block>
   <block id="45cd3072594a40004f1648f957b11b4f" category="list-text">So zeigen Sie Latenzereignisse an:</block>
   <block id="9bab24fe4c951c13841b658922a21a8b" category="list-text">Wählen Sie *Überprüfen*, um zur Registerkarte *Latenz* zu gelangen.</block>
@@ -735,8 +732,6 @@
   <block id="37b5b20fd94de2275a255ae79e7ac8f0" category="list-text">Um die Empfehlung umzusetzen, befolgen Sie die in der Empfehlungsmitteilung enthaltenen Anweisungen.</block>
   <block id="95138c66b91ee03084dfba9068536d5e" category="section-title">SSD-Verwaltungsmodus ändern</block>
   <block id="b689124bbd04a08329d8f616990fa06d" category="list-text">Wählen Sie Ihren bevorzugten Modus:</block>
-  <block id="84a7874f129070a914f70dd3d70a6716" category="section-title">Analysieren Sie Kapazitätstrends und Entscheidungspunkte</block>
-  <block id="4dbca2bab9fb0222adee0d079e0d2127" category="paragraph">Die Entscheidungspunkte im Diagramm zeigen an, wann:</block>
   <block id="e307894bdae8efc4f4fdacf666cf2573" category="section-title">Verwenden Sie die Clustertabelle</block>
   <block id="88dc1144edaa697995919551780b6e93" category="list-text">Überprüfen Sie auf der Registerkarte *Übersicht* die Clustertabelle.</block>
   <block id="8e6be07248fc78ed27f8d01305999436" category="list-text">Verwenden Sie das Suchfeld, um bestimmte Dateisysteme anhand ihres Namens zu finden.</block>
@@ -890,7 +885,6 @@
   <block id="5b9d5469c481b2fd86bb70731779a54a" category="paragraph">Für jedes Dateisystem kann festgelegt werden, wie die SSD-Kapazität verwaltet wird: manuelle Empfehlungen erhalten oder automatische Skalierung zulassen.</block>
   <block id="75be33f2f4cc39082bea6e44e8406df7" category="paragraph">Das Dateisystem wechselt sofort in den neuen Modus. Bei Auswahl von „Empfehlen“ oder „Automatisieren“ verwendet das System die festgelegten Einstellungen, um die Speicherkapazität zu analysieren und Entscheidungen zu treffen.</block>
   <block id="65bd457971cf8d44b2a0e065d040b668" category="paragraph">Das SSD-Nutzungsdiagramm zeigt, wie sich die Speichernutzung im Laufe der Zeit verändert und ermöglicht das Erkennen von Mustern.</block>
-  <block id="adcae559988943cef6bf4b9ce78904b2" category="list-text">*Automatisierungsentscheidungspunkte*: Das Automatisierungssystem hat versucht, die SSD-Kapazität zu erhöhen. Diese Punkte zeigen, ob die Aktion erfolgreich war oder fehlgeschlagen ist.</block>
   <block id="27e86a81d2f78cd7f4181479163bbbeb" category="paragraph">Die Clustertabelle bietet eine detaillierte Übersicht über jedes FSx for ONTAP Dateisystem mit Leistungs- und Nutzungsmetriken.</block>
   <block id="27a39463cff24c056326230d2490c6d4" category="list-text">*Regelmäßige Überwachung*: Das Dashboard sollte regelmäßig überprüft werden, um Trends zu erkennen, bevor sie zu Problemen werden.</block>
   <block id="5f387dd12e491b49648cab4ae9d1263e" category="list-text">**Filter verwenden**: Regions- und Kontofilter können angewendet werden, um sich auf die Teile der Infrastruktur zu konzentrieren, die überprüft werden sollen.</block>
@@ -935,7 +929,6 @@
   <block id="7e9591a005bdef4cdf16dfd575186f3b" category="paragraph">Sie können die Ansicht anpassen und Latenzspitzen mit Änderungen der IOPS und des Durchsatzes korrelieren. Markierungen für Grenzwertverletzungen und Details beim Überfahren mit der Maus helfen dabei zu erkennen, wann Schwellenwerte überschritten wurden, und wichtige Kennzahlen für die erkannte Grenzwertverletzung zu überprüfen.</block>
   <block id="94865ed9933801afc860536ada02e496" category="summary">Latenzereignisse können angezeigt und analysiert werden, um Leistungsprobleme mit FSx für ONTAP Volumes zu identifizieren. Mithilfe grundlegender Analysen und optionaler KI-Analysen lassen sich die Ursache und Lösungsvorschläge ermitteln.</block>
   <block id="939c818555e5fa65655d447cc97817ae" category="section-title">Volumen mit einer Latenz oberhalb des Schwellenwerts anzeigen</block>
-  <block id="f06921222f3510361d45443110e72880" category="list-text">Die Informationen zu jedem Ereignis in der Tabelle werden angezeigt.</block>
   <block id="3cd32cbc73706e6bc220ece19622d604" category="list-text">Das Panel zur Latenzanalyse bietet einen schnellen Überblick über die Verletzung, einschließlich eines Latenzdiagramms und Steuerelementen für Zeitraum und Typ. *Vollständige Analyse anzeigen* öffnet die detaillierte Latenzanalyseseite mit Basisanalyse, optionaler KI-Analyse und zusätzlichen Diagrammen. Siehe <block ref="6ebd25eb4c135c18dd20612e63ec5166" category="inline-link-macro-rx"></block> für Details.</block>
   <block id="0665519f24690502dfcb8f5913d6b056" category="paragraph">Ein Latenzereignis in der Spalte *Schweregrad* öffnet das Analysefenster für dieses Ereignis. Das Fenster enthält Registerkarten, die verschiedene Ansichten des Latenzereignisses bieten.</block>
   <block id="0f76eb72044a145a7b1eb778e6653a96" category="list-text">*Basis*: Zeigt die Ergebnisse einer automatischen Analyse an. Bei Verknüpfung mit dem Dateisystem wird eine Aufschlüsselung der Komponenten angezeigt und die Komponente, die die Verzögerung verursacht, identifiziert. Besteht keine Verknüpfung, erfolgt eine Aufforderung, eine hinzuzufügen. Ein interaktives Latenzdiagramm der CloudWatch-Metriken für das betroffene Volume wird angezeigt. Es werden entweder Lese- oder Schreibmetriken angezeigt, abhängig davon, welcher Alarm das Ereignis ausgelöst hat. Verschiedene Zeiträume können ausgewählt und ein Filter verwendet werden, um alle, Lese-, Schreib- oder Metadatenoperationen anzuzeigen.</block>
@@ -1035,7 +1028,6 @@
   <block id="42e48676b85dbff1f2792294e6831dc0" category="list-text">*Filter hinzufügen* auswählen.</block>
   <block id="c71e0da6508887a77f334a554ab5495a" category="summary">Das Übersichts-Dashboard dient zur Überwachung des Cluster-Zustands, zur Anzeige von Kapazitätsempfehlungen, zur Verwaltung von SSD- und Durchsatzeinstellungen sowie zur Analyse von Leistungstrends in den FSx for ONTAP Dateisystemen.</block>
   <block id="4c3cb97ad8dafb44b4527de840549941" category="paragraph">Das Übersichts-Dashboard bietet eine Übersicht über den Zustand und die Kapazität Ihrer FSx for ONTAP Dateisysteme. Eine Filterung der Daten, das Anzeigen von Kapazitätsempfehlungen, das Anpassen von SSD- und Durchsatzeinstellungen sowie das Überprüfen von Leistungstrends unterstützen bei der Entscheidung, wo Volumes platziert werden und wann eine Kapazitätserweiterung sinnvoll ist.</block>
-  <block id="3e245db3deb2fe7b566f9dfe8f122ad3" category="list-text">*Elastizität des Dateisystems*:</block>
   <block id="f3e0de8b6d05c856fde2eaa835f504ef" category="section-title">Kapazitäts- oder Durchsatzempfehlungen anzeigen und anwenden</block>
   <block id="e07b408f972ad269d9fed5451f31d8c9" category="paragraph">Workload Factory führt automatisch Empfehlungen für jedes FSx for ONTAP Dateisystem durch. Dateisysteme mit Empfehlungen lassen sich durch Filtern der Clusters-Tabelle finden.</block>
   <block id="134805f5ae47607c74a2fad588bcc889" category="list-text">In der Tabelle *Cluster* nach den relevanten Zeit- oder Detailspalten filtern.</block>
@@ -1057,7 +1049,6 @@
   <block id="91455d18a42b79b1a34df0d97bfbaffd" category="list-text">*Minimale Latenz (ms)*: Latenzschwellenwert zur Bestimmung der Durchsatzsteigerung</block>
   <block id="0a2daf37cc4cac8c9a3da95290e9a399" category="list-text">*Maximaler Durchsatz (SKUs)*: Maximal zulässige SKU für den Durchsatz</block>
   <block id="6b482ace535080820ca5dea3bb557cb6" category="paragraph">Die ausgewählten Dateisysteme wechseln sofort in den neuen Durchsatzmodus.</block>
-  <block id="232af3ec8ca37d39f0b49ddb6c81830a" category="list-text">*Empfehlungsentscheidungspunkte*: Der Kapazitätsempfehlungsalgorithmus hat festgestellt, dass zusätzliche SSD-Kapazität benötigt wird.</block>
   <block id="0d606a9207ef786e2b3dc99ea3fe3ad8" category="list-text">**Klare Schwellenwerte festlegen**: SSD-Nutzungsschwellenwerte und Durchsatzparameter auswählen, die zur jeweiligen Arbeitslast und zu den Kapazitätsplänen passen.</block>
   <block id="c6e183b5112db7515b7bc4904a3b374b" category="list-text">**Empfehlungen schnell prüfen**: Die Tabelle „Cluster“ kann gefiltert werden, um Dateisysteme mit Kapazitäts- oder Durchsatzempfehlungen zu finden. Diese können überprüft und entsprechende Maßnahmen ergriffen werden, um Speicherplatzmangel zu vermeiden.</block>
   <block id="0ecfcdfed86b687b39299cccc3380def" category="list-text">**Den richtigen Modus wählen**: Der Modus **Empfehlen** eignet sich, wenn Kapazitäts- oder Durchsatzänderungen selbst genehmigt werden sollen. Der Modus **Automatisieren** ist geeignet, wenn das System Kapazität oder Durchsatz automatisch verwalten soll.</block>
@@ -1084,11 +1075,8 @@
   <block id="e920df7cb27871af178ff85a428a8b4e" category="list-text">In *Erweiterte Konfiguration* werden die Durchsatzverwaltungsparameter konfiguriert:</block>
   <block id="39122245b5363dc3871538d2ef59784e" category="list-text">*Fenster für aufeinanderfolgende Verstöße (Stunden)*: Dauer aufeinanderfolgender Verstöße vor dem Ergreifen von Maßnahmen</block>
   <block id="a9d111294543c201d767519d991c1b8d" category="list-text">*Kennzahlen für aufeinanderfolgende Verstöße (%)*: Prozentualer Schwellenwert zur Bestimmung aufeinanderfolgender Verstöße</block>
-  <block id="d385fd0ac858ff17553d407851f64c48" category="paragraph">Wenn das SSD Kapazitätsmanagement deaktiviert ist, zeigt das Diagramm nur die bisherige Nutzung an und keine Empfehlungen oder Automatisierungsentscheidungen.</block>
-  <block id="1de4de358ec9c3a1cd36180e2c13a443" category="list-text">Auf der Registerkarte *Übersicht* wird in der Tabelle ein Dateisystemname ausgewählt. In der Clusterdetailansicht wird die Option *Durchsatz* oder *SSD-Kapazität* ausgewählt, um die Diagrammdarstellung zu wechseln.</block>
   <block id="a01346bc61a98c025144199b0893e264" category="paragraph">Wenn *Durchsatz* ausgewählt wird, zeigt das Diagramm den Client-Durchsatz und die Auslastung an, sodass die Nachfrage mit dem konfigurierten Durchsatzniveau und den Schwellenwerten verglichen werden kann.</block>
   <block id="e56ecd5b4053d7385c23bb7c3422bdd5" category="paragraph">Wenn *SSD Capacity* ausgewählt wird, zeigt das Diagramm die SSD-Nutzung an, einschließlich historischer Kapazitätstrends und Entscheidungspunkte für die Kapazität.</block>
-  <block id="d73906b15c9fc84c1806084ce8720a42" category="paragraph">Wählen Sie verschiedene Zeiträume aus, um Durchsatz- oder Kapazitätstrends über unterschiedliche Zeiträume hinweg anzuzeigen. . Bewegen Sie den Mauszeiger über Entscheidungspunkte im Diagramm, um Details zu Empfehlungen oder Automatisierungsaktionen zu bestimmten Zeitpunkten anzuzeigen. . Die Erkenntnisse aus dem Diagramm helfen Ihnen dabei: * zu verstehen, wie häufig Kapazitätsanpassungen erforderlich sind * zu bewerten, ob der Automatisierungs- oder Empfehlungsmodus besser zu Ihren Workload-Mustern passt * wiederkehrende Kapazitätsengpässe zu identifizieren * zukünftigen Kapazitätsbedarf auf der Grundlage von Wachstumstrends zu planen * fehlgeschlagene Automatisierungsversuche zu beheben</block>
   <block id="74bc5d714652a3ae18c64ee93e4ba085" category="section-title">30. September 2026</block>
   <block id="e52235241b1ae81de07e54f4309b150e" category="summary">Häufig gestellte Fragen zu NetApp Workload Factory für EDA.</block>
   <block id="f66051160a7d32c47d92cf8ad2688857" category="doc">FAQ für Workload Factory für EDA</block>
@@ -1137,4 +1125,42 @@
   <block id="944e61de0f91bfc0cd15e211ebfe75af" category="inline-link-macro">Hilfe für EDA</block>
   <block id="1b3bafacd5fad351f7d20e33c6af1735" category="paragraph">Amazon FSx for NetApp ONTAP ist eine Lösung von AWS, daher wird für den Support das Support Center in Ihrer AWS Management Console verwendet und ein Fall mit der Auswahl „FSx for ONTAP“ geöffnet. Für allgemeine Fragen zu Workload Factory oder zugehörigen Anwendungen und Services steht <block ref="b373eb075b7d6f2dc82d0ceae72b0277" category="inline-link-macro-rx"></block> zur Verfügung.</block>
   <block id="7e286d8febc5746f20c7282a62edee9c" category="sidebar">FAQ zu NetApp Workload Factory for EDA</block>
+  <block id="c13ffbb74415f75e6bfbceb28746aa00" category="doc">Volumendetails in der Latenzanalyse</block>
+  <block id="e702df4af5908b691938e2a636bf0d11" category="paragraph">Sie können jetzt die zusätzlichen Volumendetails *Volume-Typ* (RW/DP), *Volume-Stil* (FlexVol und FlexGroup) auf der Seite *Detaillierte Latenzanalyse* anzeigen.</block>
+  <block id="84040e078366ab4b302c9f45a3caa89d" category="section-title">Prüfung der Dateisystemauslastung auf Latenzereignisse</block>
+  <block id="06aefa6560003b3171cd7662ef2b3d9d" category="paragraph">Bei Volumes mit einer Latenzwarnung können Sie nun prüfen, ob das Dateisystem zum Zeitpunkt des Ereignisses stark genug belastet war, um die Performance zu beeinträchtigen. Sie können CloudWatch Daten aus den 40 Minuten vor dem Ereignis anzeigen und über einen Link zum Dateisystem weitere Untersuchungen durchführen.</block>
+  <block id="3e7850720206a5fe00f7310f49f139ef" category="inline-link-macro">Informationen zur Analyse von Latenztrends</block>
+  <block id="4082bd9c59dc64a78f083ec07f0f1ade" category="paragraph"><block ref="e0c19bfe1186d72bb091851a5915268f" category="inline-link-macro-rx"></block>.</block>
+  <block id="84ae0158deb3f95e6027fdf8d5ff467d" category="section-title">Entscheidungspunkte für den Durchsatz</block>
+  <block id="d561222faafa1c2e107d8307549a4372" category="paragraph">Nun sind Empfehlungen zum Clientdurchsatz sowie Entscheidungspunkte für die Automatisierung sichtbar. Beim Bewegen des Mauszeigers über einen Entscheidungspunkt werden Details wie die aktuelle und empfohlene SKU oder im Zeitfenster (%) überschrittene Metriken angezeigt.</block>
+  <block id="e7e1d8130eb396a11055ef0aad27b20c" category="inline-link-macro">Informationen zu Entscheidungspunkten</block>
+  <block id="b1b6afda8cefc68653435f204de78f32" category="paragraph"><block ref="c182c1de3b13ab1f612ac32dab94169a" category="inline-link-macro-rx"></block>.</block>
+  <block id="1e67c2facf6c9ccaed8c578497980ba2" category="section-title">Erneute Ausführung der Latenzanalyse</block>
+  <block id="95386ac844fe5334b9e7743d6098dfab" category="paragraph">Sie können nun *Analyse erneut ausführen* auswählen, um eine neue Latenzanalyse für ein Volume zu starten und die Ergebnisse bei Bedarf zu aktualisieren.</block>
+  <block id="1e2beb43d53ce6e7e78ce598ad680f34" category="inline-link-macro">Informationen zur Analyse von Latenzproblemen</block>
+  <block id="7ab17ff19aa466bc8531cc7568dea5a6" category="paragraph"><block ref="13291cb64cb4778475d22fb041bce2e0" category="inline-link-macro-rx"></block>.</block>
+  <block id="faffdafc286086cc0dbf1bbb1be9ad24" category="section-title">Belastung des Dateisystems</block>
+  <block id="b174f2d4d910ae1039afecd55cf7605d" category="paragraph">Bei Volumes mit einer Latenzwarnung kann eine bedarfsgesteuerte Prüfung ausgeführt werden, um festzustellen, ob das Dateisystem zum Zeitpunkt des Ereignisses so stark ausgelastet war, dass die Performance beeinträchtigt wurde. Die Prüfung wertet die 40 Minuten der CloudWatch Daten vor dem Ereignis aus und gibt entweder *Ausgelastet* oder *Nicht ausgelastet* zurück. Ein Ergebnis *Ausgelastet* bedeutet, dass die Wahrscheinlichkeit, dass die Dateisystemauslastung die Performance und Latenz beeinträchtigt hat, bei über 80 % liegt. Die Prüfung enthält außerdem einen Link zur FSx for ONTAP Ressource, damit die zugehörigen Metriken überprüft werden können.</block>
+  <block id="e886df54588d52e0380fc881467880b0" category="section-title">Verständnis der Entscheidungspunkte beim Durchsatz</block>
+  <block id="d5b00b16ab6db83fdf23282158c24ffc" category="paragraph">Das Diagramm zum Client-Durchsatz zeigt an, wann sich der vom System empfohlene Durchsatz geändert hat oder der Durchsatz automatisch angepasst wurde. Diese Markierungen erscheinen auch in der Diagrammlegende. Wenn die Durchsatzverwaltung deaktiviert ist, zeigt das Diagramm nur den bisherigen Durchsatz und keine Empfehlungen oder automatischen Änderungen an.</block>
+  <block id="1478d9dba08b46cdbef08e98cdb80335" category="list-text">Wird angezeigt, wenn das System erkennt, dass der Durchsatz erhöht werden muss. Beim Bewegen des Mauszeigers über einen Entscheidungspunkt werden die Details angezeigt. Wenn mehrere Empfehlungen zum gleichen Zeitstempel auftreten, zeigt der Punkt die Anzahl der Empfehlungen und die Details der neuesten Empfehlung an.</block>
+  <block id="0c990789e7c8c34746cdf8245924ae90" category="list-text">Wird angezeigt, wenn das Automatisierungssystem versucht, den Durchsatz zu erhöhen. Beim Bewegen des Mauszeigers über einen Entscheidungspunkt werden die Details angezeigt. Wenn die Erhöhung erfolgreich war, wird auch die neue SKU angezeigt. Wenn sie fehlschlug, wird stattdessen eine kurze Erklärung angezeigt. Wenn mehrere Fehler gleichzeitig auftreten, zeigt der Punkt die Anzahl der Fehler und die Details des zuletzt aufgetretenen Fehlers an.</block>
+  <block id="c6f02cbeb83957a98e034aa44ac8d06b" category="paragraph">Mithilfe des Client-Durchsatzdiagramms lassen sich folgende Punkte ermitteln:</block>
+  <block id="bcc32ea0c2c748a56864977ad681aae4" category="list-text">Wie oft Sie einen höheren Durchsatz benötigen</block>
+  <block id="627aca367632fb159e4a6c08e87b8226" category="list-text">Je nach Ihren Anforderungen kann der Automatisierungs- oder der Empfehlungsmodus besser geeignet sein.</block>
+  <block id="c44c2990e89eee02f130dbf8adf9df07" category="list-text">Ermittlung wiederkehrender Durchsatzgrenzen</block>
+  <block id="47c3141ddd1f9f9483f34cdb8af8ae43" category="list-text">Die Planung des künftigen Durchsatzbedarfs sollte das im Laufe der Zeit zunehmende Nutzungsvolumen berücksichtigen.</block>
+  <block id="77940ad0aaabd15b52dda5e8a86f480b" category="list-text">Zum Aktualisieren der Ergebnisse kann *Analyse erneut ausführen* ausgewählt werden. Dadurch wird eine neue Analyse für das Volume gestartet, und der Bereich wird nach Abschluss der Analyse aktualisiert.</block>
+  <block id="6f751f6512545197043d490e308e9992" category="section-title">Analyse von Kapazitäts- und Durchsatztrends sowie Entscheidungspunkten</block>
+  <block id="322cceacdd52c951c88a1d93df7f0dd8" category="list-text">Auf der Registerkarte *Übersicht* wird in der Tabelle ein Dateisystemname ausgewählt.</block>
+  <block id="ddbda74454b43f792ee3816b12e08af9" category="list-text">In der Cluster-Detailansicht kann durch Auswahl der Option *Durchsatz* oder *SSD-Kapazität* die Diagrammanzeige gewechselt werden.</block>
+  <block id="d92136d041599b752e93710c829f0583" category="list-text">Wählen Sie verschiedene Zeiträume aus, um Durchsatz- oder Kapazitätstrends über unterschiedliche Zeiträume hinweg anzuzeigen.</block>
+  <block id="8d33ce28efafbfe7600930c556bcfd55" category="list-text">Bewegen Sie den Mauszeiger über Entscheidungspunkte im Diagramm, um Details zu Empfehlungen oder Automatisierungsaktionen zu bestimmten Zeitpunkten anzuzeigen.</block>
+  <block id="4d43a6d1e695bf0a99e5bc33d3ca3fda" category="list-text">Nutzen Sie die Erkenntnisse aus dem Diagramm, um:</block>
+  <block id="8aa0b0a22cf225f503177c8f1de7df3c" category="list-text">Verstehen, wie häufig Kapazitätsanpassungen erforderlich sind</block>
+  <block id="dc036d0aefd6c43f7e0e90f879128e16" category="list-text">Prüfen Sie, ob der Automatisierungs- oder der Empfehlungsmodus besser zu Ihren Arbeitslastmustern passt</block>
+  <block id="274e06045627d8934cd9bb52e8c64f53" category="list-text">Wiederkehrende Kapazitätsengpässe identifizieren</block>
+  <block id="38e979158d55ae25a36aba4d97b0a8b4" category="list-text">Planen Sie zukünftigen Kapazitätsbedarf basierend auf Wachstumstrends</block>
+  <block id="2814ccd9bf1ef1faffa5931e29ee7f74" category="list-text">Fehlerbehebung bei fehlgeschlagenen Automatisierungsversuchen</block>
+  <block id="7dc50386b3284326e1114e4e7f4eb3fd" category="section-title">1. November 2026</block>
 </blocks>
